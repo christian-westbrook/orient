@@ -14,36 +14,23 @@
  *                access to Schedu.IO, a website whose purpose is to serve
  *                UAFS course data to students wanting to plan their
  *                school schedules with the help of a user-friendly
- *                interface. 
+ *                interface.
  **************************************************************************/
-
-// Intiates Session 
-session_start();
-$_SESSION["logIn"] = "false";
-
-// Include these PHP files
-include('view/header.php');				// Defines the header of each page
-include('controller/ValidationAndSanitization.php');    // Used to validate input authentication data and to sanitize input registration form data
-
-// Define the variable 'vas' as a new ValidationAndSanitation object
+$css = ['index-styles'];
+include('view/header.php');
+include('controller/ValidationAndSanitization.php');
+include('controller/userController.php');
 $vas = new ValidationAndSanitization();
+$uc = new userController();
 
-// ====================== | CONTROL STRUCTURES ========================
 
-// If the key 'signin-signin' has a value that is not null in the $_POST associative array...
 // Executes when the 'Sign In' button is clicked
 if(isset($_POST['signin-signin'])){
-
-	// Define the 'vasSignin' variable
-	$vasSignin;
-
-	// Define the 'vasSigninUser variable as the result of the username() method in the ValidationAndSanitization class, passing in the
-	// 'signin-user' variable, which is retrieved from the username input field, and the 'signin' variable, 
+	$vasSignin;//For checking if either username or email is valid
 	$vasSigninUser = $vas->username('signin-user', 'signin');
 	$vasSigninEmail = $vas->email('signin-user', 'signin');
 	$vasSigninPass = $vas->pass(['username'=>"signin-user", 'password'=>"signin-pass"], "signin");
-
-
+	//Checks if username or email is valid
 	if($vasSigninUser['status'] && !$vasSigninEmail['status']){
 		$vasSignin = ['status'=>true, 'message'=>"Valid Username."];
 	}
@@ -53,30 +40,16 @@ if(isset($_POST['signin-signin'])){
 	else{
 		$vasSignin = ['status'=>false, 'message'=>"No account associated with that E-Mail or Username."];
 	}
-
+	//When all fields are correct
 	if($vasSignin['status'] && $vasSigninPass['status']){
-		include('database.php');
-		$sql="SELECT * FROM USERS WHERE USERNAME='" . $_POST['signin-user']  . "' AND PASSWORD='" . $_POST['signin-pass'] . "'";
-		$stmt = $pdo->query($sql);
-		$results = $stmt->fetchAll(PDO::FETCH_ASSOC);	
-
-		if($results === FALSE) {
-			$vasSignin = ['status'=>false, 'message'=>"Invalid login credentials."];
-		}
-		else
-		{
-			$username = $results[0]['USERNAME'];
-			$pw = $results[0]['PASSWORD'];
-
-			if($username == $_POST['signin-user'] && $pw == $_POST['signin-pass']) {
-				$_SESSION["logIn"] = "true";
-				header('Location: home.php'); 	// Redirect browser to home.php
-			}
+		$userInfo = $uc->signin($_POST['signin-user'], $_POST['signin-pass']);
+		if($userInfo != false){
+			createSession($userInfo);
+			header('Location: home.php');
 		}
 	}
 }
 
-// If the key 'reg-reg' has a value that is not null in the $_POST associative array...
 // Executes when the 'Register' button is clicked
 if(isset($_POST['reg-reg'])){
 	$vasRegFname = $vas->name('reg-fname');
@@ -86,9 +59,14 @@ if(isset($_POST['reg-reg'])){
 	$vasRegEmail = $vas->email("reg-email", "registration");
 	$vasRegPassword = $vas->pass("reg-password", "registration");
 	$vasRegPassword2 = $vas->pass2("reg-password2", "reg-password");
-
+	//When all fields are correct
 	if($vasRegFname['status'] && $vasRegLname['status'] && $vasRegUsername['status'] && $vasRegEmail['status'] && $vasRegPassword['status'] && $vasRegPassword2['status']){
-		header('Location: home.php');
+		$userInfo = $uc->register($_POST['reg-fname'], $_POST['reg-lname'], $_POST['reg-email'], $_POST['reg-username'], $_POST['reg-password'], $_POST['reg-password2']);
+		var_dump($userInfo);
+		/*if($userInfo != false){
+			createSession($userInfo);
+			location('home.php');
+		}*/
 	}
 }
 ?>
@@ -100,11 +78,11 @@ if(isset($_POST['reg-reg'])){
 	<!-- Authentication/Registration Card Mid-Level Container -->
 	<!-- Contains another inner container that contains the card -->
 	<div class='row justify-content-center'>
-		
+
 		<!-- Authentication/Registration Card Inner Container -->
 		<!-- Contains the card -->
 		<div class='col-sm-12 col-md-7'>
-			
+
 			<!-- Authentication/Registration Card -->
 			<div class='card shadow-sm'>
 
@@ -131,7 +109,7 @@ if(isset($_POST['reg-reg'])){
 							</div>
 
 	            					<input type="text" class="form-control <?php isset($vasSignin) ? $vas->feedbackClass($vasSignin['status']) : ""; ?>" name="signin-user" placeholder="Username or E-Mail" <?php echo isset($_POST['signin-user']) ? 'value="'.$_POST['signin-user'].'"' : ""; ?>/>
-							
+
 							<?php isset($vasSignin) ? $vas->feedbackMessage($vasSignin['status'], $vasSignin['message']) : ""; ?>
 						</div>
 						<!-- End Username -->
@@ -171,7 +149,7 @@ if(isset($_POST['reg-reg'])){
 									<span class="oi oi-person"></span>
 								</span>
 							</div>
-	
+
 							<input type="text" class="form-control <?php isset($vasRegName) ? $vas->feedbackClass($vasRegName['status']) : ""; ?>" name="reg-fname" placeholder="Firstname" <?php echo isset($_POST['reg-fname']) ? 'value="'.$_POST['reg-fname'].'"' : ""; ?>/>
 
 							<input type="text" class="form-control <?php isset($vasRegName) ? $vas->feedbackClass($vasRegName['status']) : ""; ?>" name="reg-lname" placeholder="Lastname" <?php echo isset($_POST['reg-lname']) ? 'value="'.$_POST['reg-lname'].'"' : ""; ?>>

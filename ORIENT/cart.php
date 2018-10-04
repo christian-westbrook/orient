@@ -1,12 +1,20 @@
-<?php include('view/header.php'); ?>
+<?php
+$title = "My Schedule";
+include('view/header.php');
+if($sessionStarted == false){
+	header('Location: /~iot3/');
+}
+include('controller/cartController.php');
+$cc = new cartController();
+$cc->list($_SESSION['ID']);
+?>
 <div class="container-fluid mt-3">
   <div class="row">
     <div class="col-lg-9 col-md-12 border border-seconday rounded bg-light shadow-sm mx-2">
-      Add to "cart" -> stores crn in session or in user_cources -> cart.php loaded -> select X from COURSES where CRN = {CRN} -> format to array for cart display -> display.
       <?php
-      echo "<pre>";
-      var_dump(['Introduction to Programming'=>['date'=>'MWF', 'startTime'=>'08:15 AM', 'endTime'=>'09:30 AM']]);
-      echo "</pre>";?>
+      //echo "<pre>";
+      //var_dump(['Introduction to Programming'=>['date'=>'MWF', 'startTime'=>'08:15 AM', 'endTime'=>'09:30 AM']]);
+      //echo "</pre>";?>
       <h3 class="text-center mb-0">My Schedule</h3>
       <hr class="my-1">
       <?php generateTable(); ?>

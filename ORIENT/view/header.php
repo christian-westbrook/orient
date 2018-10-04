@@ -1,51 +1,40 @@
 <?php
-
-/*****************************************************************************
- * System	: Schedu.IO
- * Version	: 1.0
- * File		: ./view/header.php
- * Developers	: Nicholas Leonard, Anthony Osagwu, and Christian Westbrook
- * Date Created : 9/19/18
- * Last Updated : 9/23/18
- * Abstract	:
- *****************************************************************************/
-
-// Configures PHP to report any error that occurs
-error_reporting(E_ALL);
-// Configures PHP to send reported errors to the page as output.
-// TODO REMOVE THIS LINE BEFORE DEPLOYING! THIS LINE IS ONLY INTENDED FOR THE DEV ENVIRONMENT!
-ini_set('display_errors', 1);
+//error_reporting(E_ALL);
+//ini_set('display_errors', 1);
+include('controller/session.php');
 ?>
-
 <!doctype html>
 <html lang="en" style="height: 100%" class="bg-light">
 	<head>
-    		<meta charset="utf-8">
-    		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    		<link rel="stylesheet" href="css/bootstrap.min.css">
-    		<link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
-    		<title>Schedu.IO</title>
-  	</head>
-
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
+		<?php
+		if(isset($css)){
+		  foreach ($css as $file) {
+		    echo "<link rel='stylesheet' href='css/$file.css'>";
+		  }
+		}
+		?>
+		<title>Schedu.IO<?php echo (isset($title) ? " - $title" : ''); ?></title>
+		</head>
   	<body style="min-height: 100%;">
-
-    	<!-- Navigation Bar -->
     	<nav class="navbar navbar-expand-lg navbar-dark bg-primary text-white">
-		<div class="container">
-
-			<!-- UAFS Logo -->
-			<div class="navbar-brand">
-				<a href="index.php"><img class="d-inline-block align-top" src="img/uafs-white.png" height="30"/></a>
-			</div>
-
-
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-
+				<div class="container-fluid">
+					<div class="navbar-brand"><a href="index.php"><img class="d-inline-block align-top" src="img/uafs-white.png" height="30"/></a></div>
+					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
         		<div class="collapse navbar-collapse" id="navbarNav">
         			<ul class="navbar-nav">
-        			</ul>
+								<li class="nav-item"><a class="text-white nav-link" href="home.php">Home<a/></li>
+								<?php
+								if($sessionStarted == true){
+									echo "<li class='nav-item'><a class='text-white nav-link' href='cart.php'>Cart</a></li>";
+									echo "<li class='nav-item'><span class='text-white navbar-text'>Welcome, ".$_SESSION['USERNAME']."!</span></li>";
+									echo "<li class='nav-item'><a class='text-white nav-link' href='signout.php'>Sign Out</a></li>";
+								}
+								?>
+							</ul>
         		</div>
-		</div>
-	</nav>
+				</div>
+			</nav>

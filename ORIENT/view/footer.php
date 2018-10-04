@@ -6,5 +6,12 @@ $(function () {
   $('[data-toggle="popover"]').popover()
 })
 </script>
+<?php
+if(isset($javascript)){
+  foreach ($javascript as $file) {
+    echo "<script src='js/$file.js'></script>";
+  }
+}
+?>
 </body>
 </html>

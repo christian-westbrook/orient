@@ -179,7 +179,17 @@
 		}
 
 		public function passwordValid($email, $password){
-			return ['status'=>true, 'message'=>"Valid Password"];
+			include('database.php');
+			$sql = "SELECT * FROM USERS WHERE EMAIL='" . $email . "' AND PASSWORD='" . $password . "'";
+			$stmt = $pdo->query($sql);
+			$results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+			if (isset($results)) {
+				return ['status'=>true, 'message'=>"Valid Password"];
+			}
+			else {
+				return ['status'=>false, 'message'=>"Invalid Password"];
+			}
 			/*if(isset($_POST[$email]) && isset($_POST[$password])){
 				$postdata = http_build_query(['email'=>$_POST[$email],'pass'=>$_POST[$password]]);
 				$opts = ['http'=>['method'=>'POST','header'=>'Content-type: application/x-www-form-urlencoded','content'=>$postdata]];
@@ -191,13 +201,26 @@
 		}
 
 		public function emailExists($email){
-			return true;
+			include('database.php');
+
+			$sql = "SELECT * FROM USERS WHERE EMAIL='" . $email . "'";
+			$stmt = $pdo->query($sql);
+			$results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+			return isset($results);
+
 			/*$json = json_decode(file_get_contents("http://" . $_SERVER['HTTP_HOST'] . "/functions/checkEmail.php?email=$email"), true);
 			return $json["exist"];*/
 		}
 
 		public function usernameExists($username){
-			return true;
+			include('database.php');
+
+			$sql = "SELECT * FROM USERS WHERE USERNAME='" . $username . "'";
+			$stmt = $pdo->query($sql);
+			$results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+			return isset($results);
 			/*$json = json_decode(file_get_contents("http://" . $_SERVER['HTTP_HOST'] . "/functions/checkEmail.php?email=$email"), true);
 			return $json["exist"];*/
 		}

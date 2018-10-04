@@ -1,21 +1,27 @@
 <?php
 session_start();
-
-if(!isset($_SESSION["logIn"]) && empty( $_SESSION["logIn"])){
-	header("Locaation:  index.php");
+if((isset($_SESSION["logIn"]) && $_SESSION["logIn"] == "false") || !isset($_SESSION["logIn"])){
+	header("Location:  index.php");
 }
 include('home.php');
+if(isset($_POST['search'])){
 $info = thing();
 $sort1 = lvlOneAccordion_Sort($info);
 $sort2 = lvlTwoAccordion_Sort($sort1);
+}
 ?>
+
 <div class="container-fluid m-0 p-3">
-  <div class="row justify-content-center">
-    <?php displayAccordion($sort2); ?>
+	<div class="row justify-content-center">
+<?php
+if(isset($_POST['search'])){
+	displayAccordion($sort2);
+}else{
+echo '<h1 class="text-center display-4">No Search Results</h1>';
+}
+?>
   </div>
 </div>
-
-
 
 
 <?php
@@ -114,7 +120,22 @@ function status2Class($status){
 function thing(){
   include('database.php');
   $sql = "SELECT I.INSTRUCTOR_ID, I.FNAME, I.LNAME, S.SUBJECT_ID, S.NAME, C.STATUS, C.CRN, C.TITLE, C.CRSNUM, C.SEC, C.CRED, C.DAYS, C.TIME, C.ST_DATE, C.END_DATE, C.LOCATION, C.CAP, C.ACT, C.REM, C.WL, C.WEEKS FROM COURSES C JOIN INSTRUCTORS I ON C.INSTRUCTOR_ID = I.INSTRUCTOR_ID JOIN SUBJECTS S ON C.SUBJ_ID = S.SUBJECT_ID WHERE I.FNAME LIKE '%" . $_POST['search'] ."%' OR I.LNAME LIKE '%" . $_POST['search'] . "%' OR S.NAME LIKE '%" . $_POST['search'] . "%' OR C.CRN LIKE '%" . $_POST['search'] . "%' OR C.TITLE LIKE '%" . $_POST['search'] . "%' OR C.CRSNUM LIKE '%" . $_POST['search'] . "%' OR C.DAYS='" . $_POST['search'] . "'";
-	$stmt = $pdo->query($sql);
+ /*
+  $psql = "SELECT I.INSTRUCTOR_ID, I.FNAME, I.LNAME, S.SUBJECT_ID, S.NAME, C.STATUS, C.CRN, C.TITLE, C.CRSNUM, C.SEC, C.CRED, C.DAYS, C.TIME, C.ST_DATE, C.END_DATE, C.LOCATION, C.CAP, C.ACT, C.REM, C.WL, C.WEEKS FROM COURSES C JOIN INSTRUCTORS I ON C.INSTRUCTOR_ID = I.INSTRUCTOR_ID JOIN SUBJECTS S ON C.SUBJ_ID = S.SUBJECT_ID WHERE I.FNAME LIKE '%:FNAME%' OR I.LNAME LIKE '%:LNAME:%' OR S.NAME LIKE '%:NAME%' OR C.CRN LIKE '%:CRN%' OR C.TITLE LIKE '%:TITLE%' OR C.CRSNUM LIKE '%:CRSNUM%' OR C.DAYS=':DAYS'";
+
+  $s = $_POST['search'];
+  $pstmt = $pdo->prepare($sql);
+  $pstmt->bindParam(':FNAME', $s);
+  $pstmt->bindParam(':LNAME', $s);
+  $pstmt->bindParam(':NAME', $s);
+  $pstmt->bindParam(':CRN', $s);
+  $pstmt->bindParam(':TITLE', $s);
+  $pstmt->bindParam(':CRSNUM', $s);
+  $pstmt->bindParam(':DAYS', $s);
+
+  $pstmt->execute();
+  */
+  $stmt = $pdo->query($sql);
   $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
   return $results;
 }
