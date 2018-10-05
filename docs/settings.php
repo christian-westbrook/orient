@@ -7,6 +7,7 @@ font-size: 0.8em;
 width: 30em;
 padding: 1em;
 border: 1px solid #ccc;
+margin: auto;
 }
 
 .myForm * {
