@@ -1,53 +1,107 @@
 
+<style>
+
+.dataContainerOne {
+	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	font-size: 1.0em;
+	width: 75%;
+	padding: 1em;
+	border: 1px solid #ccc;
+	margin: auto;
+}
+
+.dataContainerTwo {
+	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	font-size: 1.0em;
+	width: 75%;
+	height: 400px;
+	padding: 1em;
+	border: 1px solid #ccc;
+	margin: auto;
+}
+
+.profilePicture {
+	width:250px;
+	height:250px;
+}
+
+.userDesc {
+	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	font-size: 0.8em;
+	padding: 1em;
+	position: absolute;
+    top: 80px;
+    left: 650px;
+    width: 250px;
+    height: 100px;
+}
+
+.userDesc h2 {
+	margin: auto;
+	text-align: center;
+}
+
+.dataContainerTwo h3 {
+	span: 50%;
+	margin: auto;
+	text-align: center;
+}
+
+.dataContainerTwo .left {
+	width: 50%;
+	float: left;
+}
+
+.dataContainerTwo .right {
+	width: 50%;
+	float: right;
+}
+
+</style>
 
 <div>
-	<!-- Profile Picture -->
-	<div style="float:left">
-		<img src="picture.jpg" alt="Profile Picture" style="float:left,width:250px;height:250px;padding:15px 15px 15px 100px;">
-	</div>
 
-	<!-- Name and Title -->
-	<div style="padding:50px 15px 15px 15px;">
-		<h2 style="text-align:center"> Anthony Todaro </h2>
-		<h2 style="text-align:center"> Information Technology </h2>
-		
-		<button id="editProfile" type="button" style="float:right;">Edit</button>
-	</div>
-		
-		<div>
-			<!-- Profile Information -->
-			<div style="padding:90px 15px 15px 15px;text-align:center;span:45%;float:left">
-				<h3>First Name: </h3>
-				<h3>Last Name: </h3>
-				<h3>Title: </h3>
-				<h3>Department: </h3>
-				<h3>Email: </h3>
-				<h3>Phone Number: </h3>
-			</div>
-			
-			<!-- Data for the profile -->
-			<div id="profileData" style="padding:90px 15px 15px 15px;span:45%;text-align:center">
-				<h3>Anthony</h3>
-				<h3>Todaro</h3>
-				<h3>Student</h3>
-				<h3>Information Technology</h3>
-				<h3>rtodar00@g.uafs.edu</h3>
-				<h3>479-651-0987</h3>
-			</div>
+	<div class="dataContainerOne">
+
+		<img class="profilePicture" src="picture.jpg">
+
+		<div class="userDesc">
+			<h1>Anthony Todaro</h1>
+			<h1>Computer Science</h1>
 		</div>
+		
+	</div>
 	
+	<div class="dataContainerTwo">
+		<div class="left">
+			<h3>First Name</h3>
+			<br>
+			<h3>Last Name</h3>
+			<br>
+			<h3>Title</h3>
+			<br>
+			<h3>Department</h3>
+			<br>
+			<h3>Email</h3>
+			<br>
+			<h3>Phone Number</h3>
+		</div>
+		
+		<div class="right">
+			<h3>Anthony</h3>
+			<br>
+			<h3>Todaro</h3>
+			<br>
+			<h3>Computer Scientist</h3>
+			<br>
+			<h3>Computer Science</h3>
+			<br>
+			<h3>rtodar00@g.uafs.edu</h3>
+			<br>
+			<h3>479-651-0987</h3>
+		</div>
+		
+	<div>
+
 </div>
 
-<div>
-
-	<!-- When the edit button is clicked, this script will change the profileData div to show text boxes so that
-		 users can change their information. -->
-	<script>
-	
-		document.getElementById('editProfile').onclick = function() {
-			document.getElementById('profileData').innerHTML = 'This is a test';
-		}
-	
-	</script>
-
-</div>
