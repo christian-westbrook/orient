@@ -1,59 +1,103 @@
 <?php
 
 /**************************************************************************
- * System	: Schedu.IO
- * Version	: 1.0
+ * System	: Optimized Research Interest Network
+ * Version	: Prototype System I
  * File		: index.php
- * Developers	: Nicholas Leonard, Anthony Osagwu, Christian Westbrook
- * Date Created	: 9/19/18
- * Last Updated	: 9/24/18
- * Abstract	: This file contains the home page of the Schedu.IO web
- *                system. The home page displays an authentication interface
- *                to the user, who can choose to register with the site or to
- *                log in with an existing account. Authentication provides
- *                access to Schedu.IO, a website whose purpose is to serve
- *                UAFS course data to students wanting to plan their
- *                school schedules with the help of a user-friendly
- *                interface.
+ * Developers	: Elias Nyantakanya, Anthony Todaro, Christian Westbrook
+ *
+ * Abstract	: This file presents the home page of the ORIENT web system.
+ *                The page displays an authentication interface to the user,
+ *                who can choose to register with the site or to log in with
+ *                an existing account. Authentication provides access to
+ *                ORIENT, a social network designed with researchers in mind.
  **************************************************************************/
-$css = ['index-styles'];
+
+// Links the style page index-styles. TODO This needs to be tested and adapted for ORIENT.
+//$css = ['index-styles'];
+
+// Includes the header. This file needs to be tested and adapted for ORIENT.
 include('view/header.php');
+
+// This file validates and sanitizes user data. This file needs to be tested and adapted
+// for ORIENT.
 include('controller/ValidationAndSanitization.php');
+
+// This file needs to be tested and adapted for ORIENT. 
 include('controller/userController.php');
+
+// Declare variables
 $vas = new ValidationAndSanitization();
 $uc = new userController();
 
 
-// Executes when the 'Sign In' button is clicked
-if(isset($_POST['signin-signin'])){
-	$vasSignin;//For checking if either username or email is valid
+// Executes when the 'Sign In' button is pressed.
+// If the POST key 'signin-signin' is set,
+if(isset($_POST['signin-signin']))
+{
+	// Variable for checking if either the username or email is valid.
+	$vasSignin;
+	
+	// This variable is set to the result of the username() function in
+	// the ValidationAndSanitization class.
 	$vasSigninUser = $vas->username('signin-user', 'signin');
+	
+	// This variable is set to the result of the email() function in the
+	// ValidationAndSanitization class.
 	$vasSigninEmail = $vas->email('signin-user', 'signin');
+	
+	// This variable is set to the result of the pass() function in the
+	// ValidationAndSanitization class.
 	$vasSigninPass = $vas->pass(['username'=>"signin-user", 'password'=>"signin-pass"], "signin");
-	//Checks if username or email is valid
-	if($vasSigninUser['status'] && !$vasSigninEmail['status']){
+	
+	// Checks if either the username or the email is valid
+	// If the status key of $vasSigninUser is set to true and of $vasSigninEmail is set to false, 
+	if($vasSigninUser['status'] && !$vasSigninEmail['status'])
+	{
+		// Set the status key of the $vasSignin variable to true.
 		$vasSignin = ['status'=>true, 'message'=>"Valid Username."];
 	}
-	elseif(!$vasSigninUser['status'] && $vasSigninEmail['status']){
+	// If the status key of $vasSigninUser is set to false and of $vasSigninEmail is set to true,
+	elseif(!$vasSigninUser['status'] && $vasSigninEmail['status'])
+	{
+		// Set the status key of the $vasSigninVaraible to true.
 		$vasSignin = ['status'=>true, 'message'=>"Valid E-Mail."];
 	}
-	else{
+	else
+	{
+		// Set the status key of the $vasSigninVariable to false.
 		$vasSignin = ['status'=>false, 'message'=>"No account associated with that E-Mail or Username."];
 	}
-	//When all fields are correct
-	if($vasSignin['status'] && $vasSigninPass['status']){
+	
+	// If both a valid username/email and valid password have been entered,
+	if($vasSignin['status'] && $vasSigninPass['status'])
+	{
+		// This variable is assigned the result of the signin() function in the userController class.
 		$userInfo = $uc->signin($_POST['signin-user'], $_POST['signin-pass']);
-		if($userInfo != false){
+		
+		// If the $userInfo variable isn't set to false,
+		if($userInfo != false)
+		{
+			// Call the createSession function, passing in the $userInfo.
 			createSession($userInfo);
-			header('Location: home.php');
+			
+			// Redirect to profile.php
+			header('Location: profile.php');
 		}
 	}
 }
 
-// Executes when the 'Register' button is clicked
-if(isset($_POST['reg-reg'])){
+// Executes when the 'Register' button is presssed.
+// If the POST key 'reg-reg' is set,
+if(isset($_POST['reg-reg']))
+{
+	// This variable is set to the result of the name() function in the ValidationAndSanitization class.
 	$vasRegFname = $vas->name('reg-fname');
+	
+	// This variable is set to  the result of the name() functionin the ValidationAndSanitization class.
 	$vasRegLname = $vas->name('reg-lname');
+	k k n
+	// 
 	$vasRegName = ($vasRegFname['status'] && $vasRegLname['status']) ? ['status'=>true, 'message'=>'Valid Name Format'] : ['status'=>true, 'message'=>'Invalid Name Format'];
 	$vasRegUsername = $vas->username('reg-username', 'signin');
 	$vasRegEmail = $vas->email("reg-email", "registration");
