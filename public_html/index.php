@@ -21,10 +21,10 @@ include('header.php');
 
 // This file validates and sanitizes user data. This file needs to be tested and adapted
 // for ORIENT.
-include('controller/ValidationAndSanitization.php');
+include('ValidationAndSanitization.php');
 
 // This file needs to be tested and adapted for ORIENT. 
-include('controller/userController.php');
+include('userController.php');
 
 // Declare variables
 $vas = new ValidationAndSanitization();
