@@ -30,7 +30,6 @@ include('control/UserController.php');
 $vas = new ValidationAndSanitization();
 $uc = new UserController();
 
-
 // Executes when the 'Sign In' button is pressed.
 // If the POST key 'signin-signin' is set,
 if(isset($_POST['signin-signin']))
@@ -57,6 +56,7 @@ if(isset($_POST['signin-signin']))
 		// Set the status key of the $vasSignin variable to true.
 		$vasSignin = ['status'=>true, 'message'=>"Valid Username."];
 	}
+  
 	// Else if the status key of $vasSigninUser is set to false and of $vasSigninEmail is set to true,
 	elseif(!$vasSigninUser['status'] && $vasSigninEmail['status'])
 	{
@@ -94,6 +94,7 @@ if(isset($_POST['reg-reg']))
 	// This variable is set to the result of the name() function in the ValidationAndSanitization class.
 	$vasRegFname = $vas->name('reg-fname');
 	
+
 	// This variable is set to  the result of the name() function in the ValidationAndSanitization class.
 	$vasRegLname = $vas->name('reg-lname');
 	
@@ -103,7 +104,7 @@ if(isset($_POST['reg-reg']))
 	$vasRegEmail = $vas->email("reg-email", "registration");
 	$vasRegPassword = $vas->pass("reg-password", "registration");
 	$vasRegPassword2 = $vas->pass2("reg-password2", "reg-password");
-	
+
 	//When all fields are correct
 	if($vasRegFname['status'] && $vasRegLname['status'] && $vasRegUsername['status'] && $vasRegEmail['status'] && $vasRegPassword['status'] && $vasRegPassword2['status']){
 		$userInfo = $uc->register($_POST['reg-fname'], $_POST['reg-lname'], $_POST['reg-email'], $_POST['reg-username'], $_POST['reg-password'], $_POST['reg-password2']);
