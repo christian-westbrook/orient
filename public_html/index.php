@@ -24,7 +24,7 @@ include('header.php');
 include('control/ValidationAndSanitization.php');
 
 // This file needs to be tested and adapted for ORIENT. 
-include('control/userController.php');
+include('control/UserController.php');
 
 // Declare variables
 $vas = new ValidationAndSanitization();
