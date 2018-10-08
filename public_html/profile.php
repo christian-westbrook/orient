@@ -1,7 +1,23 @@
+<?php
 
+/**************************************************************************
+ * System	  : Optimized Research Interest Network
+ * Version	  : Prototype System I
+ * File		  : profile.php
+ * Developers : Anthony Todaro, Christian Westbrook
+ *
+ * Abstract	  : 
+ **************************************************************************/
+ 
+ // Includes the header. This file needs to be tested and adapted for ORIENT.
+ include('header.php');
+ ?>
+ 
+ <!-- These styles need to be moved into a separate css file. -->
 <style>
 
-.dataContainerOne {
+.dataContainerOne 
+{
 	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 	font-size: 1.0em;
 	width: 75%;
@@ -10,7 +26,8 @@
 	margin: auto;
 }
 
-.dataContainerTwo {
+.dataContainerTwo 
+{
 	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 	font-size: 1.0em;
 	width: 75%;
@@ -20,12 +37,14 @@
 	margin: auto;
 }
 
-.profilePicture {
+.profilePicture 
+{
 	width:250px;
 	height:250px;
 }
 
-.userDesc {
+.userDesc 
+{
 	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 	font-size: 0.8em;
 	padding: 1em;
@@ -36,23 +55,27 @@
     height: 100px;
 }
 
-.userDesc h2 {
+.userDesc h2 
+{
 	margin: auto;
 	text-align: center;
 }
 
-.dataContainerTwo h3 {
+.dataContainerTwo h3 
+{
 	span: 50%;
 	margin: auto;
 	text-align: center;
 }
 
-.dataContainerTwo .left {
+.dataContainerTwo .left 
+{
 	width: 50%;
 	float: left;
 }
 
-.dataContainerTwo .right {
+.dataContainerTwo .right 
+{
 	width: 50%;
 	float: right;
 }
@@ -105,3 +128,5 @@
 
 </div>
 
+<!-- Defines the footer of each page -->
+<?php include('footer.php'); ?>
