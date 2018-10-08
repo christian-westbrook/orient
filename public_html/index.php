@@ -94,15 +94,16 @@ if(isset($_POST['reg-reg']))
 	// This variable is set to the result of the name() function in the ValidationAndSanitization class.
 	$vasRegFname = $vas->name('reg-fname');
 	
-	// This variable is set to  the result of the name() functionin the ValidationAndSanitization class.
+	// This variable is set to  the result of the name() function in the ValidationAndSanitization class.
 	$vasRegLname = $vas->name('reg-lname');
-	k k n
-	// 
+	
+	//
 	$vasRegName = ($vasRegFname['status'] && $vasRegLname['status']) ? ['status'=>true, 'message'=>'Valid Name Format'] : ['status'=>true, 'message'=>'Invalid Name Format'];
 	$vasRegUsername = $vas->username('reg-username', 'signin');
 	$vasRegEmail = $vas->email("reg-email", "registration");
 	$vasRegPassword = $vas->pass("reg-password", "registration");
 	$vasRegPassword2 = $vas->pass2("reg-password2", "reg-password");
+	
 	//When all fields are correct
 	if($vasRegFname['status'] && $vasRegLname['status'] && $vasRegUsername['status'] && $vasRegEmail['status'] && $vasRegPassword['status'] && $vasRegPassword2['status']){
 		$userInfo = $uc->register($_POST['reg-fname'], $_POST['reg-lname'], $_POST['reg-email'], $_POST['reg-username'], $_POST['reg-password'], $_POST['reg-password2']);
