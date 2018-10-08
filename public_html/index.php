@@ -4,8 +4,7 @@
  * System	  : Optimized Research Interest Network
  * Version	  : Prototype System I
  * File		  : index.php
- * Developers : Elias Nyantakanya, Anthony Todaro, Christian Westbrook,
- *              Nicholas Leonard
+ * Developers : Christian Westbrook, Nicholas Leonard
  *
  * Abstract	  : This file presents the home page of the ORIENT web system.
  *              The page displays an authentication interface to the user,
@@ -18,19 +17,18 @@
 //$css = ['index-styles'];
 
 // Includes the header. This file needs to be tested and adapted for ORIENT.
-include('view/header.php');
+include('header.php');
 
 // This file validates and sanitizes user data. This file needs to be tested and adapted
 // for ORIENT.
-include('controller/ValidationAndSanitization.php');
+include('control/ValidationAndSanitization.php');
 
 // This file needs to be tested and adapted for ORIENT. 
-include('controller/userController.php');
+include('control/UserController.php');
 
 // Declare variables
 $vas = new ValidationAndSanitization();
-$uc = new userController();
-
+$uc = new UserController();
 
 // Executes when the 'Sign In' button is pressed.
 // If the POST key 'signin-signin' is set,
@@ -58,7 +56,8 @@ if(isset($_POST['signin-signin']))
 		// Set the status key of the $vasSignin variable to true.
 		$vasSignin = ['status'=>true, 'message'=>"Valid Username."];
 	}
-	// If the status key of $vasSigninUser is set to false and of $vasSigninEmail is set to true,
+  
+	// Else if the status key of $vasSigninUser is set to false and of $vasSigninEmail is set to true,
 	elseif(!$vasSigninUser['status'] && $vasSigninEmail['status'])
 	{
 		// Set the status key of the $vasSigninVaraible to true.
@@ -79,7 +78,7 @@ if(isset($_POST['signin-signin']))
 		// If the $userInfo variable isn't set to false,
 		if($userInfo != false)
 		{
-			// Call the createSession function, passing in the $userInfo.
+			// Call the createSession() function in the header, passing in the $userInfo.
 			createSession($userInfo);
 			
 			// Redirect to profile.php
@@ -95,15 +94,17 @@ if(isset($_POST['reg-reg']))
 	// This variable is set to the result of the name() function in the ValidationAndSanitization class.
 	$vasRegFname = $vas->name('reg-fname');
 	
-	// This variable is set to  the result of the name() functionin the ValidationAndSanitization class.
+
+	// This variable is set to  the result of the name() function in the ValidationAndSanitization class.
 	$vasRegLname = $vas->name('reg-lname');
-	k k n
-	// 
+	
+	//
 	$vasRegName = ($vasRegFname['status'] && $vasRegLname['status']) ? ['status'=>true, 'message'=>'Valid Name Format'] : ['status'=>true, 'message'=>'Invalid Name Format'];
 	$vasRegUsername = $vas->username('reg-username', 'signin');
 	$vasRegEmail = $vas->email("reg-email", "registration");
 	$vasRegPassword = $vas->pass("reg-password", "registration");
 	$vasRegPassword2 = $vas->pass2("reg-password2", "reg-password");
+
 	//When all fields are correct
 	if($vasRegFname['status'] && $vasRegLname['status'] && $vasRegUsername['status'] && $vasRegEmail['status'] && $vasRegPassword['status'] && $vasRegPassword2['status']){
 		$userInfo = $uc->register($_POST['reg-fname'], $_POST['reg-lname'], $_POST['reg-email'], $_POST['reg-username'], $_POST['reg-password'], $_POST['reg-password2']);
@@ -281,4 +282,4 @@ if(isset($_POST['reg-reg']))
 <!-- End Authentication/Registration Card Outer Container -->
 
 <!-- Defines the footer of each page -->
-<?php include('view/footer.php'); ?>
+<?php include('footer.php'); ?>
