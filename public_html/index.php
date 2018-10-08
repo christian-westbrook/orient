@@ -4,7 +4,8 @@
  * System	  : Optimized Research Interest Network
  * Version	  : Prototype System I
  * File		  : index.php
- * Developers : Elias Nyantakanya, Anthony Todaro, Christian Westbrook
+ * Developers : Elias Nyantakanya, Anthony Todaro, Christian Westbrook,
+ *              Nicholas Leonard
  *
  * Abstract	  : This file presents the home page of the ORIENT web system.
  *              The page displays an authentication interface to the user,
