@@ -6,10 +6,13 @@ class UserController{
     $this->conn = $pdo;
   }
   //==========| SIGN IN |==========
-  public function signin($username, $password){
+  public function signin($username, $password)
+  {
     return $this->getUserInfo($username);
   }
-  private function getUserInfo($info){
+  private function getUserInfo($info)
+  {
+	echo $info;
     $db = $this->conn;
     $stmt = $db->prepare("SELECT USER_ID, USERNAME, EMAIL, PASSWORD, SALT, FNAME, LNAME FROM USERS WHERE USER_ID = :INFO OR LOWER(USERNAME) = LOWER(:INFO) OR LOWER(EMAIL) = LOWER(:INFO)");
     $stmt->bindParam(':INFO', $info);
