@@ -128,6 +128,7 @@ if($stmt->execute())
 	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 	font-size: 1.0em;
 	width: 85%;
+	height: 400px;
 	padding: 1em;
 	border: 1px solid #ccc;
 	margin: auto;
