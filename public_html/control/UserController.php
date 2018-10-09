@@ -12,13 +12,14 @@ class UserController{
   }
   private function getUserInfo($info)
   {
-	echo $info;
     $db = $this->conn;
     $stmt = $db->prepare("SELECT USER_ID, USERNAME, EMAIL, PASSWORD, SALT, FNAME, LNAME FROM USERS WHERE USER_ID = :INFO OR LOWER(USERNAME) = LOWER(:INFO) OR LOWER(EMAIL) = LOWER(:INFO)");
     $stmt->bindParam(':INFO', $info);
     if($stmt->execute())
 	{
-		return $stmt->fetch(PDO::FETCH_ASSOC);
+		$results = $stmt->fetch(PDO::FETCH_ASSOC);
+		echo $results[0]['USER_ID'];
+		return $results;
 	}
 	else
 	{
