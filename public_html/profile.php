@@ -21,13 +21,14 @@ if($sessionStarted == false)
 
 // There are no user entries here, so no prepared statements are necessary.
 include('database.php');
-$sql = "SELECT FNAME, LNAME, TITLE, DEP_ID, EMAIL, PHONE_NUM FROM USERS";
+$sql = "SELECT U.FNAME, U.LNAME, U.TITLE, D.NAME, U.EMAIL, U.PHONE_NUM FROM USERS U INNER JOIN DEPARTMENTS D ON U.DEP_ID = D.DEP_ID WHERE U.USER_ID=" . $_SESSION['ID'];
 $stmt = $pdo->query($sql);
 
 if($stmt->execute())
 {
 	$results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-	$_POST['NAME'] = $results[0]['FNAME'] . " " . $results[0]['LNAME'];
+	$_POST['NAME'] = $results[0]['U.FNAME'] . " " . $results[0]['LNAME'];
+	$_POST['DEP'] = $results[0]['D.NAME'];
 }
 else
 {
