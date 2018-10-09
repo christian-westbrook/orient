@@ -19,6 +19,8 @@ if($sessionStarted == false)
 	header('Location: /~iot3/');
 }
 
+echo $_SESSION['ID'];
+
 // There are no user entries here, so no prepared statements are necessary.
 include('database.php');
 $sql = "SELECT USERS.FNAME, USERS.LNAME, USERS.TITLE, DEPARTMENTS.NAME, USERS.EMAIL, USERS.PHONE_NUM FROM USERS INNER JOIN DEPARTMENTS ON USERS.DEP_ID = DEPARTMENTS.DEP_ID WHERE USERS.USER_ID=" . $_SESSION['ID'];
