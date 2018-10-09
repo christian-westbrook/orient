@@ -13,8 +13,15 @@
  *              ORIENT, a social network designed with researchers in mind.
  **************************************************************************/
  
- // Includes the header. This file needs to be tested and adapted for ORIENT.
- include('header.php');
+// Includes the header. This file needs to be tested and adapted for ORIENT.
+include('header.php');
+ 
+// If the session hasn't started, then the user hasn't been authenticated and
+// the system will redirect to the landing page.
+if($sessionStarted == false)
+{
+	header('Location: /~iot3/');
+}
  ?>
  
  <!-- These styles need to be moved into a separate css file. -->

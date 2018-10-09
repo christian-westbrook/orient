@@ -6,18 +6,25 @@ class UserController{
     $this->conn = $pdo;
   }
   //==========| SIGN IN |==========
-  public function signin($username, $password){
+  public function signin($username, $password)
+  {
     return $this->getUserInfo($username);
   }
-  private function getUserInfo($info){
+  private function getUserInfo($info)
+  {
     $db = $this->conn;
     $stmt = $db->prepare("SELECT USER_ID, USERNAME, EMAIL, PASSWORD, SALT, FNAME, LNAME FROM USERS WHERE USER_ID = :INFO OR LOWER(USERNAME) = LOWER(:INFO) OR LOWER(EMAIL) = LOWER(:INFO)");
     $stmt->bindParam(':INFO', $info);
-    if($stmt->execute()){
-				return $stmt->fetch(PDO::FETCH_ASSOC);
-			}else{
-				return false;
-      }
+    if($stmt->execute())
+	{
+		$results = $stmt->fetch(PDO::FETCH_ASSOC);
+		print_r($results);
+		return $results;
+	}
+	else
+	{
+		return false;
+    }
   }
   //==========| REGISTER |==========
   public function register($firstname, $lastname, $email, $username, $password, $password2){
