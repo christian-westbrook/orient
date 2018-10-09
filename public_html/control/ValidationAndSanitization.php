@@ -14,7 +14,8 @@
 	 * Class	: ValidationAndSanitization
 	 * Abstract	:
 	 ********************************************************************/
-	class ValidationAndSanitization {
+	class ValidationAndSanitization 
+	{
 
 		// =================== | PUBLIC FUNCTIONS | ===============================
 		

@@ -1,5 +1,5 @@
 <?php
-class userController{
+class UserController{
   private $conn;
   function __construct(){
     require_once('../database.php');
