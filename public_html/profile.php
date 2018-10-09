@@ -149,8 +149,8 @@ if($stmt->execute())
 			<h3>Email</h3>
 			<br>
 			<h3>Phone Number</h3>
-			
-			
+			<br>
+			<h3>Universities</h3>
 		</div>
 		
 		<div class="right">
@@ -159,6 +159,19 @@ if($stmt->execute())
 			<h3><?php echo $_POST['EMAIL']; ?></h3>
 			<br>
 			<h3><?php echo $_POST['PHONE_NUM']; ?></h3>
+			<br>
+			<h3>
+				<?php
+					$universities = $_POST['UNIVERSITIES'];
+					
+					$length = count($universities);
+	
+					for($i = 0; $i < $length; $i++)
+					{
+						echo $universities[$1] . "<br>";
+					}
+				?>
+			</h3>
 		</div>
 	<div>
 </div>
