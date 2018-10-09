@@ -78,6 +78,46 @@ if($stmt->execute())
 	$_POST['EMPLOYERS'] = $employers;
 }
 
+// Grab data from the USERS_SKILLS table
+
+$sql = "SELECT SKILLS.NAME FROM SKILLS INNER JOIN USERS_SKILLS ON SKILLS.SKILL_ID = USERS_SKILLS.SKILL_ID WHERE USERS_SKILLS.USER_ID=" . $_SESSION['ID'];
+$stmt = $pdo->query($sql);
+
+if($stmt->execute())
+{
+	$results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+	
+	$skills;
+	
+	$length = count($results);
+	for($i = 0; $i < $length; $i++)
+	{
+		$skills[$i] = $results[$i]['NAME'];
+	}
+		
+	$_POST['SKILLS'] = $skills;
+}
+
+// Grab data from the USERS_INTERESTS table
+
+$sql = "SELECT INTERESTS.NAME FROM INTERESTS INNER JOIN USERS_INTERESTS ON INTERESTS.INT_ID = USERS_INTERESTS.INT_ID WHERE USERS_INTERESTS.USER_ID=" . $_SESSION['ID'];
+$stmt = $pdo->query($sql);
+
+if($stmt->execute())
+{
+	$results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+	
+	$interests;
+	
+	$length = count($results);
+	for($i = 0; $i < $length; $i++)
+	{
+		$interests[$i] = $results[$i]['NAME'];
+	}
+		
+	$_POST['INTERESTS'] = $interests;
+}
+
 ?>
  
 <!-- These styles need to be moved into a separate css file. -->
@@ -162,6 +202,33 @@ if($stmt->execute())
 			<h5>Bio</h5>
 			<p><?php echo $_POST['BIO']; ?></p>
 			<br>
+			<h5>Skills</h5>
+			<br>
+			<p>
+			<?php
+				$skills = $_POST['SKILLS'];
+					
+				$length = count($skills);
+				for($i = 0; $i < $length; $i++)
+				{
+					echo $skills[$i] . " ";
+				}
+			?>
+			</p>
+			<br>
+			<h5>Research Interests</h5>
+			<br>
+			<p>
+			<?php
+				$interests = $_POST['INTERESTS'];
+					
+				$length = count($interests);
+				for($i = 0; $i < $length; $i++)
+				{
+					echo $interests[$i] . " ";
+				}
+			?>
+			</p>
 		</div>
 		
 	</div>
