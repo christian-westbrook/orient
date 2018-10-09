@@ -25,7 +25,7 @@ $sql = "SELECT FNAME, LNAME, TITLE, DEP_ID, EMAIL, PHONE_NUM FROM USERS WHERE US
 $stmt = $pdo->query($sql);
 $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-$name = $results['FNAME'] . " " . $results['LNAME'];
+$name = $results['0'] . " " . $results['1'];
 ?>
  
 <!-- These styles need to be moved into a separate css file. -->
