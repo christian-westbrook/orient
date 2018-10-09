@@ -1,6 +1,14 @@
 
 <style>
 
+.editButton {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: auto;
+	padding: 10px;
+}
+
 .dataContainerOne {
 	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 	font-size: 1.0em;
@@ -104,4 +112,6 @@
 	<div>
 
 </div>
+
+<button onclick="window.location = 'settings.html'" class="editButton">Edit Profile</button>
 
