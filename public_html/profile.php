@@ -33,8 +33,7 @@ else
 	echo "FAIL";
 }
 
-echo $results[0];
-//$name = $results['FNAME'][0] . " " . $results['LNAME'][0];
+$_POST['NAME'] = $results['FNAME'][0] . " " . $results['LNAME'][0];
 ?>
  
 <!-- These styles need to be moved into a separate css file. -->
@@ -113,7 +112,7 @@ echo $results[0];
 		<img class="profilePicture" src="picture.jpg">
 
 		<div class="userDesc">
-			<h1><?php echo $name; ?></h1>
+			<h1><?php echo $_POST['NAME']; ?></h1>
 			<h1>Computer Science</h1>
 		</div>
 		
