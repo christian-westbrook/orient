@@ -159,7 +159,9 @@ if($stmt->execute())
 			<h1><?php echo $_POST['NAME']; ?></h1>
 			<h1><?php echo $_POST['DEP']; ?></h1>
 			<br>
+			<h5>Bio</h5>
 			<p><?php echo $_POST['BIO']; ?></p>
+			<br>
 		</div>
 		
 	</div>
