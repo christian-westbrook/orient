@@ -78,12 +78,11 @@ if(isset($_POST['signin-signin']))
 		// If the $userInfo variable isn't set to false,
 		if($userInfo != false)
 		{
-			echo $userInfo[0]['FNAME'];
 			// Call the createSession() function in the header, passing in the $userInfo.
-			//createSession($userInfo);
+			createSession($userInfo);
 			
 			// Redirect to profile.php
-			//header('Location: profile.php');
+			header('Location: profile.php');
 		}
 	}
 }
