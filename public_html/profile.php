@@ -123,8 +123,8 @@ if($stmt->execute())
 <!-- These styles need to be moved into a separate css file. -->
 <style>
 
-<<<<<<< HEAD:docs/profile.php
-.editButton {
+.editButton 
+{
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -132,11 +132,8 @@ if($stmt->execute())
 	padding: 10px;
 }
 
-.dataContainerOne {
-=======
 .dataContainerOne 
 {
->>>>>>> 0b75072f4793172722e8c0c65e8e43d3bd372757:public_html/profile.php
 	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 	font-size: 1.0em;
 	width: 85%;
@@ -291,10 +288,7 @@ if($stmt->execute())
 	<div>
 </div>
 
-<<<<<<< HEAD:docs/profile.php
 <button onclick="window.location = 'settings.html'" class="editButton">Edit Profile</button>
 
-=======
 <!-- Defines the footer of each page -->
 <?php include('footer.php'); ?>
->>>>>>> 0b75072f4793172722e8c0c65e8e43d3bd372757:public_html/profile.php
