@@ -36,10 +36,16 @@ if($stmt->execute())
 	$_POST['PROFILE'] = $results[0]['PROFILE'];
 	$_POST['HOMETOWN'] = $results[0]['HOMETOWN'];
 }
-else
+
+$sql = "SELECT UNIVERSITIES.NAME FROM UNIVERSITIES INNER JOIN USERS_UNIVERSITIES ON UNIVERSITIES.UNIV_ID = USERS_UNIVERSITIES.UNIV_ID WHERE USERS_UNIVERSITIES.USER_ID=" . $_SESSION['ID'];
+$stmt = $pdo->query($sql);
+
+if($stmt->execute())
 {
-	echo "FAIL";
+	$results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+	print_r($results);
 }
+
 ?>
  
 <!-- These styles need to be moved into a separate css file. -->
@@ -133,6 +139,8 @@ else
 			<h3>Email</h3>
 			<br>
 			<h3>Phone Number</h3>
+			
+			
 		</div>
 		
 		<div class="right">

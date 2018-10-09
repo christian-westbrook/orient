@@ -125,5 +125,26 @@ CREATE TABLE USERS_UNIVERSITIES
 	FOREIGN KEY (UNIV_ID) REFERENCES UNIVERSITIES(UNIV_ID)
 );
 
-INSERT INTO DEPARTMENTS (NAME) VALUES ('Department of Computer Information Sciences');
-INSERT INTO USERS (USERNAME, EMAIL, PASSWORD, SALT, FNAME, LNAME, TITLE, HOMETOWN, PHONE_NUM, BIO, PROFILE, CREATE_TIME, DEP_ID) VALUES ('cwestbrook', 'christianwestbrook@live.com', 'abc123', 'def456', 'Christian', 'Westbrook', 'Mr.', 'Van Buren', '123-456-7890', 'I like to read horror novels and take long walks at the beach.', './img/users/cwestbrook.jpg', NOW(), 1);
+// LOAD DEPARTMENTS
+INSERT INTO DEPARTMENTS (NAME) VALUES ('College of Applied Science and Technology');
+INSERT INTO DEPARTMENTS (NAME) VALUES ('College of Business');
+INSERT INTO DEPARTMENTS (NAME) VALUES ('College of Communication, Languages, Arts, and Social Sciences');
+INSERT INTO DEPARTMENTS (NAME) VALUES ('College of Graduate Studies');
+INSERT INTO DEPARTMENTS (NAME) VALUES ('College of Health Sciences');
+INSERT INTO DEPARTMENTS (NAME) VALUES ('College of Science, Technology, Engineering and Mathematics');
+INSERT INTO DEPARTMENTS (NAME) VALUES ('School of Education');
+
+// LOAD EMPLOYERS
+INSERT INTO EMPLOYERS (NAME) VALUES ('Wal-Mart');
+INSERT INTO EMPLOYERS (NAME) VALUES ('Apple');
+INSERT INTO EMPLOYERS (NAME) VALUES ('Google');
+INSERT INTO EMPLOYERS (NAME) VALUES ('J.B. Hunt');
+
+// LOAD UNIVERSITIES
+INSERT INTO UNIVERSITIES (NAME) VALUES ('University of Arkansas');
+INSERT INTO UNIVERSITIES (NAME) VALUES ('University of Arkansas at Fort Smith');
+INSERT INTO UNIVERSITIES (NAME) VALUES ('University of Oklahoma');
+
+// LOAD TEST USERS
+INSERT INTO USERS (USERNAME, EMAIL, PASSWORD, SALT, FNAME, LNAME, TITLE, HOMETOWN, PHONE_NUM, BIO, PROFILE, CREATE_TIME, DEP_ID) VALUES ('cwestbrook', 'christianwestbrook@live.com', 'abc123', 'def456', 'Christian', 'Westbrook', 'Mr.', 'Van Buren', '123-456-7890', 'I like to read horror novels and take long walks at the beach.', './img/users/cwestbrook.jpg', NOW(), 6);
+INSERT INTO USERS_UNIVERSITIES (USER_ID, UNIV_ID) VALUES (1, 2);
