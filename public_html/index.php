@@ -78,7 +78,7 @@ if(isset($_POST['signin-signin']))
 		// If the $userInfo variable isn't set to false,
 		if($userInfo != false)
 		{
-			echo $userInfo[0]['USER_ID'];
+			echo $userInfo[0]['FNAME'];
 			// Call the createSession() function in the header, passing in the $userInfo.
 			//createSession($userInfo);
 			
