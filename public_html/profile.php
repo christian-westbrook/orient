@@ -47,7 +47,7 @@ if($stmt->execute())
 	$universities;
 	
 	$length = count($results);
-	for($i = 0; i < length; i++)
+	for($i = 0; $i < length; $i++)
 	{
 		$universities[$i] = $results[$i]['NAME'];
 	}
