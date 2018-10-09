@@ -95,7 +95,7 @@ if($stmt->execute())
 	padding: 1em;
 	position: absolute;
     top: 80px;
-    left: 650px;
+    left: 400px;
     <!-- width: 250px; -->
     height: 100px;
 }
