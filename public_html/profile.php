@@ -168,7 +168,7 @@ if($stmt->execute())
 	
 					for($i = 0; $i < $length; $i++)
 					{
-						echo $universities[$1] . "<br>";
+						echo $universities[$i] . "<br>";
 					}
 				?>
 			</h3>
