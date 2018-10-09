@@ -19,8 +19,6 @@ if($sessionStarted == false)
 	header('Location: /~iot3/');
 }
 
-echo $_SESSION['ID'];
-
 // There are no user entries here, so no prepared statements are necessary.
 include('database.php');
 $sql = "SELECT USERS.FNAME, USERS.LNAME, USERS.TITLE, DEPARTMENTS.NAME, USERS.EMAIL, USERS.PHONE_NUM FROM USERS INNER JOIN DEPARTMENTS ON USERS.DEP_ID = DEPARTMENTS.DEP_ID WHERE USERS.USER_ID=" . $_SESSION['ID'];
@@ -29,8 +27,8 @@ $stmt = $pdo->query($sql);
 if($stmt->execute())
 {
 	$results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-	$_POST['NAME'] = $results[0]['USERS.FNAME'] . " " . $results[0]['USERS.LNAME'];
-	$_POST['DEP'] = $results[0]['DEPARTMENTS.NAME'];
+	$_POST['NAME'] = $results[0]['FNAME'] . " " . $results[0]['LNAME'];
+	$_POST['DEP'] = $results[0]['NAME'];
 }
 else
 {
