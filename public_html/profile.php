@@ -27,8 +27,8 @@ $stmt = $pdo->query($sql);
 if($stmt->execute())
 {
 	$results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-	$_POST['NAME'] = $results[0]['FNAME'] . " " . $results[0]['LNAME'];
-	$_POST['DEP'] = $results[0]['NAME'];
+	$_POST['NAME'] = $results[0]['USERS.FNAME'] . " " . $results[0]['USERS.LNAME'];
+	$_POST['DEP'] = $results[0]['DEPARTMENTS.NAME'];
 }
 else
 {
@@ -113,7 +113,7 @@ else
 
 		<div class="userDesc">
 			<h1><?php echo $_POST['NAME']; ?></h1>
-			<h1>Computer Science</h1>
+			<h1><?php echo $_POST['DEP']; ?></h1>
 		</div>
 		
 	</div>
