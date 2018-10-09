@@ -24,8 +24,8 @@ include('database.php');
 $sql = "SELECT FNAME, LNAME, TITLE, DEP_ID, EMAIL, PHONE_NUM FROM USERS WHERE USER_ID=" . $_SESSION['ID'];
 $stmt = $pdo->query($sql);
 $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-$name = $results['FNAME'][0] . " " . $results['LNAME'][0];
+echo $results;
+//$name = $results['FNAME'][0] . " " . $results['LNAME'][0];
 ?>
  
 <!-- These styles need to be moved into a separate css file. -->
