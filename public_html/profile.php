@@ -27,6 +27,7 @@ $stmt = $pdo->query($sql);
 if($stmt->execute())
 {
 	$results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+	print_r($results);
 }
 else
 {
