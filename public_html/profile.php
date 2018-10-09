@@ -18,6 +18,13 @@ if($sessionStarted == false)
 {
 	header('Location: /~iot3/');
 }
+
+// There are no user entries here, so no prepared statements are necessary.
+$sql = "SELECT FNAME, LNAME, TITLE, DEP_ID, EMAIL, PHONE_NUM FROM USERS WHERE USER_ID=" . $_SESSION['ID'];
+$stmt = $pdo->query($sql);
+$results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+$name = $results['FNAME'] . " " . $results['LNAME'];
 ?>
  
 <!-- These styles need to be moved into a separate css file. -->
@@ -96,7 +103,7 @@ if($sessionStarted == false)
 		<img class="profilePicture" src="picture.jpg">
 
 		<div class="userDesc">
-			<h1>Anthony Todaro</h1>
+			<h1><?php echo $name; ?></h1>
 			<h1>Computer Science</h1>
 		</div>
 		
