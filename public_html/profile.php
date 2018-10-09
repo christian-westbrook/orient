@@ -239,8 +239,6 @@ if($stmt->execute())
 		
 	</div>
 	
-	<!-- <button onclick="window.location = 'settings.html'" class="editButton">Edit Profile</button> -->
-	
 	<div class="dataContainerTwo">
 		<div class="left">
 			<h3>Hometown</h3>
