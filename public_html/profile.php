@@ -201,9 +201,7 @@ if($stmt->execute())
 			<br>
 			<h5>Bio</h5>
 			<p><?php echo $_POST['BIO']; ?></p>
-			<br>
 			<h5>Skills</h5>
-			<br>
 			<p>
 			<?php
 				$skills = $_POST['SKILLS'];
@@ -215,9 +213,7 @@ if($stmt->execute())
 				}
 			?>
 			</p>
-			<br>
 			<h5>Research Interests</h5>
-			<br>
 			<p>
 			<?php
 				$interests = $_POST['INTERESTS'];
