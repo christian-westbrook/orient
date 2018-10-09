@@ -33,7 +33,7 @@ else
 	echo "FAIL";
 }
 
-//echo $results['FNAME'];
+echo $results[0];
 //$name = $results['FNAME'][0] . " " . $results['LNAME'][0];
 ?>
  
