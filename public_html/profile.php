@@ -20,8 +20,9 @@ if($sessionStarted == false)
 }
 
 // There are no user entries here, so no prepared statements are necessary.
+// Select all of the relevant profile information and load it into the $_POST associative array.
 include('database.php');
-$sql = "SELECT USERS.FNAME, USERS.LNAME, USERS.TITLE, DEPARTMENTS.NAME, USERS.EMAIL, USERS.PHONE_NUM FROM USERS INNER JOIN DEPARTMENTS ON USERS.DEP_ID = DEPARTMENTS.DEP_ID WHERE USERS.USER_ID=" . $_SESSION['ID'];
+$sql = "SELECT USERS.FNAME, USERS.LNAME, USERS.TITLE, DEPARTMENTS.NAME, USERS.EMAIL, USERS.PHONE_NUM, USERS.BIO FROM USERS INNER JOIN DEPARTMENTS ON USERS.DEP_ID = DEPARTMENTS.DEP_ID WHERE USERS.USER_ID=" . $_SESSION['ID'];
 $stmt = $pdo->query($sql);
 
 if($stmt->execute())
@@ -31,6 +32,7 @@ if($stmt->execute())
 	$_POST['DEP'] = $results[0]['NAME'];
 	$_POST['EMAIL'] = $results[0]['EMAIL'];
 	$_POST['PHONE_NUM'] = $results[0]['PHONE_NUM'];
+	$_POST['BIO'] = $results[0]['BIO'];
 }
 else
 {
@@ -76,7 +78,7 @@ else
 	position: absolute;
     top: 80px;
     left: 650px;
-    width: 250px;
+    <!-- width: 250px; -->
     height: 100px;
 }
 
@@ -116,6 +118,8 @@ else
 		<div class="userDesc">
 			<h1><?php echo $_POST['NAME']; ?></h1>
 			<h1><?php echo $_POST['DEP']; ?></h1>
+			<br>
+			<p><?php echo $_POST['BIO']; ?></p>
 		</div>
 		
 	</div>
