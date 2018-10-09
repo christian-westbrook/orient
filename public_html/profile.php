@@ -9,11 +9,18 @@
  * Abstract	  : 
  **************************************************************************/
  
- // Includes the header. This file needs to be tested and adapted for ORIENT.
- include('header.php');
- ?>
+// Includes the header. This file needs to be tested and adapted for ORIENT.
+include('header.php');
  
- <!-- These styles need to be moved into a separate css file. -->
+// If the session hasn't started, then the user hasn't been authenticated and
+// the system will redirect to the landing page.
+if($sessionStarted == false)
+{
+	header('Location: /~iot3/');
+}
+?>
+ 
+<!-- These styles need to be moved into a separate css file. -->
 <style>
 
 .dataContainerOne 
