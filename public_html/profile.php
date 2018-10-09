@@ -53,7 +53,7 @@ if($stmt->execute())
 		$universities[$i] = $results[$i]['NAME'];
 	}
 		
-	print_r($universities);
+	$_POST['UNIVERSITIES'] = $universities;
 }
 
 ?>
