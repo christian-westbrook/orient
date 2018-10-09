@@ -210,7 +210,7 @@ if($stmt->execute())
 				$length = count($skills);
 				for($i = 0; $i < $length; $i++)
 				{
-					echo "<b>" . $skills[$i] . "</b></t>";
+					echo $skills[$i] . " ";
 				}
 			?>
 			</p>
@@ -222,7 +222,7 @@ if($stmt->execute())
 				$length = count($interests);
 				for($i = 0; $i < $length; $i++)
 				{
-					echo "<b>" . $interests[$i] . "</b></t>";
+					echo $interests[$i] . " ";
 				}
 			?>
 			</p>
