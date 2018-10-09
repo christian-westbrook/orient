@@ -54,13 +54,18 @@ include('session.php');
 				
         		<div class="collapse navbar-collapse" id="navbarNav">
         			<ul class="navbar-nav">
-						<li class="nav-item"><a class="text-white nav-link" href="home.php">Home<a/></li>
 						
 						<?php
-						if($sessionStarted == true){
+						if($sessionStarted == true)
+						{
 							echo "<li class='nav-item'><span class='text-white navbar-text'>Welcome, " . $_SESSION['FNAME'] . " " . $_SESSION['LNAME'] . "!</span></li>";
+							echo "<li class='nav-item'><a class='text-white nav-link' href='profile.php'>Home<a/></li>";
 							echo "<li class='nav-item'><a class='test-white nav-link' href='settings.php'>Settings</a></li>";
 							echo "<li class='nav-item'><a class='text-white nav-link' href='signout.php'>Sign Out</a></li>";
+						}
+						else
+						{
+							echo "<li class='nav-item'><a class='text-white nav-link' href='profile.php'>Home<a/></li>";
 						}
 						?>
 			
