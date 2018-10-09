@@ -51,7 +51,6 @@ else
 	font-size: 1.0em;
 	width: 75%;
 	padding: 1em;
-	padding-top: 3em;
 	border: 1px solid #ccc;
 	margin: auto;
 }
