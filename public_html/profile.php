@@ -239,6 +239,8 @@ if($stmt->execute())
 		
 	</div>
 	
+	<button onclick="window.location = 'settings.html'" class="editButton">Edit Profile</button>
+	
 	<div class="dataContainerTwo">
 		<div class="left">
 			<h3>Hometown</h3>
@@ -287,8 +289,6 @@ if($stmt->execute())
 		</div>
 	<div>
 </div>
-
-<button onclick="window.location = 'settings.html'" class="editButton">Edit Profile</button>
 
 <!-- Defines the footer of each page -->
 <?php include('footer.php'); ?>
