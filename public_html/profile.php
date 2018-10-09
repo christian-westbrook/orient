@@ -22,7 +22,7 @@ if($sessionStarted == false)
 // There are no user entries here, so no prepared statements are necessary.
 // Select all of the relevant profile information and load it into the $_POST associative array.
 include('database.php');
-$sql = "SELECT USERS.FNAME, USERS.LNAME, USERS.TITLE, DEPARTMENTS.NAME, USERS.EMAIL, USERS.PHONE_NUM, USERS.BIO FROM USERS INNER JOIN DEPARTMENTS ON USERS.DEP_ID = DEPARTMENTS.DEP_ID WHERE USERS.USER_ID=" . $_SESSION['ID'];
+$sql = "SELECT USERS.FNAME, USERS.LNAME, USERS.TITLE, DEPARTMENTS.NAME, USERS.EMAIL, USERS.PHONE_NUM, USERS.BIO, USERS.PROFILE, USERS.HOMETOWN FROM USERS INNER JOIN DEPARTMENTS ON USERS.DEP_ID = DEPARTMENTS.DEP_ID WHERE USERS.USER_ID=" . $_SESSION['ID'];
 $stmt = $pdo->query($sql);
 
 if($stmt->execute())
@@ -33,6 +33,8 @@ if($stmt->execute())
 	$_POST['EMAIL'] = $results[0]['EMAIL'];
 	$_POST['PHONE_NUM'] = $results[0]['PHONE_NUM'];
 	$_POST['BIO'] = $results[0]['BIO'];
+	$_POST['PROFILE'] = $results[0]['PROFILE'];
+	$_POST['HOMETOWN'] = $results[0]['HOMETOWN'];
 }
 else
 {
@@ -113,7 +115,7 @@ else
 
 	<div class="dataContainerOne">
 
-		<img class="profilePicture" src="picture.jpg">
+		<img class="profilePicture" src="<?php echo $_POST['PROFILE']; ?>">
 
 		<div class="userDesc">
 			<h1><?php echo $_POST['NAME']; ?></h1>
@@ -126,12 +128,16 @@ else
 	
 	<div class="dataContainerTwo">
 		<div class="left">
+			<h3>Hometown</h3>
+			<br>
 			<h3>Email</h3>
 			<br>
 			<h3>Phone Number</h3>
 		</div>
 		
 		<div class="right">
+			<h3><?php echo $_POST['HOMETOWN']; ?></h3>
+			<br>
 			<h3><?php echo $_POST['EMAIL']; ?></h3>
 			<br>
 			<h3><?php echo $_POST['PHONE_NUM']; ?></h3>
