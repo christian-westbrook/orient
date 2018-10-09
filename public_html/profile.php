@@ -29,8 +29,8 @@ $stmt = $pdo->query($sql);
 if($stmt->execute())
 {
 	$results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-	$_POST['NAME'] = $results[1]['USERS.FNAME'] . " " . $results[1]['USERS.LNAME'];
-	$_POST['DEP'] = $results[1]['DEPARTMENTS.NAME'];
+	$_POST['NAME'] = $results[0]['USERS.FNAME'] . " " . $results[0]['USERS.LNAME'];
+	$_POST['DEP'] = $results[0]['DEPARTMENTS.NAME'];
 }
 else
 {

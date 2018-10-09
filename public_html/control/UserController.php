@@ -13,11 +13,14 @@ class UserController{
     $db = $this->conn;
     $stmt = $db->prepare("SELECT USER_ID, USERNAME, EMAIL, PASSWORD, SALT, FNAME, LNAME FROM USERS WHERE USER_ID = :INFO OR LOWER(USERNAME) = LOWER(:INFO) OR LOWER(EMAIL) = LOWER(:INFO)");
     $stmt->bindParam(':INFO', $info);
-    if($stmt->execute()){
-				return $stmt->fetch(PDO::FETCH_ASSOC);
-			}else{
-				return false;
-      }
+    if($stmt->execute())
+	{
+		return $stmt->fetch(PDO::FETCH_ASSOC);
+	}
+	else
+	{
+		return false;
+    }
   }
   //==========| REGISTER |==========
   public function register($firstname, $lastname, $email, $username, $password, $password2){
