@@ -31,6 +31,7 @@ CREATE TABLE USERS
 	HOMETOWN		VARCHAR(255),
 	PHONE_NUM		VARCHAR(12),
 	BIO				VARCHAR(5000),
+	PROFILE			VARCHAR(255),
 	RESUME			VARCHAR(320),
 	CREATE_TIME		DATETIME		NOT NULL,
 	DEP_ID			INT				NOT NULL,
@@ -123,3 +124,6 @@ CREATE TABLE USERS_UNIVERSITIES
 	FOREIGN KEY (USER_ID) REFERENCES USERS(USER_ID),
 	FOREIGN KEY (UNIV_ID) REFERENCES UNIVERSITIES(UNIV_ID)
 );
+
+INSERT INTO DEPARTMENTS (NAME) VALUES ('Department of Computer Information Sciences');
+INSERT INTO USERS (USERNAME, EMAIL, PASSWORD, SALT, FNAME, LNAME, TITLE, HOMETOWN, PHONE_NUM, BIO, PROFILE, CREATE_TIME, DEP_ID) VALUES ('cwestbrook', 'christianwestbrook@live.com', 'abc123', 'def456', 'Christian', 'Westbrook', 'Mr.', 'Van Buren', '123-456-7890', 'I like to read horror novels and take long walks at the beach.', './img/users/cwestbrook.jpg', NOW(), 1);
