@@ -24,7 +24,7 @@ include('database.php');
 $sql = "SELECT FNAME, LNAME, TITLE, DEP_ID, EMAIL, PHONE_NUM FROM USERS";
 $stmt = $pdo->query($sql);
 $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-echo $results;
+echo $results['FNAME'];
 //$name = $results['FNAME'][0] . " " . $results['LNAME'][0];
 ?>
  
