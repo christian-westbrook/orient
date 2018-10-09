@@ -60,7 +60,7 @@ include('session.php');
 						{
 							echo "<li class='nav-item'><span class='text-white navbar-text'>Welcome, " . $_SESSION['FNAME'] . " " . $_SESSION['LNAME'] . "!</span></li>";
 							echo "<li class='nav-item'><a class='text-white nav-link' href='profile.php'>Home<a/></li>";
-							echo "<li class='nav-item'><a class='test-white nav-link' href='settings.php'>Settings</a></li>";
+							echo "<li class='nav-item'><a class='text-white nav-link' href='settings.php'>Settings</a></li>";
 							echo "<li class='nav-item'><a class='text-white nav-link' href='signout.php'>Sign Out</a></li>";
 						}
 						else
