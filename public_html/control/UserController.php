@@ -18,7 +18,7 @@ class UserController{
     if($stmt->execute())
 	{
 		$results = $stmt->fetch(PDO::FETCH_ASSOC);
-		echo $results[0]['USER_ID'];
+		print_r($results);
 		return $results;
 	}
 	else
