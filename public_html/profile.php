@@ -43,7 +43,16 @@ $stmt = $pdo->query($sql);
 if($stmt->execute())
 {
 	$results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-	print_r($results);
+	
+	$universities;
+	
+	$length = count($results);
+	for($i = 0; i < length; i++)
+	{
+		$universities[$i] = $results[$i]['NAME'];
+	}
+		
+	print_r($universities);
 }
 
 ?>
@@ -55,7 +64,7 @@ if($stmt->execute())
 {
 	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 	font-size: 1.0em;
-	width: 75%;
+	width: 85%;
 	padding: 1em;
 	border: 1px solid #ccc;
 	margin: auto;
@@ -65,7 +74,7 @@ if($stmt->execute())
 {
 	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 	font-size: 1.0em;
-	width: 75%;
+	width: 85%;
 	height: 400px;
 	padding: 1em;
 	border: 1px solid #ccc;
