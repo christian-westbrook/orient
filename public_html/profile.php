@@ -27,13 +27,12 @@ $stmt = $pdo->query($sql);
 if($stmt->execute())
 {
 	$results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+	$_POST['NAME'] = $results[0]['FNAME'] . " " . $results[0]['LNAME'];
 }
 else
 {
 	echo "FAIL";
 }
-
-$_POST['NAME'] = $results[0]['FNAME'] . " " . $results[0]['LNAME'];
 ?>
  
 <!-- These styles need to be moved into a separate css file. -->
