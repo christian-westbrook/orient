@@ -27,8 +27,10 @@ $stmt = $pdo->query($sql);
 if($stmt->execute())
 {
 	$results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-	$_POST['NAME'] = $results[0]['FNAME'] . " " . $results[0]['LNAME'];
+	$_POST['NAME'] = $results[0]['TITLE'] . " " . $results[0]['FNAME'] . " " . $results[0]['LNAME'];
 	$_POST['DEP'] = $results[0]['NAME'];
+	$_POST['EMAIL'] = $results[0]['EMAIL'];
+	$_POST['PHONE_NUM'] = $results[0]['PHONE_NUM'];
 }
 else
 {
@@ -120,35 +122,17 @@ else
 	
 	<div class="dataContainerTwo">
 		<div class="left">
-			<h3>First Name</h3>
-			<br>
-			<h3>Last Name</h3>
-			<br>
-			<h3>Title</h3>
-			<br>
-			<h3>Department</h3>
-			<br>
 			<h3>Email</h3>
 			<br>
 			<h3>Phone Number</h3>
 		</div>
 		
 		<div class="right">
-			<h3>Anthony</h3>
+			<h3><?php echo $_POST['EMAIL']; ?></h3>
 			<br>
-			<h3>Todaro</h3>
-			<br>
-			<h3>Computer Scientist</h3>
-			<br>
-			<h3>Computer Science</h3>
-			<br>
-			<h3>rtodar00@g.uafs.edu</h3>
-			<br>
-			<h3>479-651-0987</h3>
+			<h3><?php echo $_POST['PHONE_NUM']; ?></h3>
 		</div>
-		
 	<div>
-
 </div>
 
 <!-- Defines the footer of each page -->
