@@ -21,6 +21,8 @@ if($sessionStarted == false)
 
 // There are no user entries here, so no prepared statements are necessary.
 // Select all of the relevant profile information and load it into the $_POST associative array.
+
+// Grab data from the USERS table
 include('database.php');
 $sql = "SELECT USERS.FNAME, USERS.LNAME, USERS.TITLE, DEPARTMENTS.NAME, USERS.EMAIL, USERS.PHONE_NUM, USERS.BIO, USERS.PROFILE, USERS.HOMETOWN FROM USERS INNER JOIN DEPARTMENTS ON USERS.DEP_ID = DEPARTMENTS.DEP_ID WHERE USERS.USER_ID=" . $_SESSION['ID'];
 $stmt = $pdo->query($sql);
@@ -37,6 +39,7 @@ if($stmt->execute())
 	$_POST['HOMETOWN'] = $results[0]['HOMETOWN'];
 }
 
+// Grab data from the USERS_UNIVERSITIES table
 $sql = "SELECT UNIVERSITIES.NAME FROM UNIVERSITIES INNER JOIN USERS_UNIVERSITIES ON UNIVERSITIES.UNIV_ID = USERS_UNIVERSITIES.UNIV_ID WHERE USERS_UNIVERSITIES.USER_ID=" . $_SESSION['ID'];
 $stmt = $pdo->query($sql);
 
@@ -47,13 +50,32 @@ if($stmt->execute())
 	$universities;
 	
 	$length = count($results);
-	
 	for($i = 0; $i < $length; $i++)
 	{
 		$universities[$i] = $results[$i]['NAME'];
 	}
 		
 	$_POST['UNIVERSITIES'] = $universities;
+}
+
+// Grab data from the USERS_EMPLOYERS table
+
+$sql = "SELECT EMPLOYERS.NAME FROM EMPLOYERS INNER JOIN USERS_EMPLOYERS ON EMPLOYERS.EMP_ID = USERS_EMPLOYERS.EMP_ID WHERE USERS_EMPLOYERS.USER_ID=" . $_SESSION['ID'];
+$stmt = $pdo->query($sql);
+
+if($stmt->execute())
+{
+	$results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+	
+	$employers;
+	
+	$length = count($results);
+	for($i = 0; $i < $length; $i++)
+	{
+		$employers[$i] = $results[$i]['NAME'];
+	}
+		
+	$_POST['EMPLOYERS'] = $employers;
 }
 
 ?>
@@ -151,6 +173,8 @@ if($stmt->execute())
 			<h3>Phone Number</h3>
 			<br>
 			<h3>Universities</h3>
+			<br>
+			<h3>Employers</h3>
 		</div>
 		
 		<div class="right">
@@ -169,6 +193,19 @@ if($stmt->execute())
 					for($i = 0; $i < $length; $i++)
 					{
 						echo $universities[$i] . "<br>";
+					}
+				?>
+			</h3>
+			<br>
+			<h3>
+				<?php
+					$employers = $_POST['EMPLOYERS'];
+					
+					$length = count($employers);
+	
+					for($i = 0; $i < $length; $i++)
+					{
+						echo $employers[$i] . "<br>";
 					}
 				?>
 			</h3>
