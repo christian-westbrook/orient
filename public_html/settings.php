@@ -26,6 +26,15 @@ if($sessionStarted == false)
  
  <!-- These styles need to be moved into a separate css file. -->
 <style>
+.contain {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 90vh;
+}
+
 .myForm 
 {
 	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
@@ -108,32 +117,33 @@ if($sessionStarted == false)
 
 </head>
 <body>
+	<div class="contain">
+		<form class="myForm" method="get">
 
-	<form class="myForm" method="get">
+			<p>
+				<label>Password
+				<input type="password" id="password" placeholder="Password">
+				</label> 
+			</p>
 
-		<p>
-			<label>Password
-			<input type="password" id="password" placeholder="Password">
-			</label> 
-		</p>
+			<p>
+				<label>Password 
+				<input type="password" id="password_confirm" placeholder="Confirm Password">
+				</label>
+			</p>
 
-		<p>
-			<label>Password 
-			<input type="password" id="password_confirm" placeholder="Confirm Password">
-			</label>
-		</p>
+			<p>
+				<label>Email 
+				<input type="text" placeholder="Email">
+				</label>
+			</p>
 
-		<p>
-			<label>Email 
-			<input type="text" placeholder="Email">
-			</label>
-		</p>
+			<p>
+				<button id="Save_Btn">Save</button>
+			</p>
 
-		<p>
-			<button id="Save_Btn">Save</button>
-		</p>
-
-	</form>
+		</form>
+	</div>
 
 </body>
 
