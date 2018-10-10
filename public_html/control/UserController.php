@@ -6,7 +6,7 @@ class UserController
 	
 	function __construct()
 	{
-		include('../database.php');
+		require_once('database.php');
     		$this->conn = $pdo;
   	}
 	
