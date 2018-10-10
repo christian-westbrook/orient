@@ -111,49 +111,25 @@ if($sessionStarted == false)
 	<form class="myForm" method="get">
 
 		<p>
-			<label>First Name
-			<input type="text" name="firstName" required>
+			<label>Password
+			<input type="password" id="password" placeholder="Password">
 			</label> 
 		</p>
 
 		<p>
-			<label>Last Name 
-			<input type="text" name="lastName">
-			</label>
-		</p>
-
-		<p>
-			<label>Title 
-			<input type="text" name="title">
-			</label>
-		</p>
-
-		<p>
-			<label>Department 
-			<input type="text" name="department">
+			<label>Password 
+			<input type="password" id="password_confirm" placeholder="Confirm Password">
 			</label>
 		</p>
 
 		<p>
 			<label>Email 
-			<input type="text" name="email">
+			<input type="text" placeholder="Email">
 			</label>
 		</p>
 
 		<p>
-			<label>Phone Number 
-			<input type="text" name="phoneNumber">
-			</label>
-		</p>
-
-		<p>
-			<label>Profile Picture
-			<input type="file" name="profilePicture">
-			</label>
-		</p>
-
-		<p>
-			<button>Save</button>
+			<button id="Save_Btn">Save</button>
 		</p>
 
 	</form>
