@@ -1,10 +1,15 @@
 <?php
-class UserController{
-  private $conn;
-  function __construct(){
-    require_once('../database.php');
-    $this->conn = $pdo;
-  }
+class UserController
+{
+	// Private database variable
+	private $conn;
+	
+	function __construct()
+	{
+		include('../database.php');
+    		$this->conn = $pdo;
+  	}
+	
   //==========| SIGN IN |==========
   public function signin($username, $password)
   {
@@ -12,10 +17,11 @@ class UserController{
   }
   private function getUserInfo($info)
   {
-    $db = $this->conn;
-    $stmt = $db->prepare("SELECT USER_ID, USERNAME, EMAIL, PASSWORD, SALT, FNAME, LNAME FROM USERS WHERE USER_ID = :INFO OR LOWER(USERNAME) = LOWER(:INFO) OR LOWER(EMAIL) = LOWER(:INFO)");
-    $stmt->bindParam(':INFO', $info);
-    if($stmt->execute())
+  	$db = $this->conn;
+   	$stmt = $db->prepare("SELECT USER_ID, USERNAME, EMAIL, PASSWORD, SALT, FNAME, LNAME FROM USERS WHERE USER_ID = :INFO OR LOWER(USERNAME) = LOWER(:INFO) OR LOWER(EMAIL) = LOWER(:INFO)");
+    	$stmt->bindParam(':INFO', $info);
+	  
+    	if($stmt->execute())
 	{
 		$results = $stmt->fetch(PDO::FETCH_ASSOC);
 		print_r($results);
@@ -24,7 +30,7 @@ class UserController{
 	else
 	{
 		return false;
-    }
+    	}
   }
   //==========| REGISTER |==========
   public function register($firstname, $lastname, $email, $username, $password, $password2){
