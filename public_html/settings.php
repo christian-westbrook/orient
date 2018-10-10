@@ -67,6 +67,7 @@ if($sessionStarted == false)
 }
 
 .myForm input[type="text"],
+.myForm input[type="password"],
 .myForm select,
 .myForm textarea 
 {
