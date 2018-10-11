@@ -4,6 +4,6 @@ include_once('session.php');
 
 if(closeSession())
 {
-	header('Location: /~iot3/');
+	header('Location: /~orient/');
 }
 ?>
