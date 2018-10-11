@@ -16,7 +16,7 @@ include('header.php');
 // the system will redirect to the landing page.
 if($sessionStarted == false)
 {
-	header('Location: /~iot3/');
+	header('Location: /~orient/');
 }
 
 // There are no user entries here, so no prepared statements are necessary.
