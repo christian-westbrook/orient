@@ -22,7 +22,7 @@ include('header.php');
 </head>
 <body>
 	<div class="contain">
-		<form class="myForm" method="post" id="settingsForm" >
+		<form class="myForm" method="post" id="settingsForm" onsubmit="validatePass(this);">
 
 			<p>
 				<label>Old Password
@@ -32,13 +32,13 @@ include('header.php');
 		
 			<p>
 				<label>New Password
-				<input type="password" id="pass_one" placeholder="New Password">
+				<input type="password" id="password" placeholder="New Password">
 				</label> 
 			</p>
 
 			<p>
 				<label>New Password 
-				<input type="password" id="pass_two" placeholder="Confirm Password">
+				<input type="password" id="password_confirm" placeholder="Confirm Password">
 				</label>
 			</p>
 
@@ -49,8 +49,26 @@ include('header.php');
 			</p>
 
 			<p>
-				<button id="Save_Btn" onclick="validatePass(myForm)">Save</button>
+				<button id="Save_Btn">Save</button>
 			</p>
+			
+			<script>
+
+				function validatePass(theForm) {
+					
+					if(theForm.pass_one.value == theForm.pass_two.value) {
+						
+						document.getElementById("settingsForm").submit();
+						
+					} else {
+						
+						alert('Passwords don\'t match!');
+						
+					}
+					
+				}
+				
+			</script>
 
 		</form>
 	</div>
