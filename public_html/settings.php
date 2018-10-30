@@ -22,7 +22,7 @@ include('header.php');
 </head>
 <body>
 	<div class="contain">
-		<form class="myForm" method="post" id="settingsForm" onsubmit="validatePass(this);">
+		<form class="myForm" method="post" id="settingsForm" >
 
 			<p>
 				<label>Old Password
@@ -49,7 +49,7 @@ include('header.php');
 			</p>
 
 			<p>
-				<button id="Save_Btn">Save</button>
+				<button id="Save_Btn" onclick="validatePass(myForm)">Save</button>
 			</p>
 
 		</form>
