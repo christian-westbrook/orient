@@ -29,9 +29,12 @@ html, body
 {
 	float: right;
 	border: 1px solid black;
+	padding: 0.25em;
+	margin-top: 0.25em;
+	margin-bottom: 0.25em;
 }
 	
-#login
+#log-in
 {
 	float: right;
 }
