@@ -56,7 +56,7 @@ include('header.php');
 
 				function validatePass(theForm) {
 					
-					if(theForm.pass_one.value == theForm.pass_two.value) {
+					if(theForm.password.value == theForm.password_confirm.value) {
 						
 						document.getElementById("settingsForm").submit();
 						
