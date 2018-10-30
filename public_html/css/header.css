@@ -9,6 +9,7 @@ html, body
 	background: #1E90FF;
 	color: white;
 	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	width: 100%;
 }
 
 #header a
@@ -20,10 +21,9 @@ html, body
 #header h1
 {
 	margin-left: 0.5em;
-	float: left;
 }
 
 #header p
 {
-	float: left;
+	
 }
