@@ -24,13 +24,19 @@ include('header.php');
 		<form class="myForm" method="post" id="settingsForm" onsubmit="validatePass(this);">
 
 			<p>
-				<label>Password
-				<input type="password" id="password" placeholder="Password">
+				<label>Old Password
+				<input type="password" id="old_password" placeholder="Old Password">
+				</label> 
+			</p>
+		
+			<p>
+				<label>New Password
+				<input type="password" id="password" placeholder="New Password">
 				</label> 
 			</p>
 
 			<p>
-				<label>Password 
+				<label>New Password 
 				<input type="password" id="password_confirm" placeholder="Confirm Password">
 				</label>
 			</p>
