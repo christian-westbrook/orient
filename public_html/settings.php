@@ -14,13 +14,7 @@
  
 // Includes the header. This file needs to be tested and adapted for ORIENT.
 include('header.php');
- 
-// If the session hasn't started, then the user hasn't been authenticated and
-// the system will redirect to the landing page.
-if($sessionStarted == false)
-{
-	header('Location: /~orient/');
-}
+
  ?>
 <head>
 	<link rel="stylesheet" type="text/css" href="css/settings.css">
