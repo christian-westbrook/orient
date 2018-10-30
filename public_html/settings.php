@@ -22,7 +22,7 @@ include('header.php');
 </head>
 <body>
 	<div class="contain">
-		<form class="myForm" method="post" id="settingsForm" action="validatePassword.js">
+		<form class="myForm" method="post" id="settingsForm" onsubmit="validatePass(this);">
 
 			<p>
 				<label>Old Password
