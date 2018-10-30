@@ -20,4 +20,10 @@ html, body
 #header h1
 {
 	margin-left: 0.5em;
+	float: left;
+}
+
+#header p
+{
+	float: left;
 }
