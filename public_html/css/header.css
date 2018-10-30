@@ -19,12 +19,8 @@ html, body
 	color: white;
 }
 
-#header h1, #header p
+#header p
 {
 	float: left;
-}
-
-#header h1
-{
 	margin-left: 0.5em;
 }
