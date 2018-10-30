@@ -21,7 +21,7 @@ include('header.php');
 </head>
 <body>
 	<div class="contain">
-		<form class="myForm" method="post" onsubmit="validatePass(this);">
+		<form class="myForm" method="post" id="settingsForm" onsubmit="validatePass(this);">
 
 			<p>
 				<label>Password
@@ -50,7 +50,7 @@ include('header.php');
 					
 					if(theForm.password.value == theForm.password_confirm.value) {
 						
-						alert('Passwords match!');
+						document.getElementById("settingsForm").submit();
 						
 					} else {
 						
