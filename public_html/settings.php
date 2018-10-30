@@ -21,7 +21,7 @@ include('header.php');
 </head>
 <body>
 	<div class="contain">
-		<form class="myForm" method="get">
+		<form class="myForm" method="post" onsubmit="validatePass(this);">
 
 			<p>
 				<label>Password
@@ -44,6 +44,22 @@ include('header.php');
 			<p>
 				<button id="Save_Btn">Save</button>
 			</p>
+			
+			<script>
+				function validatePass(theForm) {
+					
+					if(theForm.password != theForm.password_confirm) {
+						
+						alert('Passwords don\'t match!');
+						
+					} else {
+						
+						alert('Passwords match!');
+						
+					}
+					
+				}
+			</script>
 
 		</form>
 	</div>
