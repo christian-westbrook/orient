@@ -18,6 +18,7 @@ include('header.php');
  ?>
 <head>
 	<link rel="stylesheet" type="text/css" href="css/settings.css">
+	<script src="js/validatePassword.js"></script>
 </head>
 <body>
 	<div class="contain">
@@ -50,22 +51,6 @@ include('header.php');
 			<p>
 				<button id="Save_Btn">Save</button>
 			</p>
-			
-			<script>
-				function validatePass(theForm) {
-					
-					if(theForm.password.value == theForm.password_confirm.value) {
-						
-						document.getElementById("settingsForm").submit();
-						
-					} else {
-						
-						alert('Passwords don\'t match!');
-						
-					}
-					
-				}
-			</script>
 
 		</form>
 	</div>
