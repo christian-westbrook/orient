@@ -51,6 +51,24 @@ include('header.php');
 			<p>
 				<button id="Save_Btn">Save</button>
 			</p>
+			
+			<script>
+
+				function validatePass(theForm) {
+					
+					if(theForm.pass_one.value == theForm.pass_two.value) {
+						
+						document.getElementById("settingsForm").submit();
+						
+					} else {
+						
+						alert('Passwords don\'t match!');
+						
+					}
+					
+				}
+				
+			</script>
 
 		</form>
 	</div>
