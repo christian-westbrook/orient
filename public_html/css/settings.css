@@ -1,6 +1,6 @@
 .contain {
   display: flex;
-  flex-direction: center;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -48,14 +48,6 @@
 	float: right;
 	width: 60%;
 	border: 1px solid #ccc;
-	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
-	font-size: 0.9em;
-	padding: 0.3em;
-}
-.myForm input[type="file"] 
-{
-	float: right;
-	width: 60%;
 	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 	font-size: 0.9em;
 	padding: 0.3em;
