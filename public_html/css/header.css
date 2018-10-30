@@ -10,4 +10,6 @@ body
 	color: white;
 	width: 100%;
 	font-family: "Lucida Console", Monaco, monospace;
+	margin: 0;
+	padding: 0;
 }
