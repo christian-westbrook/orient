@@ -48,7 +48,7 @@ include('header.php');
 			<script>
 				function validatePass(theForm) {
 					
-					if(theForm.password != theForm.password_confirm) {
+					if(theForm.password.value != theForm.password_confirm.value) {
 						
 						alert('Passwords don\'t match!');
 						
