@@ -7,5 +7,6 @@
 	<a href="index.php"><p>ORIENT</p></a>
 	<a href="profile.php"><p>Profile</p></a>
 	<a href="settings.php"><p>Settings</p></a>
-	<a href="authenticate.php"><p>Log In</p></a>
+	<input type="text" placeholder="Search..." />
+	<a href="authenticate.php" id="log-in"><p>Log In</p></a>
 </div>

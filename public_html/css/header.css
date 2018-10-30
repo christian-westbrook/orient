@@ -24,3 +24,14 @@ html, body
 	float: left;
 	margin-left: 0.5em;
 }
+
+#header input
+{
+	float: right;
+	border: 1px solid black;
+}
+	
+#login
+{
+	float: right;
+}
