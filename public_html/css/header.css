@@ -25,6 +25,11 @@ html, body
 	margin-left: 0.5em;
 }
 
+#log-in
+{
+	float: right;
+}
+
 #header input
 {
 	float: right;
@@ -32,9 +37,5 @@ html, body
 	padding: 0.25em;
 	margin-top: 0.25em;
 	margin-bottom: 0.25em;
-}
-	
-#log-in
-{
-	float: right;
+	margin-left: 0.5em;
 }
