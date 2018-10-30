@@ -18,7 +18,7 @@ include('header.php');
  ?>
 <head>
 	<link rel="stylesheet" type="text/css" href="css/settings.css">
-	<script src="js/validatePassword.js"></script>
+	<script type="text/javascript" src="js/validatePassword.js"></script>
 </head>
 <body>
 	<div class="contain">
