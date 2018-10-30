@@ -4,5 +4,5 @@
 </head>
 
 <div id="header">
-	<h1>ORIENT</h1>
+	<a href="index.php"><h1>ORIENT</h1></a>
 </div>
