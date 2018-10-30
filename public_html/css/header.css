@@ -1,0 +1,43 @@
+html, body
+{
+	margin: 0;
+	padding: 0;
+}
+
+#header
+{
+	background: #1E90FF;
+	color: white;
+	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	width: 100%;
+	overflow: auto;
+}
+
+#header a
+{
+	text-decoration: none;
+	color: white;
+}
+
+#header p
+{
+	float: left;
+	margin-left: 0.5em;
+}
+
+#header input
+{
+	border: 1px solid black;
+	padding: 0.25em;
+	margin-top: 1.25em;
+	margin-bottom: 0.25em;
+	margin-left: 0.5em;
+	margin-right: 2em;
+	width: 50em;
+}
+
+#log-in
+{
+	float: right;
+	margin-right: 0.5em;
+}
