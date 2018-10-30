@@ -23,7 +23,7 @@ if($sessionStarted == false)
 }
  ?>
 <head>
-	<link rel="stylesheet" href="css/settings.css">
+	<link rel="stylesheet" type="text/css" href="css/settings.css">
 </head>
 <body>
 	<div class="contain">
