@@ -2,7 +2,7 @@
 
 				function validatePass(theForm) {
 					
-					if(theForm.password.value == theForm.password_confirm.value) {
+					if(theForm.pass_one.value == theForm.pass_two.value) {
 						
 						document.getElementById("settingsForm").submit();
 						

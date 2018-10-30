@@ -32,13 +32,13 @@ include('header.php');
 		
 			<p>
 				<label>New Password
-				<input type="password" id="password" placeholder="New Password">
+				<input type="password" id="pass_one" placeholder="New Password">
 				</label> 
 			</p>
 
 			<p>
 				<label>New Password 
-				<input type="password" id="password_confirm" placeholder="Confirm Password">
+				<input type="password" id="pass_two" placeholder="Confirm Password">
 				</label>
 			</p>
 
