@@ -16,3 +16,8 @@ html, body
 	text-decoration: none;
 	color: white;
 }
+
+#header h1
+{
+	margin-left: 0.5em;
+}
