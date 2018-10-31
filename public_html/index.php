@@ -9,6 +9,6 @@ include 'header.php';
 <div id="container">
 	<div id="home-text">
 		<h1>ORIENT</h1>
-		<h3>The future of university research collaboration</h3>
+		<p>The future of university research collaboration</p>
 	</div>
 </div>
