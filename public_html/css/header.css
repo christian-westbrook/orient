@@ -10,7 +10,7 @@ html, body
 	background: #006994;
 	width: 100%;
 	overflow: auto;
-	height: 5vh;
+	height: 6vh;
 }
 
 #header a
@@ -33,7 +33,7 @@ html, body
 #header input
 {
 	padding: 0.25em;
-	margin-top: 1.25em;
+	margin-top: 1.0em;
 	margin-bottom: 0.25em;
 	margin-left: 0.5em;
 	margin-right: 2em;
