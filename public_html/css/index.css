@@ -51,13 +51,17 @@
 	width: 8vw;
 	height: 4vh;
 	
-	text-decoration: none;
 	text-align: center;
 	margin: 0 auto;
 	margin-top: 4vh;
 	
 	border: 2px solid black;
 	border-radius: 6px;
+}
+
+#get-started a
+{
+	text-decoration: none;
 }
 
 #get-started p
