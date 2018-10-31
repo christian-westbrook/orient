@@ -1,6 +1,7 @@
 <head>
 	<title>ORIENT</title>
 	<link rel="stylesheet" type="text/css" href="css/header.css" />
+	<link rel="stylesheet" type="text/css" href="css/footer.css" />
 	<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
 	
 	<?php
