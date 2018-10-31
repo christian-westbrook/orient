@@ -1,5 +1,8 @@
 <?php
-$css = array(0 => 'index.css');
+$css = array(
+				0 => 'index'
+			);
+			
 include 'header.php';
 ?>
 

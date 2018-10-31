@@ -7,7 +7,7 @@
 	// Generates links for css stylesheets
 	foreach($css as $sheet)
 	{
-		echo '<link rel="stylesheet" type="text/css" href="css/' . $sheet . '" />';
+		echo '<link rel="stylesheet" type="text/css" href="./css/' . $sheet . '.css" />';
 	}
 	?>
 	
