@@ -13,10 +13,8 @@ include 'header.php';
 		<p>Log In</p>
 		
 		<form>
-			Username</br>
-			<input type="text" name="username" /></br>
-			Password</br>
-			<input type="password" name="password" /><br>
+			<input type="text" name="email" placeholder="Email" /></br>
+			<input type="password" name="password" placeholder="Password" /><br>
 		</form>
 	</div>
 </div>
