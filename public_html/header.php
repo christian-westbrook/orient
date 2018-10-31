@@ -1,6 +1,16 @@
 <head>
 	<title>ORIENT</title>
 	<link rel="stylesheet" type="text/css" href="css/header.css" />
+	
+	<?php
+	
+	// Generates links for css stylesheets
+	foreach($css as $sheet)
+	{
+		echo '<link rel="stylesheet" type="text/css" href="css/' . $sheet . '" />';
+	}
+	?>
+	
 	<meta charset="utf-8">
 </head>
 
