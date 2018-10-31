@@ -28,7 +28,7 @@ html, body
 #home-link
 {
 	font-weight: bold;
-	font-stretch: expanded;
+	letter-spacing: 0.1vw;
 }
 
 #header input
