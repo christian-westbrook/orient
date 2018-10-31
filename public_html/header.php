@@ -20,5 +20,6 @@
 	<a href="profile.php"><p>Profile</p></a>
 	<a href="settings.php"><p>Settings</p></a>
 	<input type="text" placeholder="Search..." />
+	<a href="results.php"><p>Search</p></a>
 	<a href="authenticate.php" id="log-in"><p>Log In</p></a>
 </div>
