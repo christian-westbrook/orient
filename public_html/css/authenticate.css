@@ -23,17 +23,12 @@
 	max-height: 100%;
 }
 
-#container h1, #container p
+#container p
 {
 	color: white;
 	
 	margin: 0 auto;
 	text-align: center;
-}
-
-#container h1
-{
-	font-size: 3.5vw;
 }
 
 #container p
@@ -45,31 +40,4 @@
 #auth
 {
 	padding-top: 30vh;
-}
-
-#get-started
-{
-	background: #006994;
-	color: white;
-	
-	width: 8vw;
-	height: 4vh;
-	
-	text-align: center;
-	margin: 0 auto;
-	margin-top: 4vh;
-	
-	border: 2px solid black;
-	border-radius: 6px;
-}
-
-#get-started a
-{
-	text-decoration: none;
-}
-
-#get-started p
-{
-	padding-top: 0.5vh;
-	font-size: 1.2vw;
 }
