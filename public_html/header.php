@@ -15,7 +15,7 @@
 </head>
 
 <div id="header">
-	<a href="index.php" id="home-link"><p>ORIENT</p></a>
+	<a href="index.php"><p id="home-link">ORIENT</p></a>
 	<a href="profile.php"><p>Profile</p></a>
 	<a href="settings.php"><p>Settings</p></a>
 	<input type="text" placeholder="Search..." />
