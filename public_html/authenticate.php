@@ -15,7 +15,7 @@ include 'header.php';
 		<form>
 			Username</br>
 			<input type="text" name="username" /></br>
-			Password
+			Password</br>
 			<input type="password" name="password" /><br>
 		</form>
 	</div>
