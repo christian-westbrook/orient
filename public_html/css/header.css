@@ -47,5 +47,9 @@ html, body
 #log-in, #sign-up
 {
 	float: right;
+}
+
+#sign-up
+{
 	margin-right: 1vw;
 }
