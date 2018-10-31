@@ -17,6 +17,10 @@
 	height: 100%;
 	max-width: 100%;
 	max-height: 100%;
+	
+	zoom: 1;
+	filter: alpha(opacity=50);
+	opacity: 0.5;
 }
 
 #container h1, #container h3
