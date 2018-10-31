@@ -1,9 +1,11 @@
 <?php
+
 $css = array(
 				0 => 'index'
 			);
 			
 include 'header.php';
+
 ?>
 
 <div id="container">
