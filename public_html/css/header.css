@@ -22,8 +22,12 @@ html, body
 #header p
 {
 	float: left;
+	
+	height: 4vh;
+	
+	margin-top: 1vh;
+	margin-bottom: 1vh;
 	margin-left: 0.5vw;
-	height: 3vh;
 }
 
 #home-link
