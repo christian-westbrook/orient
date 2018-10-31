@@ -23,18 +23,18 @@
 	max-height: 100%;
 }
 
-#auth p
+#auth
 {
 	color: white;
 	
 	margin: 0 auto;
 	text-align: center;
 	
-	font-size: 2vw;
-	font-stretch: expanded;
+	padding-top: 30vh;
 }
 
-#auth
-{
-	padding-top: 30vh;
+#auth p
+{	
+	font-size: 2vw;
+	font-stretch: expanded;
 }
