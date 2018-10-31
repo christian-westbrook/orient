@@ -8,7 +8,7 @@ html, body
 #header
 {
 	background: #006994;
-	width: 100%;
+	width: 100vw;
 	overflow: auto;
 	height: 6vh;
 }
