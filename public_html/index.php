@@ -7,6 +7,8 @@ include 'header.php';
 ?>
 
 <div id="container">
+	<span>
 	<h1>ORIENT</h1>
 	<h3>The future of university research collaboration.</h3>
+	</span>
 </div>
