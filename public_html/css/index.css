@@ -26,9 +26,5 @@
 	
 	margin: 0 auto;
 	text-align: center;
-}
-
-#container span
-{
-	margin-top: 10vh;
+	padding-top: 40vh;
 }
