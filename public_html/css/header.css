@@ -38,6 +38,7 @@ html, body
 	height: 4vh;
 	margin-top: 1vh;
 	margin-left: 1vw;
+	float: left;
 }
 
 #log-in
