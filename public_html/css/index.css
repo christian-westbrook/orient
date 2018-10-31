@@ -21,11 +21,21 @@
 
 #container h1, #container h3
 {
-	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif
+	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 	color: black;
 	
 	margin: 0 auto;
 	text-align: center;
+}
+
+#container h1
+{
+	font-size: 10em;
+}
+
+#container h3
+{
+	
 }
 
 #home-text
