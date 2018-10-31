@@ -1,13 +1,13 @@
 #container
 {
-	background-image: url(../img/uafs-tower.jpg);
+	background-image: url(../img/campus.jfif);
 	background-size: cover;
 	margin-top: 0px;
 	padding-top: 0px;
 	width: 100%;
 	height: 100%;
 	position: absolute;
-	z-index: 2;
+	top: 0px;
 }
 
 #container img
