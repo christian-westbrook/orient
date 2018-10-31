@@ -31,14 +31,12 @@
 #container h1
 {
 	font-size: 4em;
-	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
 #container h3
 {
 	font-size: 2em;
 	font-stretch: expanded;
-	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
 #home-text
