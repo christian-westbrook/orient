@@ -1,6 +1,7 @@
 #container
 {
 	background-image: url(../img/uafs-tower.jpg);
+	background-size: cover;
 	margin-top: 0px;
 	padding-top: 0px;
 	width: 100%;
