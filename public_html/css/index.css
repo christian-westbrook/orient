@@ -48,18 +48,18 @@
 	background: #006994;
 	color: white;
 	
-	width: 15vw;
-	height: 7vh;
+	width: 12vw;
+	height: 6vh;
 	
 	text-align: center;
 	margin: 0 auto;
 	margin-top: 5vh;
 	
 	border: 1px solid black;
-	
+	border-radius: 2px;
 }
 
 #get-started p
 {
-	margin-top: 1vh;
+	padding-top: 1vh;
 }
