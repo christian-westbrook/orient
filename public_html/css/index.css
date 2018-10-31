@@ -46,7 +46,6 @@
 #get-started
 {
 	background: #006994;
-	font-size: 1em;
 	color: white;
 	
 	width: 12vw;
@@ -63,4 +62,5 @@
 #get-started p
 {
 	padding-top: 1vh;
+	font-size: 0.5em;
 }
