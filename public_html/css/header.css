@@ -11,7 +11,7 @@ html, body
 	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 	width: 100%;
 	overflow: auto;
-	height: 3em;
+	height: 5vh;
 }
 
 #header a
