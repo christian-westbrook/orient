@@ -48,8 +48,8 @@
 	background: #006994;
 	color: white;
 	
-	width: 12vw;
-	height: 6vh;
+	width: 8vw;
+	height: 4vh;
 	
 	text-align: center;
 	margin: 0 auto;
@@ -61,6 +61,6 @@
 
 #get-started p
 {
-	padding-top: 1vh;
+	padding-top: 0.5vh;
 	font-size: 1.5em;
 }
