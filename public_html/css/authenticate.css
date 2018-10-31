@@ -33,7 +33,7 @@
 	padding-top: 25vh;
 }
 
-#auth p
+#label
 {	
 	font-size: 2vw;
 	font-stretch: expanded;
@@ -46,5 +46,5 @@
 
 .sub
 {
-	font-size: 0.1vw;
+	font-size: 1vw;
 }
