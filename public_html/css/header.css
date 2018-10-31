@@ -7,7 +7,6 @@ html, body
 #header
 {
 	background: #1E90FF;
-	color: black;
 	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 	width: 100%;
 	overflow: auto;
@@ -18,7 +17,7 @@ html, body
 #header a
 {
 	text-decoration: none;
-	color: white;
+	color: black;
 }
 
 #header p
