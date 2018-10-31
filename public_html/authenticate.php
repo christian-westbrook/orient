@@ -10,7 +10,9 @@ include 'header.php';
 
 <div id="container">
 	<div id="auth">
-		<p>The future of university research collaboration</p>
+		<p>Log In</p>
+		
+		
 	</div>
 </div>
 

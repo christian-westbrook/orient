@@ -23,7 +23,7 @@
 	max-height: 100%;
 }
 
-#container p
+#auth p
 {
 	color: white;
 	
@@ -31,7 +31,7 @@
 	text-align: center;
 }
 
-#container p
+#auth p
 {
 	font-size: 2vw;
 	font-stretch: expanded;
