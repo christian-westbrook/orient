@@ -10,5 +10,10 @@
 
 #footer p
 {
+	color: white;
+	
 	text-align: center;
 	margin: 0 auto;
+	
+	padding-top: 2vh;
+}
