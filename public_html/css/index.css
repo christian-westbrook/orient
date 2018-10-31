@@ -29,12 +29,12 @@
 
 #container h1
 {
-	font-size: 4em;
+	font-size: 4vw;
 }
 
 #container p
 {
-	font-size: 2em;
+	font-size: 2vw;
 	font-stretch: expanded;
 }
 
