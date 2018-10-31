@@ -34,7 +34,8 @@ html, body
 {
 	padding: 0.25em;
 	width: 50em;
-	margin-top: 2vh;
+	margin-top: 1vh;
+	height: 4vh;
 }
 
 #log-in
