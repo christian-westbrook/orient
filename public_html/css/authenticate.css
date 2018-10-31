@@ -38,3 +38,13 @@
 	font-size: 2vw;
 	font-stretch: expanded;
 }
+
+#auth a
+{
+	text-decoration: none;
+}
+
+.sub
+{
+	font-size: 0.5vw;
+}
