@@ -12,7 +12,7 @@ include 'header.php';
 		<p>The future of university research collaboration</p>
 		
 		<div id="get-started">
-		<p>Get Started</P>
+		<a href="signup.php"><p>Get Started</p></a>
 		</div>
 	</div>
 </div>
