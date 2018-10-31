@@ -10,5 +10,9 @@ include 'header.php';
 	<div id="home-text">
 		<h1>ORIENT</h1>
 		<p>The future of university research collaboration</p>
+		
+		<div id="get-started">
+		<p>Get Started</P>
+		</div>
 	</div>
 </div>

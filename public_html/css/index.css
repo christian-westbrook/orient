@@ -42,3 +42,11 @@
 {
 	padding-top: 30vh;
 }
+
+#get-started
+{
+	background: #006994;
+	color: white;
+	width: 2vw;
+	height: 3vh;
+}
