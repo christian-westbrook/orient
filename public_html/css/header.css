@@ -44,7 +44,7 @@ html, body
 	margin-left: 3vw;
 }
 
-#log-in
+#log-in, #sign-up
 {
 	float: right;
 	margin-right: 1vw;

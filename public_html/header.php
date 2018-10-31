@@ -21,5 +21,6 @@
 	<a href="settings.php"><p>Settings</p></a>
 	<input type="text" placeholder="Search..." />
 	<a href="results.php"><p>Search</p></a>
+	<a href="signup.php" id="sign-up"><p>Sign Up</p></a>
 	<a href="authenticate.php" id="log-in"><p>Log In</p></a>
 </div>
