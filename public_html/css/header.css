@@ -32,13 +32,16 @@ html, body
 
 #header input
 {
-	padding: 0.25em;
+	float: left;
+	
 	
 	width: 50em;
 	height: 4vh;
+	
+	padding: 0.25em;
+	
 	margin-top: 1vh;
-	margin-left: 1vw;
-	float: left;
+	margin-left: 3vw;
 }
 
 #log-in
