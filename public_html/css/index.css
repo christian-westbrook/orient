@@ -1,6 +1,6 @@
 #background
 {
-	background-image: url("img/uafs-tower.jpg");
+	background-image: url("../img/uafs-tower.jpg");
 	margin-top: 0px;
 	padding-top: 0px;
 	width: 100%;
@@ -9,4 +9,5 @@
 #background h1, #background h3
 {
 	margin: 0 auto;
+	text-align: center;
 }
