@@ -27,6 +27,11 @@ html, body
 	margin-left: 0.5em;
 }
 
+#home-link
+{
+	margin-right: 1em;
+}
+
 #header input
 {
 	border: 1px solid black;
