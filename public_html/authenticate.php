@@ -10,7 +10,7 @@ include 'header.php';
 
 <div id="container">
 
-	<div id="log-in">
+	<div id="authenticate">
 		<p>Log In</p>
 		<form>
 			Username</br>
