@@ -22,20 +22,22 @@ html, body
 #header p
 {
 	float: left;
-	margin-left: 2vw;
+	margin-left: 1vw;
 }
 
 #home-link
 {
-	margin-right: 2vw;
+	margin-right: 1vw;
 }
 
 #header input
 {
 	padding: 0.25em;
+	
 	width: 50em;
-	margin-top: 1vh;
 	height: 4vh;
+	margin-top: 1vh;
+	margin-left: 1vw;
 }
 
 #log-in
