@@ -22,7 +22,11 @@
 {
 	margin: 0 auto;
 	text-align: center;
-	vertical-align: middle;
 	color: black;
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif
+}
+
+#container span
+{
+	vertical-align: middle;
 }
