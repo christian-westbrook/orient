@@ -19,7 +19,7 @@
 	max-height: 100%;
 }
 
-#container h1, #container h3
+#container h1, #container p
 {
 	color: white;
 	
@@ -32,7 +32,7 @@
 	font-size: 4em;
 }
 
-#container h3
+#container p
 {
 	font-size: 2em;
 	font-stretch: expanded;
