@@ -22,7 +22,7 @@
 #container h1, #container h3
 {
 	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
-	color: black;
+	color: white;
 	
 	margin: 0 auto;
 	text-align: center;
@@ -36,6 +36,7 @@
 #container h3
 {
 	font-size: 1em;
+	font-stretch: expanded;
 }
 
 #home-text
