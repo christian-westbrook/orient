@@ -5,9 +5,9 @@
 	<?php
 	
 	// Generates links for css stylesheets
-	foreach($css as $sheet)
+	foreach($css as $key => $value)
 	{
-		echo '<link rel="stylesheet" type="text/css" href="./css/' . $sheet . '.css" />';
+		echo '<link rel="stylesheet" type="text/css" href="css/' . $value . '.css" />';
 	}
 	?>
 	
