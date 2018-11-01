@@ -22,16 +22,22 @@ include('header.php');
 
 <div id="container">
 	<div id="settings">
+		<p class="label">Change Email</p>
+
+		<form>
+			<input type="text" name="email" placeholder="New Email" class="field" /></br>
+			<input type="text" name="confirm-email" placeholder="Confirm" class="field" /></br>
+			<input type="submit" value="Change Email" class="sub-button">
+		</form>
+
 		<p class="label">Change Password</p>
 		
 		<form>
 			<input type="password" name="old-password" placeholder="Old Password" class="field" /></br>
 			<input type="password" name="new-password" placeholder="New Password" class="field" /></br>
-			<input type="password" name="confirm" placeholder="Confirm New Password" class="field" /></br>
+			<input type="password" name="confirm-password" placeholder="Confirm" class="field" /></br>
 			<input type="submit" value="Change Password" id="sub-button">
 		</form>
-		
-		<a href="auth.php"><p class="sub">Already have an account?</p></a>
 	</div>
 </div>
 
