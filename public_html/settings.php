@@ -21,14 +21,14 @@ include('header.php');
  ?>
 
 <div id="container">
-	<div id="auth">
-		<p id="label">ORIENT</p>
+	<div id="settings">
+		<p class="label">Change Password</p>
 		
 		<form>
-			<input type="text" name="email" placeholder="Email" class="field" /></br>
-			<input type="password" name="password" placeholder="Password" class="field" /></br>
-			<input type="password" name="confirm" placeholder="Confirm" class="field" /></br>
-			<input type="submit" value="Sign Up" id="sub-button">
+			<input type="password" name="old-password" placeholder="Old Password" class="field" /></br>
+			<input type="password" name="new-password" placeholder="New Password" class="field" /></br>
+			<input type="password" name="confirm" placeholder="Confirm New Password" class="field" /></br>
+			<input type="submit" value="Change Password" id="sub-button">
 		</form>
 		
 		<a href="auth.php"><p class="sub">Already have an account?</p></a>
