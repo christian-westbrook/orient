@@ -12,10 +12,9 @@ include 'header.php';
 	<div id="auth">
 		<p id="label">ORIENT</p>
 		
-		<form action="php/login-script.php" method="post">
+		<form action="index.php" method="post">
 			<input type="text" name="email" placeholder="Email" class="field" /></br>
-			<input type="password" name="password" placeholder="Password" class="field" /><br>
-			<input type="submit" value="Log In" id="sub-button">
+			<input type="submit" value="Reset Password" id="sub-button">
 		</form>
 		
 		<a href="auth.php"><p class="sub">Want to sign in?</p></a>
@@ -23,3 +22,15 @@ include 'header.php';
 </div>
 
 <?php include 'footer.php'; ?>
+
+<? php
+	
+	if(isset($_POST[submit])) {
+
+		$email = $_POST['email'];
+		$link = "espn.com";
+		$body = "Here is the link to reset your password.";
+
+		mail($email,$body,$link);
+	}
+?>
