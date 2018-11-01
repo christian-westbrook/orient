@@ -22,6 +22,8 @@ include('header.php');
 
 <div id="container">
 	<div id="settings">
+		<p id="heading">Settings</p>
+
 		<p class="label">Change Email</p>
 
 		<form>
