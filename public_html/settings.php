@@ -36,7 +36,7 @@ include('header.php');
 			<input type="password" name="old-password" placeholder="Old Password" class="field" /></br>
 			<input type="password" name="new-password" placeholder="New Password" class="field" /></br>
 			<input type="password" name="confirm-password" placeholder="Confirm" class="field" /></br>
-			<input type="submit" value="Change Password" id="sub-button">
+			<input type="submit" value="Change Password" class="sub-button">
 		</form>
 	</div>
 </div>
