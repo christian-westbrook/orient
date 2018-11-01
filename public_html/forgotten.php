@@ -12,7 +12,7 @@ include 'header.php';
 	<div id="auth">
 		<p id="label">ORIENT</p>
 		
-		<form action="forgotten.php" method="post">
+		<form action="#" method="post">
 			<input type="text" name="email" placeholder="Email" class="field" /></br>
 			<input type="submit" name="submit" value="Reset Password" id="sub-button">
 		</form>
