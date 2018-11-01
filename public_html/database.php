@@ -1,8 +1,0 @@
-<?php
-	$host =     'orientdb.c86myvnpmoub.us-east-2.rds.amazonaws.com';
-	$username = 'cwestbrook';
-	$password = 'orientdb';
-
-	$conn = new PDO("mysql:host=$host;dbname=orientdb", $username, $password);
-	$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-?>
