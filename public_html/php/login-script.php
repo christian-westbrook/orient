@@ -12,7 +12,8 @@
 	$stmt->bindParam(':PASSWORD', $plaintext, PDO::PARAM_STR);
 	$stmt->execute();
 	
+	
 	$results = $fetchAll();
 	
-	$echo results;
+	print_r($results);
 ?>
