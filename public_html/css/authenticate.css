@@ -44,6 +44,12 @@
 	text-decoration: none;
 }
 
+.field
+{
+	width: 10vw;
+	height: 4vh;
+}
+
 .sub
 {
 	font-size: 1vw;

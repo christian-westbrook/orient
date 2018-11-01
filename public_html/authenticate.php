@@ -13,8 +13,8 @@ include 'header.php';
 		<p id="label">Log In</p>
 		
 		<form>
-			<input type="text" name="email" placeholder="Email" /></br>
-			<input type="password" name="password" placeholder="Password" /><br>
+			<input type="text" name="email" placeholder="Email" class="field" /></br>
+			<input type="password" name="password" placeholder="Password" class="field" /><br>
 		</form>
 		
 		<a href="signup.php"><p class="sub">Need to create an account?</p></a>
