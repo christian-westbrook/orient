@@ -46,18 +46,12 @@
 	margin-top: 0;
 }
 
-#sub-button
-{
-	width: 15vw;
-	height: 4vh;
-}
-
 #settings a
 {
 	text-decoration: none;
 }
 
-.field
+.field, .sub-button
 {
 	width: 15vw;
 	height: 4vh;
