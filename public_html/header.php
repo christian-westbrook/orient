@@ -18,6 +18,7 @@
 	foreach($js as $key => $value)
 	{
 		echo '<script src="js/' . $value . '.js"></script>';
+	}
 	?>
 </head>
 
