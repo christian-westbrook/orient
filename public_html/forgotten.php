@@ -14,7 +14,7 @@ include 'header.php';
 		
 		<form action="index.php" method="post">
 			<input type="text" name="email" placeholder="Email" class="field" /></br>
-			<input type="submit" value="Reset Password" id="sub-button">
+			<input type="submit" name="submit" value="Reset Password" id="sub-button">
 		</form>
 		
 		<a href="auth.php"><p class="sub">Want to sign in?</p></a>
