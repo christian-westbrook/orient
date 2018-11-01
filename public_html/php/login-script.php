@@ -2,9 +2,6 @@
 	$email      = $_POST['email'];
 	$plaintext  = $_POST['password'];
 
-	echo $email;
-	echo $plaintext;
-
 	$ciphertext = password_hash($plaintext, PASSWORD_DEFAULT);
 	
 	include 'database.php';
@@ -15,7 +12,8 @@
 	$stmt->bindParam(':PASSWORD', $plaintext, PDO::PARAM_STR);
 	$stmt->execute();
 	
-	
+	echo "HERE";
+
 	$results = $fetchAll();
 	
 	print_r($results);
