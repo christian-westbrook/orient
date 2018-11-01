@@ -15,6 +15,7 @@ include 'header.php';
 		<form>
 			<input type="text" name="email" placeholder="Email" class="field" /></br>
 			<input type="password" name="password" placeholder="Password" class="field" /><br>
+			<input type="submit" value="Log In">
 		</form>
 		
 		<a href="signup.php"><p class="sub">Need to create an account?</p></a>
