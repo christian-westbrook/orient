@@ -1,8 +1,8 @@
 <?php
 
 $css = array(
-				0 => 'authenticate'
-			);
+		0 => 'auth'
+	    );
 			
 include 'header.php';
 
