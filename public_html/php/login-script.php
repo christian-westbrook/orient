@@ -2,6 +2,9 @@
 	$email      = $_POST['email'];
 	$plaintext  = $_POST['password'];
 
+	echo $email;
+	echo $plaintext;
+
 	$ciphertext = password_hash($plaintext, PASSWORD_DEFAULT);
 	
 	include 'database.php';
