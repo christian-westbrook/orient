@@ -10,9 +10,10 @@
 	$stmt = $conn->prepare($sql);
 	$stmt->bindParam(':EMAIL', $email, PDO::PARAM_STR);
 	$stmt->bindParam(':PASSWORD', $plaintext, PDO::PARAM_STR);
-	$stmt->execute();
-	
+
 	echo "HERE";
+
+	$stmt->execute();
 
 	$results = $fetchAll();
 	
