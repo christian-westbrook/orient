@@ -1,77 +1,39 @@
 <?php
 /**************************************************************************
- * System	  : Optimized Research Interest Network
- * Version	  : Prototype System I
- * File		  : settings.php
- * Developers : Anthony Todaro, Christian Westbrook
+ * System	: Open-source Research Interest Network
+ * Version	: Prototype System II
+ * File		: settings.php
+ * Developers 	: Anthony Todaro, Christian Westbrook
  *
- * Abstract	  : This file presents the home page of the ORIENT web system.
- *              The page displays an authentication interface to the user,
- *              who can choose to register with the site or to log in with
- *              an existing account. Authentication provides access to
- *              ORIENT, a social network designed with researchers in mind.
+ * Abstract 	: 
  **************************************************************************/
- 
-// Includes the header. This file needs to be tested and adapted for ORIENT.
+
+$css = array(
+		0 => 'settings'
+	    ); 
+
+$js = array(
+		0 => 'validatePassword'
+	   );
+
 include('header.php');
 
  ?>
-<head>
-	<link rel="stylesheet" type="text/css" href="css/settings.css">
-	<script src="js/validatePassword.js"></script>
-</head>
-<body>
-	<div class="contain">
-		<form class="myForm" method="post" id="settingsForm" onsubmit="validatePass(this);">
 
-			<p>
-				<label>Old Password
-				<input type="password" id="old_password" placeholder="Old Password">
-				</label> 
-			</p>
+<div id="container">
+	<div id="auth">
+		<p id="label">ORIENT</p>
 		
-			<p>
-				<label>New Password
-				<input type="password" id="password" placeholder="New Password">
-				</label> 
-			</p>
-
-			<p>
-				<label>New Password 
-				<input type="password" id="password_confirm" placeholder="Confirm Password">
-				</label>
-			</p>
-
-			<p>
-				<label>Email 
-				<input type="text" placeholder="Email">
-				</label>
-			</p>
-
-			<p>
-				<button id="Save_Btn">Save</button>
-			</p>
-			
-			<script>
-
-				function validatePass(theForm) {
-					
-					if(theForm.password.value == theForm.password_confirm.value) {
-						
-						document.getElementById("settingsForm").submit();
-						
-					} else {
-						
-						alert('Passwords don\'t match!');
-						
-					}
-					
-				}
-				
-			</script>
-
+		<form>
+			<input type="text" name="email" placeholder="Email" class="field" /></br>
+			<input type="password" name="password" placeholder="Password" class="field" /></br>
+			<input type="password" name="confirm" placeholder="Confirm" class="field" /></br>
+			<input type="submit" value="Sign Up" id="sub-button">
 		</form>
+		
+		<a href="auth.php"><p class="sub">Already have an account?</p></a>
 	</div>
+</div>
 
 </body>
 

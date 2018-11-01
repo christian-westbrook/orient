@@ -1,19 +1,24 @@
 <head>
 	<title>ORIENT</title>
+	<meta charset="utf-8">
+
 	<link rel="stylesheet" type="text/css" href="css/header.css" />
 	<link rel="stylesheet" type="text/css" href="css/footer.css" />
 	<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
 	
 	<?php
 	
-	// Generates links for css stylesheets
+	// Generates css links
 	foreach($css as $key => $value)
 	{
 		echo '<link rel="stylesheet" type="text/css" href="css/' . $value . '.css" />';
 	}
+
+	// Generates js links
+	foreach($js as $key => $value)
+	{
+		echo '<script src="js/' . $value . '.js"></script>';
 	?>
-	
-	<meta charset="utf-8">
 </head>
 
 <div id="header">
