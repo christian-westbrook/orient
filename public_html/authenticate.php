@@ -10,7 +10,7 @@ include 'header.php';
 
 <div id="container">
 	<div id="auth">
-		<p id="label">Log In</p>
+		<p id="label">ORIENT</p>
 		
 		<form>
 			<input type="text" name="email" placeholder="Email" class="field" /></br>

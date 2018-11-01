@@ -37,6 +37,13 @@
 {	
 	font-size: 2vw;
 	font-stretch: expanded;
+	
+	margin-bottom: 0;
+}
+
+#auth form
+{
+	margin-top: 0;
 }
 
 #sub-button
