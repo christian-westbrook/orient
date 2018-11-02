@@ -18,7 +18,7 @@
 
 	if($stmt->execute())
 	{
-			$results = $fetchAll();
+			$results = $stmt->$fetchAll();
 			print_r($results);
 	}
 	else
