@@ -9,11 +9,20 @@
 
 
 	include 'database.php';
-	$sql  = 'SELECT * FROM USERS WHERE EMAIL=:EMAIL AND PASSWORD=:PASSWORD';
+
+	$sql  = 'SELECT * FROM USERS WHERE EMAIL=$email AND PASSWORD=$plantext';
 
 	$stmt = $conn->prepare($sql);
-	$stmt->bindParam(':EMAIL', $email, PDO::PARAM_STR);
-	$stmt->bindParam(':PASSWORD', $plaintext, PDO::PARAM_STR);
+	//$stmt->bindParam(':EMAIL', $email, PDO::PARAM_STR);
+	//$stmt->bindParam(':PASSWORD', $plaintext, PDO::PARAM_STR);
+
+
+
+	//$sql  = 'SELECT * FROM USERS WHERE EMAIL=:EMAIL AND PASSWORD=:PASSWORD';
+
+	//$stmt = $conn->prepare($sql);
+	//$stmt->bindParam(':EMAIL', $email, PDO::PARAM_STR);
+	//$stmt->bindParam(':PASSWORD', $plaintext, PDO::PARAM_STR);
 
 	if($stmt->execute())
 	{
