@@ -14,7 +14,6 @@ $css = array(
 session_start();
 $profArr = $_SESSION['profArr'];
 include('header.php');
-print_r($profArr);
  ?>
 
 <div id="container">
