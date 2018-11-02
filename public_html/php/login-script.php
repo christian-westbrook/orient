@@ -18,9 +18,8 @@
 
 	if($stmt->execute())
 	{
-		echo "Statement did indeed execute.";
-			//$results = $fetchAll();
-			//print_r($results);
+			$results = $fetchAll();
+			print_r($results);
 	}
 	else
 	{
