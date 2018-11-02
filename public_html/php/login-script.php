@@ -5,22 +5,22 @@
 	$plaintext  = $_POST['password'];
 
 	// Encrypt the provided plaintext password
-	$ciphertext = password_hash($plaintext, PASSWORD_DEFAULT);
+	//$ciphertext = password_hash($plaintext, PASSWORD_DEFAULT);
 
 
 	include 'database.php';
 
-	$sql  = 'SELECT * FROM USERS WHERE EMAIL=:EMAIL AND PASSWORD=:PASSWORD';
+	$sql  = 'SELECT * FROM USERS WHERE EMAIL= :EMAIL AND PASSWORD= :PASSWORD';
 
 	$stmt = $conn->prepare($sql);
-	$stmt->bind_param(':EMAIL', $email, PDO::PARAM_STR);
-	$stmt->bind_param(':PASSWORD', $plaintext, PDO::PARAM_STR);
+	$stmt->bindParam(':EMAIL', $email, PDO::PARAM_STR);
+	$stmt->bindParam(':PASSWORD', $plaintext, PDO::PARAM_STR);
 
 	if($stmt->execute())
 	{
-			$results = $fetchAll();
-			print_r($results);
-			$stmt->close();
+		echo "Statement did indeed execute.";
+			//$results = $fetchAll();
+			//print_r($results);
 	}
 	else
 	{
