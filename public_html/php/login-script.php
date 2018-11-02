@@ -5,7 +5,7 @@
 	$plaintext  = $_POST['password'];
 
 	// Encrypt the provided plaintext password
-	//$ciphertext = password_hash($plaintext, PASSWORD_DEFAULT);
+	$ciphertext = password_hash($plaintext, PASSWORD_DEFAULT);
 
 
 	include 'database.php';
