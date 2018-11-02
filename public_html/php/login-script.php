@@ -20,6 +20,7 @@
 	{
 			$results = $fetchAll();
 			print_r($results);
+			$stmt->close();
 	}
 	else
 	{
