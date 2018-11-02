@@ -10,7 +10,7 @@
 
 	include 'database.php';
 
-	$sql  = 'SELECT * FROM USERS WHERE EMAIL=$email AND PASSWORD=$plantext';
+	$sql  = 'SELECT * FROM USERS WHERE EMAIL=$email AND PASSWORD=$plaintext';
 
 	$stmt = $conn->prepare($sql);
 	//$stmt->bindParam(':EMAIL', $email, PDO::PARAM_STR);
