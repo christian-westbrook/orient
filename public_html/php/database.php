@@ -7,8 +7,6 @@
 
 		$conn = new PDO("mysql:host=$host;dbname=ORIENT", $username, $password);
 		$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-		echo "HERE";
 	}
 	catch(PDOException $e)
 	{
