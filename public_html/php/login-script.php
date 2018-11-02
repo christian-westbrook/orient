@@ -19,6 +19,7 @@
 	{
 			$results = $fetchAll();
 			print_r($results);
+		echo "Statement did indeed execute.";
 	}
 	else
 	{
