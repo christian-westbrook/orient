@@ -6,7 +6,8 @@
 	$email = $_POST['email'];
 	$link = "espn.com";
 	$subject = "Password reset request";
-	$body = "Here is the link to reset your password.\n\n";
-	mail($email,$subject,$body);
+	$body = "Here is the link to reset your password.\n\n".$link;
+	$headers = "From: overlords@orient.com";
+	mail($email,$subject,$body,$headers);
 	header('Location: auth.php');
 ?>
