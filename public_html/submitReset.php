@@ -8,7 +8,7 @@
 	$link = "espn.com";
 	$subject = "Password reset request";
 	$body = "Here is the link to reset your password.\n\n";
-	mail($email,$subject,$body);
-	header('Location: auth.php');
+	//mail($email,$subject,$body);
+	//header('Location: auth.php');
 	echo "we are after";
 ?>
