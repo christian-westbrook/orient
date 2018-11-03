@@ -10,8 +10,7 @@ if($_POST['password']==$_POST['confirm']){
   
   echo "Email: ".$email."<br>Password: ".$password;
 
-	// Encrypt the provided plaintext password
-	$ciphertext = password_hash($plaintext, PASSWORD_DEFAULT);
+	
 
 
 }
