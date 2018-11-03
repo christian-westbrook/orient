@@ -1,8 +1,8 @@
 <? php
-	if(!isset($_POST['submit']))
-	{
-		echo "error; you need to submit the form!";
-	}
+	//if(!isset($_POST['submit']))
+	//{
+	//	echo "error; you need to submit the form!";
+	//}
 	echo "we are before";
 	//$email = $_POST['email'];
 	//$link = "espn.com";
