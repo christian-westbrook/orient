@@ -13,7 +13,7 @@ include 'header.php';
 		<p id="label">ORIENT</p>
 		
 		<form action="submitReset.php" method="post">
-			<input type="text" name="email" placeholder="Email" class="field" /></br>
+			<input type="email" name="email" placeholder="Email" class="field" /></br>
 			<input type="submit" name="submit" value="Reset Password" id="sub-button">
 		</form>
 		
