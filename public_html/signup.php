@@ -12,8 +12,8 @@ include 'header.php';
 	<div id="auth">
 		<p id="label">ORIENT</p>
 		
-		<form>
-			<input type="text" name="email" placeholder="Email" class="field" /></br>
+		<form action="php/signup-script.php" method="post">
+			<input type="email" name="email" placeholder="Email" class="field" /></br>
 			<input type="password" name="password" placeholder="Password" class="field" /></br>
 			<input type="password" name="confirm" placeholder="Confirm" class="field" /></br>
 			<input type="submit" value="Sign Up" id="sub-button">
