@@ -16,8 +16,9 @@
 	$stmt = $conn->prepare($sql);
 	$stmt->bindParam(':EMAIL', $email, PDO::PARAM_STR);
 	$stmt->bindParam(':PASSWORD', $plaintext, PDO::PARAM_STR);
+	$stmt->execute()
 
-	if($stmt->execute())
+	if($stmt->rowCount()>0)
 	{
 			$results = $stmt->fetchAll();
 			$_SESSION['profArr'] = $results;
@@ -25,6 +26,6 @@
 	}
 	else
 	{
-		echo "Statement failed to execute.";
+		header('Location: ../auth.php');
 	}
 ?>
