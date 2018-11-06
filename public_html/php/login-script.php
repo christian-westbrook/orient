@@ -16,17 +16,21 @@
 	$stmt = $conn->prepare($sql);
 	$stmt->bindParam(':EMAIL', $email, PDO::PARAM_STR);
 	$stmt->bindParam(':PASSWORD', $plaintext, PDO::PARAM_STR);
-	$stmt->execute()
 
-	if($stmt->rowCount()>0)
+	if($stmt->execute())
 	{
-		session_start();
 		$results = $stmt->fetchAll();
-		$_SESSION['profArr'] = $results;
-		header( "Location: ../profile.php" );
+		if($results){
+			session_start();
+			$_SESSION['profArr'] = $results;
+			header( "Location: ../profile.php" );
+		}
+		else{
+			header( "Location: ../auth.php" );
+		}
 	}
 	else
 	{
-		header("Location: ../auth.php");
+		echo "something goofed";
 	}
 ?>
