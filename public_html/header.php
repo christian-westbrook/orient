@@ -47,11 +47,4 @@ include 'session.php';
 		}
 	?>
 
-	<a href="index.php"><p id="home-link">ORIENT</p></a>
-	<a href="profile.php"><p>Profile</p></a>
-	<a href="settings.php"><p>Settings</p></a>
-	<input type="text" placeholder="Search..." />
-	<a href="results.php"><p>Search</p></a>
-	<a href="signup.php" id="sign-up"><p>Sign Up</p></a>
-	<a href="auth.php" id="log-in"><p>Log In</p></a>
 </div>
