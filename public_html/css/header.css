@@ -9,10 +9,10 @@ html, body
 {
 	background: #006994;
 	overflow: auto;
-	
+
 	width: 100%;
 	height: 6vh;
-	
+
 	min-height: 3em;
 }
 
@@ -25,9 +25,9 @@ html, body
 #header p
 {
 	float: left;
-	
+
 	height: 4vh;
-	
+
 	margin-top: 2vh;
 	margin-bottom: 0vh;
 	margin-left: 0.5vw;
@@ -42,21 +42,21 @@ html, body
 #header input
 {
 	float: left;
-	
-	
+
+
 	width: 35vw;
 	height: 4vh;
-	
+
 	margin-top: 1vh;
 	margin-left: 20vw;
 }
 
-#log-in, #sign-up
+#log-in, #sign-up, #log-out
 {
 	float: right;
 }
 
-#sign-up
+#sign-up, #log-out
 {
 	margin-right: 1vw;
 }
