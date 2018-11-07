@@ -2,15 +2,15 @@
 {
 	background-image: url(../img/background.jpg);
 	background-size: cover;
-	
+
 	width: 100%;
 	height: 88vh;
-	
+
 	max-height: 100%;
-	
+
 	margin-top: 0px;
 	padding-top: 0px;
-	
+
 	position: relative;
 	top: 0vh;
 }
@@ -26,18 +26,18 @@
 #settings
 {
 	color: white;
-	
+
 	margin: 0 auto;
 	text-align: center;
-	
-	padding-top: 15vh;
+
+	padding-top: 5vh;
 }
 
 #heading
-{	
+{
 	font-size: 2vw;
 	font-stretch: expanded;
-	
+
 	margin-bottom: 2vh;
 }
 
@@ -61,7 +61,7 @@
 {
 	font-size: 1vw;
 	width: 20vw;
-	
+
 	text-align: center;
 	margin: 0 auto;
 }
