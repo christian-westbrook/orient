@@ -10,9 +10,11 @@ if($_POST['password'] == $_POST['confirm'])
 
 	// Get the user information provided through POST
   	$email 		= $_POST['email'];
-  	$password 	= $_POST['password'];
+  	$plaintext 	= $_POST['password'];
 	$fname		= $_POST['fname'];
 	$lname		= $_POST['lname'];
+
+	$ciphertext = password_hash($plaintext, PASSWORD_DEFAULT);
 
   	include 'database.php';
 
@@ -20,7 +22,7 @@ if($_POST['password'] == $_POST['confirm'])
 
 	$stmt = $conn->prepare($sql);
 	$stmt->bindParam(':EMAIL', $email, PDO::PARAM_STR);
-	$stmt->bindParam(':PASSWORD', $password, PDO::PARAM_STR);
+	$stmt->bindParam(':PASSWORD', $ciphertext, PDO::PARAM_STR);
 	$stmt->bindParam(':FNAME', $fname, PDO::PARAM_STR);
 	$stmt->bindParam(':LNAME', $lname, PDO::PARAM_STR);
 

@@ -17,7 +17,7 @@
 
 	$stmt = $conn->prepare($sql);
 	$stmt->bindParam(':EMAIL', $email, PDO::PARAM_STR);
-	$stmt->bindParam(':PASSWORD', $plaintext, PDO::PARAM_STR);
+	$stmt->bindParam(':PASSWORD', $ciphertext, PDO::PARAM_STR);
 
 	if($stmt->execute())
 	{
