@@ -3,7 +3,7 @@
 	// Get the user information provided through POST
 	$email      = $_POST['email'];
 	$plaintext  = $_POST['password'];
-	
+
 
 	// Encrypt the provided plaintext password
 	$ciphertext = password_hash($plaintext, PASSWORD_DEFAULT);
@@ -20,12 +20,14 @@
 	if($stmt->execute())
 	{
 		$results = $stmt->fetchAll();
-		if($results){
+		if($results)
+		{
 			session_start();
 			$_SESSION['profArr'] = $results;
 			header( "Location: ../profile.php" );
 		}
-		else{
+		else
+		{
 			header( "Location: ../auth.php" );
 		}
 	}

@@ -6,20 +6,25 @@
  * File		: settings.php
  * Developers 	: Anthony Todaro, Christian Westbrook
  *
- * Abstract 	: 
+ * Abstract 	:
  **************************************************************************/
 
 $css = array(
-		0 => 'settings'
-	    ); 
+				0 => 'settings'
+	    	);
 
 $js = array(
-		0 => 'validatePassword'
-	   );
+				0 => 'validatePassword'
+	   		);
 
 include('header.php');
 
- ?>
+if($sessionStarted == false)
+{
+   header('Location: /~orient/');
+}
+
+?>
 
 <div id="container">
 	<div id="settings">
@@ -34,7 +39,7 @@ include('header.php');
 		</form>
 
 		<p class="label">Change Password</p>
-		
+
 		<form>
 			<input type="password" name="old-password" placeholder="Old Password" class="field" /></br>
 			<input type="password" name="new-password" placeholder="New Password" class="field" /></br>

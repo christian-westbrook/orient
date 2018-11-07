@@ -1,3 +1,7 @@
+<?php
+	include 'session.php';
+?>
+
 <head>
 	<title>ORIENT</title>
 	<meta charset="utf-8">
@@ -5,9 +9,9 @@
 	<link rel="stylesheet" type="text/css" href="css/header.css" />
 	<link rel="stylesheet" type="text/css" href="css/footer.css" />
 	<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
-	
+
 	<?php
-	
+
 	// Generates css links
 	foreach($css as $key => $value)
 	{

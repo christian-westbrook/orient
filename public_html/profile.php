@@ -5,20 +5,25 @@
  * File		: profile.php
  * Developers 	: Christian Westbrook
  *
- * Abstract 	: 
+ * Abstract 	:
  **************************************************************************/
 
 $css = array(
-		0 => 'profile'
-	    ); 
-session_start();
-$profArr = $_SESSION['profArr'];
+				0 => 'profile'
+	    	);
+
 include('header.php');
- ?>
+
+if($sessionStarted == false)
+{
+   header('Location: /~orient/');
+}
+
+?>
 
 <div id="container">
 	<div id="profile">
-		
+
 	</div>
 </div>
 
