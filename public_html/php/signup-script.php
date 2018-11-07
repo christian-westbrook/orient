@@ -15,7 +15,6 @@ if($_POST['password'] == $_POST['confirm'])
 	$lname		= $_POST['lname'];
 
 	$ciphertext = password_hash($plaintext, PASSWORD_DEFAULT);
-	echo $ciphertext;
 
   	include 'database.php';
 
@@ -29,7 +28,7 @@ if($_POST['password'] == $_POST['confirm'])
 
 	if($stmt->execute())
 	{
-		//header( "Location: ../auth.php" );
+		header( "Location: ../auth.php" );
 	}
 	else
 	{
