@@ -56,7 +56,9 @@ function checkSession()
 //====================================================================
 function createSession($info)
 {
+	echo "Before assignment in createSession()";
 	$_SESSION['USER_ID']        = $info['USER_ID'];
+	echo "After assignment";
 }
 
 //====================================================================
