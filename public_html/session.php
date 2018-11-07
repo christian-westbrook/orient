@@ -57,6 +57,7 @@ function checkSession()
 function createSession($info)
 {
 	$_SESSION['USER_ID']        = $info['USER_ID'];
+	$_SESSION['ROLE_ID']		= $info['ROLE_ID'];
 }
 
 //====================================================================

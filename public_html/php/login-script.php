@@ -8,7 +8,7 @@
 
 	include 'database.php';
 
-	$sql  = 'SELECT USER_ID, PASSWORD FROM USERS WHERE EMAIL= :EMAIL';
+	$sql  = 'SELECT USER_ID, PASSWORD, ROLE_ID FROM USERS WHERE EMAIL= :EMAIL';
 
 	$stmt = $conn->prepare($sql);
 	$stmt->bindParam(':EMAIL', $email, PDO::PARAM_STR);
@@ -20,6 +20,7 @@
 		if($results && password_verify($plaintext, $results[0]['PASSWORD']))
 		{
 			$info['USER_ID'] 	= $results[0]['USER_ID'];
+			$info['ROLE_ID']	= $results[0]['ROLE_ID'];
 			createSession($info);
 			header( "Location: ../profile.php" );
 		}

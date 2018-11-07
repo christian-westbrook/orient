@@ -18,7 +18,7 @@ if($_POST['password'] == $_POST['confirm'])
 
   	include 'database.php';
 
-	$sql  = 'INSERT INTO USERS (EMAIL, PASSWORD, FNAME, LNAME, CREATE_TIME) VALUES (:EMAIL, :PASSWORD, :FNAME, :LNAME, NOW())';
+	$sql  = 'INSERT INTO USERS (EMAIL, PASSWORD, FNAME, LNAME, CREATE_TIME, ROLE_ID) VALUES (:EMAIL, :PASSWORD, :FNAME, :LNAME, NOW(), 1)';
 
 	$stmt = $conn->prepare($sql);
 	$stmt->bindParam(':EMAIL', $email, PDO::PARAM_STR);

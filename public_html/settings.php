@@ -61,7 +61,5 @@ if($sessionStarted == false)
 	</div>
 </div>
 
-</body>
-
 <!-- Defines the footer of each page -->
 <?php include('footer.php'); ?>

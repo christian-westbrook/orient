@@ -35,6 +35,7 @@ CREATE TABLE USERS
 	RESUME			VARCHAR(320),
 	CREATE_TIME		DATETIME		NOT NULL,
 	DEP_ID			INT,
+	ROLE_ID			INT				NOT NULL,
 	PRIMARY KEY (USER_ID),
 	FOREIGN KEY (DEP_ID) REFERENCES DEPARTMENTS(DEP_ID)
 );
@@ -183,7 +184,7 @@ INSERT INTO ROLES (NAME) VALUES ('INSTRUCTOR');
 INSERT INTO ROLES (NAME) VALUES ('ADMIN');
 
 -- LOAD TEST USERS
-INSERT INTO USERS (EMAIL, PASSWORD, FNAME, LNAME, TITLE, HOMETOWN, PHONE_NUM, BIO, PROFILE, CREATE_TIME, DEP_ID) VALUES ('christianwestbrook@live.com', 'abc123', 'Christian', 'Westbrook', 'Mr.', 'Van Buren', '123-456-7890', 'I like to read horror novels and take long walks at the beach.', './img/users/cwestbrook.jpg', NOW(), 6);
+INSERT INTO USERS (EMAIL, PASSWORD, FNAME, LNAME, TITLE, HOMETOWN, PHONE_NUM, BIO, PROFILE, CREATE_TIME, DEP_ID) VALUES ('christianwestbrook@live.com', 'abc123', 'Christian', 'Westbrook', 'Mr.', 'Van Buren', '123-456-7890', 'I like to read horror novels and take long walks at the beach.', './img/users/cwestbrook.jpg', NOW(), 6, 1);
 
 INSERT INTO USERS_UNIVERSITIES (USER_ID, UNIV_ID) VALUES (1, 2);
 INSERT INTO USERS_UNIVERSITIES (USER_ID, UNIV_ID) VALUES (1, 1);
