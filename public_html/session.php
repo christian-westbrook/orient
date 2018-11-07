@@ -29,7 +29,7 @@ function checkSession()
 {
 	// Ternary operation
 	// If the key 'ID' is set in the _SESSION associative array, return true. Else, return false.
-	return isset($_SESSION['ID']) ? true : false;
+	return isset($_SESSION['USER_ID']) ? true : false;
 }
 
 //====================================================================
@@ -56,9 +56,7 @@ function checkSession()
 //====================================================================
 function createSession($info)
 {
-	echo "Before assignment in createSession()";
 	$_SESSION['USER_ID']        = $info['USER_ID'];
-	echo "After assignment";
 }
 
 //====================================================================
