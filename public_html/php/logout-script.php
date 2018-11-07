@@ -3,7 +3,7 @@ include '../session.php';
 
 if(closeSession())
 {
-	header('Location: ../~orient/');
+	header('Location: /~orient/');
 }
 
 ?>
