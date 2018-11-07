@@ -6,11 +6,6 @@
 	$email      = $_POST['email'];
 	$plaintext  = $_POST['password'];
 
-
-	// Encrypt the provided plaintext password
-	$ciphertext = password_hash($plaintext, PASSWORD_DEFAULT);
-
-
 	include 'database.php';
 
 	$sql  = 'SELECT USER_ID, PASSWORD FROM USERS WHERE EMAIL= :EMAIL';
@@ -22,7 +17,7 @@
 	{
 		$results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-		if($results && password_verify($ciphertext, $results[0]['PASSWORD']))
+		if($results && password_verify($plaintext, $results[0]['PASSWORD']))
 		{
 			$info['USER_ID'] 	= $results[0]['USER_ID'];
 			createSession($info);
