@@ -56,7 +56,7 @@ function checkSession()
 //====================================================================
 function createSession($info)
 {
-	$_SESSION['USER_ID']        = $info;
+	$_SESSION['USER_ID']        = $info['USER_ID'];
 }
 
 //====================================================================

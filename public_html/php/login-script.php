@@ -25,8 +25,7 @@
 
 		if($results)
 		{
-			$info = $results[0]['USER_ID'];
-			echo $info;
+			$info['USER_ID'] = $results[0]['USER_ID'];
 			createSession($info);
 			header( "Location: ../profile.php" );
 		}
