@@ -46,5 +46,4 @@ include 'session.php';
 			echo '<a href="auth.php" id="log-in"><p>Log In</p></a>';
 		}
 	?>
-
 </div>
