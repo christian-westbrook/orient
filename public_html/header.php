@@ -35,7 +35,7 @@ include 'session.php';
 			echo '<a href="settings.php"><p>Settings</p></a>';
 			echo '<input type="text" placeholder="Search..." />';
 			echo '<a href="results.php"><p>Search</p></a>';
-			echo '<a href="php/logout-script.php"><p id="log-out">Logout</p></a>';
+			echo '<a href="php/logout-script.php" id="log-out"><p>Logout</p></a>';
 		}
 		else
 		{
