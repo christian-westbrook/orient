@@ -46,6 +46,17 @@ if($sessionStarted == false)
 			<input type="password" name="confirm-password" placeholder="Confirm" class="field" /></br>
 			<input type="submit" value="Change Password" class="sub-button">
 		</form>
+
+		<p class="label">Update Profile Information</p>
+
+		<form>
+			<input type="text" name="fname" placeholder="First Name" class="field" /></br>
+			<input type="text" name="lname" placeholder="Last Name" class="field" /></br>
+			<input type="text" name="title" placeholder="Title" class="field" /></br>
+			<input type="text" name="hometown" placeholder="Hometown" class="field" /></br>
+			<input type="text" name="phone_num" placeholder="Phone Number" class="field" /></br>
+			<input type="textarea" name="bio" placeholder="Bio" class="field" /></br>
+		</form>
 	</div>
 </div>
 
