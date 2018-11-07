@@ -1,5 +1,7 @@
 <?php
 
+	include 'session.php';
+
 	// Get the user information provided through POST
 	$email      = $_POST['email'];
 	$plaintext  = $_POST['password'];
@@ -25,8 +27,8 @@
 		{
 			$info = $results[0]['USER_ID'];
 			echo $info;
-			//createSession($info);
-			//header( "Location: ../profile.php" );
+			createSession($info);
+			header( "Location: ../profile.php" );
 		}
 		else
 		{
