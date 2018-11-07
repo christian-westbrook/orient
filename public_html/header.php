@@ -30,20 +30,20 @@ include 'session.php';
 	<?php
 		if($sessionStarted == true)
 		{
-			<a href="index.php"><p id="home-link">ORIENT</p></a>
-			<a href="profile.php"><p>Profile</p></a>
-			<a href="settings.php"><p>Settings</p></a>
-			<input type="text" placeholder="Search..." />
-			<a href="results.php"><p>Search</p></a>
-			<a href="php/logout-script.php" id="log-out"><p>Logout</p></a>
+			echo '<a href="index.php"><p id="home-link">ORIENT</p></a>';
+			echo '<a href="profile.php"><p>Profile</p></a>';
+			echo '<a href="settings.php"><p>Settings</p></a>';
+			echo '<input type="text" placeholder="Search..." />';
+			echo '<a href="results.php"><p>Search</p></a>';
+			echo '<a href="php/logout-script.php" id="log-out"><p>Logout</p></a>';
 		}
 		else
 		{
-			<a href="index.php"><p id="home-link">ORIENT</p></a>
-			<input type="text" placeholder="Search..." />
-			<a href="results.php"><p>Search</p></a>
-			<a href="signup.php" id="sign-up"><p>Sign Up</p></a>
-			<a href="auth.php" id="log-in"><p>Log In</p></a>
+			echo '<a href="index.php"><p id="home-link">ORIENT</p></a>';
+			echo '<input type="text" placeholder="Search..." />';
+			echo '<a href="results.php"><p>Search</p></a>';
+			echo '<a href="signup.php" id="sign-up"><p>Sign Up</p></a>';
+			echo '<a href="auth.php" id="log-in"><p>Log In</p></a>';
 		}
 	?>
 
