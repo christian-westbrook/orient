@@ -13,19 +13,18 @@
 
 	include 'database.php';
 
-	$sql  = 'SELECT USER_ID FROM USERS WHERE EMAIL= :EMAIL AND PASSWORD= :PASSWORD';
+	$sql  = 'SELECT USER_ID, PASSWORD FROM USERS WHERE EMAIL= :EMAIL';
 
 	$stmt = $conn->prepare($sql);
 	$stmt->bindParam(':EMAIL', $email, PDO::PARAM_STR);
-	$stmt->bindParam(':PASSWORD', $ciphertext, PDO::PARAM_STR);
 
 	if($stmt->execute())
 	{
 		$results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-		if($results)
+		if($results && password_verify($ciphertext, $results[0]['PASSWORD']))
 		{
-			$info['USER_ID'] = $results[0]['USER_ID'];
+			$info['USER_ID'] 	= $results[0]['USER_ID'];
 			createSession($info);
 			header( "Location: ../profile.php" );
 		}
