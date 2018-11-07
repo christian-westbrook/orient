@@ -11,7 +11,7 @@
 
 	include 'database.php';
 
-	$sql  = 'SELECT * FROM USERS WHERE EMAIL= :EMAIL AND PASSWORD= :PASSWORD';
+	$sql  = 'SELECT USER_ID FROM USERS WHERE EMAIL= :EMAIL AND PASSWORD= :PASSWORD';
 
 	$stmt = $conn->prepare($sql);
 	$stmt->bindParam(':EMAIL', $email, PDO::PARAM_STR);
@@ -20,11 +20,12 @@
 	if($stmt->execute())
 	{
 		$results = $stmt->fetchAll();
+
 		if($results)
 		{
-			session_start();
-			$_SESSION['profArr'] = $results;
-			header( "Location: ../profile.php" );
+			print_r($results);
+			//createSession();
+			//header( "Location: ../profile.php" );
 		}
 		else
 		{
