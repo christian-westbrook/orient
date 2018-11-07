@@ -19,7 +19,7 @@
 
 	if($stmt->execute())
 	{
-		$results = $stmt->fetchAll();
+		$results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 		if($results)
 		{
