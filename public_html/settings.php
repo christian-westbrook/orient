@@ -32,7 +32,7 @@ if($sessionStarted == false)
 
 		<p class="label">Change Email</p>
 
-		<form>
+		<form action="php/change-email-script.php" method="POST">
 			<input type="text" name="email" placeholder="New Email" class="field" /></br>
 			<input type="text" name="confirm-email" placeholder="Confirm" class="field" /></br>
 			<input type="submit" value="Change Email" class="sub-button">
@@ -40,7 +40,7 @@ if($sessionStarted == false)
 
 		<p class="label">Change Password</p>
 
-		<form>
+		<form action="php/change-password-script.php" method="POST">
 			<input type="password" name="old-password" placeholder="Old Password" class="field" /></br>
 			<input type="password" name="new-password" placeholder="New Password" class="field" /></br>
 			<input type="password" name="confirm-password" placeholder="Confirm" class="field" /></br>
@@ -49,7 +49,7 @@ if($sessionStarted == false)
 
 		<p class="label">Update Profile Information</p>
 
-		<form>
+		<form action="php/update-profile-script.php" method="POST">
 			<input type="text" name="fname" placeholder="First Name" class="field" /></br>
 			<input type="text" name="lname" placeholder="Last Name" class="field" /></br>
 			<input type="text" name="title" placeholder="Title" class="field" /></br>
