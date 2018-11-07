@@ -36,6 +36,6 @@
 	}
 	else
 	{
-		echo "something goofed";
+		echo "Unable to access the ORIENT database.";
 	}
 ?>
