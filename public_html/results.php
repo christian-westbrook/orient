@@ -32,7 +32,7 @@ include('header.php');
 
 				if($results)
 				{
-					echo "<p>" . $results[0]['USER_ID'] . "</p>";
+					print_r($results);
 				}
 			}
 		?>
