@@ -2,7 +2,7 @@
     include '..\session.php';
 
     // Get the user information provided through POST
-    $id         = (string) $_SESSION['USER_ID'];
+    $id         = 2;
     $fname      = $_POST['fname'];
     $lname      = $_POST['lname'];
     $title      = $_POST['title'];
