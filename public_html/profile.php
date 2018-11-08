@@ -29,7 +29,7 @@ else
 	$id = $_SESSION['USER_ID'];
 }
 
-$id = intval($_SESSION['USER_ID']);
+$id = $_SESSION['USER_ID'];
 echo $id;
 
 // Retrieve the given user's info
