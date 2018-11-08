@@ -32,12 +32,12 @@
         $ok = false;
     }
 
-    /*// Limit file format
+    // Limit file format
     if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "gif" )
     {
         echo "Invalid file type.";
         $ok = false;
-    }*/
+    }
 
     if(!$ok)
     {
