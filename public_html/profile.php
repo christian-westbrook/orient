@@ -19,8 +19,6 @@ if($sessionStarted == false)
    $id = $_GET['SEARCH_ID'];
 }
 
-echo "HERE";
-
 // Get the ID of the user to display
 if(isset($_GET['SEARCH_ID']))
 {
