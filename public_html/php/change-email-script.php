@@ -23,7 +23,7 @@
 
         if($stmt->execute())
     	{
-            header( "Location: ../settings.php" );
+            header( "Location: ../profile.php" );
         }
         else
         {

@@ -43,32 +43,4 @@
             }
         }
     }
-
-
-
-
-
-
-
-
-
-    if($email == $confirm)
-    {
-        include 'database.php';
-
-        $sql = 'UPDATE USERS SET EMAIL= :EMAIL WHERE USER_ID= :USER_ID';
-
-        $stmt = $conn->prepare($sql);
-        $stmt->bindParam(':EMAIL', $email, PDO::PARAM_STR);
-        $stmt->bindParam(':USER_ID', $id, PDO::PARAM_STR);
-
-        if($stmt->execute())
-    	{
-            header( "Location: ../settings.php" );
-        }
-        else
-        {
-            echo "Unable to update database.";
-        }
-    }
 ?>
