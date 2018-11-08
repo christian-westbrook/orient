@@ -29,6 +29,8 @@ else
 	$id = $_SESSION['USER_ID'];
 }
 
+$id = $_SESSION['USER_ID'];
+
 // Retrieve the given user's info
 include 'php/database.php';
 
