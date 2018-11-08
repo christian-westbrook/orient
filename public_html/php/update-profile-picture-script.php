@@ -11,7 +11,7 @@
     $ok         = true;
     $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
 
-    /*// Check if image file is a actual image or fake image
+    // Check if image file is a actual image or fake image
     if(isset($_POST["pic-sub"]))
     {
         $check = getimagesize($_FILES["profile"]["tmp_name"]);
@@ -23,7 +23,7 @@
         {
             $ok = false;
         }
-    }*/
+    }
 
     // Limit file size
     if ($_FILES["profile"]["size"] > 500000)
@@ -32,12 +32,12 @@
         $ok = false;
     }
 
-    // Limit file format
-    if($imageFileType != ".jpg" && $imageFileType != ".png" && $imageFileType != ".jpeg" && $imageFileType != ".gif" )
+    /*// Limit file format
+    if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "gif" )
     {
         echo "Invalid file type.";
         $ok = false;
-    }
+    }*/
 
     if(!$ok)
     {
