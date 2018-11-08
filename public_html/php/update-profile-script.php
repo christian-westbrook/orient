@@ -2,7 +2,7 @@
     include '..\session.php';
 
     // Get the user information provided through POST
-    $id         = $_SESSION['USER_ID'];
+    $id         = intval($_SESSION['USER_ID']);
     $fname      = $_POST['fname'];
     $lname      = $_POST['lname'];
     $title      = $_POST['title'];
@@ -12,14 +12,13 @@
 
     include 'database.php';
 
-    echo $fname;
     if($fname !== '')
     {
-        $sql = 'UPDATE USERS SET FNAME= :FNAME WHERE USER_ID=2';
+        $sql = 'UPDATE USERS SET FNAME= :FNAME WHERE USER_ID=:USER_ID';
 
         $stmt = $conn->prepare($sql);
         $stmt->bindParam(':FNAME', $fname, PDO::PARAM_STR);
-        //$stmt->bindParam(':USER_ID', $id, PDO::PARAM_INT);
+        $stmt->bindParam(':USER_ID', $id, PDO::PARAM_INT);
         $stmt->execute();
     }
 
@@ -73,5 +72,5 @@
         $stmt->execute();
     }
 
-    //header( "Location: ../profile.php" );
+    header( "Location: ../profile.php" );
 ?>
