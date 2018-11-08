@@ -53,7 +53,7 @@ html, body
 
 #header sub
 {
-		float: left;
+		float: right;
 }
 
 #log-in, #sign-up, #log-out
