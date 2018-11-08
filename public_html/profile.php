@@ -51,12 +51,84 @@ if($stmt->execute())
 		$phone_num	= $results[0]['PHONE_NUM'];
 		$bio		= $results[0]['BIO'];
 		$hometown	= $results[0]['HOMETOWN'];
-		$profile	= $results[0]['PROFILE'];
 	}
 }
 else
 {
 	echo "Unable to find that user.";
+}
+
+// Grab data from the USERS_UNIVERSITIES table
+$sql = "SELECT UNIVERSITIES.NAME FROM UNIVERSITIES INNER JOIN USERS_UNIVERSITIES ON UNIVERSITIES.UNIV_ID = USERS_UNIVERSITIES.UNIV_ID WHERE USERS_UNIVERSITIES.USER_ID= :ID";
+$stmt = $conn->prepare($sql);
+$stmt->bindParam(':ID', $id, PDO::PARAM_STR);
+if($stmt->execute())
+{
+	$results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+	$universities;
+
+	$length = count($results);
+	for($i = 0; $i < $length; $i++)
+	{
+		$universities[$i] = $results[$i]['NAME'];
+	}
+
+	$_POST['UNIVERSITIES'] = $universities;
+}
+// Grab data from the USERS_EMPLOYERS table
+$sql = "SELECT EMPLOYERS.NAME FROM EMPLOYERS INNER JOIN USERS_EMPLOYERS ON EMPLOYERS.EMP_ID = USERS_EMPLOYERS.EMP_ID WHERE USERS_EMPLOYERS.USER_ID= :ID";
+$stmt = $conn->prepare($sql);
+$stmt->bindParam(':ID', $id, PDO::PARAM_STR);
+if($stmt->execute())
+{
+	$results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+	$employers;
+
+	$length = count($results);
+	for($i = 0; $i < $length; $i++)
+	{
+		$employers[$i] = $results[$i]['NAME'];
+	}
+
+	$_POST['EMPLOYERS'] = $employers;
+}
+// Grab data from the USERS_SKILLS table
+$sql = "SELECT SKILLS.NAME FROM SKILLS INNER JOIN USERS_SKILLS ON SKILLS.SKILL_ID = USERS_SKILLS.SKILL_ID WHERE USERS_SKILLS.USER_ID= :ID";
+$stmt = $conn->prepare($sql);
+$stmt->bindParam(':ID', $id, PDO::PARAM_STR);
+if($stmt->execute())
+{
+	$results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+	$skills;
+
+	$length = count($results);
+	for($i = 0; $i < $length; $i++)
+	{
+		$skills[$i] = $results[$i]['NAME'];
+	}
+
+	$_POST['SKILLS'] = $skills;
+}
+// Grab data from the USERS_INTERESTS table
+$sql = "SELECT INTERESTS.NAME FROM INTERESTS INNER JOIN USERS_INTERESTS ON INTERESTS.INT_ID = USERS_INTERESTS.INT_ID WHERE USERS_INTERESTS.USER_ID= :ID";
+$stmt = $conn->prepare($sql);
+$stmt->bindParam(':ID', $id, PDO::PARAM_STR);
+if($stmt->execute())
+{
+	$results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+	$interests;
+
+	$length = count($results);
+	for($i = 0; $i < $length; $i++)
+	{
+		$interests[$i] = $results[$i]['NAME'];
+	}
+
+	$_POST['INTERESTS'] = $interests;
 }
 
 ?>
