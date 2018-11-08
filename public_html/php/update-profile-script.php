@@ -19,7 +19,7 @@
 
         $stmt = $conn->prepare($sql);
         $stmt->bindParam(':FNAME', $fname, PDO::PARAM_STR);
-        $stmt->bindParam(':USER_ID', $id, PDO::PARAM_INT);
+        //$stmt->bindParam(':USER_ID', $id, PDO::PARAM_INT);
         $stmt->execute();
     }
 
