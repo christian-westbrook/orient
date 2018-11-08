@@ -34,7 +34,7 @@ include 'session.php';
 			echo '<a href="index.php"><p id="home-link">ORIENT</p></a>';
 			echo '<a href="profile.php"><p>Profile</p></a>';
 			echo '<a href="settings.php"><p>Settings</p></a>';
-			echo '<form action="results.php" method="POST"><input type="text" name = "search" placeholder="Search..." /><input type="submit" value="Search"></form>';
+			echo '<form action="results.php" method="POST"><input type="text" name = "search" placeholder="Search..." /><input type="submit" value="Search" id="sub"></form>';
 			echo '<a href="php/logout-script.php" id="log-out"><p>Logout</p></a>';
 		}
 		else

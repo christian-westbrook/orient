@@ -51,6 +51,11 @@ html, body
 	margin-left: 20vw;
 }
 
+#header sub
+{
+		float: left;
+}
+
 #log-in, #sign-up, #log-out
 {
 	float: right;
