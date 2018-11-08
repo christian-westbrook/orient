@@ -1,11 +1,6 @@
 <?php
     include '..\session.php';
 
-    if($sessionStarted == false)
-    {
-       header('Location: /~orient/');
-    }
-
     // Get the user information provided through POST
 	$email      = $_POST['email'];
 	$confirm    = $_POST['confirm-email'];
