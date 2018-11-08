@@ -52,6 +52,7 @@ if($sessionStarted == false)
 		<form action="php/update-profile-script.php" method="POST">
 			<input type="text" name="fname" placeholder="First Name" class="field" /></br>
 			<input type="text" name="lname" placeholder="Last Name" class="field" /></br>
+			<input type="file" name="profile" placeholder="Profile Picture" class="field" /></br>
 			<input type="text" name="title" placeholder="Title" class="field" /></br>
 			<input type="text" name="hometown" placeholder="Hometown" class="field" /></br>
 			<input type="text" name="phone-num" placeholder="Phone Number" class="field" /></br>
