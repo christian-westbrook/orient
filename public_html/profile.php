@@ -34,7 +34,7 @@ $id = $_SESSION['USER_ID'];
 // Retrieve the given user's info
 include 'php/database.php';
 
-$sql = "SELECT USERS.FNAME, USERS.LNAME, USERS.TITLE, DEPARTMENTS.NAME, USERS.EMAIL, USERS.PHONE_NUM, USERS.BIO, USERS.PROFILE, USERS.HOMETOWN FROM USERS INNER JOIN DEPARTMENTS ON USERS.DEP_ID = DEPARTMENTS.DEP_ID WHERE USERS.USER_ID= :ID";
+$sql = "SELECT FNAME, LNAME, TITLE, EMAIL, PHONE_NUM, BIO, PROFILE, HOMETOWN FROM USERS WHERE USER_ID= :ID";
 
 $stmt = $conn->prepare($sql);
 $stmt->bindParam(':ID', $id, PDO::PARAM_STR);
@@ -47,7 +47,6 @@ if($stmt->execute())
 	{
 		$results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 		$_POST['NAME'] = $results[0]['TITLE'] . " " . $results[0]['FNAME'] . " " . $results[0]['LNAME'];
-		$_POST['DEP'] = $results[0]['NAME'];
 		$_POST['EMAIL'] = $results[0]['EMAIL'];
 		$_POST['PHONE_NUM'] = $results[0]['PHONE_NUM'];
 		$_POST['BIO'] = $results[0]['BIO'];
