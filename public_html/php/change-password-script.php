@@ -12,7 +12,7 @@
 	$sql  = 'SELECT PASSWORD FROM USERS WHERE USER_ID= :USER_ID';
 
     $stmt = $conn->prepare($sql);
-	$stmt->bindParam(':USER_ID', $id, PDO::PARAM_STR);
+	$stmt->bindParam(':USER_ID', $id, PDO::PARAM_INT);
 
     if($stmt->execute())
 	{

@@ -18,7 +18,7 @@
 
         $stmt = $conn->prepare($sql);
         $stmt->bindParam(':FNAME', $fname, PDO::PARAM_STR);
-        $stmt->bindParam(':USER_ID', $id, PDO::PARAM_STR);
+        $stmt->bindParam(':USER_ID', $id, PDO::PARAM_INT);
         $stmt->execute();
     }
 
@@ -28,7 +28,7 @@
 
         $stmt = $conn->prepare($sql);
         $stmt->bindParam(':LNAME', $lname, PDO::PARAM_STR);
-        $stmt->bindParam(':USER_ID', $id, PDO::PARAM_STR);
+        $stmt->bindParam(':USER_ID', $id, PDO::PARAM_INT);
         $stmt->execute();
     }
 
@@ -38,7 +38,7 @@
 
         $stmt = $conn->prepare($sql);
         $stmt->bindParam(':TITLE', $title, PDO::PARAM_STR);
-        $stmt->bindParam(':USER_ID', $id, PDO::PARAM_STR);
+        $stmt->bindParam(':USER_ID', $id, PDO::PARAM_INT);
         $stmt->execute();
     }
 
@@ -48,7 +48,7 @@
 
         $stmt = $conn->prepare($sql);
         $stmt->bindParam(':HOMETOWN', $hometown, PDO::PARAM_STR);
-        $stmt->bindParam(':USER_ID', $id, PDO::PARAM_STR);
+        $stmt->bindParam(':USER_ID', $id, PDO::PARAM_INT);
         $stmt->execute();
     }
 
@@ -58,7 +58,7 @@
 
         $stmt = $conn->prepare($sql);
         $stmt->bindParam(':PHONE_NUM', $phone_num, PDO::PARAM_STR);
-        $stmt->bindParam(':USER_ID', $id, PDO::PARAM_STR);
+        $stmt->bindParam(':USER_ID', $id, PDO::PARAM_INT);
         $stmt->execute();
     }
 
@@ -68,7 +68,7 @@
 
         $stmt = $conn->prepare($sql);
         $stmt->bindParam(':BIO', $bio, PDO::PARAM_STR);
-        $stmt->bindParam(':USER_ID', $id, PDO::PARAM_STR);
+        $stmt->bindParam(':USER_ID', $id, PDO::PARAM_INT);
         $stmt->execute();
     }
 

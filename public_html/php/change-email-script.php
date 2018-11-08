@@ -14,7 +14,7 @@
 
         $stmt = $conn->prepare($sql);
         $stmt->bindParam(':EMAIL', $email, PDO::PARAM_STR);
-        $stmt->bindParam(':USER_ID', $id, PDO::PARAM_STR);
+        $stmt->bindParam(':USER_ID', $id, PDO::PARAM_INT);
 
         if($stmt->execute())
     	{
