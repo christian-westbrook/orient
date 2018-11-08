@@ -45,14 +45,14 @@ if($stmt->execute())
 
 	if($results)
 	{
-		$fname 		= $results[0]['FNAME'];
-		$lname 		= $results[0]['LNAME'];
-		$title		= $results[0]['TITLE'];
-		$dep		= $results[0]['NAME'];
-		$email		= $results[0]['EMAIL'];
-		$phone_num	= $results[0]['PHONE_NUM'];
-		$bio		= $results[0]['BIO'];
-		$hometown	= $results[0]['HOMETOWN'];
+		$results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+		$_POST['NAME'] = $results[0]['TITLE'] . " " . $results[0]['FNAME'] . " " . $results[0]['LNAME'];
+		$_POST['DEP'] = $results[0]['NAME'];
+		$_POST['EMAIL'] = $results[0]['EMAIL'];
+		$_POST['PHONE_NUM'] = $results[0]['PHONE_NUM'];
+		$_POST['BIO'] = $results[0]['BIO'];
+		$_POST['PROFILE'] = $results[0]['PROFILE'];
+		$_POST['HOMETOWN'] = $results[0]['HOMETOWN'];
 	}
 }
 else
