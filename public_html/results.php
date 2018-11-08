@@ -21,6 +21,8 @@ include('header.php');
 		<?php
 			include 'php/database.php';
 
+			echo $search;
+
 			$search = $_POST['search'];
 			$search = "%$search%";
 
