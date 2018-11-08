@@ -12,17 +12,16 @@
 
     include 'database.php';
 
+    echo $fname;
     if($fname !== '')
     {
+        echo "HERE";
         $sql = 'UPDATE USERS SET FNAME= :FNAME WHERE USER_ID= :USER_ID';
 
         $stmt = $conn->prepare($sql);
         $stmt->bindParam(':FNAME', $fname, PDO::PARAM_STR);
         $stmt->bindParam(':USER_ID', $id, PDO::PARAM_INT);
-        if(!$stmt->execute())
-        {
-            echo "Problem executing";
-        }
+        $stmt->execute();
     }
 
     if($lname !== '')
