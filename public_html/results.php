@@ -22,7 +22,7 @@ include('header.php');
 			include 'php/database.php';
 
 			$search = $_POST['search'];
-			$search = "%$search%";
+			$search = "$search";
 
 			$sql = 'SELECT USERS_INTERESTS.USER_ID, USERS_INTERESTS.INT_ID, INTERESTS.NAME FROM USERS_INTERESTS INNER JOIN INTERESTS ON USERS_INTERESTS.INT_ID = INTERESTS.INT_ID WHERE INTERESTS.NAME LIKE :SEARCH';
 			$stmt->bindParam(':SEARCH', $search, PDO::PARAM_STR);
