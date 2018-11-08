@@ -51,7 +51,7 @@ if($sessionStarted == false)
 
 		<form action="php/update-profile-picture-script.php" method="POST">
 			<input type="file" name="profile" placeholder="Profile Picture" class="field" /></br>
-			<input type="submit" value="Update Profile Picture" class="sub-button">
+			<input type="submit" value="Update Profile Picture" class="sub-button" name="pic-sub">
 		</form>
 
 		<p class="label">Update Profile Information</p>
