@@ -38,7 +38,7 @@ include 'php/database.php';
 $sql = "SELECT FNAME, LNAME, TITLE, EMAIL, PHONE_NUM, BIO, PROFILE, HOMETOWN FROM USERS WHERE USER_ID= :ID";
 
 $stmt = $conn->prepare($sql);
-$stmt->bindParam(':ID', $id, PDO::PARAM_STR);
+$stmt->bindParam(':ID', $id, PDO::PARAM_INT);
 
 if($stmt->execute())
 {
