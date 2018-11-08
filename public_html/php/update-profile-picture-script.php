@@ -9,7 +9,7 @@
     $target_file    = $target_dir . basename($_FILES["profile"]["name"]);
 
     $ok         = true;
-    $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+    $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
 
     // Check if image file is a actual image or fake image
     if(isset($_POST["pic-sub"]))
@@ -33,7 +33,7 @@
     }
 
     // Limit file format
-    if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "gif" )
+    if($imageFileType != ".jpg" && $imageFileType != ".png" && $imageFileType != ".jpeg" && $imageFileType != ".gif" )
     {
         echo "Invalid file type.";
         $ok = false;
