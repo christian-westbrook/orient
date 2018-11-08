@@ -30,7 +30,6 @@ else
 }
 
 $id = $_SESSION['USER_ID'];
-echo $id;
 
 // Retrieve the given user's info
 include 'php/database.php';
