@@ -10,7 +10,6 @@
 
 // Starts the PHP session by creating/retrieving the $_SESSION associative array.
 session_start();
-echo $_SESSION['USER_ID'];
 
 //====================================================================
 // Function	: checkSession()
