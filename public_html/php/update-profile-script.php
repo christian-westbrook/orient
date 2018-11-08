@@ -19,7 +19,10 @@
         $stmt = $conn->prepare($sql);
         $stmt->bindParam(':FNAME', $fname, PDO::PARAM_STR);
         $stmt->bindParam(':USER_ID', $id, PDO::PARAM_INT);
-        $stmt->execute();
+        if(!$stmt->execute())
+        {
+            echo "Problem executing;"
+        }
     }
 
     if($lname !== '')
@@ -72,5 +75,5 @@
         $stmt->execute();
     }
 
-    header( "Location: ../profile.php" );
+    //header( "Location: ../profile.php" );
 ?>
