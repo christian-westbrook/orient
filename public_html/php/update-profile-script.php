@@ -21,7 +21,7 @@
         $stmt->bindParam(':USER_ID', $id, PDO::PARAM_INT);
         if(!$stmt->execute())
         {
-            echo "Problem executing;"
+            echo "Problem executing";
         }
     }
 
