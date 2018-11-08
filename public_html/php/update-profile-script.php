@@ -1,5 +1,5 @@
 <?php
-    include '..\session.php';
+    include '../session.php';
 
     // Get the user information provided through POST
     $id         = (string) $_SESSION['USER_ID'];
