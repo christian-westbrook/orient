@@ -25,7 +25,7 @@
 
 #profile
 {
-	color: white;
+	color: black;
 
 	margin: 0 auto;
 	text-align: center;
@@ -120,7 +120,7 @@
 	width: 50%;
 	float: left;
 }
-#dataContainerTwo #right 
+#dataContainerTwo #right
 {
 	width: 50%;
 	float: right;

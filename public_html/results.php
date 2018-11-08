@@ -5,12 +5,12 @@
  * File		: results.php
  * Developers 	: Christian Westbrook
  *
- * Abstract 	: 
+ * Abstract 	:
  **************************************************************************/
 
 $css = array(
 		0 => 'results'
-	    ); 
+	    );
 
 include('header.php');
 
@@ -18,7 +18,14 @@ include('header.php');
 
 <div id="container">
 	<div id="results">
-		
+		<?php
+			include 'php/database.php';
+
+			
+
+			$sql = 'SELECT USERS_INTERESTS.USER_ID FROM USERS_INTERESTS INNER JOIN INTERESTS ON USERS_INTERESTS.INT_ID = INTERESTS.INT_ID WHERE INTERESTS.NAME LIKE :SEARCH';
+			$stmt->bindParam(':SEARCH', $search, PDO::PARAM_STR);
+		?>
 	</div>
 </div>
 
