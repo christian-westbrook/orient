@@ -46,7 +46,6 @@ if($stmt->execute())
 
 	if($results)
 	{
-		$results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 		$_POST['NAME'] = $results[0]['TITLE'] . " " . $results[0]['FNAME'] . " " . $results[0]['LNAME'];
 		$_POST['EMAIL'] = $results[0]['EMAIL'];
 		$_POST['PHONE_NUM'] = $results[0]['PHONE_NUM'];
