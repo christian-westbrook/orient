@@ -10,13 +10,10 @@
     $id         = $_SESSION['USER_ID'];
     $fname      = $_POST['fname'];
     $lname      = $_POST['lname'];
-    $profile    = $_POST['profile'];
     $title      = $_POST['title'];
     $hometown   = $_POST['hometown'];
     $phone_num  = $_POST['phone-num'];
     $bio        = $_POST['bio'];
-
-    echo $profile;
 
     include 'database.php';
 

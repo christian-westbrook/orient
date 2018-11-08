@@ -47,12 +47,18 @@ if($sessionStarted == false)
 			<input type="submit" value="Change Password" class="sub-button">
 		</form>
 
+		<p class="label">Update Profile Picture</p>
+
+		<form action="php/update-profile-picture-script.php" method="POST">
+			<input type="file" name="profile" placeholder="Profile Picture" class="field" /></br>
+			<input type="submit" value="Update Profile Picture" class="sub-button">
+		</form>
+
 		<p class="label">Update Profile Information</p>
 
 		<form action="php/update-profile-script.php" method="POST">
 			<input type="text" name="fname" placeholder="First Name" class="field" /></br>
 			<input type="text" name="lname" placeholder="Last Name" class="field" /></br>
-			<input type="file" name="profile" placeholder="Profile Picture" class="field" /></br>
 			<input type="text" name="title" placeholder="Title" class="field" /></br>
 			<input type="text" name="hometown" placeholder="Hometown" class="field" /></br>
 			<input type="text" name="phone-num" placeholder="Phone Number" class="field" /></br>
