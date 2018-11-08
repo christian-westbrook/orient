@@ -2,7 +2,7 @@
     include '..\session.php';
 
     // Get the user information provided through POST
-    $id         = $_SESSION['USER_ID'];
+    $id         = (string) $_SESSION['USER_ID'];
     $fname      = $_POST['fname'];
     $lname      = $_POST['lname'];
     $title      = $_POST['title'];
@@ -14,7 +14,7 @@
 
     if($fname !== '')
     {
-        $sql = 'UPDATE USERS SET FNAME= :FNAME WHERE USER_ID={$id}';
+        $sql = 'UPDATE USERS SET FNAME= :FNAME WHERE USER_ID=' . $id;
 
         $stmt = $conn->prepare($sql);
         $stmt->bindParam(':FNAME', $fname, PDO::PARAM_STR);
