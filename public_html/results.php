@@ -32,10 +32,7 @@ include('header.php');
 
 				if($results)
 				{
-					foreach ($results as $key)
-					{
-						echo $key['USER_ID'];
-					}
+					echo $results[0]['USER_ID'];
 				}
 			}
 		?>
