@@ -14,7 +14,7 @@
 
     if($fname !== '')
     {
-        $sql = "UPDATE USERS SET FNAME= :FNAME WHERE USER_ID= " . $_SESSION['USER_ID'];
+        $sql = "UPDATE USERS SET FNAME= :FNAME WHERE USER_ID= " . $id;
 
         $stmt = $conn->prepare($sql);
         $stmt->bindParam(':FNAME', $fname, PDO::PARAM_STR);
