@@ -27,7 +27,7 @@
         }
         else
         {
-            echo "Unable to update databse.";
+            echo "Unable to update database.";
         }
     }
 ?>
