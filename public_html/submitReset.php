@@ -20,7 +20,7 @@
 		}
 		else
 		{
-			header( "Location: ../auth.php" );
+			echo "you goofed.";
 		}
 	}
 	else
