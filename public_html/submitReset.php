@@ -4,7 +4,7 @@
 		echo "error! you need to submit the form!";
 	}
 	$email = $_POST['email'];
-	include 'database.php';
+	include 'php/database.php';
 	$sql  = 'SELECT * USERS WHERE EMAIL= :EMAIL';
 	$stmt = $conn->prepare($sql);
 	$stmt->bindParam(':EMAIL', $email, PDO::PARAM_STR)
