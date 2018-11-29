@@ -133,98 +133,96 @@ if($stmt->execute())
 
 ?>
 
-<div id="container">
-	<div id="profile">
+	<div id="container">
+		<div id="profile">
 
-		<div id="dataContainerOne">
+			<div id="dataContainerOne">
 
-			<img id="profilePicture" src="<?php echo $_POST['PROFILE']; ?>">
+				<img id="profilePicture" src="<?php echo $_POST['PROFILE']; ?>">
 
-			<div id="userDesc">
-				<h1><?php echo $_POST['NAME']; ?></h1>
-				<h1>DEPARTMENT</h1>
-				<br>
-				<h5>Bio</h5>
-				<p><?php echo $_POST['BIO']; ?></p>
-				<h5>Skills</h5>
-				<p>
-				<?php
-					$skills = $_POST['SKILLS'];
-
-					$length = count($skills);
-					for($i = 0; $i < $length; $i++)
-					{
-						echo $skills[$i] . " ";
-					}
-				?>
-				</p>
-				<h5>Research Interests</h5>
-				<p>
-				<?php
-					$interests = $_POST['INTERESTS'];
-
-					$length = count($interests);
-					for($i = 0; $i < $length; $i++)
-					{
-						echo $interests[$i] . " ";
-					}
-				?>
-				</p>
-			</div>
-
-		</div>
-
-		<div id="dataContainerTwo">
-			<div id="left">
-				<h3>Hometown</h3>
-				<br>
-				<h3>Email</h3>
-				<br>
-				<h3>Phone Number</h3>
-				<br>
-				<h3>Universities</h3>
-				<br>
-				<h3>Employers</h3>
-			</div>
-
-			<div id="right">
-				<h3><?php echo $_POST['HOMETOWN']; ?></h3>
-				<br>
-				<h3><?php echo $_POST['EMAIL']; ?></h3>
-				<br>
-				<h3><?php echo $_POST['PHONE_NUM']; ?></h3>
-				<br>
-				<h3>
+				<div id="userDesc">
+					<h1><?php echo $_POST['NAME']; ?></h1>
+					<h1>DEPARTMENT</h1>
+					<br>
+					<h5>Bio</h5>
+					<p><?php echo $_POST['BIO']; ?></p>
+					<h5>Skills</h5>
+					<p>
 					<?php
-						$universities = $_POST['UNIVERSITIES'];
+						$skills = $_POST['SKILLS'];
 
-						$length = count($universities);
-
+						$length = count($skills);
 						for($i = 0; $i < $length; $i++)
 						{
-							echo $universities[$i] . "<br>";
+							echo $skills[$i] . " ";
 						}
 					?>
-				</h3>
-				<br>
-				<h3>
+					</p>
+					<h5>Research Interests</h5>
+					<p>
 					<?php
-						$employers = $_POST['EMPLOYERS'];
+						$interests = $_POST['INTERESTS'];
 
-						$length = count($employers);
-
+						$length = count($interests);
 						for($i = 0; $i < $length; $i++)
 						{
-							echo $employers[$i] . "<br>";
+							echo $interests[$i] . " ";
 						}
 					?>
-				</h3>
-			</div>
-		</div>
-	</div>	
-</div>
+					</p>
+				</div>
 
-</body>
+			</div>
+
+			<div id="dataContainerTwo">
+				<div id="left">
+					<h3>Hometown</h3>
+					<br>
+					<h3>Email</h3>
+					<br>
+					<h3>Phone Number</h3>
+					<br>
+					<h3>Universities</h3>
+					<br>
+					<h3>Employers</h3>
+				</div>
+
+				<div id="right">
+					<h3><?php echo $_POST['HOMETOWN']; ?></h3>
+					<br>
+					<h3><?php echo $_POST['EMAIL']; ?></h3>
+					<br>
+					<h3><?php echo $_POST['PHONE_NUM']; ?></h3>
+					<br>
+					<h3>
+						<?php
+							$universities = $_POST['UNIVERSITIES'];
+
+							$length = count($universities);
+
+							for($i = 0; $i < $length; $i++)
+							{
+								echo $universities[$i] . "<br>";
+							}
+						?>
+					</h3>
+					<br>
+					<h3>
+						<?php
+							$employers = $_POST['EMPLOYERS'];
+
+							$length = count($employers);
+
+							for($i = 0; $i < $length; $i++)
+							{
+								echo $employers[$i] . "<br>";
+							}
+						?>
+					</h3>
+				</div>
+			</div>
+		</div>	
+	</div>
 
 <!-- Defines the footer of each page -->
 <?php include('footer.php'); ?>
