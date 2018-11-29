@@ -1,6 +1,6 @@
 <?php
 	$email = $_POST['email'];
-  	$password = $_POST['password'];
+  	$pword = $_POST['password'];
   	$confirm = $_POST['confirm'];
   	$userid = (int)$_POST['userid'];
   	include 'database.php';
@@ -10,12 +10,10 @@
   	$stmt->bindParam(':EMAIL', $email, PDO::PARAM_STR);
   if($stmt->execute())
 	{
-	  echo $password;
-	  /*
 		$results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 		if($results && strcmp($password,$confirm))
 		{
-            		$ciphertext = password_hash($password, PASSWORD_DEFAULT);
+            		$ciphertext = password_hash($pword, PASSWORD_DEFAULT);
             		$sql = 'UPDATE USERS SET PASSWORD= :PASSWORD WHERE USER_ID= :USER_ID';
             		$stmt = $conn->prepare($sql);
             		$stmt->bindParam(':USER_ID', $userid, PDO::PARAM_INT);
@@ -25,6 +23,5 @@
                 		header( "Location: ../settings.php" );
             		}
   		}
-		*/
     	}
 ?>
