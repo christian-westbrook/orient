@@ -10,6 +10,8 @@
   	$stmt->bindParam(':EMAIL', $email, PDO::PARAM_STR);
   if($stmt->execute())
 	{
+	  echo $password;
+	  /*
 		$results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 		if($results && strcmp($password,$confirm))
 		{
@@ -23,5 +25,6 @@
                 		header( "Location: ../settings.php" );
             		}
   		}
+		*/
     	}
 ?>
