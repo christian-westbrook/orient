@@ -12,6 +12,8 @@
 
 	position: relative;
 	top: 0vh;
+	
+	background:transparent;
 }
 
 #container img
@@ -85,7 +87,6 @@
 	padding: 1em;
 	border: 1px solid #ccc;
 	margin: auto;
-	background:transparent
 }
 
 #profilePicture
