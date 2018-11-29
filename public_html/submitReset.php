@@ -21,26 +21,38 @@
 				<!DOCTYPE html>
 				<html>
 				<head>
+				<style>
+				.button{
+					background-color: white;
+					color: black;
+					font-size: 16px;
+					border-radius: 12px;
+					transition-duration: 0.4s;
+					border: 2px solid #008CBA;
+					
+				}
+				.button:hover {
+					background-color: #008CBA;
+					color: white;
+				}
+				</style>
 				<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 				<script>
 				$(document).ready(function(){
 				    $("button").click(function(){
-					$.post("demo_test_post.asp",
+					$.post("code.cis.uafs.edu/~orient/pwreset.php",
 					{
-					  name: "Donald Duck",
-					  city: "Duckburg"
+					  email: "'.$email.'"
 					},
-					function(data,status){
-					    alert("Data: " + data + "\nStatus: " + status);
-					});
 				    });
 				});
 				</script>
 				</head>
 				<body>
-
-				<button>Send an HTTP POST request to a page and get the result back</button>
-
+					A request to reset your ORIENT password was recently submitted.\n
+					If you did not make this request then please ignore this request.\n
+					Otherwise, follow the folloring link to reset your password.\n\n
+				<button class="button">Reset Password</button>
 				</body>
 				</html>
 			';
