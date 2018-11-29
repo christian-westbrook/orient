@@ -172,7 +172,7 @@ if($stmt->execute())
 			</p>
 		</div>
 
-	</div>
+		</div>
 
 	<div id="dataContainerTwo">
 		<div id="left">
@@ -221,6 +221,7 @@ if($stmt->execute())
 			</h3>
 		</div>
 	</div>
+</div>	
 </div>
 
 </body>
