@@ -14,7 +14,7 @@
 		{
 			$subject = "Password reset request";
 			$headers = "From: admin@orient.com";
-			$body = "blah"
+			$body = "blah";
 			mail($email,$subject,$body,$headers);
 			header('Location: auth.php');
 		}
