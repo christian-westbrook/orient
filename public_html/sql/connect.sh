@@ -1,1 +1,0 @@
-mysql -h orientdb.c86myvnpmoub.us-east-2.rds.amazonaws.com -P 3306 -u cwestbrook -p
