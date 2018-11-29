@@ -174,7 +174,7 @@ if($stmt->execute())
 
 	</div>
 
-	<div id="dataContainerTwo">
+	<div id="dataContainerOne">
 		<div id="left">
 			<h3>Hometown</h3>
 			<br>
