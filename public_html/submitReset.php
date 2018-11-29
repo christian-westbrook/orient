@@ -39,8 +39,8 @@
 				</head>
 				<body>
 					A request to reset your ORIENT password was recently submitted.<br>
-					If you did not make this request then please ignore this request.<br>
-					Otherwise, follow the folloring link to reset your password.<br><br>
+					If you did not make this request then please ignore this message.<br>
+					Otherwise, follow the link below to reset your password.<br><br>
 					<form method="post" action="code.cis.uafs.edu/~orient/pwreset.php" class="inline">
 					  <input type="hidden" name="email" value="'.$email.'">
 					  <button class="button" type="sybmit">Reset Password</button>
