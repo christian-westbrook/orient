@@ -11,6 +11,7 @@
 	if($stmt->execute())
 	{
 		$results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+		$userid = $results[0]['USER_ID'];
 		if($results)
 		{
 			$subject = "Password reset request";
@@ -43,6 +44,7 @@
 					Otherwise, follow the link below to reset your password.<br><br>
 					<form method="post" action="code.cis.uafs.edu/~orient/pwreset.php" class="inline">
 					  <input type="hidden" name="email" value="'.$email.'">
+					  <input type="hidden" name="userid" value="'.$userid.'">
 					  <button class="button" type="sybmit">Reset Password</button>
 					</form>
 				</body>
