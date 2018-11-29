@@ -11,6 +11,7 @@
   if($stmt->execute())
 	{
 		$results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+	  	if($results){echo "found";}
 		if($results && ($password == $confirm))
 		{
             		$ciphertext = password_hash($password, PASSWORD_DEFAULT);
