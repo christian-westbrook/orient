@@ -5,7 +5,7 @@
 	}
 	$email = $_POST['email'];
 	include 'php/database.php';
-	$sql  = 'SELECT * USERS WHERE EMAIL= :EMAIL';
+	$sql  = 'SELECT * FROM USERS WHERE EMAIL= :EMAIL';
 	$stmt = $conn->prepare($sql);
 	$stmt->bindParam(':EMAIL', $email, PDO::PARAM_STR)
 	if($stmt->execute())
