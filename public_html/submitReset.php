@@ -15,6 +15,7 @@
 		{
 			$subject = "Password reset request";
 			$headers = "From: admin@orient.com";
+			$headers .= "MIME-Version: 1.0\r\n";
 			$headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
 			$body ='
 				<!DOCTYPE html>
