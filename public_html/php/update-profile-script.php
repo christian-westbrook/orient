@@ -10,8 +10,6 @@
     $phone_num  = $_POST['phone-num'];
     $bio        = $_POST['bio'];
 
-    echo $id;
-
     include 'database.php';
 
     if($fname !== '')
@@ -74,5 +72,5 @@
         $stmt->execute();
     }
 
-    //header( "Location: ../profile.php" );
+    header( "Location: ../profile.php" );
 ?>
