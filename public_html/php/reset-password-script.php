@@ -22,18 +22,6 @@
         	  	{
                 		header( "Location: ../settings.php" );
             		}
-			else
-			{
-				echo "you goofed";
-			}
   		}
-	  	else
-		{
-			echo "you mega goofed";
-		}
     	}
-else
-            {
-                echo "Unable to update database.";
-            }
 ?>
