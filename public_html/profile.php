@@ -172,6 +172,9 @@ if($stmt->execute())
 			</p>
 		</div>
 
+	</div>
+
+	<div id="dataContainerTwo">
 		<div id="left">
 			<h3>Hometown</h3>
 			<br>
