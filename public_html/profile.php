@@ -12,7 +12,7 @@ $css = array(
 				0 => 'profile'
 	    	);
 
-include('header.php');
+include 'header.php';
 
 if($sessionStarted == false)
 {
