@@ -2,7 +2,7 @@
 	$email = $_POST['email'];
   	$password = $_POST['password'];
   	$confirm = $_POST['confirm'];
-  	$userid = $_POST['userid'];
+  	$userid = (int)$_POST['userid'];
   	include 'database.php';
 	$sql  = 'SELECT * FROM USERS WHERE USER_ID= :USER_ID AND EMAIL= :EMAIL';
   	$stmt = $conn->prepare($sql);
@@ -16,7 +16,7 @@
             		$ciphertext = password_hash($password, PASSWORD_DEFAULT);
             		$sql = 'UPDATE USERS SET PASSWORD= :PASSWORD WHERE USER_ID= :USER_ID';
             		$stmt = $conn->prepare($sql);
-            		$stmt->bindParam(':USER_ID', $userid, PDO::PARAM_STR);
+            		$stmt->bindParam(':USER_ID', $userid, PDO::PARAM_INT);
             		$stmt->bindParam(':PASSWORD', $ciphertext, PDO::PARAM_STR);
             		if($stmt->execute())
         	  	{
