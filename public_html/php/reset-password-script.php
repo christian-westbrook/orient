@@ -22,6 +22,10 @@
         	  	{
                 		header( "Location: ../settings.php" );
             		}
+			else
+			{
+				echo "you goofed";
+			}
   		}
     	}
 else
