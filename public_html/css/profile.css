@@ -10,10 +10,8 @@
 	margin-top: 0px;
 	padding-top: 0px;
 
-	position: relative;
+	position: absolute;
 	top: 0vh;
-	
-	background:transparent;
 }
 
 #container img
