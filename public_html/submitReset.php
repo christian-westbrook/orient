@@ -7,7 +7,7 @@
 	include 'php/database.php';
 	$sql  = 'SELECT * FROM USERS WHERE EMAIL= :EMAIL';
 	$stmt = $conn->prepare($sql);
-	$stmt->bindParam(':EMAIL', $email, PDO::PARAM_STR)
+	$stmt->bindParam(':EMAIL', $email, PDO::PARAM_STR);
 	if($stmt->execute())
 	{
 		$results = $stmt->fetchAll(PDO::FETCH_ASSOC);
