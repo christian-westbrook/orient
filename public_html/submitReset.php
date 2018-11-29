@@ -30,8 +30,7 @@
 	
 	
 
-	$body = "<!DOCTYPE html>
-			<html>
+	$body = "<<<HTML
 			<head>
 			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 			<script>
@@ -54,5 +53,5 @@
 			<button>Send an HTTP POST request to a page and get the result back</button>
 
 			</body>
-			</html>";
+			HTML;
 ?>
