@@ -1,4 +1,7 @@
 <?php
+$css = array(
+		0 => 'signup'
+	    );
 include 'header.php';
 $email   = $_POST['email'];
 $userid   = $_POST['userid'];
