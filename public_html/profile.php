@@ -220,8 +220,6 @@ if($stmt->execute())
 				?>
 			</h3>
 		</div>
-	<div>
-
 	</div>
 </div>
 
