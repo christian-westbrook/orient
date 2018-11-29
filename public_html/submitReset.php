@@ -10,7 +10,8 @@
 	$stmt->bindParam(':EMAIL', $email, PDO::PARAM_STR)
 	if($stmt->execute())
 	{
-		if($stmt->rowCount()>0)
+		$results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+		if($results)
 		{
 			$subject = "Password reset request";
 			$headers = "From: admin@orient.com";
