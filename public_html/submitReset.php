@@ -36,23 +36,15 @@
 					color: white;
 				}
 				</style>
-				<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-				<script>
-				$(document).ready(function(){
-				    $("button").click(function(){
-					$.post("code.cis.uafs.edu/~orient/pwreset.php",
-					{
-					  email: "'.$email.'"
-					},
-				    });
-				});
-				</script>
 				</head>
 				<body>
-					A request to reset your ORIENT password was recently submitted.\n
-					If you did not make this request then please ignore this request.\n
-					Otherwise, follow the folloring link to reset your password.\n\n
-				<button class="button">Reset Password</button>
+					A request to reset your ORIENT password was recently submitted.<br>
+					If you did not make this request then please ignore this request.<br>
+					Otherwise, follow the folloring link to reset your password.<br><br>
+					<form method="post" action="code.cis.uafs.edu/~orient/pwreset.php" class="inline">
+					  <input type="hidden" name="email" value="'.$email.'">
+					  <button class="button" type="sybmit">Reset Password</button>
+					</form>
 				</body>
 				</html>
 			';
