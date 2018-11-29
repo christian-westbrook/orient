@@ -53,10 +53,6 @@
 			mail($email,$subject,$body,$headers);
 			header('Location: auth.php');
 		}
-		else
-		{
-			echo "you goofed.";
-		}
 	}
 	else
 	{
