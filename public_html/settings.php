@@ -63,7 +63,7 @@ if($sessionStarted == false)
 			<input type="text" name="lname" placeholder="Last Name" class="field" /></br>
 			<input type="text" name="title" placeholder="Title" class="field" /></br>
 			<input type="text" name="hometown" placeholder="Hometown" class="field" /></br>
-			<input type="text" name="phone-num" placeholder="Phone Number" class="field" /></br>
+			<input type="text" name="phone-num" placeholder="XXX-XXX-XXXX" class="field" /></br>
 			<input type="textarea" name="bio" placeholder="Bio" class="field" /></br>
 			<input type="submit" value="Update Information" class="sub-button">
 		</form>
