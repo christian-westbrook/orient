@@ -11,8 +11,7 @@
   if($stmt->execute())
 	{
 		$results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-	  	if($results){echo "found";}
-		if($results && ($password == $confirm))
+		if($results && strcmp($password,$confirm))
 		{
             		$ciphertext = password_hash($password, PASSWORD_DEFAULT);
             		$sql = 'UPDATE USERS SET PASSWORD= :PASSWORD WHERE USER_ID= :USER_ID';
