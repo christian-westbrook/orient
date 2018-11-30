@@ -181,7 +181,7 @@ $_POST['DEP'] = $dep;
 					$length = count($interests);
 					for($i = 0; $i < $length; $i++)
 					{
-						echo $interests[$i] . " ";
+						echo '<a href="results.php?SEARCH="' . $interests[$i] . '">' . $interests[$i] . '</a>';
 					}
 				?>
 				</p>
