@@ -32,7 +32,7 @@ else
 // Retrieve the given user's info
 include 'php/database.php';
 
-$sql = "SELECT FNAME, LNAME, TITLE, EMAIL, PHONE_NUM, BIO, PROFILE, HOMETOWN FROM USERS WHERE USER_ID= :ID";
+$sql = "SELECT FNAME, LNAME, TITLE, EMAIL, PHONE_NUM, BIO, PROFILE, HOMETOWN, DEP_ID FROM USERS WHERE USER_ID= :ID";
 
 $stmt = $conn->prepare($sql);
 $stmt->bindParam(':ID', $id, PDO::PARAM_INT);
@@ -49,6 +49,7 @@ if($stmt->execute())
 		$_POST['BIO'] = $results[0]['BIO'];
 		$_POST['PROFILE'] = $results[0]['PROFILE'];
 		$_POST['HOMETOWN'] = $results[0]['HOMETOWN'];
+		$_POST['DEP_ID'] = $results[0]['DEP_ID'];
 	}
 }
 else
@@ -129,6 +130,24 @@ if($stmt->execute())
 	$_POST['INTERESTS'] = $interests;
 }
 
+// Get the name of the users' department
+$sql = "SELECT NAME FROM DEPARTMENTS WHERE DEP_ID = :DEP_ID";
+$stmt = $conn->prepare($sql);
+$stmt->bindParam(':ID', $_POST[DEP_ID], PDO::PARAM_INT);
+
+$dep = '';
+if($stmt->execute())
+{
+	$results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+	if($results)
+	{
+		$dep = $results[0]['NAME'];
+	}
+}
+
+$_POST['DEP'] = $dep;
+
 ?>
 
 <div id="container">
@@ -140,7 +159,7 @@ if($stmt->execute())
 
 			<div id="userDesc">
 				<h1><?php echo $_POST['NAME']; ?></h1>
-				<h1>DEPARTMENT</h1>
+				<h1><?php echo $_POST['DEP']; ?></h1>
 				<br>
 				<h5>Bio</h5>
 				<p><?php echo $_POST['BIO']; ?></p>
