@@ -140,10 +140,7 @@ if($stmt->execute())
 {
 	$results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-	if($results)
-	{
-		$dep = $results[0]['NAME'];
-	}
+	$dep = $results[0]['NAME'];
 }
 
 $_POST['DEP'] = $dep;
