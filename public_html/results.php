@@ -33,6 +33,8 @@ include 'header.php';
 
 				if($results)
 				{
+					print_r($results);
+					
 					foreach($results as $key => $value)
 					{
 						echo $results[$key]['FNAME'] . " " . $results[$key]['LNAME'] . "<br>";
