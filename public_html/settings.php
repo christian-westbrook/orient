@@ -46,15 +46,13 @@ if($sessionStarted == false)
 			<input type="password" name="confirm-password" placeholder="Confirm" class="field" /></br>
 			<input type="submit" value="Change Password" class="sub-button">
 		</form>
-		
-		<!--
+
 		<p class="label">Update Profile Picture</p>
 
 		<form action="php/update-profile-picture-script.php" method="POST">
-			<input type="file" name="profile" placeholder="Profile Picture" class="field" /></br>
+			<input type="file" name="profile" accept="image/*">
 			<input type="submit" value="Update Profile Picture" class="sub-button" name="pic-sub">
 		</form>
-		-->
 
 		<p class="label">Update Profile Information</p>
 
