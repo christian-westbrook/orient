@@ -136,7 +136,8 @@ $stmt = $conn->prepare($sql);
 $dep_id = (int) $_POST['DEP_ID'];
 $stmt->bindParam(':ID', $dep_id, PDO::PARAM_INT);
 
-$dep = ' ';
+$dep = '';
+echo "HERE";
 if($stmt->execute())
 {
 	$results = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -145,8 +146,6 @@ if($stmt->execute())
 }
 
 $_POST['DEP'] = $dep;
-
-echo "HERE";
 
 ?>
 
