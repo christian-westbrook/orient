@@ -169,7 +169,7 @@ $_POST['DEP'] = $dep;
 					$length = count($skills);
 					for($i = 0; $i < $length; $i++)
 					{
-						echo $skills[$i] . " ";
+						echo '<a href="results.php?SEARCH="' . $skills[$i] . '">' . $skills[$i] . '</a> ';
 					}
 				?>
 				</p>
@@ -181,7 +181,7 @@ $_POST['DEP'] = $dep;
 					$length = count($interests);
 					for($i = 0; $i < $length; $i++)
 					{
-						echo '<a href="results.php?SEARCH="' . $interests[$i] . '">' . $interests[$i] . '</a>   ';
+						echo '<a href="results.php?SEARCH="' . $interests[$i] . '">' . $interests[$i] . '</a> ';
 					}
 				?>
 				</p>
