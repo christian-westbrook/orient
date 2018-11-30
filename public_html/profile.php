@@ -139,8 +139,6 @@ $stmt->bindParam(':DEP_ID', $dep_id, PDO::PARAM_INT);
 $dep = '';
 if($stmt->execute())
 {
-	echo "HERE";
-
 	$results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 	$dep = $results[0]['NAME'];
