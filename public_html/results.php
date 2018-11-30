@@ -25,7 +25,7 @@ include 'header.php';
 
 			echo $search;
 
-			$sql = 'SELECT USERS.FNAME, USERS.LNAME FROM USERS INNER JOIN USERS_INTERESTS ON USERS_INTERESTS.USER_ID = USERS.USER_ID INNER JOIN INTERESTS ON INTERESTS.INT_ID = USERS_INTERESTS.INT_ID WHERE INTERESTS.NAME LIKE :SEARCH';
+			$sql = 'SELECT USERS.FNAME, USERS.LNAME FROM USERS LEFT JOIN USERS_INTERESTS ON USERS_INTERESTS.USER_ID = USERS.USER_ID INNER JOIN INTERESTS ON INTERESTS.INT_ID = USERS_INTERESTS.INT_ID WHERE INTERESTS.NAME LIKE :SEARCH';
 			$stmt = $conn->prepare($sql);
 			$stmt->bindParam(':SEARCH', $search, PDO::PARAM_STR);
 
@@ -37,7 +37,7 @@ include 'header.php';
 				{
 					foreach($results as $key => $value)
 					{
-						echo $results[$key]['FNAME'] . " " . $results[$key]['LNAME'];
+						echo $results[$key]['FNAME'] . " " . $results[$key]['LNAME'] . "<br>";
 					}
 				}
 			}
