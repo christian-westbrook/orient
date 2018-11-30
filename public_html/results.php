@@ -35,6 +35,10 @@ include 'header.php';
 
 				if($results)
 				{
+					foreach($results as $key => $value)
+					{
+						
+					}
 					echo $results[0]['FNAME'];
 				}
 			}
