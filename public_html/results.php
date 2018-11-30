@@ -37,9 +37,8 @@ include 'header.php';
 				{
 					foreach($results as $key => $value)
 					{
-						
+						echo $results[$key]['FNAME'] . " " . $results[$key]['LNAME'];
 					}
-					echo $results[0]['FNAME'];
 				}
 			}
 			else
