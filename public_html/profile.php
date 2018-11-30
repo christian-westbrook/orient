@@ -133,7 +133,7 @@ if($stmt->execute())
 // Get the name of the users' department
 $sql = "SELECT NAME FROM DEPARTMENTS WHERE DEP_ID = :DEP_ID";
 $stmt = $conn->prepare($sql);
-$stmt->bindParam(':ID', $_POST[DEP_ID], PDO::PARAM_INT);
+$stmt->bindParam(':ID', $_POST['DEP_ID'], PDO::PARAM_INT);
 
 $dep = '';
 if($stmt->execute())
