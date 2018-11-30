@@ -28,7 +28,6 @@ include 'header.php';
 			$sql = 'SELECT USERS.FNAME, USERS.LNAME, INTERESTS.NAME FROM USERS INNER JOIN USERS_INTERESTS ON USERS_INTERESTS.USER_ID = USERS.USER_ID INNER JOIN INTERESTS ON INTERESTS.INT_ID = USERS_INTERESTS.INT_ID WHERE INTERESTS.NAME LIKE :SEARCH';
 			$stmt = $conn->prepare($sql);
 			$stmt->bindParam(':SEARCH', $search, PDO::PARAM_STR);
-			echo 'HERE';
 
 			if($stmt->execute())
 			{
@@ -36,7 +35,7 @@ include 'header.php';
 
 				if($results)
 				{
-					print_r($results);
+					echo $results[0]['USERS.FNAME'];
 				}
 			}
 			else
