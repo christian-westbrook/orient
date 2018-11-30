@@ -31,6 +31,8 @@ include 'session.php';
 	function search()
 	{
 		var searchString = document.getElementById("input");
+		var redirect = "code.cis.uafs.edu/~orient/php/results.php?SEARCH=" + searchString;
+		window.location.href = redirect;
 	}
 </script>
 
@@ -42,14 +44,14 @@ include 'session.php';
 			echo '<a href="profile.php"><p>Profile</p></a>';
 			echo '<a href="settings.php"><p>Settings</p></a>';
 			echo '<input type="text" id="input" placeholder="Search..." />';
-			echo '<a href="results.php"><p>Search</p></a>';
+			echo '<a onclick="search()" href="#"><p>Search</p></a>';
 			echo '<a href="php/logout-script.php" id="log-out"><p>Logout</p></a>';
 		}
 		else
 		{
 			echo '<a href="index.php"><p id="home-link">ORIENT</p></a>';
 			echo '<input type="text" id="input" placeholder="Search..." />';
-			echo '<a href="results.php"><p>Search</p></a>';
+			echo '<a onclick="search()" href="#"><p>Search</p></a>';
 			echo '<a href="signup.php" id="sign-up"><p>Sign Up</p></a>';
 			echo '<a href="auth.php" id="log-in"><p>Log In</p></a>';
 		}
