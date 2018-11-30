@@ -35,7 +35,7 @@ include 'session.php';
 		a.onclick = function search()
 		{
 
-			var searchString = document.getElementById("input");
+			var searchString = document.getElementById("input").value;
 			var redirect = "results.php?SEARCH=" + searchString;
 			window.location.href = redirect;
 		}
