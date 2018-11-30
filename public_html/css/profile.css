@@ -92,6 +92,7 @@
 {
 	width: 10vw;
 	height: 10vh;
+	float: left;
 }
 #userDesc
 {
