@@ -32,6 +32,7 @@ include 'header.php';
 			{
 				$results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
+				echo 'HERE';
 				if($results)
 				{
 					print_r($results);
