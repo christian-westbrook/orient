@@ -51,6 +51,11 @@
 	text-decoration: none;
 }
 
+#profile
+{
+	padding-left: 2vw;
+}
+
 .field, .sub-button
 {
 	width: 15vw;
