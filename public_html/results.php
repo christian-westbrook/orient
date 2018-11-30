@@ -35,7 +35,7 @@ include 'header.php';
 
 				if($results)
 				{
-					echo $results[0]['USERS.FNAME'];
+					echo $results[0]['FNAME'];
 				}
 			}
 			else
