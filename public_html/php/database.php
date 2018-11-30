@@ -5,7 +5,7 @@
 		$username = 'orientdb';
 		$password = 'UApass123';
 
-		$conn = new PDO("mysql:host=$host;dbname=ORIENT", $username, $password);
+		$conn = new PDO("mysql:host=$host;dbname=orientdb", $username, $password);
 		$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 	}
 	catch(PDOException $e)
