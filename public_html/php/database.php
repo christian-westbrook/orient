@@ -1,7 +1,7 @@
 <?php
 	try
 	{
-		$host =     'code.cis.uafs.edu';
+		$host =     'localhost';
 		$username = 'orientdb';
 		$password = 'UApass123';
 
