@@ -19,7 +19,7 @@ include 'header.php';
 		</form>
 
 		<a href="signup.php"><p class="sub">Need to create an account?</p></a>
-		<a href="forgotten.php"><p class="sub">Forgotten password?</p></a>
+		<a href="forgotten.php"><p class="sub">Forgot your password?</p></a>
 	</div>
 </div>
 
