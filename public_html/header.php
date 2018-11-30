@@ -36,7 +36,7 @@ include 'session.php';
 		{
 
 			var searchString = document.getElementById("input");
-			var redirect = "code.cis.uafs.edu/~orient/results.php?SEARCH=" + searchString;
+			var redirect = "results.php?SEARCH=" + searchString;
 			window.location.href = redirect;
 		}
 	}
