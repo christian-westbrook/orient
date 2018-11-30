@@ -33,11 +33,9 @@ include 'header.php';
 
 				if($results)
 				{
-					print_r($results);
-					
 					foreach($results as $key => $value)
 					{
-						echo $results[$key]['FNAME'] . " " . $results[$key]['LNAME'] . "<br>";
+						echo '<a href="profile.php?SEARCH_ID=' . $results[$key]["USER_ID"] . '">' . $results[$key]["FNAME"] . ' ' . $results[$key]["LNAME"] . '</a><br>';
 					}
 				}
 			}

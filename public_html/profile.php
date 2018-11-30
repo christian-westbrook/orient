@@ -16,13 +16,13 @@ include 'header.php';
 
 if($sessionStarted == false)
 {
-   $id = $_GET['SEARCH_ID'];
+   $id = $_POST['SEARCH_ID'];
 }
 
 // Get the ID of the user to display
-if(isset($_GET['SEARCH_ID']))
+if(isset($_POST['SEARCH_ID']))
 {
-	$id = $_GET['SEARCH_ID'];
+	$id = $_POST['SEARCH_ID'];
 }
 else
 {
@@ -221,7 +221,7 @@ if($stmt->execute())
 				</h3>
 			</div>
 		</div>
-	</div>	
+	</div>
 </div>
 
 <!-- Defines the footer of each page -->
