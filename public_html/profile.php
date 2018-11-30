@@ -134,6 +134,7 @@ if($stmt->execute())
 $sql = "SELECT NAME FROM DEPARTMENTS WHERE DEP_ID = :DEP_ID";
 $stmt = $conn->prepare($sql);
 $dep_id = (int) $_POST['DEP_ID'];
+echo "HERE";
 $stmt->bindParam(':ID', $dep_id, PDO::PARAM_INT);
 
 $dep = '';
