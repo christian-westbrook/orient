@@ -41,7 +41,5 @@ include 'header.php';
 	</div>
 </div>
 
-</body>
-
 <!-- Defines the footer of each page -->
 <?php include 'footer.php'; ?>
