@@ -137,9 +137,10 @@ $dep_id = (int) $_POST['DEP_ID'];
 $stmt->bindParam(':ID', $dep_id, PDO::PARAM_INT);
 
 $dep = '';
-echo "HERE";
 if($stmt->execute())
 {
+	echo "HERE";
+
 	$results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 	$dep = $results[0]['NAME'];
