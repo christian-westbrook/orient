@@ -42,4 +42,4 @@ include('header.php');
 </body>
 
 <!-- Defines the footer of each page -->
-<?php include('footer.php'); ?>
+<?php include 'footer.php'; ?>
