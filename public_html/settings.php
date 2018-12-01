@@ -106,7 +106,7 @@ if($_SESSION['ROLE_ID'] == 5) $admin= True;
 				<?php
 					$valz = $stmtINT->fetchAll(PDO::FETCH_ASSOC);
 					$length = count($valz);
-					$sql = 'SELECT * FROM USERS_INTERESTS WHERE INT_ID= :INT_ID AND SKILL_ID= :SKILL_ID';
+					$sql = 'SELECT * FROM USERS_INTERESTS WHERE USER_ID= :USER_ID AND INT_ID= :INT_ID';
 					for($i = 0; $i < $length; $i++){
 						$stmt = $conn->prepare($sql);
 						$stmt->bindParam(':INT_ID', $valz[$i]['INT_ID'], PDO::PARAM_INT);
