@@ -23,6 +23,7 @@ if($sessionStarted == false)
 {
    header('Location: /~orient/');
 }
+$id         = $_SESSION['USER_ID'];
 include 'php/database.php';
 $sqlEMP = 'SELECT * FROM EMPLOYERS';
 $sqlUNI = 'SELECT * FROM UNIVERSITIES';
@@ -36,6 +37,7 @@ $stmtINT = $conn->prepare($sqlINT);
 $stmtINT->execute();
 $stmtSKL = $conn->prepare($sqlSKL);
 $stmtSKL->execute();
+$selected;
 
 ?>
 
@@ -111,9 +113,18 @@ $stmtSKL->execute();
 				<?php
 					$valz = $stmtSKL->fetchAll(PDO::FETCH_ASSOC);
 					$length = count($valz);
+					$sql = 'SELECT * FROM USERS_SKILLS WHERE USER_ID= :USER_ID AND SKILL_ID= :SKILL_ID';
 					for($i = 0; $i < $length; $i++){
+						$stmt = $conn->prepare($sql);
+						$stmt->bindParam(':SKILL_ID', $valz[$i]['SKILL_ID'], PDO::PARAM_INT);
+						$stmt->bindParam(':USER_ID', $id, PDO::PARAM_INT);
+						$stmt->execute();
+						$valz2 = $stmt->fetchAll(PDO::FETCH_ASSOC);
+						$length = count($valz);
+						if($length>0){$selected='selected';}
+						else{$selected='';}
 				?>
-				<option value="<?php echo $valz[$i]['SKILL_ID'];?>"><?php echo $valz[$i]['NAME'];?></option>
+				<option value="<?php echo $valz[$i]['SKILL_ID'];?>" <?php echo $selected;?>><?php echo $valz[$i]['NAME'];?></option>
 				<?php } ?>
 			</select><br>
 			<input type="submit" value="Update Information" class="sub-button">
