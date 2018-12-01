@@ -19,10 +19,7 @@ $js = array(
 
 include 'header.php';
 
-include 'database.php';
-
-echo 'HERE';
-
+include 'php/database.php';
 $sqlEMP = 'SELECT NAME FROM EMPLOYERS';
 $sqlUNI = 'SELECT NAME FROM UNIVERSITIES';
 $sqlINT = 'SELECT NAME FROM INTERESTS';
