@@ -20,6 +20,9 @@ $js = array(
 include 'header.php';
 
 include 'database.php';
+
+echo 'HERE';
+
 $sqlEMP = 'SELECT NAME FROM EMPLOYERS';
 $sqlUNI = 'SELECT NAME FROM UNIVERSITIES';
 $sqlINT = 'SELECT NAME FROM INTERESTS';
@@ -27,8 +30,6 @@ $sqlINT = 'SELECT NAME FROM SKILLS';
 $stmtEMP = $conn->query($sqlEMP);
 $stmtUNI = $conn->query($sqlUNI);
 $stmtINT = $conn->query($sqlINT);
-
-echo 'HERE';
 
 ?>
 
