@@ -148,6 +148,7 @@ $_POST['DEP'] = $dep;
 
 ?>
 
+<!--
 <div id="container">
 	<div id="profile">
 
@@ -239,6 +240,10 @@ $_POST['DEP'] = $dep;
 		</div>
 	</div>
 </div>
+-->
+
+<div id="container">
+</div>
 
 <!-- Defines the footer of each page -->
-<?php include('footer.php'); ?>
+<?php include 'footer.php'; ?>
