@@ -150,8 +150,9 @@
 {
 	text-decoration: none;
 	background: #006994;
-	border-radius: 25%;
+	border-radius: 50%;
 	border: solid 1px black;
-	padding: 4px;
+	padding: 6px;
+	height: 3em;
 	margin-right: 2em;
 }
