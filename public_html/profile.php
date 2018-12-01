@@ -271,11 +271,6 @@ $_POST['EMP'] = $emp;
 		</div>
 	</div>
 
-	<div id="about">
-		<p><b>Email:</b> <?php echo $_POST['EMAIL']; ?></p>
-		<p><b>Phone:</b> <?php echo $_POST['PHONE_NUM']; ?></p>
-	</div>
-
 	<div id="ints-skills">
 		<p><b>Research Interests</b></br></br>
 		<?php
