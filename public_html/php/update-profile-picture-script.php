@@ -5,7 +5,7 @@
     $id             = $_SESSION['USER_ID'];
     $profile        = $_POST['profile'];
 
-    echo $profile;
+    phpinfo();
 
     print_r($_FILES);
 
