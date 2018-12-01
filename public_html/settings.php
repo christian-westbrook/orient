@@ -77,6 +77,14 @@ $stmtSKL = $conn->query($sqlSKL);
 				<option value="2">2</option>
 				<option value="3">3</option>
 			</select>
+			<select name="poopz">
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">1</option>
+				<option value="5">2</option>
+				<option value="6">3</option>
+			</select>
 			<select name="employer">				
 				<?php 
 					while ($valz = $stmtEMP->fetch_assoc()){ ?>
