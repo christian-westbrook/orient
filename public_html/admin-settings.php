@@ -28,30 +28,26 @@ $stmtINT = $conn->prepare($sqlINT);
 $stmtINT->execute();
 $stmtSKL = $conn->prepare($sqlSKL);
 $stmtSKL->execute();
-$selected;
+$sqlNU = 'SELECT * FROM USERS';
+$stmtNU = $conn->prepare($sqlNU);
+$stmtNU->execute();
 
 ?>
 
 <div id="container">
 	<div id="settings">
 		<p id="heading">Settings</p>
-		<?php	if($admin){ 
-			$sqlNU = 'SELECT * FROM USERS';
-			$stmtNU = $conn->prepare($sqlNU);
-			$stmtNU->execute();
+		<select name="newuserid" class="field">
+		<option value="ignore">Select A User</option>
+		<?php
+			$valNU = $stmtNU->fetchAll(PDO::FETCH_ASSOC);
+			$lenNU = count($valNU);
+			for($i = 0; $i < $length; $i++){
 		?>
-			<select name="newuserid" class="field">
-			<option value="ignore">Select A User</option>
-			<?php
-				$valNU = $stmtNU->fetchAll(PDO::FETCH_ASSOC);
-				$lenNU = count($valNU);
-				for($i = 0; $i < $length; $i++){
-			?>
-			<option value="<?php echo $valNU[$i]['USER_ID'];?>"><?php echo $valNU[$i]['FNAME']." ".$valNU[$i]['LNAME'];?></option>
-			<?php } ?>
-			</select><br>
+		<option value="<?php echo $valNU[$i]['USER_ID'];?>"><?php echo $valNU[$i]['FNAME']." ".$valNU[$i]['LNAME'];?></option>
 		<?php } ?>
-
+		</select><br>
+			
 		<p class="label">Change Email</p>
 
 		<form action="php/change-email-script.php" method="POST">
@@ -110,18 +106,9 @@ $selected;
 				<?php
 					$valz = $stmtINT->fetchAll(PDO::FETCH_ASSOC);
 					$length = count($valz);
-					$sql = 'SELECT * FROM USERS_INTERESTS WHERE INT_ID= :INT_ID AND SKILL_ID= :SKILL_ID';
 					for($i = 0; $i < $length; $i++){
-						$stmt = $conn->prepare($sql);
-						$stmt->bindParam(':INT_ID', $valz[$i]['INT_ID'], PDO::PARAM_INT);
-						$stmt->bindParam(':USER_ID', $id, PDO::PARAM_INT);
-						$stmt->execute();
-						$valz2 = $stmt->fetchAll(PDO::FETCH_ASSOC);
-						$length2 = count($valz2);
-						if($length2>0){$selected='selected';}
-						else{$selected='';}
 				?>
-				<option value="<?php echo $valz[$i]['INT_ID'];?>"<?php echo $selected;?>><?php echo $valz[$i]['NAME'];?></option>
+				<option value="<?php echo $valz[$i]['INT_ID'];?>"><?php echo $valz[$i]['NAME'];?></option>
 				<?php } ?>
 			</select><br>
 			<select name="skill[]" class="field2" multiple>
@@ -129,18 +116,9 @@ $selected;
 				<?php
 					$valz = $stmtSKL->fetchAll(PDO::FETCH_ASSOC);
 					$length = count($valz);
-					$sql = 'SELECT * FROM USERS_SKILLS WHERE USER_ID= :USER_ID AND SKILL_ID= :SKILL_ID';
 					for($i = 0; $i < $length; $i++){
-						$stmt = $conn->prepare($sql);
-						$stmt->bindParam(':SKILL_ID', $valz[$i]['SKILL_ID'], PDO::PARAM_INT);
-						$stmt->bindParam(':USER_ID', $id, PDO::PARAM_INT);
-						$stmt->execute();
-						$valz2 = $stmt->fetchAll(PDO::FETCH_ASSOC);
-						$length2 = count($valz2);
-						if($length2>0){$selected='selected';}
-						else{$selected='';}
 				?>
-				<option value="<?php echo $valz[$i]['SKILL_ID'];?>" <?php echo $selected;?>><?php echo $valz[$i]['NAME'];?></option>
+				<option value="<?php echo $valz[$i]['SKILL_ID'];?>"><?php echo $valz[$i]['NAME'];?></option>
 				<?php } ?>
 			</select><br>
 			<input type="submit" value="Update Information" class="sub-button">
