@@ -132,9 +132,13 @@
 
 	margin-left: 5em;
 	margin-top: 5em;
+
+	display: inline-block;
+    float: left;
 }
 
 #head-info
 {
-	
+	display: inline-block;
+    float: left;
 }
