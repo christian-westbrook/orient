@@ -122,6 +122,11 @@
 }
 */
 
+#upper-container
+{
+	min-width: 1000px;
+}
+
 #profile-pic
 {
 	width: 250px;

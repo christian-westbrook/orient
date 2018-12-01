@@ -260,6 +260,7 @@ $_POST['ROLE'] = $role;
 -->
 
 <div id="container">
+	<div id="upper-container">
 	<img id="profile-pic" src="<?php echo $_POST['PROFILE']; ?>">
 
 	<div id="head-info">
@@ -277,6 +278,7 @@ $_POST['ROLE'] = $role;
  				   echo '<a class="interest" href="results.php?SEARCH="' . $interests[$i] . '">' . $interests[$i] . '</a> ';
  			   }
  		   ?></p>
+	</div>
 	</div>
 </div>
 
