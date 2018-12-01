@@ -30,7 +30,8 @@
 
 	padding-top: 2vh;
 	height: 86vh;
-	width: 50vw;
+	width: 60vw;
+	min-width: 400px;
 }
 
 #heading
