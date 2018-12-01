@@ -153,6 +153,14 @@
 	white-space: nowrap;
 }
 
+#about
+{
+	float: left;
+	clear: left;
+	margin-left: 5em;
+	margin-top: 2em;
+}
+
 #ints-skills
 {
 	float: left;
