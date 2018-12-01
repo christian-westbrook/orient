@@ -117,25 +117,21 @@
         }
     }
     */
+    if(isset($_POST['skill']))
+    {
+	    $sql = 'DELETE FROM USERS_SKILLS WHERE USER_ID= :USER_ID';
+            $stmt = $conn->prepare($sql);
+            $stmt->bindParam(':USER_ID', $id, PDO::PARAM_INT);
+            $stmt->execute();
+    }
     foreach ($_POST['skill'] as $skillid){
         if($skillid !== 'ignore')
         {
-            $sql = 'SELECT * FROM USERS_SKILLS WHERE USER_ID= :USER_ID AND SKILL_ID= :SKILL_ID';
-            
+            $sql = 'INSERT INTO USERS_SKILLS (USER_ID, SKILL_ID) VALUES(:USER_ID, :SKILL_ID)';
             $stmt = $conn->prepare($sql);
             $stmt->bindParam(':SKILL_ID', $skillid, PDO::PARAM_INT);
             $stmt->bindParam(':USER_ID', $id, PDO::PARAM_INT);
             $stmt->execute();
-	    $valz = $stmt->fetchAll(PDO::FETCH_ASSOC);
-	    $length = count($valz);
-            if(!$length>0)
-            {
-                $sql = 'INSERT INTO USERS_SKILLS (USER_ID, SKILL_ID) VALUES(:USER_ID, :SKILL_ID)';
-                $stmt = $conn->prepare($sql);
-                $stmt->bindParam(':SKILL_ID', $skillid, PDO::PARAM_INT);
-                $stmt->bindParam(':USER_ID', $id, PDO::PARAM_INT);
-                $stmt->execute();
-            }
         }
     }
 
