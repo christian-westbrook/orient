@@ -51,11 +51,11 @@
 	text-decoration: none;
 }
 
-#profile
+/**#profile
 {
 	width: 15vw;
 	height: 4vh;
-}
+}*/
 
 .field, .sub-button
 {
