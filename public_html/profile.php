@@ -263,7 +263,7 @@ $_POST['EMP'] = $emp;
 
 	<div id="head-info">
 		<h1><?php echo $_POST['NAME']; ?></h1>
-		<p><?php echo $_POST['ROLE']; ?></p>
+		<p><?php echo $_POST['ROLE']; ?> <?php echo $_POST['UNIV']; ?> <?php echo $_POST['EMPLOYER']; ?></p>
 		<p><b>Research Summary</b></br></br>
 		   <?php echo $_POST['BIO']; ?></p>
 		<p><b>Research Interests</b></br></br>
