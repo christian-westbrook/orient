@@ -29,13 +29,13 @@ $sqlUNI = 'SELECT NAME FROM UNIVERSITIES';
 $sqlINT = 'SELECT NAME FROM INTERESTS';
 $sqlSKL = 'SELECT NAME FROM SKILLS';
 $stmtEMP = $conn->prepare($sqlEMP);
-$stmtEMP->execute()
+$stmtEMP->execute();
 $stmtUNI = $conn->prepare($sqlUNI);
-$stmtUNI->execute()
+$stmtUNI->execute();
 $stmtINT = $conn->prepare($sqlINT);
-$stmtINT->execute()
+$stmtINT->execute();
 $stmtSKL = $conn->prepare($sqlSKL);
-$stmtSKL->execute()
+$stmtSKL->execute();
 
 ?>
 
