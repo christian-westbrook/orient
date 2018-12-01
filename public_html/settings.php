@@ -28,6 +28,8 @@ $stmtEMP = $conn->query($sqlEMP);
 $stmtUNI = $conn->query($sqlUNI);
 $stmtINT = $conn->query($sqlINT);
 
+echo 'HERE';
+
 ?>
 
 <div id="container">
