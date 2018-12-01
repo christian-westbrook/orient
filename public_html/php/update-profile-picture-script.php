@@ -7,7 +7,7 @@
 
     echo $profile;
 
-    print_r($_FILE);
+    print_r($_FILES);
 
     if(is_uploaded_file(realpath($profile['tmp_name'])))
     {
