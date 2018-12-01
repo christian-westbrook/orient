@@ -75,18 +75,18 @@ $stmtSKL->execute();
 			<input type="text" name="title" placeholder="Title" class="field" /></br>
 			<input type="text" name="hometown" placeholder="Hometown" class="field" /></br>
 			<input type="text" name="phone-num" placeholder="XXX-XXX-XXXX" class="field" /></br>
-			<input type="textarea" name="bio" placeholder="Bio" class="field" /></br>
-			<select name="employer" class="field">				
+			<input type="textarea" name="bio" placeholder="Research Summary" class="field" /></br>
+			<select name="employer" class="field">
 				<option value="ignore">Select An Employer</option>
-				<?php 
+				<?php
 					$valz = $stmtEMP->fetchAll(PDO::FETCH_ASSOC);
 					$length = count($valz);
-					for($i = 0; $i < $length; $i++){					
+					for($i = 0; $i < $length; $i++){
 				?>
 				<option value="<?php echo $valz[$i]['EMP_ID'];?>"><?php echo $valz[$i]['NAME'];?></option>
 				<?php } ?>
 			</select><br>
-			<select name="university" class="field">				
+			<select name="university" class="field">
 				<option value="ignore">Select A University</option>
 				<?php
 					$valz = $stmtUNI->fetchAll(PDO::FETCH_ASSOC);
@@ -96,9 +96,9 @@ $stmtSKL->execute();
 				<option value="<?php echo $valz[$i]['UNIV_ID'];?>"><?php echo $valz[$i]['NAME'];?></option>
 				<?php } ?>
 			</select><br>
-			<select name="interest[]" class="field2" multiple>				
+			<select name="interest[]" class="field2" multiple>
 				<option value="ignore">Select Your Interests</option>
-				<?php 
+				<?php
 					$valz = $stmtINT->fetchAll(PDO::FETCH_ASSOC);
 					$length = count($valz);
 					for($i = 0; $i < $length; $i++){
@@ -106,9 +106,9 @@ $stmtSKL->execute();
 				<option value="<?php echo $valz[$i]['INT_ID'];?>"><?php echo $valz[$i]['NAME'];?></option>
 				<?php } ?>
 			</select><br>
-			<select name="skill[]" class="field2" multiple>				
+			<select name="skill[]" class="field2" multiple>
 				<option value="ignore">Select Your Skills</option>
-				<?php 
+				<?php
 					$valz = $stmtSKL->fetchAll(PDO::FETCH_ASSOC);
 					$length = count($valz);
 					for($i = 0; $i < $length; $i++){
