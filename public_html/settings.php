@@ -23,7 +23,7 @@ if($sessionStarted == false)
 {
    header('Location: /~orient/');
 }
-include 'database.php';
+include 'php/database.php';
 $sqlEMP = 'SELECT NAME FROM EMPLOYERS';
 $sqlUNI = 'SELECT NAME FROM UNIVERSITIES';
 $sqlINT = 'SELECT NAME FROM INTERESTS';
@@ -73,22 +73,22 @@ $stmtSKL = $conn->query($sqlSKL);
 			<input type="text" name="phone-num" placeholder="XXX-XXX-XXXX" class="field" /></br>
 			<input type="textarea" name="bio" placeholder="Bio" class="field" /></br>
 			<select name="employer">
-				?><?php while($index = $stmtEMP->fetch_assoc()){ ?>
+				<?php while($index = $stmtEMP->fetch_assoc()){ ?>
 				<option value="<?php echo $index["NAME"];?>"><?php echo $index["NAME"];?></option>
 				<?php } ?>
 			</select>
 			<select name="university">
-				?><?php while($index = $stmtUNI->fetch_assoc()){ ?>
+				<?php while($index = $stmtUNI->fetch_assoc()){ ?>
 				<option value="<?php echo $index["NAME"];?>"><?php echo $index["NAME"];?></option>
 				<?php } ?>
 			</select>
 			<select name="interest" multiple>
-				?><?php while($index = $stmtINT->fetch_assoc()){ ?>
+				<?php while($index = $stmtINT->fetch_assoc()){ ?>
 				<option value="<?php echo $index["NAME"];?>"><?php echo $index["NAME"];?></option>
 				<?php } ?>
 			</select>
 			<select name="skill" multiple>
-				?><?php while($index = $stmtSKL->fetch_assoc()){ ?>
+				<?php while($index = $stmtSKL->fetch_assoc()){ ?>
 				<option value="<?php echo $index["NAME"];?>"><?php echo $index["NAME"];?></option>
 				<?php } ?>
 			</select>
