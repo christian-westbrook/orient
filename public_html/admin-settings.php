@@ -14,6 +14,10 @@ if($sessionStarted == false)
 {
    header('Location: /~orient/');
 }
+if(!$_SESSION['ROLE_ID'] == 5)
+{
+   header('Location: /~orient/settings.php');
+}
 $id         = $_SESSION['USER_ID'];
 include 'php/database.php';
 $sqlEMP = 'SELECT * FROM EMPLOYERS';
