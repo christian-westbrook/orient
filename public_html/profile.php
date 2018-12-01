@@ -266,11 +266,13 @@ $_POST['EMP'] = $emp;
 			<p><?php echo $_POST['ROLE']; ?></br> <?php echo $_POST['UNIV']; ?></br> <?php echo $_POST['DEP']; ?></br><?php echo $_POST['EMP']; ?></p>
 			<p><b>Research Summary</b></br></br>
 		   	   <?php echo $_POST['BIO']; ?></p>
+			   <p><b>Email:</b> <?php echo $_POST['EMAIL']; ?></p>
+   			<p><b>Phone:</b> <?php echo $_POST['PHONE_NUM']; ?></p>
 		</div>
 	</div>
 
 	<div id="about">
-		<p><b>Email:</b> <?php echo $_POST['NAME']; ?></p>
+		<p><b>Email:</b> <?php echo $_POST['EMAIL']; ?></p>
 		<p><b>Phone:</b> <?php echo $_POST['PHONE_NUM']; ?></p>
 	</div>
 
