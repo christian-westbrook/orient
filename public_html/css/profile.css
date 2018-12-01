@@ -78,6 +78,7 @@
 #dataContainerOne h1
 {
 	text-align: left;
+	padding-left: 5vw;
 	float: left;
 	min-width: 400px;
 }
