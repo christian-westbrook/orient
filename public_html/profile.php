@@ -267,6 +267,16 @@ $_POST['ROLE'] = $role;
 		<p><?php echo $_POST['ROLE']; ?></p>
 		<p><b>Research Summary</b></br></br>
 		   <?php echo $_POST['BIO']; ?></p>
+		<p><b>Research Interests</b></br></br>
+			<?php
+ 			   $interests = $_POST['INTERESTS'];
+
+ 			   $length = count($interests);
+ 			   for($i = 0; $i < $length; $i++)
+ 			   {
+ 				   echo '<a href="results.php?SEARCH="' . $interests[$i] . '">' . $interests[$i] . '</a> ';
+ 			   }
+ 		   ?></p>
 	</div>
 </div>
 
