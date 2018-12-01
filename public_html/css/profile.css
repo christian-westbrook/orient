@@ -152,7 +152,8 @@
 {
 	text-decoration: none;
 	background: #006994;
-	border-radius: 4px;
+	color: white;
+	border-radius: 6px;
 	border: solid 1px black;
 	padding: 8px;
 	height: 3em;
