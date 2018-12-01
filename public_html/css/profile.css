@@ -155,6 +155,7 @@
 
 .interest
 {
+	float: left;
 	text-decoration: none;
 	background: #006994;
 	color: white;
