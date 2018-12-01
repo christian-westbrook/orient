@@ -65,7 +65,7 @@ if($lenADM>0) $admin= True;
 				$lenNU = count($valNU);
 				for($i = 0; $i < $length; $i++){
 			?>
-			<option value="<?php echo $valNU[$i]['USER_ID'];?>"><?php echo $valNU[$i]['NAME'];?></option>
+			<option value="<?php echo $valNU[$i]['USER_ID'];?>"><?php echo $valNU[$i]['FNAME']." ".$valNU[$i]['LNAME'];?></option>
 			<?php } ?>
 			</select><br>
 		<?php } ?>
