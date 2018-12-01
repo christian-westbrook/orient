@@ -49,7 +49,7 @@ if($sessionStarted == false)
 
 		<p class="label">Update Profile Picture</p>
 
-		<form action="php/update-profile-picture-script.php" method="POST">
+		<form action="php/update-profile-picture-script.php" method="POST" enctype="multipart/form-data">
 			<input type="file" class="field" name="profile" accept="image/*" /></br>
 			<input type="submit" value="Update Profile Picture" class="sub-button" name="pic-sub">
 		</form>
