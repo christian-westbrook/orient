@@ -78,6 +78,7 @@
 #dataContainerOne h1
 {
 	text-align: left;
+	float: left;
 }
 
 #dataContainerTwo
