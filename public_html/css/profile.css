@@ -78,6 +78,11 @@
 	margin-top: 0px;
 }
 
+#dataContainerOne h1
+{
+	text-align: left;
+}
+
 #dataContainerTwo
 {
 	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
