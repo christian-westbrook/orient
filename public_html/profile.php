@@ -201,8 +201,9 @@ $_POST['EMP'] = $emp;
    	</div>
 
 	<form id="post-form" action="php/make-post-script.php" method="POST">
-		<p>Make Post</p>
+		<p><b>Make Post</b></p>
 		<input type="text" name="post" placeholder="How's your research going?" />
+		<input type="submit" value="Post" />
 	</form>
 </div>
 
