@@ -28,10 +28,14 @@ $sqlEMP = 'SELECT NAME FROM EMPLOYERS';
 $sqlUNI = 'SELECT NAME FROM UNIVERSITIES';
 $sqlINT = 'SELECT NAME FROM INTERESTS';
 $sqlSKL = 'SELECT NAME FROM SKILLS';
-$stmtEMP = $conn->query($sqlEMP);
-$stmtUNI = $conn->query($sqlUNI);
-$stmtINT = $conn->query($sqlINT);
-$stmtSKL = $conn->query($sqlSKL);
+$stmtEMP = $conn->prepare($sqlEMP);
+$stmtEMP->execute()
+$stmtUNI = $conn->prepare($sqlUNI);
+$stmtUNI->execute()
+$stmtINT = $conn->prepare($sqlINT);
+$stmtINT->execute()
+$stmtSKL = $conn->prepare($sqlSKL);
+$stmtSKL->execute()
 
 ?>
 
@@ -74,22 +78,22 @@ $stmtSKL = $conn->query($sqlSKL);
 			<input type="textarea" name="bio" placeholder="Bio" class="field" /></br>
 			<select name="employer">
 				<?php while($index = $stmtEMP->fetch_assoc()){ ?>
-				<option value="<?php echo $index["NAME"];?>"><?php echo $index["NAME"];?></option>
+				<option value="<?php echo $index["NAME"]; ?>"><?php echo $index["NAME"]; ?></option>
 				<?php } ?>
 			</select>
 			<select name="university">
 				<?php while($index = $stmtUNI->fetch_assoc()){ ?>
-				<option value="<?php echo $index["NAME"];?>"><?php echo $index["NAME"];?></option>
+				<option value="<?php echo $index["NAME"]; ?>"><?php echo $index["NAME"]; ?></option>
 				<?php } ?>
 			</select>
 			<select name="interest" multiple>
 				<?php while($index = $stmtINT->fetch_assoc()){ ?>
-				<option value="<?php echo $index["NAME"];?>"><?php echo $index["NAME"];?></option>
+				<option value="<?php echo $index["NAME"]; ?>"><?php echo $index["NAME"]; ?></option>
 				<?php } ?>
 			</select>
 			<select name="skill" multiple>
 				<?php while($index = $stmtSKL->fetch_assoc()){ ?>
-				<option value="<?php echo $index["NAME"];?>"><?php echo $index["NAME"];?></option>
+				<option value="<?php echo $index["NAME"]; ?>"><?php echo $index["NAME"]; ?></option>
 				<?php } ?>
 			</select>
 			<input type="submit" value="Update Information" class="sub-button">
