@@ -28,14 +28,10 @@ $sqlEMP = 'SELECT NAME FROM EMPLOYERS';
 $sqlUNI = 'SELECT NAME FROM UNIVERSITIES';
 $sqlINT = 'SELECT NAME FROM INTERESTS';
 $sqlSKL = 'SELECT NAME FROM SKILLS';
-$stmtEMP = $conn->prepare($sqlEMP);
-$stmtEMP->execute();
-$stmtUNI = $conn->prepare($sqlUNI);
-$stmtUNI->execute();
-$stmtINT = $conn->prepare($sqlINT);
-$stmtINT->execute();
-$stmtSKL = $conn->prepare($sqlSKL);
-$stmtSKL->execute();
+$stmtEMP = $conn->query($sqlEMP);
+$stmtUNI = $conn->query($sqlUNI);
+$stmtINT = $conn->query($sqlINT);
+$stmtSKL = $conn->query($sqlSKL);
 
 ?>
 
@@ -76,9 +72,15 @@ $stmtSKL->execute();
 			<input type="text" name="hometown" placeholder="Hometown" class="field" /></br>
 			<input type="text" name="phone-num" placeholder="XXX-XXX-XXXX" class="field" /></br>
 			<input type="textarea" name="bio" placeholder="Bio" class="field" /></br>
-			<select name="employer">
-				<?php while($index = $stmtEMP->fetch_assoc()){ ?>
-				<option value="<?php echo $index["NAME"]; ?>">1</option>
+			<select name="poop">
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+			</select>
+			<select name="employer">				
+				<?php 
+					while ($valz = $stmtEMP->fetch_assoc()){ ?>
+				<option value="<?php echo $valz['NAME']; ?>">1</option>
 				<?php } ?>
 			</select>
 			<input type="submit" value="Update Information" class="sub-button">
