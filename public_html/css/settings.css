@@ -54,12 +54,15 @@
 #profile
 {
 	width: 15vw;
+	height: 4vh;
 }
 
 .field, .sub-button
 {
 	width: 15vw;
 	height: 4vh;
+
+	min-width: 300px;
 }
 
 .sub
