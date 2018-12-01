@@ -83,6 +83,9 @@
         $stmt->bindParam(':EMP_ID', $employer, PDO::PARAM_INT);
         $stmt->bindParam(':USER_ID', $id, PDO::PARAM_INT);
         $stmt->execute();
+        if(!$stmt->execute())
+        {
+        }
     }
 
     if($university !== 'ignore')
