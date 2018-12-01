@@ -244,6 +244,9 @@ $_POST['DEP'] = $dep;
 
 <div id="container">
 	<img id="profile-pic" src="<?php echo $_POST['PROFILE']; ?>">
+
+	<h1><?php echo $_POST['NAME']; ?></h1>
+	<h1><?php echo $_POST['DEP']; ?></h1>
 </div>
 
 <!-- Defines the footer of each page -->
