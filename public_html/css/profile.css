@@ -122,9 +122,10 @@
 }
 */
 
-#upper-container
+#inner-container
 {
-	margin: 0 auto;
+	margin-left: 10%;
+	margin-right: 10%;
 }
 
 #profile-pic

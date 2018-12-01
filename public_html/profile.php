@@ -258,7 +258,7 @@ $_POST['EMP'] = $emp;
 -->
 
 <div id="container">
-	<div id="upper-container">
+	<div id="inner-container">
 		<img id="profile-pic" src="<?php echo $_POST['PROFILE']; ?>">
 
 		<div id="head-info">
@@ -270,7 +270,6 @@ $_POST['EMP'] = $emp;
    			<p><b>Phone:</b> <?php echo $_POST['PHONE_NUM']; ?></p>
 			<p><b>Hometown:</b> <?php echo $_POST['HOMETOWN']; ?></p>
 		</div>
-	</div>
 
 	<div id="ints-skills">
 		<p><b>Research Interests</b></br></br>
@@ -295,6 +294,7 @@ $_POST['EMP'] = $emp;
 		   	}
 	   	?></p>
    	</div>
+	</div>
 </div>
 
 <!-- Defines the footer of each page -->
