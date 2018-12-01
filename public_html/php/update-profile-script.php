@@ -84,39 +84,69 @@
         $stmt->bindParam(':USER_ID', $id, PDO::PARAM_INT);
         $stmt->execute();
         if(!$stmt->execute())
-        {
+        {  
+            $sql = 'INSERT INTO USERS_EMPLOYERS (USER_ID, EMP_ID, TITLE, ST_DATE, END_DATE) VALUES (:USER_ID, :EMP:ID, "TITLE", NOW(), NOW())';
+            $stmt = $conn->prepare($sql);
+            $stmt->bindParam(':EMP_ID', $employer, PDO::PARAM_INT);
+            $stmt->bindParam(':USER_ID', $id, PDO::PARAM_INT);
+            $stmt->execute();
         }
     }
 
     if($university !== 'ignore')
     {
         $sql = 'UPDATE USERS_UNIVERSITIES SET UNIV_ID= :UNIV_ID WHERE USER_ID= :USER_ID';
-
+        
         $stmt = $conn->prepare($sql);
         $stmt->bindParam(':UNIV_ID', $university, PDO::PARAM_INT);
         $stmt->bindParam(':USER_ID', $id, PDO::PARAM_INT);
-        $stmt->execute();
+        if(!$stmt->execute())
+        {
+            $sql = 'INSERT INTO USERS_UNIVERSITIES (USER_ID, UNIV_ID) VALUES (:USER_ID, :UNIV_ID)';
+            $stmt = $conn->prepare($sql);
+            $stmt->bindParam(':UNIV_ID', $university, PDO::PARAM_INT);
+            $stmt->bindParam(':USER_ID', $id, PDO::PARAM_INT);
+            $stmt->execute();
+        }
     }
 
     foreach ($_POST['interest'] as $intid){
         if($intid !== 'ignore')
         {
-            $sql = 'INSERT INTO USERS_INTERESTS (USER_ID, INT_ID) VALUES(:USER_ID, :INT_ID)';
+            $sql = 'SELECT * FROM USERS_INTERESTS WHERE USER_ID= :USER_ID AND INT_ID= :INT_ID';
+            
             $stmt = $conn->prepare($sql);
             $stmt->bindParam(':INT_ID', $intid, PDO::PARAM_INT);
             $stmt->bindParam(':USER_ID', $id, PDO::PARAM_INT);
-            $stmt->execute();
+            $newresults = $stmt->execute();
+            if(!$newresults)
+            {
+                $sql = 'INSERT INTO USERS_INTERESTS (USER_ID, INT_ID) VALUES(:USER_ID, :INT_ID)';
+                $stmt = $conn->prepare($sql);
+                $stmt->bindParam(':INT_ID', $intid, PDO::PARAM_INT);
+                $stmt->bindParam(':USER_ID', $id, PDO::PARAM_INT);
+                $stmt->execute();
+            }
         }
     }
     
     foreach ($_POST['skill'] as $skillid){
         if($skillid !== 'ignore')
         {
-            $sql = 'INSERT INTO USERS_SKILLS (USER_ID, SKILL_ID) VALUES(:USER_ID, :SKILL_ID)';
+            $sql = 'SELECT * FROM USERS_SKILLS WHERE USER_ID= :USER_ID AND SKILL_ID= :SKILL_ID';
+            
             $stmt = $conn->prepare($sql);
             $stmt->bindParam(':SKILL_ID', $skillid, PDO::PARAM_INT);
             $stmt->bindParam(':USER_ID', $id, PDO::PARAM_INT);
-            $stmt->execute();
+            $newresults = $stmt->execute();
+            if(!$newresults)
+            {
+                $sql = 'INSERT INTO USERS_SKILLS (USER_ID, SKILL_ID) VALUES(:USER_ID, :SKILL_ID)';
+                $stmt = $conn->prepare($sql);
+                $stmt->bindParam(':SKILL_ID', $skillid, PDO::PARAM_INT);
+                $stmt->bindParam(':USER_ID', $id, PDO::PARAM_INT);
+                $stmt->execute();
+            }
         }
     }
 
