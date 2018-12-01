@@ -120,7 +120,7 @@
             $stmt->bindParam(':USER_ID', $id, PDO::PARAM_INT);
             $stmt->execute();
             $valz = $stmt->fetchAll(PDO::FETCH_ASSOC);
-			$length = count($valz);
+	    $length = count($valz);
             if(!$length>0)
             {
                 $sql = 'INSERT INTO USERS_INTERESTS (USER_ID, INT_ID) VALUES(:USER_ID, :INT_ID)';
@@ -140,8 +140,10 @@
             $stmt = $conn->prepare($sql);
             $stmt->bindParam(':SKILL_ID', $skillid, PDO::PARAM_INT);
             $stmt->bindParam(':USER_ID', $id, PDO::PARAM_INT);
-            $newresults = $stmt->execute();
-            if(!$newresults)
+            $stmt->execute();
+	    $valz = $stmt->fetchAll(PDO::FETCH_ASSOC);
+	    $length = count($valz);
+            if(!$length>0)
             {
                 $sql = 'INSERT INTO USERS_SKILLS (USER_ID, SKILL_ID) VALUES(:USER_ID, :SKILL_ID)';
                 $stmt = $conn->prepare($sql);
