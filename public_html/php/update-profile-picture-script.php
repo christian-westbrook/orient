@@ -5,9 +5,11 @@
     $id             = $_SESSION['USER_ID'];
     $profile        = $_POST['profile'];
 
-    phpinfo();
-
+    echo $profile;
     print_r($_FILES);
+
+
+    phpinfo();
 
     if(is_uploaded_file($_FILES['profile']['tmp_name']))
     {
