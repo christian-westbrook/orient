@@ -99,12 +99,11 @@
 }
 #userDesc
 {
-	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 	font-size: 0.8em;
 	padding: 1em;
     top: 80px;
     left: 450px;
-    <!-- width: 250px; -->
+    width: 250px;
     height: 100px;
 	float: left;
 	text-align: left;
