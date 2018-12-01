@@ -5,7 +5,7 @@
     $id             = $_SESSION['USER_ID'];
     $profile        = $_POST['profile'];
 
-    if(is_uploaded_file($_FILES['profile.jpg']['tmp_name']))
+    if(is_uploaded_file(realpath($profile['tmp_name'])))
     {
         echo 'HERE';
     }
