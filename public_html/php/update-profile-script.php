@@ -95,7 +95,7 @@
         $stmt->execute()
     }
     
-    if(isset($_POST['skill']))
+    if(isset($_POST['interest']))
     {
 	    $sql = 'DELETE FROM USERS_INTERESTS WHERE USER_ID= :USER_ID';
 	    $stmt = $conn->prepare($sql);
