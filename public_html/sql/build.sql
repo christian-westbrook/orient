@@ -165,7 +165,7 @@ INSERT INTO ROLES (NAME) VALUES ('INSTRUCTOR');
 INSERT INTO ROLES (NAME) VALUES ('ADMIN');
 
 -- LOAD TEST USERS
-INSERT INTO USERS (EMAIL, PASSWORD, FNAME, LNAME, TITLE, HOMETOWN, PHONE_NUM, BIO, PROFILE, CREATE_TIME, DEP_ID, ROLE_ID, UNIV_ID, EMP_ID) VALUES ('christianwestbrook@live.com', 'abc123', 'Christian', 'Westbrook', 'Mr.', 'Van Buren', '123-456-7890', 'I like to read horror novels and take long walks at the beach.', './img/users/1.jpg', NOW(), 6, 1, 1, 2);
+INSERT INTO USERS (EMAIL, PASSWORD, FNAME, LNAME, TITLE, HOMETOWN, PHONE_NUM, BIO, PROFILE, CREATE_TIME, DEP_ID, ROLE_ID, UNIV_ID, EMP_ID) VALUES ('christianwestbrook@live.com', 'abc123', 'Christian', 'Westbrook', 'Mr.', 'Van Buren', '123-456-7890', 'I like to read horror novels and take long walks at the beach.', './img/users/1.jpg', NOW(), 6, 5, 2, 3);
 
 INSERT INTO USERS_SKILLS (USER_ID, SKILL_ID) VALUES (1, 1);
 INSERT INTO USERS_SKILLS (USER_ID, SKILL_ID) VALUES (1, 2);
