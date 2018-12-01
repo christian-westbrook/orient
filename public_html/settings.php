@@ -17,12 +17,8 @@ $js = array(
 				0 => 'validatePassword'
 	   		);
 
-include('header.php');
+include 'header.php';
 
-if($sessionStarted == false)
-{
-   header('Location: /~orient/');
-}
 include 'database.php';
 $sqlEMP = 'SELECT NAME FROM EMPLOYERS';
 $sqlUNI = 'SELECT NAME FROM UNIVERSITIES';
