@@ -259,26 +259,28 @@ $_POST['EMP'] = $emp;
 
 <div id="container">
 	<div id="upper-container">
-	<img id="profile-pic" src="<?php echo $_POST['PROFILE']; ?>">
+		<img id="profile-pic" src="<?php echo $_POST['PROFILE']; ?>">
 
-	<div id="head-info">
-		<h1><?php echo $_POST['NAME']; ?></h1>
-		<p><?php echo $_POST['ROLE']; ?></br> <?php echo $_POST['UNIV']; ?></br> <?php echo $_POST['EMP']; ?></p>
-		<p><b>Research Summary</b></br></br>
-		   <?php echo $_POST['BIO']; ?></p>
-	</div>
+		<div id="head-info">
+			<h1><?php echo $_POST['NAME']; ?></h1>
+			<p><?php echo $_POST['ROLE']; ?></br> <?php echo $_POST['UNIV']; ?></br> <?php echo $_POST['EMP']; ?></p>
+			<p><b>Research Summary</b></br></br>
+		   	   <?php echo $_POST['BIO']; ?></p>
+		</div>
 	</div>
 
-	<p><b>Research Interests</b></br></br>
+	<div id="ints-skills">
+		<p><b>Research Interests</b></br></br>
 		<?php
-		   $interests = $_POST['INTERESTS'];
+		   	$interests = $_POST['INTERESTS'];
 
-		   $length = count($interests);
-		   for($i = 0; $i < $length; $i++)
-		   {
+		   	$length = count($interests);
+		   	for($i = 0; $i < $length; $i++)
+		   	{
 			   echo '<a class="interest" href="results.php?SEARCH="' . $interests[$i] . '">' . $interests[$i] . '</a> ';
-		   }
-	   ?></p>
+		   	}
+	   	?></p>
+   	</div>
 </div>
 
 <!-- Defines the footer of each page -->
