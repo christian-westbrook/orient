@@ -82,19 +82,41 @@
         $sql = 'UPDATE USERS_EMPLOYERS SET EMP_ID= :EMP_ID WHERE USER_ID= :USER_ID';
 
         $stmt = $conn->prepare($sql);
-        $stmt->bindParam(':EMP_ID', $employer, PDO::PARAM_STR);
+        $stmt->bindParam(':EMP_ID', $employer, PDO::PARAM_INT);
         $stmt->bindParam(':USER_ID', $id, PDO::PARAM_INT);
         $stmt->execute();
     }
 
-    if($employer !== 'ignore')
+    if($university !== 'ignore')
     {
         $sql = 'UPDATE USERS_UNIVERSITIES SET UNIV_ID= :UNIV_ID WHERE USER_ID= :USER_ID';
 
         $stmt = $conn->prepare($sql);
-        $stmt->bindParam(':UNIV_ID', $university, PDO::PARAM_STR);
+        $stmt->bindParam(':UNIV_ID', $university, PDO::PARAM_INT);
         $stmt->bindParam(':USER_ID', $id, PDO::PARAM_INT);
         $stmt->execute();
+    }
+
+    foreach ($interest as $intid){
+        if($intid !== 'ignore')
+        {
+            $sql = 'INSERT INTO USERS_INTERESTS (USER_ID, INT_ID) VALUES(:USER_ID, :INT_ID)';
+            $stmt = $conn->prepare($sql);
+            $stmt->bindParam(':INT_ID', $intid, PDO::PARAM_INT);
+            $stmt->bindParam(':USER_ID', $id, PDO::PARAM_INT);
+            $stmt->execute();
+        }
+    }
+    
+    foreach ($skill as $skillid){
+        if($skillid !== 'ignore')
+        {
+            $sql = 'INSERT INTO USERS_SKILLS (USER_ID, SKILL_ID) VALUES(:USER_ID, :SKILL_ID)';
+            $stmt = $conn->prepare($sql);
+            $stmt->bindParam(':SKILL_ID', $skillid, PDO::PARAM_INT);
+            $stmt->bindParam(':USER_ID', $id, PDO::PARAM_INT);
+            $stmt->execute();
+        }
     }
 
     header( "Location: ../profile.php" );
