@@ -124,7 +124,7 @@
 
 #upper-container
 {
-	
+
 }
 
 #profile-pic
@@ -158,6 +158,7 @@
 	float: left;
 	clear: left;
 	margin-left: 5em;
+	margin-top: 2em;
 }
 
 .interest, .skill
