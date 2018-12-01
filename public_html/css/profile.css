@@ -90,8 +90,8 @@
 
 #profilePicture
 {
-	width: 10vw;
-	height: 20vh;
+	width: 200px;
+	height: 200px;
 	float: left;
 	border: 2px solid black;
 }
