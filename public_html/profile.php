@@ -266,18 +266,19 @@ $_POST['EMP'] = $emp;
 		<p><?php echo $_POST['ROLE']; ?></br> <?php echo $_POST['UNIV']; ?></br> <?php echo $_POST['EMP']; ?></p>
 		<p><b>Research Summary</b></br></br>
 		   <?php echo $_POST['BIO']; ?></p>
-		<p><b>Research Interests</b></br></br>
-			<?php
- 			   $interests = $_POST['INTERESTS'];
+	</div>
+	</div>
 
- 			   $length = count($interests);
- 			   for($i = 0; $i < $length; $i++)
- 			   {
- 				   echo '<a class="interest" href="results.php?SEARCH="' . $interests[$i] . '">' . $interests[$i] . '</a> ';
- 			   }
- 		   ?></p>
-	</div>
-	</div>
+	<p><b>Research Interests</b></br></br>
+		<?php
+		   $interests = $_POST['INTERESTS'];
+
+		   $length = count($interests);
+		   for($i = 0; $i < $length; $i++)
+		   {
+			   echo '<a class="interest" href="results.php?SEARCH="' . $interests[$i] . '">' . $interests[$i] . '</a> ';
+		   }
+	   ?></p>
 </div>
 
 <!-- Defines the footer of each page -->
