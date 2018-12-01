@@ -1,5 +1,7 @@
 <?php
 include 'session.php';
+
+upload_temp_dir("temp/");
 ?>
 
 <head>
