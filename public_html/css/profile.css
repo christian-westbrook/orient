@@ -79,6 +79,7 @@
 {
 	text-align: left;
 	float: left;
+	min-width: 400px;
 }
 
 #dataContainerTwo
