@@ -81,21 +81,6 @@ $stmtSKL->execute();
 				<option value="<?php echo $index["NAME"]; ?>">1</option>
 				<?php } ?>
 			</select>
-			<select name="university">
-				<?php while($index = $stmtUNI->fetch_assoc()){ ?>
-				<option value="<?php echo $index["NAME"]; ?>">2</option>
-				<?php } ?>
-			</select>
-			<select name="interest" multiple>
-				<?php while($index = $stmtINT->fetch_assoc()){ ?>
-				<option value="<?php echo $index["NAME"]; ?>">3</option>
-				<?php } ?>
-			</select>
-			<select name="skill" multiple>
-				<?php while($index = $stmtSKL->fetch_assoc()){ ?>
-				<option value="<?php echo $index["NAME"]; ?>">4</option>
-				<?php } ?>
-			</select>
 			<input type="submit" value="Update Information" class="sub-button">
 		</form>
 	</div>
