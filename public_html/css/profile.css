@@ -121,3 +121,11 @@
 	float: right;
 }
 */
+
+#profile-pic
+{
+	width: 250px;
+	height: 250px;
+
+	border: solid 2px black;
+}
