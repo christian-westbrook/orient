@@ -47,23 +47,7 @@ if($_SESSION['ROLE_ID'] == 5) $admin= True;
 <div id="container">
 	<div id="settings">
 		<p id="heading">Settings</p>
-		<?php	if($admin){ 
-			$sqlNU = 'SELECT * FROM USERS';
-			$stmtNU = $conn->prepare($sqlNU);
-			$stmtNU->execute();
-		?>
-			<select name="newuserid" class="field">
-			<option value="ignore">Select A User</option>
-			<?php
-				$valNU = $stmtNU->fetchAll(PDO::FETCH_ASSOC);
-				$lenNU = count($valNU);
-				for($i = 0; $i < $length; $i++){
-			?>
-			<option value="<?php echo $valNU[$i]['USER_ID'];?>"><?php echo $valNU[$i]['FNAME']." ".$valNU[$i]['LNAME'];?></option>
-			<?php } ?>
-			</select><br>
-		<?php } ?>
-
+		
 		<p class="label">Change Email</p>
 
 		<form action="php/change-email-script.php" method="POST">
