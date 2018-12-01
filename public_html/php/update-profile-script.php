@@ -9,7 +9,6 @@
     $hometown   = $_POST['hometown'];
     $phone_num  = $_POST['phone-num'];
     $bio        = $_POST['bio'];
-    if(isset($_POST['newuserid'])) $id = $_POST['newuserid'];
     $employer   = $_POST['employer'];
     $university = $_POST['university'];
 
