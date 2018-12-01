@@ -65,3 +65,9 @@
 	margin-left: 5em;
 	margin-top: 0.5em;
 }
+
+#post-field
+{
+	width: 10em;
+	height: 1.5em;
+}
