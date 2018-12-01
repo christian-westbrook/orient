@@ -199,6 +199,11 @@ $_POST['EMP'] = $emp;
 		   	}
 	   	?></p>
    	</div>
+
+	<form action="php/make-post-script.php" method="POST">
+		<p class="label">Make Post</p>
+		<input type="text" name="post" placeholder="How's your research going?" />
+	</form>
 </div>
 
 <!-- Defines the footer of each page -->
