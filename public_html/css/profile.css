@@ -134,8 +134,12 @@
 	margin-top: 5em;
 }
 
-h1
+#head-info
 {
 	display: inline-block;
+}
+
+h1
+{
 	padding-bottom: 100px;
 }
