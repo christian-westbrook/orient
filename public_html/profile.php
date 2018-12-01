@@ -274,7 +274,7 @@ $_POST['ROLE'] = $role;
  			   $length = count($interests);
  			   for($i = 0; $i < $length; $i++)
  			   {
- 				   echo '<a href="results.php?SEARCH="' . $interests[$i] . '">' . $interests[$i] . '</a> ';
+ 				   echo '<a class="interest" href="results.php?SEARCH="' . $interests[$i] . '">' . $interests[$i] . '</a> ';
  			   }
  		   ?></p>
 	</div>

@@ -145,3 +145,9 @@
 	display: inline-block;
     float: left;
 }
+
+.interests
+{
+	text-decoration: none;
+	background: red;
+}
