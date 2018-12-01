@@ -76,25 +76,25 @@ $stmtSKL->execute();
 			<input type="text" name="hometown" placeholder="Hometown" class="field" /></br>
 			<input type="text" name="phone-num" placeholder="XXX-XXX-XXXX" class="field" /></br>
 			<input type="textarea" name="bio" placeholder="Bio" class="field" /></br>
-			<select name="employer" class="field">				
+			<select name="employer[]" class="field">				
 				<option value="ignore">Select An Employer</option>
 				<?php while ($valz = $stmtEMP->fetchAll(PDO::FETCH_ASSOC)){ ?>
 				<option value="<?php echo $valz[0]['EMP_ID'];?>"><?php echo $valz[0]['NAME'];?></option>
 				<?php } ?>
 			</select><br>
-			<select name="university" class="field">				
+			<select name="university[]" class="field">				
 				<option value="ignore">Select A University</option>
 				<?php while ($valz = $stmtUNI->fetchAll(PDO::FETCH_ASSOC)){ ?>
 				<option value="<?php echo $valz[0]['UNIV_ID'];?>"><?php echo $valz[0]['NAME'];?></option>
 				<?php } ?>
 			</select><br>
-			<select name="interest" class="field2" multiple>				
+			<select name="interest[]" class="field2" multiple>				
 				<option value="ignore">Select Your Interests</option>
 				<?php while ($valz = $stmtINT->fetchAll(PDO::FETCH_ASSOC)){ ?>
 				<option value="<?php echo $valz[0]['INT_ID'];?>"><?php echo $valz[0]['NAME'];?></option>
 				<?php } ?>
 			</select><br>
-			<select name="skill" class="field2" multiple>				
+			<select name="skill[]" class="field2" multiple>				
 				<option value="ignore">Select Your Skills</option>
 				<?php while ($valz = $stmtSKL->fetchAll(PDO::FETCH_ASSOC)){ ?>
 				<option value="<?php echo $valz[0]['SKILL_ID'];?>"><?php echo $valz[0]['NAME'];?></option>
