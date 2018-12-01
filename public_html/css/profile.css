@@ -139,6 +139,9 @@
 
 #head-info
 {
+	margin-top: 5em;
+	margin-left: 3em;
+
 	display: inline-block;
     float: left;
 }
