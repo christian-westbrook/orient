@@ -32,7 +32,7 @@ else
 // Retrieve the given user's info
 include 'php/database.php';
 
-$sql = "SELECT FNAME, LNAME, TITLE, EMAIL, PHONE_NUM, BIO, PROFILE, HOMETOWN, DEP_ID FROM USERS WHERE USER_ID= :ID";
+$sql = "SELECT FNAME, LNAME, TITLE, EMAIL, PHONE_NUM, BIO, PROFILE, HOMETOWN, DEP_ID, ROLE_ID FROM USERS WHERE USER_ID= :ID";
 
 $stmt = $conn->prepare($sql);
 $stmt->bindParam(':ID', $id, PDO::PARAM_INT);
@@ -50,6 +50,7 @@ if($stmt->execute())
 		$_POST['PROFILE'] = $results[0]['PROFILE'];
 		$_POST['HOMETOWN'] = $results[0]['HOMETOWN'];
 		$_POST['DEP_ID'] = $results[0]['DEP_ID'];
+		$_POST['ROLE_ID'] = $results[0]['ROLE_ID'];
 	}
 }
 else
@@ -145,6 +146,22 @@ if($stmt->execute())
 }
 
 $_POST['DEP'] = $dep;
+
+// Get the name of the users' role
+$sql = "SELECT NAME FROM ROLES WHERE ROLE_ID = :ROLE_ID";
+$stmt = $conn->prepare($sql);
+$role_id = (int) $_POST['ROLE_ID'];
+$stmt->bindParam(':ROLE_ID', $role_id, PDO::PARAM_INT);
+
+$role = '';
+if($stmt->execute())
+{
+	$results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+	$role = $results[0]['NAME'];
+}
+
+$_POST['ROLE'] = $role;
 
 ?>
 
@@ -247,6 +264,7 @@ $_POST['DEP'] = $dep;
 
 	<div id="head-info">
 		<h1><?php echo $_POST['NAME']; ?></h1>
+		<p><?php echo $_POST['ROLE']; ?></p>
 	</div>
 </div>
 
