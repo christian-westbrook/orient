@@ -120,8 +120,8 @@ $selected;
 						$stmt->bindParam(':USER_ID', $id, PDO::PARAM_INT);
 						$stmt->execute();
 						$valz2 = $stmt->fetchAll(PDO::FETCH_ASSOC);
-						$length = count($valz2);
-						if($length>0){$selected='selected';}
+						$length2 = count($valz2);
+						if($length2>0){$selected='selected';}
 						else{$selected='';}
 				?>
 				<option value="<?php echo $valz[$i]['SKILL_ID'];?>" <?php echo $selected;?>><?php echo $valz[$i]['NAME'];?></option>
