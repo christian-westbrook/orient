@@ -9,7 +9,7 @@
 
     print_r($_FILES);
 
-    if(is_uploaded_file(realpath($profile['tmp_name'])))
+    if(is_uploaded_file(realpath($file['tmp_name'])))
     {
         echo 'HERE';
     }
