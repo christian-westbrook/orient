@@ -120,7 +120,7 @@ $selected;
 						$stmt->bindParam(':USER_ID', $id, PDO::PARAM_INT);
 						$stmt->execute();
 						$valz2 = $stmt->fetchAll(PDO::FETCH_ASSOC);
-						$length = count($valz);
+						$length = count($valz2);
 						if($length>0){$selected='selected';}
 						else{$selected='';}
 				?>
