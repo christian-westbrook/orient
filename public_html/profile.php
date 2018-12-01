@@ -265,7 +265,7 @@ $_POST['ROLE'] = $role;
 	<div id="head-info">
 		<h1><?php echo $_POST['NAME']; ?></h1>
 		<p><?php echo $_POST['ROLE']; ?></p>
-		<p><b>Research Summary<b></br></br>
+		<p><b>Research Summary</b></br></br>
 		   <?php echo $_POST['BIO']; ?></p>
 	</div>
 </div>
