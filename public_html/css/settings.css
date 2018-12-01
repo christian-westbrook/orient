@@ -65,6 +65,14 @@
 	min-width: 300px;
 }
 
+.field2
+{
+	width: 15vw;
+	height: 8vh;
+
+	min-width: 300px;
+}
+
 .sub
 {
 	font-size: 1vw;
