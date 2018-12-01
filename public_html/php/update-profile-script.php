@@ -12,8 +12,8 @@
 
     $employer   = $_POST['employer'];
     $university = $_POST['university'];
-    $interest   = $_POST['interest'];
-    $skill      = $_POST['skill'];
+    $interest[] = $_POST['interest'];
+    $skill[]    = $_POST['skill'];
 
     include 'database.php';
 
