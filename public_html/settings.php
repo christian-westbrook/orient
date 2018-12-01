@@ -88,13 +88,13 @@ $stmtSKL->execute();
 				<option value="<?php echo $valz[0]['NAME'];?>"><?php echo $valz[0]['NAME'];?></option>
 				<?php } ?>
 			</select><br>
-			<select name="interest" class="field" multiple>				
+			<select name="interest" class="field2" multiple>				
 				<option value="ignore">Select Your Interests</option>
 				<?php while ($valz = $stmtINT->fetchAll(PDO::FETCH_ASSOC)){ ?>
 				<option value="<?php echo $valz[0]['NAME'];?>"><?php echo $valz[0]['NAME'];?></option>
 				<?php } ?>
 			</select><br>
-			<select name="skill" class="field" multiple>				
+			<select name="skill" class="field2" multiple>				
 				<option value="ignore">Select Your Skills</option>
 				<?php while ($valz = $stmtSKL->fetchAll(PDO::FETCH_ASSOC)){ ?>
 				<option value="<?php echo $valz[0]['NAME'];?>"><?php echo $valz[0]['NAME'];?></option>
