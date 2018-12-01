@@ -17,16 +17,21 @@ $js = array(
 				0 => 'validatePassword'
 	   		);
 
-include 'header.php';
+include('header.php');
 
+if($sessionStarted == false)
+{
+   header('Location: /~orient/');
+}
 include 'php/database.php';
 $sqlEMP = 'SELECT NAME FROM EMPLOYERS';
 $sqlUNI = 'SELECT NAME FROM UNIVERSITIES';
 $sqlINT = 'SELECT NAME FROM INTERESTS';
-$sqlINT = 'SELECT NAME FROM SKILLS';
+$sqlSKL = 'SELECT NAME FROM SKILLS';
 $stmtEMP = $conn->query($sqlEMP);
 $stmtUNI = $conn->query($sqlUNI);
 $stmtINT = $conn->query($sqlINT);
+$stmtSKL = $conn->query($sqlSKL);
 
 ?>
 
@@ -67,25 +72,30 @@ $stmtINT = $conn->query($sqlINT);
 			<input type="text" name="hometown" placeholder="Hometown" class="field" /></br>
 			<input type="text" name="phone-num" placeholder="XXX-XXX-XXXX" class="field" /></br>
 			<input type="textarea" name="bio" placeholder="Bio" class="field" /></br>
-			<input type="submit" value="Update Information" class="sub-button">
 			<select name="employer">
-				?><?php while($index = $stmtEMP->fetch_assoc()){ ?>
+				<?php while($index = $stmtEMP->fetch_assoc()){ ?>
 				<option value="<?php echo $index["NAME"];?>"><?php echo $index["NAME"];?></option>
 				<?php } ?>
 			</select>
 			<select name="university">
-				?><?php while($index = $stmtUNI->fetch_assoc()){ ?>
+				<?php while($index = $stmtUNI->fetch_assoc()){ ?>
 				<option value="<?php echo $index["NAME"];?>"><?php echo $index["NAME"];?></option>
 				<?php } ?>
 			</select>
 			<select name="interest" multiple>
-				?><?php while($index = $stmtINT->fetch_assoc()){ ?>
+				<?php while($index = $stmtINT->fetch_assoc()){ ?>
 				<option value="<?php echo $index["NAME"];?>"><?php echo $index["NAME"];?></option>
 				<?php } ?>
 			</select>
+			<select name="skill" multiple>
+				<?php while($index = $stmtSKL->fetch_assoc()){ ?>
+				<option value="<?php echo $index["NAME"];?>"><?php echo $index["NAME"];?></option>
+				<?php } ?>
+			</select>
+			<input type="submit" value="Update Information" class="sub-button">
 		</form>
 	</div>
 </div>
 
 <!-- Defines the footer of each page -->
-<?php include 'footer.php'; ?>
+<?php include('footer.php'); ?>
