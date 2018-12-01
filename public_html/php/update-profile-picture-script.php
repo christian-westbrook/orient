@@ -9,6 +9,8 @@
 
     print_r($_FILES);
 
+    phpinfo();
+
     if(is_uploaded_file(realpath($file['tmp_name'])))
     {
         echo 'HERE';
