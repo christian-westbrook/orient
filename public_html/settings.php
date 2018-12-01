@@ -75,7 +75,7 @@ $stmtSKL->execute();
 			<input type="text" name="title" placeholder="Title" class="field" /></br>
 			<input type="text" name="hometown" placeholder="Hometown" class="field" /></br>
 			<input type="text" name="phone-num" placeholder="XXX-XXX-XXXX" class="field" /></br>
-			<input type="textarea" name="bio" placeholder="Research Summary" class="field" id="research-summary"/></br>
+			<input type="textarea" rows="4" name="bio" placeholder="Research Summary" class="field" id="research-summary"/></br>
 			<select name="employer" class="field">
 				<option value="ignore">Select An Employer</option>
 				<?php
