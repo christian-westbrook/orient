@@ -32,7 +32,7 @@ else
 // Retrieve the given user's info
 include 'php/database.php';
 
-$sql = "SELECT FNAME, LNAME, TITLE, EMAIL, PHONE_NUM, BIO, PROFILE, HOMETOWN, DEP_ID, ROLE_ID FROM USERS WHERE USER_ID= :ID";
+$sql = "SELECT FNAME, LNAME, TITLE, EMAIL, PHONE_NUM, BIO, PROFILE, HOMETOWN, DEP_ID, ROLE_ID, UNIV_ID, EMP_ID FROM USERS WHERE USER_ID= :ID";
 
 $stmt = $conn->prepare($sql);
 $stmt->bindParam(':ID', $id, PDO::PARAM_INT);
@@ -51,6 +51,8 @@ if($stmt->execute())
 		$_POST['HOMETOWN'] = $results[0]['HOMETOWN'];
 		$_POST['DEP_ID'] = $results[0]['DEP_ID'];
 		$_POST['ROLE_ID'] = $results[0]['ROLE_ID'];
+		$_POST['UNIV_ID'] = $results[0]['UNIV_ID'];
+		$_POST['EMP_ID'] = $results[0]['EMP_ID'];
 	}
 }
 else
@@ -58,42 +60,6 @@ else
 	echo "Unable to find that user.";
 }
 
-// Grab data from the USERS_UNIVERSITIES table
-$sql = "SELECT UNIVERSITIES.NAME FROM UNIVERSITIES INNER JOIN USERS_UNIVERSITIES ON UNIVERSITIES.UNIV_ID = USERS_UNIVERSITIES.UNIV_ID WHERE USERS_UNIVERSITIES.USER_ID= :ID";
-$stmt = $conn->prepare($sql);
-$stmt->bindParam(':ID', $id, PDO::PARAM_STR);
-if($stmt->execute())
-{
-	$results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-	$universities;
-
-	$length = count($results);
-	for($i = 0; $i < $length; $i++)
-	{
-		$universities[$i] = $results[$i]['NAME'];
-	}
-
-	$_POST['UNIVERSITIES'] = $universities;
-}
-// Grab data from the USERS_EMPLOYERS table
-$sql = "SELECT EMPLOYERS.NAME FROM EMPLOYERS INNER JOIN USERS_EMPLOYERS ON EMPLOYERS.EMP_ID = USERS_EMPLOYERS.EMP_ID WHERE USERS_EMPLOYERS.USER_ID= :ID";
-$stmt = $conn->prepare($sql);
-$stmt->bindParam(':ID', $id, PDO::PARAM_STR);
-if($stmt->execute())
-{
-	$results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-	$employers;
-
-	$length = count($results);
-	for($i = 0; $i < $length; $i++)
-	{
-		$employers[$i] = $results[$i]['NAME'];
-	}
-
-	$_POST['EMPLOYERS'] = $employers;
-}
 // Grab data from the USERS_SKILLS table
 $sql = "SELECT SKILLS.NAME FROM SKILLS INNER JOIN USERS_SKILLS ON SKILLS.SKILL_ID = USERS_SKILLS.SKILL_ID WHERE USERS_SKILLS.USER_ID= :ID";
 $stmt = $conn->prepare($sql);
@@ -162,6 +128,38 @@ if($stmt->execute())
 }
 
 $_POST['ROLE'] = $role;
+
+// Get the name of the users' university
+$sql = "SELECT NAME FROM UNIVERSITIES WHERE UNIV_ID = :UNIV_ID";
+$stmt = $conn->prepare($sql);
+$univ_id = (int) $_POST['UNIV_ID'];
+$stmt->bindParam(':UNIV_ID', $univ_id, PDO::PARAM_INT);
+
+$univ = '';
+if($stmt->execute())
+{
+	$results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+	$univ = $results[0]['NAME'];
+}
+
+$_POST['UNIV'] = $univ;
+
+// Get the name of the users' employer
+$sql = "SELECT NAME FROM EMPLOYERS WHERE EMP_ID = :EMP_ID";
+$stmt = $conn->prepare($sql);
+$emp_id = (int) $_POST['EMP_ID'];
+$stmt->bindParam(':EMP_ID', $emp_id, PDO::PARAM_INT);
+
+$emp = '';
+if($stmt->execute())
+{
+	$results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+	$emp = $results[0]['NAME'];
+}
+
+$_POST['EMP'] = $emp;
 
 ?>
 
