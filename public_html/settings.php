@@ -76,7 +76,7 @@ $stmtSKL->execute();
 			<input type="text" name="hometown" placeholder="Hometown" class="field" /></br>
 			<input type="text" name="phone-num" placeholder="XXX-XXX-XXXX" class="field" /></br>
 			<input type="textarea" name="bio" placeholder="Bio" class="field" /></br>
-			<select name="employer[]" class="field">				
+			<select name="employer" class="field">				
 				<option value="ignore">Select An Employer</option>
 				<?php 
 					$valz = $stmtEMP->fetchAll(PDO::FETCH_ASSOC);
@@ -86,22 +86,34 @@ $stmtSKL->execute();
 				<option value="<?php echo $valz[$i]['EMP_ID'];?>"><?php echo $valz[$i]['NAME'];?></option>
 				<?php } ?>
 			</select><br>
-			<select name="university[]" class="field">				
+			<select name="university" class="field">				
 				<option value="ignore">Select A University</option>
-				<?php while ($valz = $stmtUNI->fetchAll(PDO::FETCH_ASSOC)){ ?>
-				<option value="<?php echo $valz[0]['UNIV_ID'];?>"><?php echo $valz[0]['NAME'];?></option>
+				<?php
+					$valz = $stmtUNI->fetchAll(PDO::FETCH_ASSOC);
+					$length = count($valz);
+					for($i = 0; $i < $length; $i++){
+				?>
+				<option value="<?php echo $valz[$i]['UNIV_ID'];?>"><?php echo $valz[$i]['NAME'];?></option>
 				<?php } ?>
 			</select><br>
 			<select name="interest[]" class="field2" multiple>				
 				<option value="ignore">Select Your Interests</option>
-				<?php while ($valz = $stmtINT->fetchAll(PDO::FETCH_ASSOC)){ ?>
-				<option value="<?php echo $valz[0]['INT_ID'];?>"><?php echo $valz[0]['NAME'];?></option>
+				<?php 
+					$valz = $stmtINT->fetchAll(PDO::FETCH_ASSOC);
+					$length = count($valz);
+					for($i = 0; $i < $length; $i++){
+				?>
+				<option value="<?php echo $valz[$i]['INT_ID'];?>"><?php echo $valz[$i]['NAME'];?></option>
 				<?php } ?>
 			</select><br>
 			<select name="skill[]" class="field2" multiple>				
 				<option value="ignore">Select Your Skills</option>
-				<?php while ($valz = $stmtSKL->fetchAll(PDO::FETCH_ASSOC)){ ?>
-				<option value="<?php echo $valz[0]['SKILL_ID'];?>"><?php echo $valz[0]['NAME'];?></option>
+				<?php 
+					$valz = $stmtSKL->fetchAll(PDO::FETCH_ASSOC);
+					$length = count($valz);
+					for($i = 0; $i < $length; $i++){
+				?>
+				<option value="<?php echo $valz[$i]['SKILL_ID'];?>"><?php echo $valz[$i]['NAME'];?></option>
 				<?php } ?>
 			</select><br>
 			<input type="submit" value="Update Information" class="sub-button">
