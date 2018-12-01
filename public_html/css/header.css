@@ -14,6 +14,10 @@ html, body
 	height: 6vh;
 
 	min-height: 3em;
+
+	position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
 }
 
 #header a
