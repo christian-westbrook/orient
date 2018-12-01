@@ -25,13 +25,14 @@ if($sessionStarted == false)
 }
 include 'php/database.php';
 $sqlEMP = 'SELECT NAME FROM EMPLOYERS';
-$sqlUNI = 'SELECT NAME FROM UNIVERSITIES';
-$sqlINT = 'SELECT NAME FROM INTERESTS';
-$sqlSKL = 'SELECT NAME FROM SKILLS';
-$stmtEMP = $conn->query($sqlEMP);
-$stmtUNI = $conn->query($sqlUNI);
-$stmtINT = $conn->query($sqlINT);
-$stmtSKL = $conn->query($sqlSKL);
+//$sqlUNI = 'SELECT NAME FROM UNIVERSITIES';
+//$sqlINT = 'SELECT NAME FROM INTERESTS';
+//$sqlSKL = 'SELECT NAME FROM SKILLS';
+$stmtEMP = $conn->prepare($sqlEMP);
+$stmtEMP->execute()
+//$stmtUNI = $conn->query($sqlUNI);
+//$stmtINT = $conn->query($sqlINT);
+//$stmtSKL = $conn->query($sqlSKL);
 
 ?>
 
@@ -72,10 +73,10 @@ $stmtSKL = $conn->query($sqlSKL);
 			<input type="text" name="hometown" placeholder="Hometown" class="field" /></br>
 			<input type="text" name="phone-num" placeholder="XXX-XXX-XXXX" class="field" /></br>
 			<input type="textarea" name="bio" placeholder="Bio" class="field" /></br>
-			<select name="employer">
+			<select name="employer">				
 				<option value="ignore">Select an Employer</option>
-				<?php while ($valz = $stmtEMP->fetch_assoc()){ ?>
-				<option value="<?php echo $valz['Subject'];?>">1</option>
+				<?php while ($valz = $stmtEMP->fetchAll(PDO::FETCH_ASSOC)){ ?>
+				<option value="<?php echo $valz[0]['NAME'];?>">1</option>
 				<?php } ?>
 			</select>
 			<input type="submit" value="Update Information" class="sub-button">
