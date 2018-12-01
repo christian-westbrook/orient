@@ -268,6 +268,7 @@ $_POST['EMP'] = $emp;
 		   	   <?php echo $_POST['BIO']; ?></p>
 			   <p><b>Email:</b> <?php echo $_POST['EMAIL']; ?></p>
    			<p><b>Phone:</b> <?php echo $_POST['PHONE_NUM']; ?></p>
+			<p><b>Hometown:</b> <?php echo $_POST['HOMETOWN']; ?></p>
 		</div>
 	</div>
 
