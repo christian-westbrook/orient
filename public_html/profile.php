@@ -280,6 +280,17 @@ $_POST['EMP'] = $emp;
 			   echo '<a class="interest" href="results.php?SEARCH="' . $interests[$i] . '">' . $interests[$i] . '</a> ';
 		   	}
 	   	?></p>
+
+		<p><b>Skills</b></br></br>
+		<?php
+		   	$skills = $_POST['SKILLS'];
+
+		   	$length = count($skills);
+		   	for($i = 0; $i < $length; $i++)
+		   	{
+			   echo '<a class="skill" href="results.php?SEARCH="' . $skills[$i] . '">' . $skills[$i] . '</a> ';
+		   	}
+	   	?></p>
    	</div>
 </div>
 
