@@ -78,8 +78,12 @@ $stmtSKL->execute();
 			<input type="textarea" name="bio" placeholder="Bio" class="field" /></br>
 			<select name="employer[]" class="field">				
 				<option value="ignore">Select An Employer</option>
-				<?php while ($valz = $stmtEMP->fetchAll(PDO::FETCH_ASSOC)){ ?>
-				<option value="<?php echo $valz[0]['EMP_ID'];?>"><?php echo $valz[0]['NAME'];?></option>
+				<?php 
+					$valz = $stmtEMP->fetchAll(PDO::FETCH_ASSOC);
+					$length = count($valz);
+					for($i = 0; $i < $length; $i++){					
+				?>
+				<option value="<?php echo $valz[$i]['EMP_ID'];?>"><?php echo $valz[$i]['NAME'];?></option>
 				<?php } ?>
 			</select><br>
 			<select name="university[]" class="field">				
