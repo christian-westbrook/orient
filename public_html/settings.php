@@ -40,13 +40,7 @@ $stmtSKL->execute();
 $selected;
 
 $admin= False;
-$sqlADM= 'SELECT * FROM USERS WHERE USER_ID= :USER_ID AND ROLE_ID= 5';
-$stmtADM->bindParam(':USER_ID', $id, PDO::PARAM_INT);
-$stmtADM = $conn->prepare($sqlADM);
-$stmtADM->execute();
-$valADM = $stmtADM->fetchAll(PDO::FETCH_ASSOC);
-$lenADM = count($valADM);
-if($lenADM>0) $admin= True;
+if($_SESSION['ROLE_ID'] == 5) $admin= True;
 
 ?>
 
