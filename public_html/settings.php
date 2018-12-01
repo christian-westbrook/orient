@@ -23,6 +23,14 @@ if($sessionStarted == false)
 {
    header('Location: /~orient/');
 }
+include 'database.php';
+$sqlEMP = 'SELECT NAME FROM EMPLOYERS';
+$sqlUNI = 'SELECT NAME FROM UNIVERSITIES';
+$sqlINT = 'SELECT NAME FROM INTERESTS';
+$sqlINT = 'SELECT NAME FROM SKILLS';
+$stmtEMP = $conn->query($sqlEMP);
+$stmtUNI = $conn->query($sqlUNI);
+$stmtINT = $conn->query($sqlINT);
 
 ?>
 
@@ -49,8 +57,8 @@ if($sessionStarted == false)
 
 		<p class="label">Update Profile Picture</p>
 
-		<form action="php/update-profile-picture-script.php" method="POST" enctype="multipart/form-data">
-			<input type="file" class="field" name="profile" id="profile" accept="image/*" /></br>
+		<form action="php/update-profile-picture-script.php" method="POST">
+			<input type="file" class="field" name="profile" accept="image/*" /></br>
 			<input type="submit" value="Update Profile Picture" class="sub-button" name="pic-sub">
 		</form>
 
@@ -64,6 +72,21 @@ if($sessionStarted == false)
 			<input type="text" name="phone-num" placeholder="XXX-XXX-XXXX" class="field" /></br>
 			<input type="textarea" name="bio" placeholder="Bio" class="field" /></br>
 			<input type="submit" value="Update Information" class="sub-button">
+			<select name="employer">
+				?><?php while($index = $stmtEMP->fetch_assoc()){ ?>
+				<option value="<?php echo $index["NAME"];?>"><?php echo $index["NAME"];?></option>
+				<?php } ?>
+			</select>
+			<select name="university">
+				?><?php while($index = $stmtUNI->fetch_assoc()){ ?>
+				<option value="<?php echo $index["NAME"];?>"><?php echo $index["NAME"];?></option>
+				<?php } ?>
+			</select>
+			<select name="interest" multiple>
+				?><?php while($index = $stmtINT->fetch_assoc()){ ?>
+				<option value="<?php echo $index["NAME"];?>"><?php echo $index["NAME"];?></option>
+				<?php } ?>
+			</select>
 		</form>
 	</div>
 </div>
