@@ -49,6 +49,7 @@ include 'session.php';
 			echo '<a href="index.php"><p id="home-link">ORIENT</p></a>';
 			echo '<a href="profile.php"><p>Profile</p></a>';
 			echo '<a href="settings.php"><p>Settings</p></a>';
+			if($_SESSION['ROLE_ID'] == 5)echo '<a href="admin-settings.php"><p>Admin</p></a>';
 			echo '<input type="text" id="input" placeholder="Search..." />';
 			echo '<a onclick="search()" href="#" id="search-link"><p>Search</p></a>';
 			echo '<a href="php/logout-script.php" id="log-out"><p>Logout</p></a>';
