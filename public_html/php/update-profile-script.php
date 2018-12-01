@@ -74,7 +74,7 @@
         $stmt->bindParam(':USER_ID', $id, PDO::PARAM_INT);
         $stmt->execute();
     }
-
+/*
     if($employer !== 'ignore')
     {
         $sql = 'UPDATE USERS SET EMP_ID= :EMP_ID WHERE USER_ID= :USER_ID';
@@ -116,7 +116,7 @@
             }
         }
     }
-    
+    */
     foreach ($_POST['skill'] as $skillid){
         if($skillid !== 'ignore')
         {
