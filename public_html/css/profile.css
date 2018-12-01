@@ -107,16 +107,16 @@
     <!-- width: 250px; -->
     height: 100px;
 	float: left;
+	text-align: left;
 }
+
 #userDesc h2
 {
 	margin: auto;
-	text-align: center;
 }
 #dataContainerTwo h3
 {
 	margin: auto;
-	text-align: center;
 }
 #dataContainerTwo #left
 {
