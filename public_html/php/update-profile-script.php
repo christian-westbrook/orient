@@ -12,8 +12,6 @@
 
     $employer   = $_POST['employer'];
     $university = $_POST['university'];
-    $interest[] = $_POST['interest'];
-    $skill[]    = $_POST['skill'];
 
     include 'database.php';
 
@@ -97,7 +95,7 @@
         $stmt->execute();
     }
 
-    foreach ($interest as $intid){
+    foreach ($_POST['interest'] as $intid){
         if($intid !== 'ignore')
         {
             $sql = 'INSERT INTO USERS_INTERESTS (USER_ID, INT_ID) VALUES(:USER_ID, :INT_ID)';
@@ -108,7 +106,7 @@
         }
     }
     
-    foreach ($skill as $skillid){
+    foreach ($_POST['skill'] as $skillid){
         if($skillid !== 'ignore')
         {
             $sql = 'INSERT INTO USERS_SKILLS (USER_ID, SKILL_ID) VALUES(:USER_ID, :SKILL_ID)';
