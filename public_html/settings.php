@@ -39,11 +39,36 @@ $stmtSKL = $conn->prepare($sqlSKL);
 $stmtSKL->execute();
 $selected;
 
+$admin= False;
+$sqlADM= 'SELECT * FROM USERS WHERE USER_ID= :USER_ID AND ROLE_ID= 5';
+$stmtADM->bindParam(':USER_ID', $id, PDO::PARAM_INT);
+$stmtADM = $conn->prepare($sqlADM);
+$stmtADM->execute();
+$valADM = $stmtADM->fetchAll(PDO::FETCH_ASSOC);
+$lenADM = count($valADM);
+if($lenADM>0) $admin= True;
+
 ?>
 
 <div id="container">
 	<div id="settings">
 		<p id="heading">Settings</p>
+		<?php	if($admin){ 
+			$sqlNU = 'SELECT * FROM USERS';
+			$stmtNU = $conn->prepare($sqlNU);
+			$stmtNU->execute();
+		?>
+			<select name="newuserid" class="field">
+			<option value="ignore">Select A User</option>
+			<?php
+				$valNU = $stmtNU->fetchAll(PDO::FETCH_ASSOC);
+				$lenNU = count($valNU);
+				for($i = 0; $i < $length; $i++){
+			?>
+			<option value="<?php echo $valNU[$i]['USER_ID'];?>"><?php echo $valNU[$i]['NAME'];?></option>
+			<?php } ?>
+			</select><br>
+		<?php } ?>
 
 		<p class="label">Change Email</p>
 
