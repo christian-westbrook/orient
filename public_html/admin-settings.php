@@ -48,7 +48,7 @@ $stmtNU->execute();
 		<?php
 			$valNU = $stmtNU->fetchAll(PDO::FETCH_ASSOC);
 			$lenNU = count($valNU);
-			for($i = 0; $i < $length; $i++){
+			for($i = 0; $i < $lenNU; $i++){
 		?>
 		<option value="<?php echo $valNU[$i]['USER_ID'];?>"><?php echo $valNU[$i]['FNAME']." ".$valNU[$i]['LNAME'];?></option>
 		<?php } ?>
