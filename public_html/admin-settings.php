@@ -63,11 +63,11 @@ $stmtNU->execute();
 			<input type="password" name="old-password" placeholder="Old Password" class="field" /></br>
 			<input type="password" name="new-password" placeholder="New Password" class="field" /></br>
 			<input type="password" name="confirm-password" placeholder="Confirm" class="field" /></br>
-			<input type="submit" value="Change Password" class="sub-button">
+			<input type="submit" value="Change Password" class="sub-button"></br>
 		
 
 			<input type="file" class="field" name="profile" accept="image/*" /></br>
-			<input type="submit" value="Update Profile Picture" class="sub-button" name="pic-sub">
+			<input type="submit" value="Update Profile Picture" class="sub-button" name="pic-sub"></br>
 
 
 			<input type="text" name="fname" placeholder="First Name" class="field" /></br>
