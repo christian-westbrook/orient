@@ -87,13 +87,13 @@
     if($university !== 'ignore')
     {
         $sql = 'UPDATE USERS SET UNIV_ID= :UNIV_ID WHERE USER_ID= :USER_ID';
-        
+
         $stmt = $conn->prepare($sql);
         $stmt->bindParam(':UNIV_ID', $university, PDO::PARAM_INT);
         $stmt->bindParam(':USER_ID', $id, PDO::PARAM_INT);
-        $stmt->execute()
+        $stmt->execute();
     }
-    
+
     if(isset($_POST['interest']))
     {
 	    $sql = 'DELETE FROM USERS_INTERESTS WHERE USER_ID= :USER_ID';
