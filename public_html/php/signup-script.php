@@ -13,6 +13,7 @@ if($_POST['password'] == $_POST['confirm'])
   	$plaintext 	= $_POST['password'];
 	$fname		= $_POST['fname'];
 	$lname		= $_POST['lname'];
+    $profile    = "default.png";
 
 	$ciphertext = password_hash($plaintext, PASSWORD_DEFAULT);
 
@@ -25,7 +26,7 @@ if($_POST['password'] == $_POST['confirm'])
 	$stmt->bindParam(':PASSWORD', $ciphertext, PDO::PARAM_STR);
 	$stmt->bindParam(':FNAME', $fname, PDO::PARAM_STR);
 	$stmt->bindParam(':LNAME', $lname, PDO::PARAM_STR);
-    $stmt->bindParam(':PROFILE', 'default.png', PDO::PARAM_STR);
+    $stmt->bindParam(':PROFILE', $profile, PDO::PARAM_STR);
 
 	if($stmt->execute())
 	{
