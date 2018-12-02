@@ -13,7 +13,7 @@ if($_POST['password'] == $_POST['confirm'])
   	$plaintext 	= $_POST['password'];
 	$fname		= $_POST['fname'];
 	$lname		= $_POST['lname'];
-    $profile    = "default.png";
+    $profile    = "img/users/default.png";
 
 	$ciphertext = password_hash($plaintext, PASSWORD_DEFAULT);
 
