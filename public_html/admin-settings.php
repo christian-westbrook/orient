@@ -58,7 +58,7 @@ $stmtNU->execute();
 		
 			<input type="text" name="email" placeholder="New Email" class="field" /></br>
 			<input type="text" name="confirm-email" placeholder="Confirm" class="field" /></br>
-			<input type="submit" value="Change Email" class="sub-button">
+			<input type="submit" value="Change Email" class="sub-button"></br>
 		
 			<input type="password" name="old-password" placeholder="Old Password" class="field" /></br>
 			<input type="password" name="new-password" placeholder="New Password" class="field" /></br>
