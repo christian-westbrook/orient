@@ -161,6 +161,26 @@ if($stmt->execute())
 
 $_POST['EMP'] = $emp;
 
+// Get this users' posts
+$sql = "SELECT * FROM POSTS WHERE USER_ID = :USER_ID";
+$stmt = $conn->prepare($sql);
+$stmt->bindParam(':USER_ID', $id, PDO::PARAM_INT);
+
+if($stmt->execute())
+{
+	$results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+	$posts;
+
+	$length = count($results);
+	for($i = 0; $i < $length; $i++)
+	{
+		$posts[$i] = $results[$i]['MESSAGE'];
+	}
+
+	$_POST['POSTS'] = $posts;
+}
+
 ?>
 
 <div id="container">
@@ -209,6 +229,15 @@ $_POST['EMP'] = $emp;
 					<input type="submit" id="post-button" value="Post" />
 				</form>';
 	}
+
+	$posts = $_POST['POSTS'];
+
+	$length = count($posts);
+	for($i = 0; $i < $length; $i++)
+	{
+		  echo '<p>' . $posts[i] . "</p></br></br>";
+	}
+
 	?>
 </div>
 
