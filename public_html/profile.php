@@ -201,7 +201,7 @@ $_POST['EMP'] = $emp;
    	</div>
 
 	<?php
-	if($id === $_SESSION['USER_ID'];)
+	if($id === $_SESSION['USER_ID'])
 	{
 		echo '	<form id="post-form" action="php/make-post-script.php" method="POST">
 					<p><b>Make Post</b></p>
