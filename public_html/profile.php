@@ -235,7 +235,7 @@ if($stmt->execute())
 	$length = count($posts);
 	for($i = 0; $i < $length; $i++)
 	{
-		  echo '<p>' . $posts[i] . "</p></br></br>";
+		  echo '<p class="post">' . $posts[i] . "</p></br></br>";
 	}
 
 	?>

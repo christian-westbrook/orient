@@ -77,3 +77,9 @@
 	width: 5em;
 	height: 3em;
 }
+
+.post
+{
+	float: left;
+	clear: left;
+}
