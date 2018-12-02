@@ -1,9 +1,9 @@
 <?php
 /**************************************************************************
- * System	: Open-source Research Interest Network
- * Version	: Prototype System II
- * File		: profile.php
- * Developers 	: Christian Westbrook
+ * System		: Open-source Research Interest Network
+ * Version		: Final System
+ * File			: profile.php
+ * Developers	: Brad Hamilton, Christian Westbrook
  *
  * Abstract 	:
  **************************************************************************/
@@ -200,11 +200,16 @@ $_POST['EMP'] = $emp;
 	   	?></p>
    	</div>
 
-	<form id="post-form" action="php/make-post-script.php" method="POST">
-		<p><b>Make Post</b></p>
-		<input type="text" name="post" id="post-field" placeholder="How's your research going?" />
-		<input type="submit" id="post-button" value="Post" />
-	</form>
+	<?php
+	if($id === $_SESSION['USER_ID'];)
+	{
+		echo '	<form id="post-form" action="php/make-post-script.php" method="POST">
+					<p><b>Make Post</b></p>
+					<input type="text" name="post" id="post-field" placeholder="How\'s your research going?" />
+					<input type="submit" id="post-button" value="Post" />
+				</form>';
+	}
+	?>
 </div>
 
 <!-- Defines the footer of each page -->
