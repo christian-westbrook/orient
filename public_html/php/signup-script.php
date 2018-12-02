@@ -18,13 +18,14 @@ if($_POST['password'] == $_POST['confirm'])
 
   	include 'database.php';
 
-	$sql  = 'INSERT INTO USERS (EMAIL, PASSWORD, FNAME, LNAME, CREATE_TIME, ROLE_ID, PROFILE) VALUES (:EMAIL, :PASSWORD, :FNAME, :LNAME, NOW(), 1, 'default.png')';
+	$sql  = 'INSERT INTO USERS (EMAIL, PASSWORD, FNAME, LNAME, CREATE_TIME, ROLE_ID, PROFILE) VALUES (:EMAIL, :PASSWORD, :FNAME, :LNAME, NOW(), 1, :PROFILE)';
 
 	$stmt = $conn->prepare($sql);
 	$stmt->bindParam(':EMAIL', $email, PDO::PARAM_STR);
 	$stmt->bindParam(':PASSWORD', $ciphertext, PDO::PARAM_STR);
 	$stmt->bindParam(':FNAME', $fname, PDO::PARAM_STR);
 	$stmt->bindParam(':LNAME', $lname, PDO::PARAM_STR);
+    $stmt->bindParam(':PROFILE', 'default.png', PDO::PARAM_STR);
 
 	if($stmt->execute())
 	{
