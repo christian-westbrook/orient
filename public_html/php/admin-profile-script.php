@@ -27,7 +27,7 @@
         $target = '.' . $target;
         move_uploaded_file($_FILES['profile']['tmp_name'], $target);
     }
-*/
+
     if($email !== '')
     {
         $sql = 'UPDATE USERS SET EMAIL= :EMAIL WHERE USER_ID= :USER_ID';
@@ -162,7 +162,7 @@
             $stmt->execute();
         }
     }
-
+*/
     if(isset($_POST['publications']))
     {
 	    $sql = 'DELETE FROM USERS_PUBLICATIONS WHERE USER_ID= :USER_ID';
