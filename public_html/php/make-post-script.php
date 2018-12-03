@@ -2,7 +2,7 @@
 	include '../session.php';
 
 	$userid = $_SESSION['USER_ID'];
-	$post = $_POST['post'];
+	$post = $_POST['post-field'];
 
 	echo $post;
 
