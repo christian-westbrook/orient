@@ -73,9 +73,10 @@
 	min-width: 300px;
 }
 
-label
+#setting label
 {
 	text-align: left;
+	width: 15vw;
 }
 .sub
 {
