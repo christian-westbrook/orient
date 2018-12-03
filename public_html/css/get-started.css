@@ -29,6 +29,7 @@
 
 .type
 {
+	padding-top: 0;
 	background: #006994;
 	color: white;
 	text-align: center;
@@ -42,8 +43,6 @@
 	margin-left: 2em;
 
 	display: inline-block;
-	float: left;
-	clear: left;
 }
 
 #admin
