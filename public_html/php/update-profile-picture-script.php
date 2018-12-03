@@ -8,7 +8,7 @@
     if(is_uploaded_file($_FILES['profile']['tmp_name']) && (substr($_FILES['profile']['type'], 0, 6) == 'image/'))
     {
         $target = './img/users/' . $id . '.' . substr($_FILES['profile']['type'], 6);
-        echo $target;
+        echo $target . '<br>';
 
         include 'database.php';
         $sql = 'UPDATE USERS SET PROFILE= :PROFILE WHERE USER_ID= :USER_ID';
