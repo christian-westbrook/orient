@@ -26,7 +26,7 @@ $sqlINT = 'SELECT * FROM INTERESTS';
 $sqlSKL = 'SELECT * FROM SKILLS';
 $sqlROL = 'SELECT * FROM ROLES';
 $sqlPUB = 'SELECT * FROM PUBLICATIONS';
-$sqlPUB = 'SELECT * FROM DEPARTMENTS';
+$sqlDEP = 'SELECT * FROM DEPARTMENTS';
 
 $stmtEMP = $conn->prepare($sqlEMP);
 $stmtEMP->execute();
