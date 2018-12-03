@@ -6,7 +6,6 @@
 
 	echo $post;
 
-	/*
 	include 'database.php';
 	$sql = 'INSERT INTO POSTS (USER_ID, MESSAGE) VALUES (:USER_ID, :MESSAGE)';
 	$stmt = $conn->prepare($sql);
@@ -20,5 +19,5 @@
 	else
 	{
 		echo "Unable to create post";
-	}*/
+	}
 ?>
