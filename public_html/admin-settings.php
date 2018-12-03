@@ -19,7 +19,6 @@ if(!$_SESSION['ROLE_ID'] == 5)
    header('Location: /~orient/settings.php');
 }  
 $id= $_SESSION['USER_ID'];
-
 include 'php/database.php';
 $sqlEMP = 'SELECT * FROM EMPLOYERS';
 $sqlUNI = 'SELECT * FROM UNIVERSITIES';
@@ -50,15 +49,15 @@ $stmtNU->execute();
 
 ?>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-        <script>
-            $(document).ready(function(){
-            $('#newuserdd').change(function(){
-                var inputValue = $(this).val();
-                $.post('admin-settings.php', { newuserid: inputValue }, function(data){
-			<?php echo $id= $_POST['newuserid'] ?>
-                });
-            });
-        });
+<script>
+    $(document).ready(function(){
+    $('#newuserdd').change(function(){
+	var inputValue = $(this).val();
+	$.post('admin-settings.php', { newuserid: inputValue }, function(data){
+		<?php $id= $_POST['newuserid']; ?>
+	});
+    });
+});
 </script>
 <div id="container">
 	<div id="settings">
