@@ -18,7 +18,9 @@ if(!$_SESSION['ROLE_ID'] == 5)
 {
    header('Location: /~orient/settings.php');
 }
-$id         = $_SESSION['USER_ID'];
+if (!empty($_POST["newuserid"])) $id= $_POST['newuserid'];    
+else $id= $_SESSION['USER_ID'];
+
 include 'php/database.php';
 $sqlEMP = 'SELECT * FROM EMPLOYERS';
 $sqlUNI = 'SELECT * FROM UNIVERSITIES';
@@ -48,14 +50,23 @@ $stmtNU = $conn->prepare($sqlNU);
 $stmtNU->execute();
 
 ?>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script>
+            $(document).ready(function(){
+            $('#newuserdd').change(function(){
+                var inputValue = $(this).val();
+                $.post('admin-settings.php', { newuserid: inputValue }, function(data){
+                });
+            });
+        });
+</script>
 <div id="container">
 	<div id="settings">
 		<p id="heading">Settings</p>
 		
 		<form action="php/admin-profile-script.php" method="POST">
 		
-			<select name="newuserid" class="field">
+			<select name="newuserid" class="field" id="newuserdd">
 			<option value="ignore">Select A User</option>
 			<?php
 				$valNU = $stmtNU->fetchAll(PDO::FETCH_ASSOC);
@@ -70,7 +81,7 @@ $stmtNU->execute();
 			<input type="file" class="field" name="profile" accept="image/*" /></br>
 			<input type="submit" value="Update Profile Picture" class="sub-button" name="pic-sub"></br>
 
-			<input type="text" name="fname" placeholder="First Name" class="field" /></br>
+			<input type="text" name="fname" placeholder="<?php echo $id;?>" class="field" /></br>
 			<input type="text" name="lname" placeholder="Last Name" class="field" /></br>
 			<input type="text" name="email" placeholder="Change Email" class="field" /></br>
 			<input type="text" name="title" placeholder="Title" class="field" /></br>
