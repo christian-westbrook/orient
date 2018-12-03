@@ -5,7 +5,7 @@
     $id             = $_SESSION['USER_ID'];
     $profile        = $_POST['profile'];
 
-    if(is_uploaded_file($_FILES['profile']['tmp_name']) && (substr($_FILES['profile']['type'], 0, 6) == 'image/') && $_FILES["profile"]["size"] > 0)
+    if(is_uploaded_file($_FILES['profile']['tmp_name']) && (substr($_FILES['profile']['type'], 0, 6) == 'image/') && ($_FILES["profile"]["size"] > 0))
     {
         $target = './img/users/' . $id . '.' . substr($_FILES['profile']['type'], 6);
 
