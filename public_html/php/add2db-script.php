@@ -10,7 +10,7 @@
   $newemployer 	    = $_POST['newemployer'];
   $newdepartment		= $_POST['newdepartment'];
   
-  if(!$newrole=='')
+  if($newrole !== '')
   {
     $sql  = 'INSERT INTO ROLES (NAME) VALUES (:ROLE);';
     $stmt = $conn->prepare($sql);
@@ -19,7 +19,7 @@
     else echo "Something went wrong!";
   }
 
-  if(!$newpublication=='')
+  if($newpublication !== '')
     {
       $sql  = 'INSERT INTO PUBLICATIONS (NAME) VALUES (:PUB);';
       $stmt = $conn->prepare($sql);
@@ -28,7 +28,7 @@
       else echo "Something went wrong!";
     }
 
-  if(!$newskill=='')
+  if($newskill !== '')
     {
       $sql  = 'INSERT INTO SKILLS (NAME) VALUES (:SKL);';
       $stmt = $conn->prepare($sql);
@@ -37,7 +37,7 @@
       else echo "Something went wrong!";
     }
 
-  if(!$newinterest=='')
+  if($newinterest !== '')
     {
       $sql  = 'INSERT INTO INTERESTS (NAME) VALUES (:INT);';
       $stmt = $conn->prepare($sql);
@@ -46,7 +46,7 @@
       else echo "Something went wrong!";
     }
 
-  if(!$newuniversity=='')
+  if($newuniversity !== '')
     {
       $sql  = 'INSERT INTO UNIVERSITIES (NAME) VALUES (:UNI);';
       $stmt = $conn->prepare($sql);
@@ -55,7 +55,7 @@
       else echo "Something went wrong!";
     }
 
-  if(!$newemployer=='')
+  if($newemployer !== '')
     {
       $sql  = 'INSERT INTO EMPLOYERS (NAME) VALUES (:EMP);';
       $stmt = $conn->prepare($sql);
@@ -63,7 +63,7 @@
       if($stmt->execute()) header( "Location: ../admin-settings.php" );
       else echo "Something went wrong!";
     }
-  if(!$newdepartment=='')
+  if($newdepartment !== '')
       {
         $sql  = 'INSERT INTO DEPARTMENTS (NAME) VALUES (:DEP);';
         $stmt = $conn->prepare($sql);
