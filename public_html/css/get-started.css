@@ -32,14 +32,17 @@
 {
 	background: #006994;
 
-	width: 25em;
-	height: 25em;
+	width: 15em;
+	height: 15em;
 
 	border: 2px solid black;
 	border-radius: 6px;
 
 	display: inline-block;
 	float: left;
+
+	margin-left: 2em;
+	margin-top: 2em;
 }
 
 #admin
