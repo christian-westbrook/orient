@@ -188,7 +188,7 @@ if($stmt->execute())
 function formatDateTime($datetime)
 {
 	$formatted = substr($datetime, 1, strlen($datetime) - 1);
-	return formatted;
+	return $formatted;
 }
 
 ?>
