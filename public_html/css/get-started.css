@@ -28,6 +28,12 @@
 	float: left;
 }
 
+#types
+{
+	float: left;
+	clear: left;
+}
+
 .type
 {
 	background: #006994;
@@ -50,7 +56,7 @@
 
 #admin
 {
-	clear: left;
+	
 }
 
 #member
