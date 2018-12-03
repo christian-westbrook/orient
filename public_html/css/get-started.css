@@ -49,6 +49,7 @@
 
 	display: inline-block;
 	float: left;
+	clear: left;
 }
 
 #admin
