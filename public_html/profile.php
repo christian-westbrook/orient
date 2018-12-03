@@ -193,29 +193,29 @@ function formatDateTime($datetime)
 
 	switch ($month)
 	{
-		case 01: 	$month = 'Jan.';
+		case "01": 	$month = 'Jan.';
 		 			break;
-		case 02: $month = 'Feb.';
+		case "02": $month = 'Feb.';
 					break;
-		case 03: $month = 'Mar.';
+		case "03": $month = 'Mar.';
 					break;
-		case 04: $month = 'Apr.';
+		case "04": $month = 'Apr.';
 					break;
-		case 05:	$month = 'May';
+		case "05":	$month = 'May';
 					break;
-		case 06:	$month = 'June';
+		case "06":	$month = 'June';
 					break;
-		case 07: 	$month = 'July';
+		case "07": 	$month = 'July';
 					break;
-		case 08:	$month = "Aug.";
+		case "08":	$month = "Aug.";
 					break;
-		case 09:	$month = "Sep.";
+		case "09":	$month = "Sep.";
 					break;
-		case 10:	$month = "Oct.";
+		case "10":	$month = "Oct.";
 					break;
-		case 11:	$month = "Nov.";
+		case "11":	$month = "Nov.";
 					break;
-		case 12:	$month = "Dec.";
+		case "12":	$month = "Dec.";
 					break;
 	}
 
