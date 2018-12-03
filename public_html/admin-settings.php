@@ -198,7 +198,7 @@ $valCU = $stmtCU->fetchAll(PDO::FETCH_ASSOC);
 				<option value="<?php echo $valz[$i]['SKILL_ID'];?>" <?php echo $selected;?>><?php echo $valz[$i]['NAME'];?></option>
 				<?php } ?>
 			</select><br>
-			<select name="publications" class="field2" multiple>
+			<select name="publications[]" class="field2" multiple>
 				<option value="ignore">--Select Publication(s)--</option>
 				<?php
 					$valz = $stmtPUB->fetchAll(PDO::FETCH_ASSOC);
