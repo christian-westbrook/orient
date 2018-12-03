@@ -27,7 +27,7 @@
         $target = '.' . $target;
         move_uploaded_file($_FILES['profile']['tmp_name'], $target);
     }
-
+*/
     if($email !== '')
     {
         $sql = 'UPDATE USERS SET EMAIL= :EMAIL WHERE USER_ID= :USER_ID';
@@ -46,7 +46,7 @@
         $stmt->execute();
     }
 
-    if($role !== '')
+    if($role !== 'ignore')
     {
         $sql = 'UPDATE USERS SET ROLE_ID= :ROLE_ID WHERE USER_ID= :USER_ID';
         $stmt = $conn->prepare($sql);
@@ -55,7 +55,7 @@
         $stmt->execute();
     }
 
-    if($department !== '')
+    if($department !== 'ignore')
     {
         $sql = 'UPDATE USERS SET DEP_ID= :DEP_ID WHERE USER_ID= :USER_ID';
         $stmt = $conn->prepare($sql);
@@ -108,7 +108,7 @@
         $stmt->bindParam(':USER_ID', $id, PDO::PARAM_INT);
         $stmt->execute();
     }
-*/
+
     if($employer !== 'ignore')
     {
         $sql = 'UPDATE USERS SET EMP_ID= :EMP_ID WHERE USER_ID= :USER_ID';
