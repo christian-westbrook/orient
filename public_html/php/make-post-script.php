@@ -7,7 +7,7 @@
 	echo $post;
 
 	include 'database.php';
-	$sql = 'INSERT INTO POSTS (USER_ID, MESSAGE) VALUES (:USER_ID, :POST)';
+	$sql = 'INSERT INTO POSTS (USER_ID, MESSAGE, CREATE_TIME) VALUES (:USER_ID, :POST, NOW())';
 	$stmt = $conn->prepare($sql);
 	$stmt->bindParam(':USER_ID', $userid, PDO::PARAM_INT);
 	$stmt->bindParam(':POST', $post, PDO::PARAM_STR);
