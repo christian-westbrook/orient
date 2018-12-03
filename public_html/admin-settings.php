@@ -60,7 +60,7 @@ $stmtNU->execute();
 				$valNU = $stmtNU->fetchAll(PDO::FETCH_ASSOC);
 				$lenNU = count($valNU);
 				for($i = 0; $i < $lenNU; $i++){
-				if(echo $valNU[$i]['USER_ID'] == $id){$selected='selected';}
+				if($valNU[$i]['USER_ID'] == $id){$selected='selected';}
 				else{$selected='';}
 			?>
 			<option value="<?php echo $valNU[$i]['USER_ID'];?>" <?php echo $selected;?>><?php echo $valNU[$i]['FNAME']." ".$valNU[$i]['LNAME'];?></option>
