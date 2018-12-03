@@ -19,7 +19,7 @@ if(!$_SESSION['ROLE_ID'] == 5)
    header('Location: /~orient/settings.php');
 }  
 
-if(isset($_POST['newuserid'])) $id = $_POST['newuserid'];
+if(isset($_POST['newuseriddd'])) $id = $_POST['newuseriddd'];
 else $id= $_SESSION['USER_ID'];
 
 include 'php/database.php';
@@ -60,7 +60,7 @@ $valCU = $stmtCU->fetchAll(PDO::FETCH_ASSOC);
 	<div id="settings">
 		<p id="heading">Settings</p>
 		<form action="#" method="POST">
-			<select name="newuserid" class="field" onchange="this.form.submit()">
+			<select name="newuseriddd" class="field" onchange="this.form.submit()">
 			<?php
 				$valNU = $stmtNU->fetchAll(PDO::FETCH_ASSOC);
 				$lenNU = count($valNU);
