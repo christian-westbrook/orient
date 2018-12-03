@@ -18,7 +18,7 @@
 
         $target = '.' . $target;
 
-        echo is_writable('../img/users/');
+        echo is_writable('../img/users');
 
         move_uploaded_file($_FILES['profile']['tmp_name'], $target);
     }
