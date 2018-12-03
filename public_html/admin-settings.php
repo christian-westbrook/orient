@@ -78,7 +78,7 @@ $stmtNU->execute();
 			<input type="text" name="phone-num" placeholder="XXX-XXX-XXXX" class="field" /></br>
 			<input type="textarea" rows="4" wrap="hard" name="bio" placeholder="Research Summary" class="field" id="research-summary"/></br>
 			<select name="role" class="field">
-				<option value="ignore">Select A New Role</option>
+				<option value="ignore">--Select A New Role--</option>
 				<?php
 					$valz = $stmtROL->fetchAll(PDO::FETCH_ASSOC);
 					$length = count($valz);
@@ -88,7 +88,7 @@ $stmtNU->execute();
 				<?php } ?>
 			</select><br>
 			<select name="department" class="field">
-				<option value="ignore">Select A New Department</option>
+				<option value="ignore">--Select A New Department--</option>
 				<?php
 					$valz = $stmtDEP->fetchAll(PDO::FETCH_ASSOC);
 					$length = count($valz);
@@ -98,7 +98,7 @@ $stmtNU->execute();
 				<?php } ?>
 			</select><br>
 			<select name="employer" class="field">
-				<option value="ignore">Select An Employer</option>
+				<option value="ignore">--Select An Employer--</option>
 				<?php
 					$valz = $stmtEMP->fetchAll(PDO::FETCH_ASSOC);
 					$length = count($valz);
@@ -108,7 +108,7 @@ $stmtNU->execute();
 				<?php } ?>
 			</select><br>
 			<select name="university" class="field">
-				<option value="ignore">Select A University</option>
+				<option value="ignore">--Select A University--</option>
 				<?php
 					$valz = $stmtUNI->fetchAll(PDO::FETCH_ASSOC);
 					$length = count($valz);
@@ -118,7 +118,7 @@ $stmtNU->execute();
 				<?php } ?>
 			</select><br>
 			<select name="interest[]" class="field2" multiple>
-				<option value="ignore">Select Your Interests</option>
+				<option value="ignore">--Select Your Interests--</option>
 				<?php
 					$valz = $stmtINT->fetchAll(PDO::FETCH_ASSOC);
 					$length = count($valz);
@@ -128,7 +128,7 @@ $stmtNU->execute();
 				<?php } ?>
 			</select><br>
 			<select name="skill[]" class="field2" multiple>
-				<option value="ignore">Select Your Skills</option>
+				<option value="ignore">--Select Your Skills--</option>
 				<?php
 					$valz = $stmtSKL->fetchAll(PDO::FETCH_ASSOC);
 					$length = count($valz);
@@ -138,7 +138,7 @@ $stmtNU->execute();
 				<?php } ?>
 			</select><br>
 			<select name="publications" class="field2" multiple>
-				<option value="ignore">Select Publication(s)</option>
+				<option value="ignore">--Select Publication(s)--</option>
 				<?php
 					$valz = $stmtPUB->fetchAll(PDO::FETCH_ASSOC);
 					$length = count($valz);
