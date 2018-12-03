@@ -16,10 +16,10 @@
         $stmt->bindParam(':USER_ID', $id, PDO::PARAM_INT);
         $stmt->execute();
 
-        echo "HERE";
-
         $target = '.' . $target;
 
         move_uploaded_file($_FILES['profile']['tmp_name'], $target);
     }
+
+    header( "Location: ../profile.php" );
 ?>
