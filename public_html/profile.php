@@ -191,7 +191,7 @@ function formatDateTime($datetime)
 	$month = substr($datetime, 5, 2);
 	$day = substr($datetime, 8, 2);
 
-	$switch ($month)
+	switch ($month)
 	{
 		case 01: 	$month = 'Jan.';
 		 			break;
