@@ -9,7 +9,9 @@
 	margin-top: 0px;
 	padding-top: 0px;
 
-	position: sticky;
+	position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
 
 
 	top: 0vh;
