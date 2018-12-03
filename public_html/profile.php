@@ -187,7 +187,7 @@ if($stmt->execute())
 // Time formatter function
 function formatDateTime($datetime)
 {
-	$formatted = substr($datetime, 1, strlen($datetime) - 1);
+	$formatted = substr($datetime, 0, strlen($datetime) - 1);
 	return $formatted;
 }
 
@@ -246,7 +246,7 @@ function formatDateTime($datetime)
 	$length = count($posts);
 	for($i = 0; $i < $length; $i++)
 	{
-		  echo '<p class="post">' . $posts[$i] . '</p></br>' . formatDateTime($times[$i]) . '</br></br>';
+		  echo '<p class="post">' . $posts[$i] . '</p></br>' . $times[%i] . '</br>' formatDateTime($times[$i]) . '</br></br>';
 	}
 
 	?>
