@@ -84,7 +84,7 @@ $valCU = $stmtCU->fetchAll(PDO::FETCH_ASSOC);
 			<input type="text" name="lname" value="<?php echo $valCU[0]['LNAME'];?>" class="field" /></br>
 			<label>Email:</label></br>
 			<input type="text" name="email" value="<?php echo $valCU[0]['EMAIL'];?>" class="field" /></br>
-			<label>Titel:</label></br>
+			<label>Title:</label></br>
 			<input type="text" name="title" value="<?php echo $valCU[0]['TITLE'];?>" class="field" /></br>
 			<label>Hometown:</label></br>
 			<input type="text" name="hometown" value="<?php echo $valCU[0]['HOMETOWN'];?>" class="field" /></br>
