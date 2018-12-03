@@ -75,9 +75,8 @@
 
 #settings label
 {
-	text-align: left;
+	display: block;
 	width: 15vw;
-	float:left
 }
 .sub
 {
