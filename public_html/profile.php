@@ -280,7 +280,7 @@ function formatDateTime($datetime)
 	$length = count($posts);
 	for($i = 0; $i < $length; $i++)
 	{
-		  echo '<div class="post"><img src="' . $profile . '" /> ' . $name . '</br>' . $posts[$i] . '</br><span class="post-time">' . formatDateTime($times[$i]) . '</span></div></br></br>';
+		  echo '<div class="post"><img class="post-profile-pic" src="' . $profile . '" /> ' . $name . '</br>' . $posts[$i] . '</br><span class="post-time">' . formatDateTime($times[$i]) . '</span></div></br></br>';
 	}
 
 	$vheight = 88 + ($length * 20);
