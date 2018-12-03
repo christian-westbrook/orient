@@ -78,17 +78,17 @@ $valCU = $stmtCU->fetchAll(PDO::FETCH_ASSOC);
 			<input type="file" class="field" name="profile" accept="image/*" /></br>
 			<input type="submit" value="Update Profile Picture" class="sub-button" name="pic-sub"></br>
 
-			<label class="field">First Name:</label></br>
+			<label>First Name:</label></br>
 			<input type="text" name="fname" value="<?php echo $valCU[0]['FNAME'];?>" class="field" /></br>
-			<label class="field">Last Name:</label></br>
+			<label>Last Name:</label></br>
 			<input type="text" name="lname" value="<?php echo $valCU[0]['LNAME'];?>" class="field" /></br>
-			<label class="field">Email:</label></br>
+			<label>Email:</label></br>
 			<input type="text" name="email" value="<?php echo $valCU[0]['EMAIL'];?>" class="field" /></br>
-			<label class="field">Titel:</label></br>
+			<label>Titel:</label></br>
 			<input type="text" name="title" value="<?php echo $valCU[0]['TITLE'];?>" class="field" /></br>
-			<label class="field">Hometown:</label></br>
+			<label>Hometown:</label></br>
 			<input type="text" name="hometown" value="<?php echo $valCU[0]['HOMETOWN'];?>" class="field" /></br>
-			<label class="field">Phone Num:</label></br>
+			<label>Phone Num:</label></br>
 			<input type="text" name="phone-num" value="<?php echo $valCU[0]['PHONE_NUM'];?>" class="field" /></br>
 			<input type="textarea" rows="4" wrap="hard" name="bio" placeholder="Research Summary" class="field" id="research-summary"/></br>
 			<select name="role" class="field">
