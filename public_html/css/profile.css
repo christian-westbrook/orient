@@ -10,11 +10,7 @@
 	padding-top: 0px;
 
 	position: -webkit-sticky; /* Safari */
-    position: sticky;
-    top: 0;
-
-
-	top: 0vh;
+    position: fixed;
 }
 
 #profile-pic
