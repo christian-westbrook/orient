@@ -80,7 +80,7 @@
 	clear: left;
 	color: white;
 	margin-left: 5em;
-	margin-top: 0.5em;
+	margin-top: 1em;
 	background: #006994;
 	border-radius: 6px;
 	border: solid 1px black;
@@ -89,5 +89,5 @@
 
 .post-time
 {
-	font-size: 0.5em;
+	font-size: 1em;
 }
