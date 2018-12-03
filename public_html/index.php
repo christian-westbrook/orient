@@ -14,7 +14,7 @@ include 'header.php';
 		<p>The future of university research collaboration</p>
 
 		<div id="get-started">
-		<a href="signup.php"><p>Get Started</p></a>
+		<a href="get-started.php"><p>Get Started</p></a>
 		</div>
 	</div>
 </div>
