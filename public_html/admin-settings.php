@@ -67,14 +67,13 @@ $stmtNU->execute();
 			<?php } ?>
 			</select>
 			<br>
-			<br>
 		</form>
 		<form action="php/admin-profile-script.php" method="POST">
-			<input type="hidden" name="newuserid" value="<?php echo $id;?>" class="field" /></br>			
+			<input type="hidden" name="newuserid" value="<?php echo $id;?>" class="field" />		
 			<input type="file" class="field" name="profile" accept="image/*" /></br>
 			<input type="submit" value="Update Profile Picture" class="sub-button" name="pic-sub"></br>
 
-			<input type="text" name="fname" placeholder="first Name" class="field" /></br>
+			<input type="text" name="fname" value="poop" class="field" /></br>
 			<input type="text" name="lname" placeholder="Last Name" class="field" /></br>
 			<input type="text" name="email" placeholder="Change Email" class="field" /></br>
 			<input type="text" name="title" placeholder="Title" class="field" /></br>
