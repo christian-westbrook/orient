@@ -56,6 +56,7 @@ $stmtNU->execute();
             $('#newuserdd').change(function(){
                 var inputValue = $(this).val();
                 $.post('admin-settings.php', { newuserid: inputValue }, function(data){
+			alert("it worked yo");
                 });
             });
         });
