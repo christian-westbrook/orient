@@ -278,7 +278,7 @@ function formatDateTime($datetime)
 	$length = count($posts);
 	for($i = 0; $i < $length; $i++)
 	{
-		  echo '<div class="post"><p>' . $posts[$i] . '</br>' . formatDateTime($times[$i]) . '</p></div></br></br>';
+		  echo '<div class="post">' . $posts[$i] . '</br>' . formatDateTime($times[$i]) . '</div></br></br>';
 	}
 
 	$vheight = 88 + ($length * 20);
