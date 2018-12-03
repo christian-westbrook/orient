@@ -73,6 +73,14 @@
 	min-width: 300px;
 }
 
+.field3
+{
+	width: 15vw;
+	height: 14vh;
+	overflow-y: scroll;
+	min-width: 300px;
+}
+
 .sub
 {
 	font-size: 1vw;
