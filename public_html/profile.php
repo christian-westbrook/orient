@@ -162,7 +162,7 @@ if($stmt->execute())
 $_POST['EMP'] = $emp;
 
 // Get this users' posts
-$sql = "SELECT * FROM POSTS WHERE USER_ID = :USER_ID";
+$sql = "SELECT MESSAGE FROM POSTS WHERE USER_ID = :USER_ID";
 $stmt = $conn->prepare($sql);
 $stmt->bindParam(':USER_ID', $id, PDO::PARAM_INT);
 
