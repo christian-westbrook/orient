@@ -5,10 +5,10 @@
     $id             = $_SESSION['USER_ID'];
     $profile        = $_POST['profile'];
 
-    print_r($_FILES);
-
-    if(is_uploaded_file($_FILES['profile']['tmp_name']))
+    if(is_uploaded_file($_FILES['profile']['tmp_name']) && (substr($_FILES['profile']['type'], 0, 6) == 'image/'))
     {
-        echo 'HERE';
+        $target = '../img/users/' . $id . '.' . substr($_FILES['profile']['type'], 6);
+        echo $target;
+        //move_uploaded_file($_FILES['profile']['tmp_name'], $target);
     }
 ?>
