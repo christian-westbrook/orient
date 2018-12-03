@@ -179,8 +179,6 @@ if($stmt->execute())
 	}
 
 	$_POST['POSTS'] = $posts;
-
-	print_r($posts);
 }
 
 ?>
@@ -233,6 +231,8 @@ if($stmt->execute())
 	}
 
 	$posts = $_POST['POSTS'];
+
+	print_r($posts);
 
 	$length = count($posts);
 	for($i = 0; $i < $length; $i++)
