@@ -25,14 +25,12 @@
 
 #promo
 {
-	float: left;
+	
 }
 
 #types
 {
-	float: left;
-	clear: left;
-	display: inline-block;
+
 }
 
 .type
@@ -46,9 +44,6 @@
 
 	border: 2px solid black;
 	border-radius: 6px;
-
-	display: inline-block;
-	float: left;
 
 	margin-left: 2em;
 	margin-top: 2em;
