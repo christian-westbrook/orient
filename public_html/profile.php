@@ -275,14 +275,12 @@ function formatDateTime($datetime)
 	$posts = $_POST['POSTS'];
 	$times = $_POST['TIMES'];
 	$profile = $_POST['PROFILE'];
-	$title = $_POST['TITLE'];
-	$fname = $_POST['FNAME'];
-	$lname = $_POST['LNAME'];
+	$name = $_POST['NAME'];
 
 	$length = count($posts);
 	for($i = 0; $i < $length; $i++)
 	{
-		  echo '<div class="post"><img src=' . $profile . '/> ' . $title . ' ' . $fname . ' ' . $lname . '</br>' . $posts[$i] . '</br><span class="post-time">' . formatDateTime($times[$i]) . '</span></div></br></br>';
+		  echo '<div class="post"><img src="' . $profile . '" /> ' . $name . '</br>' . $posts[$i] . '</br><span class="post-time">' . formatDateTime($times[$i]) . '</span></div></br></br>';
 	}
 
 	$vheight = 88 + ($length * 20);
