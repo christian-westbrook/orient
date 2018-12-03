@@ -179,6 +179,8 @@ if($stmt->execute())
 	}
 
 	$_POST['POSTS'] = $posts;
+
+	print_r($posts);
 }
 
 ?>
