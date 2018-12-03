@@ -21,7 +21,7 @@
 
   if($newpublication !== '')
     {
-      $sql  = 'INSERT INTO PUBLICATIONS (NAME) VALUES (:PUB);';
+      $sql  = 'INSERT INTO PUBLICATIONS (NAME, PUB_DATE) VALUES (:PUB, NOW());';
       $stmt = $conn->prepare($sql);
       $stmt->bindParam(':PUB', $newpublication, PDO::PARAM_STR);
       if($stmt->execute()) header( "Location: ../admin-settings.php" );
