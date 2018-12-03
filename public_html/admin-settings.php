@@ -50,6 +50,11 @@ $sqlNU = 'SELECT * FROM USERS';
 $stmtNU = $conn->prepare($sqlNU);
 $stmtNU->execute();
 
+$sqlCU = 'SELECT * FROM USERS WHERE USER_ID= :USER_ID';
+$stmtCU = $conn->prepare($sqlCU);
+$stmtCU->bindParam(':USER_ID', $id, PDO::PARAM_INT);
+$stmtCU->execute();
+$valCU = $stmtCU->fetchAll(PDO::FETCH_ASSOC);
 ?>
 <div id="container">
 	<div id="settings">
@@ -73,12 +78,12 @@ $stmtNU->execute();
 			<input type="file" class="field" name="profile" accept="image/*" /></br>
 			<input type="submit" value="Update Profile Picture" class="sub-button" name="pic-sub"></br>
 
-			<input type="text" name="fname" value="poop" class="field" /></br>
-			<input type="text" name="lname" placeholder="Last Name" class="field" /></br>
-			<input type="text" name="email" placeholder="Change Email" class="field" /></br>
-			<input type="text" name="title" placeholder="Title" class="field" /></br>
-			<input type="text" name="hometown" placeholder="Hometown" class="field" /></br>
-			<input type="text" name="phone-num" placeholder="XXX-XXX-XXXX" class="field" /></br>
+			<input type="text" name="fname" value="<?php echo $valCU[0]['FNAME'];?>" class="field" /></br>
+			<input type="text" name="lname" value="<?php echo $valCU[0]['LNAME'];?>" class="field" /></br>
+			<input type="text" name="email" value="<?php echo $valCU[0]['EMAIL'];?>" class="field" /></br>
+			<input type="text" name="title" value="<?php echo $valCU[0]['TITLE'];?>" class="field" /></br>
+			<input type="text" name="hometown" value="<?php echo $valCU[0]['HOMETOWN'];?>" class="field" /></br>
+			<input type="text" name="phone-num" value="<?php echo $valCU[0]['PHONE_NUM'];?>" class="field" /></br>
 			<input type="textarea" rows="4" wrap="hard" name="bio" placeholder="Research Summary" class="field" id="research-summary"/></br>
 			<select name="role" class="field">
 				<option value="ignore">--Select A New Role--</option>
