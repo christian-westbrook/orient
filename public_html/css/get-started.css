@@ -25,7 +25,7 @@
 
 #promo
 {
-	
+
 }
 
 #types
@@ -44,6 +44,8 @@
 
 	border: 2px solid black;
 	border-radius: 6px;
+
+	display: inline-block;
 
 	margin-left: 2em;
 	margin-top: 2em;
