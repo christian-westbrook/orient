@@ -14,13 +14,13 @@ include 'header.php';
 	<div id="promo">
 	</div>
 
-	<div id="admin">
+	<div id="admin" class="type">
 	</div>
 
-	<div id="member">
+	<div id="member" class="type">
 	</div>
 
-	<div id="guest">
+	<div id="guest" class="type">
 	</div>
 </div>
 
