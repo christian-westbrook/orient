@@ -144,7 +144,7 @@
             $stmt->execute();
         }
     }
-
+*/
     if(isset($_POST['skill']))
     {
 	    $sql = 'DELETE FROM USERS_SKILLS WHERE USER_ID= :USER_ID';
@@ -162,7 +162,7 @@
             $stmt->execute();
         }
     }
-*/
+
     if(isset($_POST['publications']))
     {
 	    $sql = 'DELETE FROM USERS_PUBLICATIONS WHERE USER_ID= :USER_ID';
