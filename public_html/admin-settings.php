@@ -86,9 +86,18 @@ $stmtNU->execute();
 				<?php
 					$valz = $stmtROL->fetchAll(PDO::FETCH_ASSOC);
 					$length = count($valz);
+					$sql = 'SELECT * FROM USERS WHERE USER_ID= :USER_ID AND ROLE_ID= :ROLE_ID';
 					for($i = 0; $i < $length; $i++){
+						$stmt = $conn->prepare($sql);
+						$stmt->bindParam(':ROLE_ID', $valz[$i]['ROLE_ID'], PDO::PARAM_INT);
+						$stmt->bindParam(':USER_ID', $id, PDO::PARAM_INT);
+						$stmt->execute();
+						$valz2 = $stmt->fetchAll(PDO::FETCH_ASSOC);
+						$length2 = count($valz2);
+						if($length2>0){$selected='selected';}
+						else{$selected='';}
 				?>
-				<option value="<?php echo $valz[$i]['ROLE_ID'];?>"><?php echo $valz[$i]['NAME'];?></option>
+				<option value="<?php echo $valz[$i]['ROLE_ID'];?>" <?php echo $selected;?>><?php echo $valz[$i]['NAME'];?></option>
 				<?php } ?>
 			</select><br>
 			<select name="department" class="field">
@@ -96,9 +105,18 @@ $stmtNU->execute();
 				<?php
 					$valz = $stmtDEP->fetchAll(PDO::FETCH_ASSOC);
 					$length = count($valz);
+					$sql = 'SELECT * FROM USERS WHERE USER_ID= :USER_ID AND DEP_ID= :DEP_ID';
 					for($i = 0; $i < $length; $i++){
+						$stmt = $conn->prepare($sql);
+						$stmt->bindParam(':DEP_ID', $valz[$i]['DEP_ID'], PDO::PARAM_INT);
+						$stmt->bindParam(':USER_ID', $id, PDO::PARAM_INT);
+						$stmt->execute();
+						$valz2 = $stmt->fetchAll(PDO::FETCH_ASSOC);
+						$length2 = count($valz2);
+						if($length2>0){$selected='selected';}
+						else{$selected='';}
 				?>
-				<option value="<?php echo $valz[$i]['DEP_ID'];?>"><?php echo $valz[$i]['NAME'];?></option>
+				<option value="<?php echo $valz[$i]['DEP_ID'];?>" <?php echo $selected;?>><?php echo $valz[$i]['NAME'];?></option>
 				<?php } ?>
 			</select><br>
 			<select name="employer" class="field">
@@ -106,9 +124,18 @@ $stmtNU->execute();
 				<?php
 					$valz = $stmtEMP->fetchAll(PDO::FETCH_ASSOC);
 					$length = count($valz);
+					$sql = 'SELECT * FROM USERS WHERE USER_ID= :USER_ID AND EMP_ID= :EMP_ID';
 					for($i = 0; $i < $length; $i++){
+						$stmt = $conn->prepare($sql);
+						$stmt->bindParam(':EMP_ID', $valz[$i]['EMP_ID'], PDO::PARAM_INT);
+						$stmt->bindParam(':USER_ID', $id, PDO::PARAM_INT);
+						$stmt->execute();
+						$valz2 = $stmt->fetchAll(PDO::FETCH_ASSOC);
+						$length2 = count($valz2);
+						if($length2>0){$selected='selected';}
+						else{$selected='';}
 				?>
-				<option value="<?php echo $valz[$i]['EMP_ID'];?>"><?php echo $valz[$i]['NAME'];?></option>
+				<option value="<?php echo $valz[$i]['EMP_ID'];?>" <?php echo $selected;?>><?php echo $valz[$i]['NAME'];?></option>
 				<?php } ?>
 			</select><br>
 			<select name="university" class="field">
@@ -116,9 +143,18 @@ $stmtNU->execute();
 				<?php
 					$valz = $stmtUNI->fetchAll(PDO::FETCH_ASSOC);
 					$length = count($valz);
+					$sql = 'SELECT * FROM USERS WHERE USER_ID= :USER_ID AND UNIV_ID= :UNIV_ID';
 					for($i = 0; $i < $length; $i++){
+						$stmt = $conn->prepare($sql);
+						$stmt->bindParam(':UNIV_ID', $valz[$i]['UNIV_ID'], PDO::PARAM_INT);
+						$stmt->bindParam(':USER_ID', $id, PDO::PARAM_INT);
+						$stmt->execute();
+						$valz2 = $stmt->fetchAll(PDO::FETCH_ASSOC);
+						$length2 = count($valz2);
+						if($length2>0){$selected='selected';}
+						else{$selected='';}
 				?>
-				<option value="<?php echo $valz[$i]['UNIV_ID'];?>"><?php echo $valz[$i]['NAME'];?></option>
+				<option value="<?php echo $valz[$i]['UNIV_ID'];?>" <?php echo $selected;?>><?php echo $valz[$i]['NAME'];?></option>
 				<?php } ?>
 			</select><br>
 			<select name="interest[]" class="field2" multiple>
@@ -126,9 +162,18 @@ $stmtNU->execute();
 				<?php
 					$valz = $stmtINT->fetchAll(PDO::FETCH_ASSOC);
 					$length = count($valz);
+					$sql = 'SELECT * FROM USERS_INTERESTS WHERE USER_ID= :USER_ID AND INT_ID= :INT_ID';
 					for($i = 0; $i < $length; $i++){
+						$stmt = $conn->prepare($sql);
+						$stmt->bindParam(':INT_ID', $valz[$i]['INT_ID'], PDO::PARAM_INT);
+						$stmt->bindParam(':USER_ID', $id, PDO::PARAM_INT);
+						$stmt->execute();
+						$valz2 = $stmt->fetchAll(PDO::FETCH_ASSOC);
+						$length2 = count($valz2);
+						if($length2>0){$selected='selected';}
+						else{$selected='';}
 				?>
-				<option value="<?php echo $valz[$i]['INT_ID'];?>"><?php echo $valz[$i]['NAME'];?></option>
+				<option value="<?php echo $valz[$i]['INT_ID'];?>" <?php echo $selected;?>><?php echo $valz[$i]['NAME'];?></option>
 				<?php } ?>
 			</select><br>
 			<select name="skill[]" class="field2" multiple>
@@ -136,9 +181,18 @@ $stmtNU->execute();
 				<?php
 					$valz = $stmtSKL->fetchAll(PDO::FETCH_ASSOC);
 					$length = count($valz);
+					$sql = 'SELECT * FROM USERS_SKILLS WHERE USER_ID= :USER_ID AND SKILL_ID= :SKILL_ID';
 					for($i = 0; $i < $length; $i++){
+						$stmt = $conn->prepare($sql);
+						$stmt->bindParam(':SKILL_ID', $valz[$i]['SKILL_ID'], PDO::PARAM_INT);
+						$stmt->bindParam(':USER_ID', $id, PDO::PARAM_INT);
+						$stmt->execute();
+						$valz2 = $stmt->fetchAll(PDO::FETCH_ASSOC);
+						$length2 = count($valz2);
+						if($length2>0){$selected='selected';}
+						else{$selected='';}
 				?>
-				<option value="<?php echo $valz[$i]['SKILL_ID'];?>"><?php echo $valz[$i]['NAME'];?></option>
+				<option value="<?php echo $valz[$i]['SKILL_ID'];?>" <?php echo $selected;?>><?php echo $valz[$i]['NAME'];?></option>
 				<?php } ?>
 			</select><br>
 			<select name="publications" class="field2" multiple>
@@ -146,9 +200,18 @@ $stmtNU->execute();
 				<?php
 					$valz = $stmtPUB->fetchAll(PDO::FETCH_ASSOC);
 					$length = count($valz);
+					$sql = 'SELECT * FROM USERS_PUBLICATIONS WHERE USER_ID= :USER_ID AND PUB_ID= :PUB_ID';
 					for($i = 0; $i < $length; $i++){
+						$stmt = $conn->prepare($sql);
+						$stmt->bindParam(':PUB_ID', $valz[$i]['PUB_ID'], PDO::PARAM_INT);
+						$stmt->bindParam(':USER_ID', $id, PDO::PARAM_INT);
+						$stmt->execute();
+						$valz2 = $stmt->fetchAll(PDO::FETCH_ASSOC);
+						$length2 = count($valz2);
+						if($length2>0){$selected='selected';}
+						else{$selected='';}
 				?>
-				<option value="<?php echo $valz[$i]['PUB_ID'];?>"><?php echo $valz[$i]['NAME'];?></option>
+				<option value="<?php echo $valz[$i]['PUB_ID'];?>" <?php echo $selected;?>><?php echo $valz[$i]['NAME'];?></option>
 				<?php } ?>
 			</select><br>
 			<input type="submit" value="Update Information" class="sub-button">
