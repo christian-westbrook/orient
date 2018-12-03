@@ -83,7 +83,7 @@ $valCU = $stmtCU->fetchAll(PDO::FETCH_ASSOC);
 			<input type="text" name="title" value="<?php echo $valCU[0]['TITLE'];?>" class="field" /></br>
 			<input type="text" name="hometown" value="<?php echo $valCU[0]['HOMETOWN'];?>" class="field" /></br>
 			<input type="text" name="phone-num" value="<?php echo $valCU[0]['PHONE_NUM'];?>" class="field" /></br>
-			<textarea rows="4" wrap="hard" name="bio" value="<?php echo $valCU[0]['BIO'];?>" placeholder="Research Summary" class="field3"></textarea></br>
+			<textarea rows="4" wrap="hard" name="bio" value="<?php echo $valCU[0]['BIO'];?>" class="field3"></textarea></br>
 			<select name="role" class="field">
 				<option value="ignore">--Select A New Role--</option>
 				<?php
