@@ -31,6 +31,9 @@
 .type
 {
 	background: #006994;
+	color: white;
+	margin: 0 auto;
+	text-align: center;
 
 	width: 15em;
 	height: 15em;
