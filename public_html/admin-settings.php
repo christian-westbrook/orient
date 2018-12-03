@@ -70,7 +70,7 @@ $stmtNU->execute();
 			<br>
 		</form>
 		<form action="php/admin-profile-script.php" method="POST">
-			<input type="text" name="fname" placeholder="<?php echo $id;?>" class="field" /></br>			
+			<input type="hidden" name="newuserid" value="<?php echo $id;?>" class="field" /></br>			
 			<input type="file" class="field" name="profile" accept="image/*" /></br>
 			<input type="submit" value="Update Profile Picture" class="sub-button" name="pic-sub"></br>
 
