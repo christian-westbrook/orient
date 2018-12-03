@@ -82,7 +82,7 @@ if($_SESSION['ROLE_ID'] == 5) $admin= True;
 			<input type="text" name="phone-num" placeholder="XXX-XXX-XXXX" class="field" /></br>
 			<input type="textarea" rows="4" wrap="hard" name="bio" placeholder="Research Summary" class="field" id="research-summary"/></br>
 			<select name="employer" class="field">
-				<option value="ignore">Select An Employer</option>
+				<option value="ignore">--Select An Employer--</option>
 				<?php
 					$valz = $stmtEMP->fetchAll(PDO::FETCH_ASSOC);
 					$length = count($valz);
@@ -92,7 +92,7 @@ if($_SESSION['ROLE_ID'] == 5) $admin= True;
 				<?php } ?>
 			</select><br>
 			<select name="university" class="field">
-				<option value="ignore">Select A University</option>
+				<option value="ignore">--Select A University--</option>
 				<?php
 					$valz = $stmtUNI->fetchAll(PDO::FETCH_ASSOC);
 					$length = count($valz);
@@ -102,7 +102,7 @@ if($_SESSION['ROLE_ID'] == 5) $admin= True;
 				<?php } ?>
 			</select><br>
 			<select name="interest[]" class="field2" multiple>
-				<option value="ignore">Select Your Interests</option>
+				<option value="ignore">--Select Your Interests--</option>
 				<?php
 					$valz = $stmtINT->fetchAll(PDO::FETCH_ASSOC);
 					$length = count($valz);
@@ -121,7 +121,7 @@ if($_SESSION['ROLE_ID'] == 5) $admin= True;
 				<?php } ?>
 			</select><br>
 			<select name="skill[]" class="field2" multiple>
-				<option value="ignore">Select Your Skills</option>
+				<option value="ignore">--Select Your Skills--</option>
 				<?php
 					$valz = $stmtSKL->fetchAll(PDO::FETCH_ASSOC);
 					$length = count($valz);
