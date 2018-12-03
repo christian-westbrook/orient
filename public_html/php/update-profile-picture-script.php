@@ -18,17 +18,6 @@
 
         $target = '.' . $target;
 
-        if(is_writable('../img/users'))
-        {
-            echo "Writable";
-        }
-        else
-        {
-            echo "Not writable";
-        }
-
         move_uploaded_file($_FILES['profile']['tmp_name'], $target);
     }
-
-    //header( "Location: ../profile.php" );
 ?>
