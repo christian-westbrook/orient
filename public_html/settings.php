@@ -47,7 +47,7 @@ if($_SESSION['ROLE_ID'] == 5) $admin= True;
 <div id="container">
 	<div id="settings">
 		<p id="heading">Settings</p>
-		
+
 		<p class="label">Change Email</p>
 
 		<form action="php/change-email-script.php" method="POST">
@@ -68,7 +68,7 @@ if($_SESSION['ROLE_ID'] == 5) $admin= True;
 		<p class="label">Update Profile Picture</p>
 
 		<form action="php/update-profile-picture-script.php" method="POST">
-			<input type="file" class="field" name="profile" accept="image/*" /></br>
+			<input type="file" class="field" name="profile" id="profile" accept="image/*" /></br>
 			<input type="submit" value="Update Profile Picture" class="sub-button" name="pic-sub">
 		</form>
 
