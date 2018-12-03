@@ -10,7 +10,7 @@
     $lname          = $_POST['lname'];
     $title          = $_POST['title'];
     $hometown       = $_POST['hometown'];
-    $phone_num      = $_POST['phone-num'];
+    $phonenum       = $_POST['phone-num'];
     $bio            = $_POST['bio'];
     $employer       = $_POST['employer'];
     $university     = $_POST['university'];
@@ -91,7 +91,7 @@
         $stmt->execute();
     }
 
-    if($phone_num !== '')
+    if($phonenum !== '')
     {
         $sql = 'UPDATE USERS SET PHONE_NUM= :PHONE_NUM WHERE USER_ID= :USER_ID';
         $stmt = $conn->prepare($sql);
