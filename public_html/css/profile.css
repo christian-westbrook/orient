@@ -104,7 +104,16 @@
 
 .post-name
 {
-	padding-bottom: 4em;
 	display: inline-block;
     float: left;
+
+	margin-left: 1em;
+	margin-top: 0.5em;
+}
+
+.post-message
+{
+	display: inline-block;
+	float: left;
+	clear: left;
 }
