@@ -30,7 +30,7 @@
 
 #types
 {
-
+	margin: 0 auto;
 }
 
 .type
@@ -48,7 +48,6 @@
 	display: inline-block;
 
 	margin-left: 2em;
-	margin-top: 2em;
 }
 
 #admin
