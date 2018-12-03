@@ -10,7 +10,7 @@
     $lname          = $_POST['lname'];
     $title          = $_POST['title'];
     $hometown       = $_POST['hometown'];
-    $phonenum       = $_POST['phone-num'];
+    $phonenum       = $_POST['phonenum'];
     $bio            = $_POST['bio'];
     $employer       = $_POST['employer'];
     $university     = $_POST['university'];
@@ -95,7 +95,7 @@
     {
         $sql = 'UPDATE USERS SET PHONE_NUM= :PHONE_NUM WHERE USER_ID= :USER_ID';
         $stmt = $conn->prepare($sql);
-        $stmt->bindParam(':PHONE_NUM', $phone_num, PDO::PARAM_STR);
+        $stmt->bindParam(':PHONE_NUM', $phonenum, PDO::PARAM_STR);
         $stmt->bindParam(':USER_ID', $id, PDO::PARAM_INT);
         $stmt->execute();
     }
