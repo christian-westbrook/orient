@@ -80,20 +80,29 @@ $valCU = $stmtCU->fetchAll(PDO::FETCH_ASSOC);
 		<p class="label">Update Profile Information</p>
 
 		<form action="php/update-profile-script.php" method="POST">
-			<input type="text" name="fname" <?php if($valCU[0]['FNAME'] !== '') echo 'value="'.$valCU[0]['FNAME'].'"'; else echo 'placeholde"First Name"'; ?> class="field" /></br>
-			<input type="text" name="lname" placeholder="Last Name" class="field" /></br>
-			<input type="text" name="title" placeholder="Title" class="field" /></br>
-			<input type="text" name="hometown" placeholder="Hometown" class="field" /></br>
-			<input type="text" name="phone-num" placeholder="XXX-XXX-XXXX" class="field" /></br>
+			<input type="text" name="fname" <?php if($valCU[0]['FNAME'] !== '') echo 'value="'.$valCU[0]['FNAME'].'"'; else echo 'placeholder="First Name"'; ?> class="field" /></br>
+			<input type="text" name="lname" <?php if($valCU[0]['LNAME'] !== '') echo 'value="'.$valCU[0]['LNAME'].'"'; else echo 'placeholder="Last Name"'; ?> class="field" /></br>
+			<input type="text" name="title" <?php if($valCU[0]['TITLE'] !== '') echo 'value="'.$valCU[0]['TITLE'].'"'; else echo 'placeholder="Title"'; ?> class="field" /></br>
+			<input type="text" name="hometown" <?php if($valCU[0]['HOMETOWN'] !== '') echo 'value="'.$valCU[0]['HOMETOWN'].'"'; else echo 'placeholder="Hometown"'; ?> class="field" /></br>
+			<input type="text" name="phone-num" <?php if($valCU[0]['PHONE_NUM'] !== '') echo 'value="'.$valCU[0]['PHONE_NUM'].'"'; else echo 'placeholder="XXX-XXX-XXXX"'; ?> class="field" /></br>
 			<input type="textarea" rows="4" wrap="hard" name="bio" placeholder="Research Summary" class="field" id="research-summary"/></br>
 			<select name="employer" class="field">
 				<option value="ignore">--Select An Employer--</option>
 				<?php
 					$valz = $stmtEMP->fetchAll(PDO::FETCH_ASSOC);
 					$length = count($valz);
+					$sql = 'SELECT * FROM USERS WHERE USER_ID= :USER_ID AND EMP_ID= :EMP_ID';
 					for($i = 0; $i < $length; $i++){
+						$stmt = $conn->prepare($sql);
+						$stmt->bindParam(':EMP_ID', $valz[$i]['EMP_ID'], PDO::PARAM_INT);
+						$stmt->bindParam(':USER_ID', $id, PDO::PARAM_INT);
+						$stmt->execute();
+						$valz2 = $stmt->fetchAll(PDO::FETCH_ASSOC);
+						$length2 = count($valz2);
+						if($length2>0){$selected='selected';}
+						else{$selected='';}
 				?>
-				<option value="<?php echo $valz[$i]['EMP_ID'];?>"><?php echo $valz[$i]['NAME'];?></option>
+				<option value="<?php echo $valz[$i]['EMP_ID'];?>" <?php echo $selected;?>><?php echo $valz[$i]['NAME'];?></option>
 				<?php } ?>
 			</select><br>
 			<select name="university" class="field">
@@ -101,9 +110,18 @@ $valCU = $stmtCU->fetchAll(PDO::FETCH_ASSOC);
 				<?php
 					$valz = $stmtUNI->fetchAll(PDO::FETCH_ASSOC);
 					$length = count($valz);
+					$sql = 'SELECT * FROM USERS WHERE USER_ID= :USER_ID AND UNIV_ID= :UNIV_ID';
 					for($i = 0; $i < $length; $i++){
+						$stmt = $conn->prepare($sql);
+						$stmt->bindParam(':UNIV_ID', $valz[$i]['UNIV_ID'], PDO::PARAM_INT);
+						$stmt->bindParam(':USER_ID', $id, PDO::PARAM_INT);
+						$stmt->execute();
+						$valz2 = $stmt->fetchAll(PDO::FETCH_ASSOC);
+						$length2 = count($valz2);
+						if($length2>0){$selected='selected';}
+						else{$selected='';}
 				?>
-				<option value="<?php echo $valz[$i]['UNIV_ID'];?>"><?php echo $valz[$i]['NAME'];?></option>
+				<option value="<?php echo $valz[$i]['UNIV_ID'];?>" <?php echo $selected;?>><?php echo $valz[$i]['NAME'];?></option>
 				<?php } ?>
 			</select><br>
 			<select name="interest[]" class="field2" multiple>
