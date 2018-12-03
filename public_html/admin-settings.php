@@ -78,7 +78,7 @@ $stmtNU->execute();
 			<input type="text" name="phone-num" placeholder="XXX-XXX-XXXX" class="field" /></br>
 			<input type="textarea" rows="4" wrap="hard" name="bio" placeholder="Research Summary" class="field" id="research-summary"/></br>
 			<select name="role" class="field">
-				<optgroup value="ignore" label="Select A New Role">
+				<option value="ignore">Select A New Role</option>
 				<?php
 					$valz = $stmtROL->fetchAll(PDO::FETCH_ASSOC);
 					$length = count($valz);
@@ -86,7 +86,6 @@ $stmtNU->execute();
 				?>
 				<option value="<?php echo $valz[$i]['ROLE_ID'];?>"><?php echo $valz[$i]['NAME'];?></option>
 				<?php } ?>
-				</optgroup>
 			</select><br>
 			<select name="department" class="field">
 				<option value="ignore">Select A New Department</option>
