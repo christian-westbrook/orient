@@ -77,12 +77,14 @@ $valCU = $stmtCU->fetchAll(PDO::FETCH_ASSOC);
 			<input type="hidden" name="newuserid" value="<?php echo $id;?>" class="field" />
 			<input type="file" class="field" name="profile" id="profile" accept="image/*" /><br>
 
-			<input type="text" name="fname" value="<?php echo $valCU[0]['FNAME'];?>" class="field" /></br>
+			
+			
+			<input type="text" name="fname" value="<?php echo $valCU[0]['FNAME'];??" class="field" /></br>
 			<input type="text" name="lname" value="<?php echo $valCU[0]['LNAME'];?>" class="field" /></br>
-			<input type="text" name="email" value="<?php echo $valCU[0]['EMAIL'];?>" class="field" /></br>
-			<input type="text" name="title" value="<?php echo $valCU[0]['TITLE'];?>" class="field" /></br>
-			<input type="text" name="hometown" value="<?php echo $valCU[0]['HOMETOWN'];?>" class="field" /></br>
-			<input type="text" name="phone-num" value="<?php echo $valCU[0]['PHONE_NUM'];?>" class="field" /></br>
+			<input type="text" name="email" value="<?php echo $valCU[0]['EMAIL'];?>" class="field" /></br>			
+			<input type="text" name="title" <?php if($valCU[0]['TITLE'] !== '') echo 'value="'.$valCU[0]['TITLE'].'"'; else echo 'placeholder="Title"'; ?> class="field" /></br>
+			<input type="text" name="hometown" <?php if($valCU[0]['HOMETOWN'] !== '') echo 'value="'.$valCU[0]['HOMETOWN'].'"'; else echo 'placeholder="Hometown"'; ?> class="field" /></br>
+			<input type="text" name="phone-num" <?php if($valCU[0]['PHONE_NUM'] !== '') echo 'value="'.$valCU[0]['PHONE_NUM'].'"'; else echo 'placeholder="XXX-XXX-XXXX"'; ?> class="field" /></br>
 			<textarea rows="4" wrap="hard" name="bio" value="<?php echo $valCU[0]['BIO'];?>" class="field3"></textarea></br>
 			<select name="role" class="field">
 				<option value="ignore">--Select A New Role--</option>
