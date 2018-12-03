@@ -184,6 +184,13 @@ if($stmt->execute())
 	$_POST['TIMES'] = $times;
 }
 
+// Time formatter function
+function formatDateTime($datetime)
+{
+	$formatted = substr($datetime, 1, strlen($datetime) - 1);
+	return formatted;
+}
+
 ?>
 
 <div id="container">
@@ -239,7 +246,7 @@ if($stmt->execute())
 	$length = count($posts);
 	for($i = 0; $i < $length; $i++)
 	{
-		  echo '<p class="post">' . $posts[$i] . "</p></br> . $times[$i] . </br></br>";
+		  echo '<p class="post">' . $posts[$i] . '</p></br>' . formatDateTime($times[$i]) . '</br></br>';
 	}
 
 	?>
