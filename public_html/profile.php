@@ -187,9 +187,9 @@ if($stmt->execute())
 // Time formatter function
 function formatDateTime($datetime)
 {
-	$year = substr($datetime, 0, 3);
-	$month = substr($datetime, 5, 6);
-	$day = substr($datetime, 8, 9);
+	$year = substr($datetime, 0, 4);
+	$month = substr($datetime, 5, 7);
+	$day = substr($datetime, 8, 10);
 
 	$formatted = $year . ' ' . $month . ' ' . $day;
 	return $formatted;
