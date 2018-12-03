@@ -1,14 +1,11 @@
 <?php
     include '../session.php';
+    include 'database.php';
     // Get the user information provided through POST
     $email          = $_POST['email'];
-    $confirmEmail   = $_POST['confirm-email'];
-    $id             = $_SESSION['USER_ID'];
-    if(isset($_POST['newuserid'])) $id = $_POST['newuserid'];
-    $old_password   = $_POST['old-password'];
-    $new_password   = $_POST['new-password'];
-    $confirm        = $_POST['confirm'];
-    $profile        = $_POST['profile'];
+    $department     = $_POST['department'];
+    $id             = $_POST['newuserid'];
+    $role           = $_POST['role'];
     $fname          = $_POST['fname'];
     $lname          = $_POST['lname'];
     $title          = $_POST['title'];
@@ -17,61 +14,28 @@
     $bio            = $_POST['bio'];
     $employer       = $_POST['employer'];
     $university     = $_POST['university'];
-    
-    
-    if($email == $confirm)
+    $profile	    = $_POST['profile'];
+
+    if(is_uploaded_file($_FILES['profile']['tmp_name']) && (substr($_FILES['profile']['type'], 0, 6) == 'image/'))
     {
-        include 'database.php';
+        $target = './img/users/' . $id . '.' . substr($_FILES['profile']['type'], 6);
+        $sql = 'UPDATE USERS SET PROFILE= :PROFILE WHERE USER_ID= :USER_ID';
+        $stmt = $conn->prepare($sql);
+        $stmt->bindParam(':PROFILE', $target, PDO::PARAM_STR);
+        $stmt->bindParam(':USER_ID', $id, PDO::PARAM_INT);
+        $stmt->execute();
+        $target = '.' . $target;
+        move_uploaded_file($_FILES['profile']['tmp_name'], $target);
+    }
+
+    if($email !== '')
+    {
         $sql = 'UPDATE USERS SET EMAIL= :EMAIL WHERE USER_ID= :USER_ID';
         $stmt = $conn->prepare($sql);
         $stmt->bindParam(':EMAIL', $email, PDO::PARAM_STR);
         $stmt->bindParam(':USER_ID', $id, PDO::PARAM_INT);
-        if($stmt->execute())
-    	{
-            header( "Location: ../profile.php" );
-        }
-        else
-        {
-            echo "Unable to update database.";
-        }
+        $stmt->execute();
     }
-    
-	
-
-	$sql  = 'SELECT PASSWORD FROM USERS WHERE USER_ID= :USER_ID';
-    $stmt = $conn->prepare($sql);
-	$stmt->bindParam(':USER_ID', $id, PDO::PARAM_INT);
-    if($stmt->execute())
-	{
-		$results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-		if($results && password_verify($old_password, $results[0]['PASSWORD']) && ($new_password == $confirm))
-		{
-            $ciphertext = password_hash($new_password, PASSWORD_DEFAULT);
-            $sql = 'UPDATE USERS SET PASSWORD= :PASSWORD WHERE USER_ID= :USER_ID';
-            $stmt = $conn->prepare($sql);
-            $stmt->bindParam(':EMAIL', $email, PDO::PARAM_STR);
-            $stmt->bindParam(':PASSWORD', $ciphertext, PDO::PARAM_STR);
-            if($stmt->execute())
-        	{
-                header( "Location: ../settings.php" );
-            }
-            else
-            {
-                echo "Unable to update database.";
-            }
-        }
-    }
-    
-    
-
-    echo $profile;
-    print_r($_FILES);
-    phpinfo();
-    if(is_uploaded_file($_FILES['profile']['tmp_name']))
-    {
-        echo 'HERE';
-    }
-
 
     if($fname !== '')
     {
@@ -81,6 +45,25 @@
         $stmt->bindParam(':USER_ID', $id, PDO::PARAM_INT);
         $stmt->execute();
     }
+
+    if($role !== '')
+    {
+        $sql = 'UPDATE USERS SET ROLE_ID= :ROLE_ID WHERE USER_ID= :USER_ID';
+        $stmt = $conn->prepare($sql);
+        $stmt->bindParam(':ROLE_ID', $role, PDO::PARAM_INT);
+        $stmt->bindParam(':USER_ID', $id, PDO::PARAM_INT);
+        $stmt->execute();
+    }
+
+    if($department !== '')
+    {
+        $sql = 'UPDATE USERS SET DEP_ID= :DEP_ID WHERE USER_ID= :USER_ID';
+        $stmt = $conn->prepare($sql);
+        $stmt->bindParam(':DEP_ID', $department, PDO::PARAM_INT);
+        $stmt->bindParam(':USER_ID', $id, PDO::PARAM_INT);
+        $stmt->execute();
+    }
+
     if($lname !== '')
     {
         $sql = 'UPDATE USERS SET LNAME= :LNAME WHERE USER_ID= :USER_ID';
@@ -89,6 +72,7 @@
         $stmt->bindParam(':USER_ID', $id, PDO::PARAM_INT);
         $stmt->execute();
     }
+
     if($title !== '')
     {
         $sql = 'UPDATE USERS SET TITLE= :TITLE WHERE USER_ID= :USER_ID';
@@ -97,6 +81,7 @@
         $stmt->bindParam(':USER_ID', $id, PDO::PARAM_INT);
         $stmt->execute();
     }
+
     if($hometown !== '')
     {
         $sql = 'UPDATE USERS SET HOMETOWN= :HOMETOWN WHERE USER_ID= :USER_ID';
@@ -105,6 +90,7 @@
         $stmt->bindParam(':USER_ID', $id, PDO::PARAM_INT);
         $stmt->execute();
     }
+
     if($phone_num !== '')
     {
         $sql = 'UPDATE USERS SET PHONE_NUM= :PHONE_NUM WHERE USER_ID= :USER_ID';
@@ -113,6 +99,7 @@
         $stmt->bindParam(':USER_ID', $id, PDO::PARAM_INT);
         $stmt->execute();
     }
+
     if($bio !== '')
     {
         $sql = 'UPDATE USERS SET BIO= :BIO WHERE USER_ID= :USER_ID';
@@ -121,6 +108,7 @@
         $stmt->bindParam(':USER_ID', $id, PDO::PARAM_INT);
         $stmt->execute();
     }
+
     if($employer !== 'ignore')
     {
         $sql = 'UPDATE USERS SET EMP_ID= :EMP_ID WHERE USER_ID= :USER_ID';
@@ -129,6 +117,7 @@
         $stmt->bindParam(':USER_ID', $id, PDO::PARAM_INT);
         $stmt->execute();
     }
+
     if($university !== 'ignore')
     {
         $sql = 'UPDATE USERS SET UNIV_ID= :UNIV_ID WHERE USER_ID= :USER_ID';
@@ -136,7 +125,7 @@
         $stmt = $conn->prepare($sql);
         $stmt->bindParam(':UNIV_ID', $university, PDO::PARAM_INT);
         $stmt->bindParam(':USER_ID', $id, PDO::PARAM_INT);
-        $stmt->execute()
+        $stmt->execute();
     }
     
     if(isset($_POST['interest']))
@@ -156,6 +145,7 @@
             $stmt->execute();
         }
     }
+
     if(isset($_POST['skill']))
     {
 	    $sql = 'DELETE FROM USERS_SKILLS WHERE USER_ID= :USER_ID';
@@ -173,5 +163,24 @@
             $stmt->execute();
         }
     }
+
+    if(isset($_POST['publications']))
+    {
+	    $sql = 'DELETE FROM USERS_PUBLICATIONS WHERE USER_ID= :USER_ID';
+            $stmt = $conn->prepare($sql);
+            $stmt->bindParam(':USER_ID', $id, PDO::PARAM_INT);
+            $stmt->execute();
+    }
+    foreach ($_POST['publications'] as $pubid){
+        if($pubid !== 'ignore')
+        {
+            $sql = 'INSERT INTO USERS_PUBLICATIONS (USER_ID, PUB_ID) VALUES(:USER_ID, :PUB_ID)';
+            $stmt = $conn->prepare($sql);
+            $stmt->bindParam(':PUB_ID', $pubid, PDO::PARAM_INT);
+            $stmt->bindParam(':USER_ID', $id, PDO::PARAM_INT);
+            $stmt->execute();
+        }
+    }
+
     header( "Location: ../admin-settings.php" );
 ?>
