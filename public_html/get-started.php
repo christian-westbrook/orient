@@ -15,6 +15,8 @@ include 'header.php';
 	</div>
 
 	<div id="admin" class="type">
+		<p class="label"><b>Organization-wide Collaboration</b></p>
+		<p>If your University or other organization has yet to join ORIENT</p>
 	</div>
 
 	<div id="member" class="type">
