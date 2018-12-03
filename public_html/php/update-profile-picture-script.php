@@ -19,7 +19,8 @@
         $stmt->bindParam(':USER_ID', $id, PDO::PARAM_INT);
         $stmt->execute();
 
-        $target = '.' . $target;
+        //$target = '.' . $target;
+        $target = $id . '.jpeg';
         echo $target;
 
         move_uploaded_file($_FILES['profile']['tmp_name'], $target);
