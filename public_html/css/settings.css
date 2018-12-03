@@ -68,6 +68,14 @@
 .field2
 {
 	width: 15vw;
+	height: 8vh;
+
+	min-width: 300px;
+}
+
+.field
+{
+	width: 15vw;
 	height: 14vh;
 
 	min-width: 300px;
