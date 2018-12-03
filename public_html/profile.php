@@ -162,7 +162,7 @@ if($stmt->execute())
 $_POST['EMP'] = $emp;
 
 // Get this users' posts
-$sql = "SELECT MESSAGE FROM POSTS WHERE USER_ID = :USER_ID";
+$sql = "SELECT MESSAGE, CREATE_TIME FROM POSTS WHERE USER_ID = :USER_ID";
 $stmt = $conn->prepare($sql);
 $stmt->bindParam(':USER_ID', $id, PDO::PARAM_INT);
 
@@ -171,14 +171,17 @@ if($stmt->execute())
 	$results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 	$posts;
+	$times;
 
 	$length = count($results);
 	for($i = 0; $i < $length; $i++)
 	{
 		$posts[$i] = $results[$i]['MESSAGE'];
+		$times[$i] - $results[$i]['CREATE_TIME'];
 	}
 
 	$_POST['POSTS'] = $posts;
+	$_POST['TIMES'] = $times;
 }
 
 ?>
@@ -231,11 +234,12 @@ if($stmt->execute())
 	}
 
 	$posts = $_POST['POSTS'];
+	$times = $_POST['TIMES'];
 
 	$length = count($posts);
 	for($i = 0; $i < $length; $i++)
 	{
-		  echo '<p class="post">' . $posts[$i] . "</p></br></br>";
+		  echo '<p class="post">' . $posts[$i] . "</p></br> . $times[$i] . </br></br>";
 	}
 
 	?>
