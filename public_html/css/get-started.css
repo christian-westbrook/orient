@@ -28,6 +28,14 @@
 
 }
 
+.type
+{
+	background: #006994;
+
+	border: 2px solid black;
+	border-radius: 6px;
+}
+
 #admin
 {
 
@@ -40,5 +48,5 @@
 
 #guest
 {
-	
+
 }
