@@ -6,7 +6,9 @@
 	height: 6vh;
 
 	margin-top: 0;
-	position: sticky;
+	position: -webkit-sticky; /* Safari */
+    position: sticky;
+    bottom: 0;
 
 	z-index: 2;
 }
