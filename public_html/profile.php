@@ -226,7 +226,6 @@ function formatDateTime($datetime)
 ?>
 
 <div id="container">
-</div>
 		<img id="profile-pic" src="<?php echo $_POST['PROFILE']; ?>">
 
 		<div id="head-info">
@@ -285,6 +284,8 @@ function formatDateTime($datetime)
 	$vheight = 88 + ($length * 20);
 
 	?>
+
+</div>
 
 <!-- Defines the footer of each page -->
 <?php include 'footer.php'; ?>
