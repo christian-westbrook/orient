@@ -18,8 +18,10 @@ if(!$_SESSION['ROLE_ID'] == 5)
 {
    header('Location: /~orient/settings.php');
 }  
-if (!empty($_POST['newuserid'])) $id = $_POST['newuserid'];
+
+if(isset($_POST['newuserid'])) $id = $_POST['newuserid'];
 else $id= $_SESSION['USER_ID'];
+
 include 'php/database.php';
 $sqlEMP = 'SELECT * FROM EMPLOYERS';
 $sqlUNI = 'SELECT * FROM UNIVERSITIES';
@@ -49,34 +51,23 @@ $stmtNU = $conn->prepare($sqlNU);
 $stmtNU->execute();
 
 ?>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script>
-    $(document).ready(function(){
-    $('#newuserdd').change(function(){
-	var inputValue = $(this).val();
-	$.post('admin-settings.php', { newuserid: inputValue }).done(function(data){
-		location.reload();
-	});
-    });
-});
-</script>
 <div id="container">
 	<div id="settings">
 		<p id="heading">Settings</p>
-		
-		<select name="newuserid" class="field" id="newuserdd">
-		<option value="ignore">Select A User</option>
-		<?php
-			$valNU = $stmtNU->fetchAll(PDO::FETCH_ASSOC);
-			$lenNU = count($valNU);
-			for($i = 0; $i < $lenNU; $i++){
-		?>
-		<option value="<?php echo $valNU[$i]['USER_ID'];?>"><?php echo $valNU[$i]['FNAME']." ".$valNU[$i]['LNAME'];?></option>
-		<?php } ?>
-		</select>
-		<br>
-		<br>
-		
+		<form action="#" method="POST">
+			<select name="newuserid" class="field" onchange="this.form.submit()">
+			<option value="ignore">Select A User</option>
+			<?php
+				$valNU = $stmtNU->fetchAll(PDO::FETCH_ASSOC);
+				$lenNU = count($valNU);
+				for($i = 0; $i < $lenNU; $i++){
+			?>
+			<option value="<?php echo $valNU[$i]['USER_ID'];?>"><?php echo $valNU[$i]['FNAME']." ".$valNU[$i]['LNAME'];?></option>
+			<?php } ?>
+			</select>
+			<br>
+			<br>
+		</form>
 		<form action="php/admin-profile-script.php" method="POST">
 			<input type="text" name="fname" placeholder="<?php echo $id;?>" class="field" /></br>			
 			<input type="file" class="field" name="profile" accept="image/*" /></br>
