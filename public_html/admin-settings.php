@@ -18,7 +18,8 @@ if(!$_SESSION['ROLE_ID'] == 5)
 {
    header('Location: /~orient/settings.php');
 }  
-$id= $_SESSION['USER_ID'];
+if (!empty($_POST['newuserid'])) $id = $_POST['newuserid'];
+else $id= $_SESSION['USER_ID'];
 include 'php/database.php';
 $sqlEMP = 'SELECT * FROM EMPLOYERS';
 $sqlUNI = 'SELECT * FROM UNIVERSITIES';
@@ -54,7 +55,6 @@ $stmtNU->execute();
     $('#newuserdd').change(function(){
 	var inputValue = $(this).val();
 	$.post('admin-settings.php', { newuserid: inputValue }, function(data){
-		<?php $id= $_POST['newuserid']; ?>
 	});
     });
 });
