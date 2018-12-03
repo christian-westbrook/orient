@@ -24,7 +24,9 @@
 
 #types
 {
-	float: left;
+	display: inline-block;
+    float: left;
+	clear: left;
 }
 
 .type
@@ -41,7 +43,9 @@
 	border-radius: 6px;
 
 	margin-left: 2em;
-	float: left;
+
+	display: inline-block;
+    float: left;
 }
 
 #admin
@@ -62,4 +66,5 @@
 #footer
 {
 	float: left;
+	clear: left;
 }

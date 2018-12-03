@@ -30,5 +30,6 @@ include 'header.php';
 			<p>If you're just here to look around, sign up as a guest.</p>
 		</div>
 	</div>
+</div>
 
 <?php include 'footer.php'; ?>
