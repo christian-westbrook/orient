@@ -246,7 +246,7 @@ function formatDateTime($datetime)
 	$length = count($posts);
 	for($i = 0; $i < $length; $i++)
 	{
-		  echo '<p class="post">' . $posts[$i] . '</p></br>' . $times[%i] . '</br>' formatDateTime($times[$i]) . '</br></br>';
+		  echo '<p class="post">' . $posts[$i] . '</p></br>' . $times[$i] . '</br>' formatDateTime($times[$i]) . '</br></br>';
 	}
 
 	?>
