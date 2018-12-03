@@ -7,7 +7,7 @@
 
     if(is_uploaded_file($_FILES['profile']['tmp_name']) && (substr($_FILES['profile']['type'], 0, 6) == 'image/'))
     {
-        $target = 'img/users/' . $id . '.' . substr($_FILES['profile']['type'], 6);
+        $target = './img/users/' . $id . '.' . substr($_FILES['profile']['type'], 6);
         echo $target;
 
         include 'database.php';
@@ -17,7 +17,7 @@
         $stmt->bindParam(':USER_ID', $id, PDO::PARAM_INT);
         $stmt->execute();
 
-        move_uploaded_file($_FILES['profile']['tmp_name'], '../' . $target);
+        move_uploaded_file($_FILES['profile']['tmp_name'], '.' . $target);
     }
 
     header( "Location: ../profile.php" );
