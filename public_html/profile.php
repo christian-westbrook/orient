@@ -283,13 +283,6 @@ function formatDateTime($datetime)
 
 	$vheight = 88 + ($length * 20);
 
-	echo'<style type="text/css">
-			#container
-			{
-				height = $vheight;
-			}
-		</style>';
-
 	?>
 </div>
 
