@@ -10,7 +10,7 @@
     $lname          = $_POST['lname'];
     $title          = $_POST['title'];
     $hometown       = $_POST['hometown'];
-    $phonenum       = $_POST['phonenum'];
+    $phone_num       = $_POST['phone-num'];
     $bio            = $_POST['bio'];
     $employer       = $_POST['employer'];
     $university     = $_POST['university'];
@@ -91,11 +91,11 @@
         $stmt->execute();
     }
 
-    if($phonenum !== '')
+    if($phone_num !== '')
     {
         $sql = 'UPDATE USERS SET PHONE_NUM= :PHONE_NUM WHERE USER_ID= :USER_ID';
         $stmt = $conn->prepare($sql);
-        $stmt->bindParam(':PHONE_NUM', $phonenum, PDO::PARAM_STR);
+        $stmt->bindParam(':PHONE_NUM', $phone_num, PDO::PARAM_STR);
         $stmt->bindParam(':USER_ID', $id, PDO::PARAM_INT);
         $stmt->execute();
     }
