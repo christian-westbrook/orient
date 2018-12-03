@@ -25,20 +25,26 @@
 
 #promo
 {
-
+	float: left;
 }
 
 .type
 {
 	background: #006994;
 
+	width: 10em;
+	height: 10em;
+
 	border: 2px solid black;
 	border-radius: 6px;
+
+	display: inline-block;
+	float: left;
 }
 
 #admin
 {
-
+	clear: left;
 }
 
 #member
