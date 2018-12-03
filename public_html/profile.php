@@ -191,7 +191,7 @@ function formatDateTime($datetime)
 	$month = substr($datetime, 5, 7);
 	$day = substr($datetime, 8, 10);
 
-	$formatted = $year;
+	$formatted = $month;
 	return $formatted;
 }
 
