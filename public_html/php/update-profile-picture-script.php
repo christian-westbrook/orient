@@ -10,12 +10,11 @@
         $target = '../img/users/' . $id . '.' . substr($_FILES['profile']['type'], 6);
 
         include 'database.php';
+        echo "HERE";
         $sql = 'UPDATE USERS SET PROFILE= :PROFILE WHERE USER_ID= :USER_ID';
         $stmt->bindParam(':PROFILE', $target, PDO::PARAM_STR);
         $stmt->bindParam(':USER_ID', $id, PDO::PARAM_INT);
         $stmt->execute();
-
-        echo "HERE";
 
         if(move_uploaded_file($_FILES['profile']['tmp_name'], $target))
         {
