@@ -93,7 +93,7 @@
 	font-size: 0.75em;
 	display: inline-block;
 	float: right;
-	clear: right;
+	clear: left;
 }
 
 .post-profile-pic
