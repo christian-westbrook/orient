@@ -274,6 +274,10 @@ function formatDateTime($datetime)
 
 	$posts = $_POST['POSTS'];
 	$times = $_POST['TIMES'];
+	$profile = $_POST['PROFILE'];
+	$title = $_POST['TITLE'];
+	$fname = $_POST['FNAME'];
+	$lname = $_POST['LNAME'];
 
 	$length = count($posts);
 	for($i = 0; $i < $length; $i++)
