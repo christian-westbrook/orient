@@ -56,13 +56,14 @@ $stmtNU->execute();
 		<p id="heading">Settings</p>
 		<form action="#" method="POST">
 			<select name="newuserid" class="field" onchange="this.form.submit()">
-			<option value="ignore">Select A User</option>
 			<?php
 				$valNU = $stmtNU->fetchAll(PDO::FETCH_ASSOC);
 				$lenNU = count($valNU);
 				for($i = 0; $i < $lenNU; $i++){
+				if(echo $valNU[$i]['USER_ID'] == $id){$selected='selected';}
+				else{$selected='';}
 			?>
-			<option value="<?php echo $valNU[$i]['USER_ID'];?>"><?php echo $valNU[$i]['FNAME']." ".$valNU[$i]['LNAME'];?></option>
+			<option value="<?php echo $valNU[$i]['USER_ID'];?>" <?php echo $selected;?>><?php echo $valNU[$i]['FNAME']." ".$valNU[$i]['LNAME'];?></option>
 			<?php } ?>
 			</select>
 			<br>
