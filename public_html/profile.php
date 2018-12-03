@@ -281,6 +281,15 @@ function formatDateTime($datetime)
 		  echo '<div class="post"><p>' . $posts[$i] . '</br>' . formatDateTime($times[$i]) . '</p></div></br></br>';
 	}
 
+	$vheight = 88 + ($length * 6);
+
+	echo'<style type="text/css" scoped>
+			#container
+			{
+				height = $vheight;
+			}
+		</style>';
+
 	?>
 </div>
 
