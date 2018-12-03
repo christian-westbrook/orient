@@ -27,6 +27,9 @@
 	display: inline-block;
     float: left;
 	clear: left;
+
+	margin-top: 5em;
+	margin: 0 auto;
 }
 
 .type
