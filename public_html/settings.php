@@ -42,6 +42,11 @@ $selected;
 $admin= False;
 if($_SESSION['ROLE_ID'] == 5) $admin= True;
 
+$sqlCU = 'SELECT * FROM USERS WHERE USER_ID= :USER_ID';
+$stmtCU = $conn->prepare($sqlCU);
+$stmtCU->bindParam(':USER_ID', $id, PDO::PARAM_INT);
+$stmtCU->execute();
+$valCU = $stmtCU->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <div id="container">
@@ -75,7 +80,7 @@ if($_SESSION['ROLE_ID'] == 5) $admin= True;
 		<p class="label">Update Profile Information</p>
 
 		<form action="php/update-profile-script.php" method="POST">
-			<input type="text" name="fname" placeholder="First Name" class="field" /></br>
+			<input type="text" name="fname" <?php if($valCU[0]['FNAME'] !== '') echo 'value="'.$valCU[0]['FNAME'].'"'; else echo 'placeholde"First Name"'; ?> class="field" /></br>
 			<input type="text" name="lname" placeholder="Last Name" class="field" /></br>
 			<input type="text" name="title" placeholder="Title" class="field" /></br>
 			<input type="text" name="hometown" placeholder="Hometown" class="field" /></br>
