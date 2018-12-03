@@ -14,3 +14,10 @@
 	position: relative;
 	top: 0vh;
 }
+
+#head-text
+{
+	color: white;
+	margin: 0 auto;
+	text-align: center;
+}
