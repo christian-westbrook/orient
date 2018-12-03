@@ -7,7 +7,7 @@
 
     if(is_uploaded_file($_FILES['profile']['tmp_name']) && (substr($_FILES['profile']['type'], 0, 6) == 'image/'))
     {
-        $target = '../img/users/' . $id . '.' . substr($_FILES['profile']['type'], 6);
+        $target = 'img/users/' . $id . '.' . substr($_FILES['profile']['type'], 6);
         echo $target;
 
         include 'database.php';
@@ -17,7 +17,7 @@
         echo "HERE";
         $stmt->execute();
 
-        if(move_uploaded_file($_FILES['profile']['tmp_name'], $target))
+        if(move_uploaded_file($_FILES['profile']['tmp_name'], '../' . $target))
         {
 
         }
