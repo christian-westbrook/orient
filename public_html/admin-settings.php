@@ -74,8 +74,8 @@ $valCU = $stmtCU->fetchAll(PDO::FETCH_ASSOC);
 			<br>
 		</form>
 		<form action="php/admin-profile-script.php" method="POST">
-			<input type="hidden" name="newuserid" value="<?php echo $id;?>" class="field" />		
-			<input type="file" class="field" name="profile" accept="image/*" /></br>
+			<input type="hidden" name="newuserid" value="<?php echo $id;?>" class="field" />
+			<input type="file" class="field" name="profile" id="profile" accept="image/*" /><br>
 
 			<input type="text" name="fname" value="<?php echo $valCU[0]['FNAME'];?>" class="field" /></br>
 			<input type="text" name="lname" value="<?php echo $valCU[0]['LNAME'];?>" class="field" /></br>
