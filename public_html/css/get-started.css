@@ -40,7 +40,6 @@
 	padding-top: 0;
 	background: #006994;
 	color: white;
-	text-align: center;
 
 	width: 15em;
 	height: 15em;
@@ -52,6 +51,11 @@
 
 	display: inline-block;
     float: left;
+}
+
+.label
+{
+	text-align: center;
 }
 
 #admin
