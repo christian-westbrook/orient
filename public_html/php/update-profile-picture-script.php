@@ -5,12 +5,9 @@
     $id             = $_SESSION['USER_ID'];
     $profile        = $_POST['profile'];
 
-    print_r($_FILES);
-
     if(is_uploaded_file($_FILES['profile']['tmp_name']) && (substr($_FILES['profile']['type'], 0, 6) == 'image/'))
     {
         $target = './img/users/' . $id . '.' . substr($_FILES['profile']['type'], 6);
-        echo $target . '<br>';
 
         include 'database.php';
         $sql = 'UPDATE USERS SET PROFILE= :PROFILE WHERE USER_ID= :USER_ID';
@@ -19,9 +16,9 @@
         $stmt->bindParam(':USER_ID', $id, PDO::PARAM_INT);
         $stmt->execute();
 
-        //$target = '.' . $target;
-        $target = $id . '.jpeg';
-        echo $target;
+        $target = '.' . $target;
+
+        echo is_writable('../img/users/');
 
         move_uploaded_file($_FILES['profile']['tmp_name'], $target);
     }
