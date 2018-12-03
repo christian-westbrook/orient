@@ -91,6 +91,8 @@
 .post-time
 {
 	font-size: 0.75em;
+	display: inline-block;
+	float: right;
 }
 
 .post-profile-pic
