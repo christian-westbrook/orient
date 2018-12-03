@@ -9,8 +9,7 @@
 	margin-top: 0px;
 	padding-top: 0px;
 
-	position: -webkit-sticky; /* Safari */
-    position: sticky;
+	position: absolute;
 }
 
 #profile-pic
