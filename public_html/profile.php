@@ -190,6 +190,7 @@ function formatDateTime($datetime)
 	$year = substr($datetime, 0, 4);
 	$month = substr($datetime, 5, 2);
 	$day = substr($datetime, 8, 2);
+	$time = substr($datetime, 11, 8);
 
 	switch ($month)
 	{
@@ -219,7 +220,7 @@ function formatDateTime($datetime)
 					break;
 	}
 
-	$formatted = $month . ' ' . $day . ', ' . $year;
+	$formatted = $month . ' ' . $day . ', ' . $year . ' ' . $time;
 	return $formatted;
 }
 
