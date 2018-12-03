@@ -177,7 +177,7 @@ if($stmt->execute())
 	for($i = 0; $i < $length; $i++)
 	{
 		$posts[$i] = $results[$i]['MESSAGE'];
-		$times[$i] - $results[$i]['CREATE_TIME'];
+		$times[$i] = $results[$i]['CREATE_TIME'];
 	}
 
 	$_POST['POSTS'] = $posts;
