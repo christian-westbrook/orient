@@ -226,69 +226,77 @@ function formatDateTime($datetime)
 
 ?>
 
-<div id="container">
-		<img id="profile-pic" src="<?php echo $_POST['PROFILE']; ?>">
+<body>
 
-		<div id="head-info">
-			<h1><?php echo $_POST['NAME']; ?></h1>
-			<p><?php echo $_POST['ROLE']; ?></br> <?php echo $_POST['UNIV']; ?></br> <?php echo $_POST['DEP']; ?></br><?php echo $_POST['EMP']; ?></p>
-			<p><b>Research Summary</b></br></br>
-		   	   <?php echo $_POST['BIO']; ?></p>
-			   <p><b>Email:</b> <?php echo $_POST['EMAIL']; ?></p>
-   			<p><b>Phone:</b> <?php echo $_POST['PHONE_NUM']; ?></p>
-			<p><b>Hometown:</b> <?php echo $_POST['HOMETOWN']; ?></p>
+	<div id="container">
+			<img id="profile-pic" src="<?php echo $_POST['PROFILE']; ?>">
+
+			<div id="head-info">
+				<h1><?php echo $_POST['NAME']; ?></h1>
+				<p><?php echo $_POST['ROLE']; ?></br> <?php echo $_POST['UNIV']; ?></br> <?php echo $_POST['DEP']; ?></br><?php echo $_POST['EMP']; ?></p>
+				<p><b>Research Summary</b></br></br>
+				   <?php echo $_POST['BIO']; ?></p>
+				   <p><b>Email:</b> <?php echo $_POST['EMAIL']; ?></p>
+				<p><b>Phone:</b> <?php echo $_POST['PHONE_NUM']; ?></p>
+				<p><b>Hometown:</b> <?php echo $_POST['HOMETOWN']; ?></p>
+			</div>
+
+		<div id="ints-skills">
+			<p><b>Research Interests</b></br></br>
+			<?php
+				$interests = $_POST['INTERESTS'];
+
+				$length = count($interests);
+				for($i = 0; $i < $length; $i++)
+				{
+				   echo '<a class="interest" href="results.php?SEARCH="' . $interests[$i] . '">' . $interests[$i] . '</a> ';
+				}
+			?></p>
+
+			<p><b>Skills</b></br></br>
+			<?php
+				$skills = $_POST['SKILLS'];
+
+				$length = count($skills);
+				for($i = 0; $i < $length; $i++)
+				{
+				   echo '<a class="skill" href="results.php?SEARCH="' . $skills[$i] . '">' . $skills[$i] . '</a> ';
+				}
+			?></p>
 		</div>
 
-	<div id="ints-skills">
-		<p><b>Research Interests</b></br></br>
 		<?php
-		   	$interests = $_POST['INTERESTS'];
+		if($id === $_SESSION['USER_ID'])
+		{
+			echo '	<form id="post-form" action="php/make-post-script.php" method="POST">
+						<p><b>Make Post</b></p>
+						<input type="text" name="post-field" id="post-field" placeholder="How\'s your research going?" />
+						<input type="submit" id="post-button" value="Post" />
+					</form>';
+		}
 
-		   	$length = count($interests);
-		   	for($i = 0; $i < $length; $i++)
-		   	{
-			   echo '<a class="interest" href="results.php?SEARCH="' . $interests[$i] . '">' . $interests[$i] . '</a> ';
-		   	}
-	   	?></p>
+		$posts = $_POST['POSTS'];
+		$times = $_POST['TIMES'];
+		$profile = $_POST['PROFILE'];
+		$name = $_POST['NAME'];
 
-		<p><b>Skills</b></br></br>
-		<?php
-		   	$skills = $_POST['SKILLS'];
+		$length = count($posts);
+		if($length > 10)
+		{
+			$length = 10;
+		}
 
-		   	$length = count($skills);
-		   	for($i = 0; $i < $length; $i++)
-		   	{
-			   echo '<a class="skill" href="results.php?SEARCH="' . $skills[$i] . '">' . $skills[$i] . '</a> ';
-		   	}
-	   	?></p>
-   	</div>
+		for($i = $length - 1; $i >= 0; $i--)
+		{
+			  echo '<div class="post"><img class="post-profile-pic" src="' . $profile . '" /> <span class="post-name">' . $name . '</span></br><span class="post-message">' . $posts[$i] . '</span></br><span class="post-time">' . formatDateTime($times[$i]) . '</span></div></br></br>';
+		}
 
-	<?php
-	if($id === $_SESSION['USER_ID'])
-	{
-		echo '	<form id="post-form" action="php/make-post-script.php" method="POST">
-					<p><b>Make Post</b></p>
-					<input type="text" name="post-field" id="post-field" placeholder="How\'s your research going?" />
-					<input type="submit" id="post-button" value="Post" />
-				</form>';
-	}
+		$vheight = 88 + ($length * 20);
 
-	$posts = $_POST['POSTS'];
-	$times = $_POST['TIMES'];
-	$profile = $_POST['PROFILE'];
-	$name = $_POST['NAME'];
+		?>
 
-	$length = count($posts);
-	for($i = $length - 1; $i >= 0; $i--)
-	{
-		  echo '<div class="post"><img class="post-profile-pic" src="' . $profile . '" /> <span class="post-name">' . $name . '</span></br><span class="post-message">' . $posts[$i] . '</span></br><span class="post-time">' . formatDateTime($times[$i]) . '</span></div></br></br>';
-	}
+	</div>
 
-	$vheight = 88 + ($length * 20);
-
-	?>
-
-</div>
-
+</body>
 <!-- Defines the footer of each page -->
 <?php include 'footer.php'; ?>

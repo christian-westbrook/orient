@@ -1,8 +1,5 @@
 #container
 {
-	background-image: url(../img/background.jpg);
-	background-size: cover;
-
 	width: 100%;
 	height: 200vh;
 
@@ -72,6 +69,15 @@
 {
 	width: 5em;
 	height: 3em;
+}
+
+body 
+{
+	
+    background-image: url(../img/background.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+	
 }
 
 .post
