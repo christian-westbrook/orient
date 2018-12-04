@@ -279,11 +279,6 @@ function formatDateTime($datetime)
 	$name = $_POST['NAME'];
 
 	$length = count($posts);
-	if($length > 10)
-	{
-		$length = 10;
-	}
-
 	for($i = $length - 1; $i >= 0; $i--)
 	{
 		  echo '<div class="post"><img class="post-profile-pic" src="' . $profile . '" /> <span class="post-name">' . $name . '</span></br><span class="post-message">' . $posts[$i] . '</span></br><span class="post-time">' . formatDateTime($times[$i]) . '</span></div></br></br>';
