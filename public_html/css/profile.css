@@ -1,6 +1,7 @@
 #container
 {
 	width: 100%;
+	min-height: 88vh;
 
 	z-index: -1;
 }
