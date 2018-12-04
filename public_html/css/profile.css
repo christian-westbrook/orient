@@ -140,7 +140,6 @@ body
 {
 	display: inline-block;
 	float: left;
-	padding-bottom: 1em;
 	margin-left: 0.25em;
 }
 
@@ -149,5 +148,5 @@ body
 	font-size: 0.75em;
 	display: inline-block;
 	float: right;
-	clear: right;
+	clear: left;
 }
