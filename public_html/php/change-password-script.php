@@ -4,7 +4,7 @@
     // Get the user information provided through POST
 	$old_password   = $_POST['old-password'];
     $new_password   = $_POST['new-password'];
-    $confirm        = $_POST['confirm'];
+    $confirm        = $_POST['confirm-password'];
     $id             = $_SESSION['USER_ID'];
 
     include 'database.php';
