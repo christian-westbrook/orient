@@ -127,7 +127,7 @@ body
 .heart
 {
 	display: inline-block;
-	float: right;
+	float: left;
 
 	width: 25px;
 	height: 25px;
@@ -138,7 +138,7 @@ body
 .likes
 {
 	display: inline-block;
-	float: right;
+	float: left;
 	margin-bottom: 0.5em;
 }
 
