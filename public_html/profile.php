@@ -37,6 +37,8 @@ $sql = "SELECT FNAME, LNAME, TITLE, EMAIL, PHONE_NUM, BIO, PROFILE, HOMETOWN, AL
 $stmt = $conn->prepare($sql);
 $stmt->bindParam(':ID', $id, PDO::PARAM_INT);
 
+echo "HERE";
+
 if($stmt->execute())
 {
 	$results = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -78,8 +80,6 @@ if($stmt->execute())
 
 	$_POST['SKILLS'] = $skills;
 }
-
-echo "HERE";
 
 // Grab data from the USERS_INTERESTS table
 $sql = "SELECT INTERESTS.NAME FROM INTERESTS INNER JOIN USERS_INTERESTS ON INTERESTS.INT_ID = USERS_INTERESTS.INT_ID WHERE USERS_INTERESTS.USER_ID= :ID";
