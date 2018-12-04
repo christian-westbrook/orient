@@ -8,22 +8,17 @@ $js = array(
 				0 => 'validatePassword'
 	   		);
 
-include('header.php');
+include 'header.php';
 
-if($sessionStarted == false)
-{
-   header('Location: /~orient/');
-}
 if(!$_SESSION['ROLE_ID'] == 5)
 {
    header('Location: /~orient/settings.php');
-}  
+}
 
 if(isset($_POST['newuseriddd'])) $id = $_POST['newuseriddd'];
 else $id= $_SESSION['USER_ID'];
 
 include 'php/database.php';
-$sqlEMP = 'SELECT * FROM EMPLOYERS';
 $sqlUNI = 'SELECT * FROM UNIVERSITIES';
 $sqlINT = 'SELECT * FROM INTERESTS';
 $sqlSKL = 'SELECT * FROM SKILLS';
@@ -31,8 +26,6 @@ $sqlROL = 'SELECT * FROM ROLES';
 $sqlPUB = 'SELECT * FROM PUBLICATIONS';
 $sqlDEP = 'SELECT * FROM DEPARTMENTS';
 
-$stmtEMP = $conn->prepare($sqlEMP);
-$stmtEMP->execute();
 $stmtUNI = $conn->prepare($sqlUNI);
 $stmtUNI->execute();
 $stmtINT = $conn->prepare($sqlINT);
@@ -82,7 +75,7 @@ $valCU = $stmtCU->fetchAll(PDO::FETCH_ASSOC);
 
 				<input type="text" name="fname" value="<?php echo $valCU[0]['FNAME']; ?>" class="field" /></br>
 				<input type="text" name="lname" value="<?php echo $valCU[0]['LNAME']; ?>" class="field" /></br>
-				<input type="text" name="email" value="<?php echo $valCU[0]['EMAIL']; ?>" class="field" /></br>			
+				<input type="text" name="email" value="<?php echo $valCU[0]['EMAIL']; ?>" class="field" /></br>
 				<input type="text" name="title" <?php if(!empty($valCU[0]['TITLE'])) echo 'value="'.$valCU[0]['TITLE'].'"'; else echo 'placeholder="Title"'; ?> class="field" /></br>
 				<input type="text" name="hometown" <?php if(!empty($valCU[0]['HOMETOWN'])) echo 'value="'.$valCU[0]['HOMETOWN'].'"'; else echo 'placeholder="Hometown"'; ?> class="field" /></br>
 				<input type="text" name="phone-num" <?php if(!empty($valCU[0]['PHONE_NUM'])) echo 'value="'.$valCU[0]['PHONE_NUM'].'"'; else echo 'placeholder="XXX-XXX-XXXX"'; ?> class="field" /></br>
@@ -125,25 +118,7 @@ $valCU = $stmtCU->fetchAll(PDO::FETCH_ASSOC);
 					<option value="<?php echo $valz[$i]['DEP_ID'];?>" <?php echo $selected;?>><?php echo $valz[$i]['NAME'];?></option>
 					<?php } ?>
 				</select><br>
-				<select name="employer" class="field">
-					<option value="ignore">--Select An Employer--</option>
-					<?php
-						$valz = $stmtEMP->fetchAll(PDO::FETCH_ASSOC);
-						$length = count($valz);
-						$sql = 'SELECT * FROM USERS WHERE USER_ID= :USER_ID AND EMP_ID= :EMP_ID';
-						for($i = 0; $i < $length; $i++){
-							$stmt = $conn->prepare($sql);
-							$stmt->bindParam(':EMP_ID', $valz[$i]['EMP_ID'], PDO::PARAM_INT);
-							$stmt->bindParam(':USER_ID', $id, PDO::PARAM_INT);
-							$stmt->execute();
-							$valz2 = $stmt->fetchAll(PDO::FETCH_ASSOC);
-							$length2 = count($valz2);
-							if($length2>0){$selected='selected';}
-							else{$selected='';}
-					?>
-					<option value="<?php echo $valz[$i]['EMP_ID'];?>" <?php echo $selected;?>><?php echo $valz[$i]['NAME'];?></option>
-					<?php } ?>
-				</select><br>
+			
 				<select name="university" class="field">
 					<option value="ignore">--Select A University--</option>
 					<?php
