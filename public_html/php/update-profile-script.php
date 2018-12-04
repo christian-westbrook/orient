@@ -7,6 +7,7 @@
     $lname      = $_POST['lname'];
     $title      = $_POST['title'];
     $hometown   = $_POST['hometown'];
+    $almamater  = $_POST['alma-mater'];
     $phone_num  = $_POST['phone-num'];
     $bio        = $_POST['bio'];
     $university = $_POST['university'];
@@ -49,6 +50,16 @@
 
         $stmt = $conn->prepare($sql);
         $stmt->bindParam(':HOMETOWN', $hometown, PDO::PARAM_STR);
+        $stmt->bindParam(':USER_ID', $id, PDO::PARAM_INT);
+        $stmt->execute();
+    }
+
+    if($almamater !== '')
+    {
+        $sql = 'UPDATE USERS SET ALMA_MATER= :ALMA_MATER WHERE USER_ID= :USER_ID';
+
+        $stmt = $conn->prepare($sql);
+        $stmt->bindParam(':ALMA_MATER', $almamater, PDO::PARAM_STR);
         $stmt->bindParam(':USER_ID', $id, PDO::PARAM_INT);
         $stmt->execute();
     }
