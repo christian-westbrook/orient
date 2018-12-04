@@ -41,19 +41,14 @@ include 'session.php';
 			window.location.href = redirect;
 		}
 		
-		function enter(e)
-		{
-			
-			if( e.keyCode == 13 || e.which == 13 ) 
-			{
-				
+		$(document).keypress(function(e) {
+			var keycode = (e.keyCode ? e.keyCode : e.which);
+			if (keycode == '13') {
 				var searchString = document.getElementById("input").value;
 				var redirect = "results.php?SEARCH=" + searchString;
 				window.location.href = redirect;
-				
 			}
-			
-		}
+		});
 		
 	}
 </script>
@@ -68,7 +63,7 @@ include 'session.php';
 			echo '<a href="explore.php"><p id="explore-link">Explore</p></a>';
 			if($_SESSION['ROLE_ID'] == 5)echo '<a href="admin-settings.php"><p>Admin</p></a>';
 			echo '<input type="text" id="input" placeholder="Search..." />';
-			echo '<a onclick="search()" onkeypress="enter(event)" href="#" id="search-link"><p>Search</p></a>';
+			echo '<a onclick="search()" href="#" id="search-link"><p>Search</p></a>';
 			echo '<a href="php/logout-script.php" id="log-out"><p>Logout</p></a>';
 		}
 		else
