@@ -71,6 +71,7 @@ function formatDateTime($datetime)
 				$datetime = $results[$key]["CREATE_TIME"];
 				$time = formatDateTime($datetime);
 				echo '<div class="post"><img class="post-profile-pic" src="' . $profile . '" /> <span class="post-name">' . $name . '</span></br><span class="post-message">' . $post . '</span></br><span class="post-time">' . $time . '</span></div></br></br>';
+			}
 		}
 	}
 	else
