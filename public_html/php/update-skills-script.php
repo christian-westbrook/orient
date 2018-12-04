@@ -4,6 +4,8 @@
 	// Get the user information provided through POST
     $id         = $_SESSION['USER_ID'];
 
+	include 'database.php';
+
 	if(isset($_POST['skill']))
     {
 	    $sql = 'DELETE FROM USERS_SKILLS WHERE USER_ID= :USER_ID';

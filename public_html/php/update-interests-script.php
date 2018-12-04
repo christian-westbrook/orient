@@ -4,6 +4,8 @@
 	// Get the user information provided through POST
     $id         = $_SESSION['USER_ID'];
 
+	include 'database.php';
+
 	if(isset($_POST['interest']))
     {
 	    $sql = 'DELETE FROM USERS_INTERESTS WHERE USER_ID= :USER_ID';
