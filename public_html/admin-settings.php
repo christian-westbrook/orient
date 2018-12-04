@@ -99,7 +99,6 @@ $valCU = $stmtCU->fetchAll(PDO::FETCH_ASSOC);
 				</select><br>
 
 				<select name="university" class="field">
-					<option value="ignore">--Select A University--</option>
 					<?php
 						$valz = $stmtUNI->fetchAll(PDO::FETCH_ASSOC);
 						$length = count($valz);
@@ -119,7 +118,6 @@ $valCU = $stmtCU->fetchAll(PDO::FETCH_ASSOC);
 				</select><br>
 
 				<select name="department" class="field">
-					<option value="ignore">--Select A New Department--</option>
 					<?php
 						$valz = $stmtDEP->fetchAll(PDO::FETCH_ASSOC);
 						$length = count($valz);
@@ -137,6 +135,8 @@ $valCU = $stmtCU->fetchAll(PDO::FETCH_ASSOC);
 					<option value="<?php echo $valz[$i]['DEP_ID'];?>" <?php echo $selected;?>><?php echo $valz[$i]['NAME'];?></option>
 					<?php } ?>
 				</select><br>
+
+				<p>Interests</p>
 
 				<select name="interest[]" class="field2" multiple>
 					<option value="ignore">--Select Your Interests--</option>
@@ -157,6 +157,9 @@ $valCU = $stmtCU->fetchAll(PDO::FETCH_ASSOC);
 					<option value="<?php echo $valz[$i]['INT_ID'];?>" <?php echo $selected;?>><?php echo $valz[$i]['NAME'];?></option>
 					<?php } ?>
 				</select><br>
+
+				<p>Skills</p>
+
 				<select name="skill[]" class="field2" multiple>
 					<option value="ignore">--Select Your Skills--</option>
 					<?php
