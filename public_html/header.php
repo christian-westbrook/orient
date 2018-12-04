@@ -40,6 +40,18 @@ include 'session.php';
 			var redirect = "results.php?SEARCH=" + searchString;
 			window.location.href = redirect;
 		}
+		
+		document.getElementById("search-link").addEventListener("keypress", function(event) {
+			
+			if (event.keyCode == 13) {
+				
+				var searchString = document.getElementById("input").value;
+				var redirect = "results.php?SEARCH=" + searchString;
+				window.location.href = redirect;
+				
+			}
+			
+		});
 	}
 </script>
 
