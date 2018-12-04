@@ -13,7 +13,7 @@ include 'header.php';
 	<?php
 
 	include 'php/database.php';
-	$sql = "SELECT USERS.USER_ID, USERS.TITLE, USERS.FNAME, USERS.LNAME, USERS.PROFILE, POSTS.MESSAGE FROM POSTS INNER JOIN USERS ON USERS.USER_ID = POSTS.POST_ID";
+	$sql = "SELECT USERS.USER_ID, USERS.TITLE, USERS.FNAME, USERS.LNAME, USERS.PROFILE, POSTS.MESSAGE FROM POSTS INNER JOIN USERS ON USERS.USER_ID = POSTS.USER_ID";
 	$stmt = $conn->prepare($sql);
 
 	if($stmt->execute())
@@ -27,7 +27,7 @@ include 'header.php';
 				$id = $results[$key]["USER_ID"];
 				$name = $results[$key]["TITLE"] . ' ' . $results[$key]["FNAME"] . ' ' . $results[$key]["LNAME"];
 				$profile = $results[$key]["PROFILE"];
-				$post= $results[$key]["POST"];
+				$post= $results[$key]["MESSAGE"];
 				echo '<div class="post"><img class="post-pic" src="' . $profile . '" /><a href="profile.php?SEARCH_ID=' . $id . '"><p class="post-name">' . $name . '</p></a><p class="post-message">' . $post . '</p></div>';
 			}
 		}
