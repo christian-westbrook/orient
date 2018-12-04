@@ -41,15 +41,20 @@ include 'session.php';
 			window.location.href = redirect;
 		}
 		
-		document.getElementById("search-link").addEventListener("keypress", function(event) {
+		function enter(e)
+		{
 			
-			if (event.keyCode == 13) {
+			if( e.keyCode == 13 ) 
+			{
 				
-				a.click();
+				var searchString = document.getElementById("input").value;
+				var redirect = "results.php?SEARCH=" + searchString;
+				window.location.href = redirect;
 				
 			}
 			
-		});
+		}
+		
 	}
 </script>
 
@@ -63,7 +68,7 @@ include 'session.php';
 			echo '<a href="explore.php"><p id="explore-link">Explore</p></a>';
 			if($_SESSION['ROLE_ID'] == 5)echo '<a href="admin-settings.php"><p>Admin</p></a>';
 			echo '<input type="text" id="input" placeholder="Search..." />';
-			echo '<a onclick="search()" href="#" id="search-link"><p>Search</p></a>';
+			echo '<a onclick="search()" onkeypress="enter(event)" href="#" id="search-link"><p>Search</p></a>';
 			echo '<a href="php/logout-script.php" id="log-out"><p>Logout</p></a>';
 		}
 		else
