@@ -60,7 +60,16 @@
 
 .result
 {
-
+	float: left;
+	clear: left;
+	color: white;
+	margin-left: 5em;
+	margin-top: 1em;
+	background: #006994;
+	border-radius: 6px;
+	border: solid 1px black;
+	padding: 5px;
+	width: 45em;
 }
 
 .result-pic
