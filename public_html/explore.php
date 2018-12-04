@@ -50,6 +50,8 @@ function formatDateTime($datetime)
 
 <body>
 	<div id="container">
+
+	<h1 id="explore">Explore ORIENT</h1>
 	<?php
 
 	include 'php/database.php';
