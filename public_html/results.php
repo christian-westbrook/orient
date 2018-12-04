@@ -19,6 +19,7 @@ include 'header.php';
 <body>
 
 	<div id="container">
+		<h1 id="search">Search: <?php echo $_GET['SEARCH'] ?></h1>
 		<div id="results">
 			<?php
 				include 'php/database.php';
