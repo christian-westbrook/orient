@@ -99,6 +99,7 @@ $valCU = $stmtCU->fetchAll(PDO::FETCH_ASSOC);
 				</select><br>
 
 				<select name="university" class="field">
+					<option value="ignore">--Select A University--</option>
 					<?php
 						$valz = $stmtUNI->fetchAll(PDO::FETCH_ASSOC);
 						$length = count($valz);
@@ -118,6 +119,7 @@ $valCU = $stmtCU->fetchAll(PDO::FETCH_ASSOC);
 				</select><br>
 
 				<select name="department" class="field">
+					<option value="ignore">--Select A New Department--</option>
 					<?php
 						$valz = $stmtDEP->fetchAll(PDO::FETCH_ASSOC);
 						$length = count($valz);
