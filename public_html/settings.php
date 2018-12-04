@@ -23,8 +23,8 @@ $id         = $_SESSION['USER_ID'];
 
 include 'php/database.php';
 $sqlUNI = 'SELECT * FROM UNIVERSITIES';
-$sqlINT = 'SELECT * FROM INTERESTS';
-$sqlSKL = 'SELECT * FROM SKILLS';
+$sqlINT = 'SELECT * FROM INTERESTS ORDER BY NAME ASC';
+$sqlSKL = 'SELECT * FROM SKILLS ORDER BY NAME ASC';
 $stmtUNI = $conn->prepare($sqlUNI);
 $stmtUNI->execute();
 $stmtINT = $conn->prepare($sqlINT);
