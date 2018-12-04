@@ -71,11 +71,11 @@
 	font-size: 1.25em;
 }
 
-body 
+body
 {
-	
+
     background-image: url(../img/background.jpg);
     background-size: cover;
     background-attachment: fixed;
-	
+
 }

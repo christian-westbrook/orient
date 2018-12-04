@@ -1,0 +1,22 @@
+body
+{
+
+    background-image: url(../img/background.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+
+}
+
+#container
+{
+	width: 100%;
+	height: 88vh;
+
+	max-height: 100%;
+
+	margin-top: 0px;
+	padding-top: 0px;
+
+	position: relative;
+	top: 0vh;
+}
