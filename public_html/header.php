@@ -44,7 +44,7 @@ include 'session.php';
 		function enter(e)
 		{
 			
-			if( e.keyCode == 13 ) 
+			if( e.keyCode == 13 || e.which == 13 ) 
 			{
 				
 				var searchString = document.getElementById("input").value;
