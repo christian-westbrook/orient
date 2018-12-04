@@ -95,13 +95,6 @@ body
 	width: 45em;
 }
 
-.post-time
-{
-	font-size: 0.75em;
-	display: inline-block;
-	float: right;
-}
-
 .post-profile-pic
 {
 	width: 50px;
@@ -147,4 +140,11 @@ body
 	display: inline-block;
 	float: right;
 	margin-bottom: 0.5em;
+}
+
+.post-time
+{
+	font-size: 0.75em;
+	display: inline-block;
+	float: right;
 }
