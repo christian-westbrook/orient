@@ -13,7 +13,7 @@ include 'header.php';
 		<p id="label">ORIENT</p>
 
 		<form action="php/signup-script.php" method="post">
-			<input type="text" name="email" placeholder="Email" class="field" /></br>
+			<input type="email" name="email" placeholder="Email" class="field" /></br>
 			<input type="text" name="fname" placeholder="First Name" class="field" /></br>
 			<input type="text" name="lname" placeholder="Last Name" class="field" /></br>
 			<input type="password" name="password" placeholder="Password" class="field" /></br>
