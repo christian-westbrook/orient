@@ -33,8 +33,6 @@ include 'header.php';
 				{
 					$results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-					print_r($results);
-
 					if($results)
 					{
 						foreach($results as $key => $value)
