@@ -148,7 +148,7 @@ if($stmt->execute())
 $_POST['UNIV'] = $univ;
 
 // Get this users' posts
-$sql = "SELECT MESSAGE, CREATE_TIME FROM POSTS WHERE USER_ID = :USER_ID";
+$sql = "SELECT MESSAGE, CREATE_TIME, LIKES FROM POSTS WHERE USER_ID = :USER_ID";
 $stmt = $conn->prepare($sql);
 $stmt->bindParam(':USER_ID', $id, PDO::PARAM_INT);
 
@@ -158,16 +158,19 @@ if($stmt->execute())
 
 	$posts;
 	$times;
+	$likes;
 
 	$length = count($results);
 	for($i = 0; $i < $length; $i++)
 	{
 		$posts[$i] = $results[$i]['MESSAGE'];
 		$times[$i] = $results[$i]['CREATE_TIME'];
+		$likes[$i] = $results[$i]['LIKES'];
 	}
 
 	$_POST['POSTS'] = $posts;
 	$_POST['TIMES'] = $times;
+	$_POST['LIKES'] = $likes;
 }
 
 // Time formatter function
@@ -264,14 +267,14 @@ function formatDateTime($datetime)
 
 		$posts = $_POST['POSTS'];
 		$times = $_POST['TIMES'];
+		$likes = $_POST['LIKES'];
 		$profile = $_POST['PROFILE'];
 		$name = $_POST['NAME'];
 
 		$length = count($posts);
-
 		for($i = $length - 1; $i >= 0; $i--)
 		{
-			  echo '<div class="post"><img class="post-profile-pic" src="' . $profile . '" /> <span class="post-name">' . $name . '</span></br><span class="post-message">' . $posts[$i] . '</span></br><span class="post-time">' . formatDateTime($times[$i]) . '</span></div></br></br>';
+			  echo '<div class="post"><img class="post-profile-pic" src="' . $profile . '" /> <span class="post-name">' . $name . '</span></br><span class="post-message">' . $posts[$i] . '</span></br><img id="heart" src="img/empty-heart.png" /> ' . $likes[$i] . ' </br><span class="post-time">' . formatDateTime($times[$i]) . '</span></div></br></br>';
 		}
 
 		$vheight = 88 + ($length * 20);
