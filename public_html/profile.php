@@ -249,7 +249,7 @@ function formatDateTime($datetime)
 				$length = count($interests);
 				for($i = 0; $i < $length; $i++)
 				{
-				   echo '<a class="interest" href="results.php?SEARCH="' . $interests[$i] . '">' . $interests[$i] . '</a> ';
+				   echo '<a class="interest" href="results.php?SEARCH=' . $interests[$i] . '">' . $interests[$i] . '</a> ';
 				}
 			?></p>
 
@@ -260,7 +260,7 @@ function formatDateTime($datetime)
 				$length = count($skills);
 				for($i = 0; $i < $length; $i++)
 				{
-				   echo '<a class="skill" href="results.php?SEARCH="' . $skills[$i] . '">' . $skills[$i] . '</a> ';
+				   echo '<a class="skill" href="results.php?SEARCH=' . $skills[$i] . '">' . $skills[$i] . '</a> ';
 				}
 			?></p>
 		</div>
