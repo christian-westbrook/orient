@@ -13,12 +13,15 @@ $css = array(
 	    );
 
 include 'header.php';
-
- ?>
+?>
 
 <body>
 
 	<div id="container">
+		<?php
+			if($_GET['SEARCH'] !== '')
+			{
+		?>
 		<h1 id="search">'<?php echo $_GET['SEARCH'] ?>'</h1>
 		<div id="results">
 			<?php
@@ -52,6 +55,17 @@ include 'header.php';
 				}
 			?>
 		</div>
+		<?php
+			}
+			else
+			{
+		?>
+
+		<h1 id="search">No search term entered</h1>
+
+		<?php
+			}
+		?>
 	</div>
 
 </body>
