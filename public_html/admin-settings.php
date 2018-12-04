@@ -97,25 +97,6 @@ $valCU = $stmtCU->fetchAll(PDO::FETCH_ASSOC);
 					<option value="<?php echo $valz[$i]['ROLE_ID'];?>" <?php echo $selected;?>><?php echo $valz[$i]['NAME'];?></option>
 					<?php } ?>
 				</select><br>
-				<select name="department" class="field">
-					<option value="ignore">--Select A New Department--</option>
-					<?php
-						$valz = $stmtDEP->fetchAll(PDO::FETCH_ASSOC);
-						$length = count($valz);
-						$sql = 'SELECT * FROM USERS WHERE USER_ID= :USER_ID AND DEP_ID= :DEP_ID';
-						for($i = 0; $i < $length; $i++){
-							$stmt = $conn->prepare($sql);
-							$stmt->bindParam(':DEP_ID', $valz[$i]['DEP_ID'], PDO::PARAM_INT);
-							$stmt->bindParam(':USER_ID', $id, PDO::PARAM_INT);
-							$stmt->execute();
-							$valz2 = $stmt->fetchAll(PDO::FETCH_ASSOC);
-							$length2 = count($valz2);
-							if($length2>0){$selected='selected';}
-							else{$selected='';}
-					?>
-					<option value="<?php echo $valz[$i]['DEP_ID'];?>" <?php echo $selected;?>><?php echo $valz[$i]['NAME'];?></option>
-					<?php } ?>
-				</select><br>
 
 				<select name="university" class="field">
 					<option value="ignore">--Select A University--</option>
@@ -136,6 +117,27 @@ $valCU = $stmtCU->fetchAll(PDO::FETCH_ASSOC);
 					<option value="<?php echo $valz[$i]['UNIV_ID'];?>" <?php echo $selected;?>><?php echo $valz[$i]['NAME'];?></option>
 					<?php } ?>
 				</select><br>
+
+				<select name="department" class="field">
+					<option value="ignore">--Select A New Department--</option>
+					<?php
+						$valz = $stmtDEP->fetchAll(PDO::FETCH_ASSOC);
+						$length = count($valz);
+						$sql = 'SELECT * FROM USERS WHERE USER_ID= :USER_ID AND DEP_ID= :DEP_ID';
+						for($i = 0; $i < $length; $i++){
+							$stmt = $conn->prepare($sql);
+							$stmt->bindParam(':DEP_ID', $valz[$i]['DEP_ID'], PDO::PARAM_INT);
+							$stmt->bindParam(':USER_ID', $id, PDO::PARAM_INT);
+							$stmt->execute();
+							$valz2 = $stmt->fetchAll(PDO::FETCH_ASSOC);
+							$length2 = count($valz2);
+							if($length2>0){$selected='selected';}
+							else{$selected='';}
+					?>
+					<option value="<?php echo $valz[$i]['DEP_ID'];?>" <?php echo $selected;?>><?php echo $valz[$i]['NAME'];?></option>
+					<?php } ?>
+				</select><br>
+
 				<select name="interest[]" class="field2" multiple>
 					<option value="ignore">--Select Your Interests--</option>
 					<?php
