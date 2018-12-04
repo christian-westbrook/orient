@@ -43,6 +43,9 @@ if($stmt->execute())
 
 	if($results)
 	{
+
+		print_r($results);
+
 		$_POST['NAME'] = $results[0]['TITLE'] . " " . $results[0]['FNAME'] . " " . $results[0]['LNAME'];
 		$_POST['EMAIL'] = $results[0]['EMAIL'];
 		$_POST['PHONE_NUM'] = $results[0]['PHONE_NUM'];
@@ -59,8 +62,6 @@ else
 {
 	echo "Unable to find that user.";
 }
-
-echo "HERE";
 
 // Grab data from the USERS_SKILLS table
 $sql = "SELECT SKILLS.NAME FROM SKILLS INNER JOIN USERS_SKILLS ON SKILLS.SKILL_ID = USERS_SKILLS.SKILL_ID WHERE USERS_SKILLS.USER_ID= :ID";
