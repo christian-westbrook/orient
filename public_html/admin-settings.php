@@ -139,7 +139,6 @@ $valCU = $stmtCU->fetchAll(PDO::FETCH_ASSOC);
 				<p>Interests</p>
 
 				<select name="interest[]" class="field2" multiple>
-					<option value="ignore">--Select Your Interests--</option>
 					<?php
 						$valz = $stmtINT->fetchAll(PDO::FETCH_ASSOC);
 						$length = count($valz);
@@ -161,7 +160,6 @@ $valCU = $stmtCU->fetchAll(PDO::FETCH_ASSOC);
 				<p>Skills</p>
 
 				<select name="skill[]" class="field2" multiple>
-					<option value="ignore">--Select Your Skills--</option>
 					<?php
 						$valz = $stmtSKL->fetchAll(PDO::FETCH_ASSOC);
 						$length = count($valz);
