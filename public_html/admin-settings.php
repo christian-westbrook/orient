@@ -51,7 +51,7 @@ $valCU = $stmtCU->fetchAll(PDO::FETCH_ASSOC);
 
 	<div id="container">
 		<div id="settings">
-			<p id="heading">Settings</p>
+			<p id="heading">Admin Tools</p>
 			<form action="#" method="POST">
 				<select name="newuseriddd" class="field" onchange="this.form.submit()">
 				<?php
