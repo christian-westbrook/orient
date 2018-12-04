@@ -228,7 +228,7 @@ $valCU = $stmtCU->fetchAll(PDO::FETCH_ASSOC);
 			<input type="text" name="newuniversity" placeholder="University" class="field" /></br>
 			<input type="text" name="newemployer" placeholder="Employer" class="field" /></br>
 			<input type="text" name="newdepartment" placeholder="Department" class="field" /></br>
-			<input type="submit" value="Add" class="sub-button">
+			<input type="submit" value="Add New Values" class="sub-button">
 		</form>
 	</div>
 </div>
