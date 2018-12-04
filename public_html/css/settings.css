@@ -57,7 +57,19 @@
 	height: 4vh;
 }*/
 
-.field, .sub-button
+.sub-button
+{
+	text-decoration: none;
+	background: #006994;
+	color: white;
+	border-radius: 6px;
+	border: solid 1px black;
+	padding: 8px;
+	height: 3em;
+	margin-right: 1em;
+}
+
+.field, /*.sub-button */
 {
 	width: 15vw;
 	height: 4vh;
