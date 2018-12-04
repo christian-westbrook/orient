@@ -23,7 +23,6 @@ $sqlUNI = 'SELECT * FROM UNIVERSITIES';
 $sqlINT = 'SELECT * FROM INTERESTS';
 $sqlSKL = 'SELECT * FROM SKILLS';
 $sqlROL = 'SELECT * FROM ROLES';
-$sqlPUB = 'SELECT * FROM PUBLICATIONS';
 $sqlDEP = 'SELECT * FROM DEPARTMENTS';
 
 $stmtUNI = $conn->prepare($sqlUNI);
@@ -34,8 +33,6 @@ $stmtSKL = $conn->prepare($sqlSKL);
 $stmtSKL->execute();
 $stmtROL = $conn->prepare($sqlROL);
 $stmtROL->execute();
-$stmtPUB = $conn->prepare($sqlPUB);
-$stmtPUB->execute();
 $stmtDEP = $conn->prepare($sqlDEP);
 $stmtDEP->execute();
 
@@ -118,7 +115,7 @@ $valCU = $stmtCU->fetchAll(PDO::FETCH_ASSOC);
 					<option value="<?php echo $valz[$i]['DEP_ID'];?>" <?php echo $selected;?>><?php echo $valz[$i]['NAME'];?></option>
 					<?php } ?>
 				</select><br>
-			
+
 				<select name="university" class="field">
 					<option value="ignore">--Select A University--</option>
 					<?php
@@ -176,25 +173,7 @@ $valCU = $stmtCU->fetchAll(PDO::FETCH_ASSOC);
 					<option value="<?php echo $valz[$i]['SKILL_ID'];?>" <?php echo $selected;?>><?php echo $valz[$i]['NAME'];?></option>
 					<?php } ?>
 				</select><br>
-				<select name="publications[]" class="field2" multiple>
-					<option value="ignore">--Select Publication(s)--</option>
-					<?php
-						$valz = $stmtPUB->fetchAll(PDO::FETCH_ASSOC);
-						$length = count($valz);
-						$sql = 'SELECT * FROM USERS_PUBLICATIONS WHERE USER_ID= :USER_ID AND PUB_ID= :PUB_ID';
-						for($i = 0; $i < $length; $i++){
-							$stmt = $conn->prepare($sql);
-							$stmt->bindParam(':PUB_ID', $valz[$i]['PUB_ID'], PDO::PARAM_INT);
-							$stmt->bindParam(':USER_ID', $id, PDO::PARAM_INT);
-							$stmt->execute();
-							$valz2 = $stmt->fetchAll(PDO::FETCH_ASSOC);
-							$length2 = count($valz2);
-							if($length2>0){$selected='selected';}
-							else{$selected='';}
-					?>
-					<option value="<?php echo $valz[$i]['PUB_ID'];?>" <?php echo $selected;?>><?php echo $valz[$i]['NAME'];?></option>
-					<?php } ?>
-				</select><br>
+
 				<input type="submit" value="Update Information" class="sub-button">
 			</form>
 			<p id="heading">Add New Values</p>
