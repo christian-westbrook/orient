@@ -16,7 +16,9 @@
 #search
 {
 	color: white;
+	text-align: center;
 	margin: 0 auto;
+	padding-top: 5vh;
 }
 
 #results
