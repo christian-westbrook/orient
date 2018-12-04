@@ -1,5 +1,5 @@
 Optimized Research Interest Network (ORIENT)
-Copyright (c) 2018 Elias Nyantakanya, Anthony Todaro, and Christian Westbrook
+Copyright (c) 2018 Elias Nyantakanya, Anthony Todaro, Nathan Brown, Brad Hamilton and Christian Westbrook
 
 1. INTRODUCTION
 
