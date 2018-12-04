@@ -10,9 +10,9 @@
     $lname          = $_POST['lname'];
     $title          = $_POST['title'];
     $hometown       = $_POST['hometown'];
-    $phone_num       = $_POST['phone-num'];
+    $almamater      = $_POST['alma-mater'];
+    $phone_num      = $_POST['phone-num'];
     $bio            = $_POST['bio'];
-    $employer       = $_POST['employer'];
     $university     = $_POST['university'];
     $profile	    = $_POST['profile'];
 
@@ -91,6 +91,15 @@
         $stmt->execute();
     }
 
+    if($almamater !== '')
+    {
+        $sql = 'UPDATE USERS SET ALMA_MATER= :ALMA_MATER WHERE USER_ID= :USER_ID';
+        $stmt = $conn->prepare($sql);
+        $stmt->bindParam(':ALMA_MATER', $almamater, PDO::PARAM_STR);
+        $stmt->bindParam(':USER_ID', $id, PDO::PARAM_INT);
+        $stmt->execute();
+    }
+
     if($phone_num !== '')
     {
         $sql = 'UPDATE USERS SET PHONE_NUM= :PHONE_NUM WHERE USER_ID= :USER_ID';
@@ -109,15 +118,6 @@
         $stmt->execute();
     }
 
-    if($employer !== 'ignore')
-    {
-        $sql = 'UPDATE USERS SET EMP_ID= :EMP_ID WHERE USER_ID= :USER_ID';
-        $stmt = $conn->prepare($sql);
-        $stmt->bindParam(':EMP_ID', $employer, PDO::PARAM_INT);
-        $stmt->bindParam(':USER_ID', $id, PDO::PARAM_INT);
-        $stmt->execute();
-    }
-
     if($university !== 'ignore')
     {
         $sql = 'UPDATE USERS SET UNIV_ID= :UNIV_ID WHERE USER_ID= :USER_ID';
@@ -126,7 +126,7 @@
         $stmt->bindParam(':USER_ID', $id, PDO::PARAM_INT);
         $stmt->execute();
     }
-    
+
     if(isset($_POST['interest']))
     {
 	    $sql = 'DELETE FROM USERS_INTERESTS WHERE USER_ID= :USER_ID';
@@ -158,24 +158,6 @@
             $sql = 'INSERT INTO USERS_SKILLS (USER_ID, SKILL_ID) VALUES(:USER_ID, :SKILL_ID)';
             $stmt = $conn->prepare($sql);
             $stmt->bindParam(':SKILL_ID', $skillid, PDO::PARAM_INT);
-            $stmt->bindParam(':USER_ID', $id, PDO::PARAM_INT);
-            $stmt->execute();
-        }
-    }
-
-    if(isset($_POST['publications']))
-    {
-	    $sql = 'DELETE FROM USERS_PUBLICATIONS WHERE USER_ID= :USER_ID';
-            $stmt = $conn->prepare($sql);
-            $stmt->bindParam(':USER_ID', $id, PDO::PARAM_INT);
-            $stmt->execute();
-    }
-    foreach ($_POST['publications'] as $pubid){
-        if($pubid !== 'ignore')
-        {
-            $sql = 'INSERT INTO USERS_PUBLICATIONS (USER_ID, PUB_ID) VALUES(:USER_ID, :PUB_ID)';
-            $stmt = $conn->prepare($sql);
-            $stmt->bindParam(':PUB_ID', $pubid, PDO::PARAM_INT);
             $stmt->bindParam(':USER_ID', $id, PDO::PARAM_INT);
             $stmt->execute();
         }
