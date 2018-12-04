@@ -281,10 +281,6 @@ function formatDateTime($datetime)
 		$name = $_POST['NAME'];
 
 		$length = count($posts);
-		if($length > 10)
-		{
-			$length = 10;
-		}
 
 		for($i = $length - 1; $i >= 0; $i--)
 		{
