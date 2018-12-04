@@ -124,29 +124,10 @@ body
 	margin-top: 0.5em;
 }
 
-.heart
-{
-	display: inline-block;
-	float: right;
-	clear: left;
-
-	width: 25px;
-	height: 25px;
-
-	margin-left: 0.25em;
-	margin-top: 0.5em;
-}
-
-.likes
-{
-	display: inline-block;
-	float: right;
-}
-
 .post-time
 {
 	font-size: 0.75em;
 	display: inline-block;
 	float: right;
-	clear: right;
+	clear: left;
 }
