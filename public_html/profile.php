@@ -32,7 +32,7 @@ else
 // Retrieve the given user's info
 include 'php/database.php';
 
-$sql = "SELECT FNAME, LNAME, TITLE, EMAIL, PHONE_NUM, BIO, PROFILE, HOMETOWN, DEP_ID, ROLE_ID, UNIV_ID, EMP_ID FROM USERS WHERE USER_ID= :ID";
+$sql = "SELECT FNAME, LNAME, TITLE, EMAIL, PHONE_NUM, BIO, PROFILE, HOMETOWN, ALMA_MATER, DEP_ID, ROLE_ID, UNIV_ID, FROM USERS WHERE USER_ID= :ID";
 
 $stmt = $conn->prepare($sql);
 $stmt->bindParam(':ID', $id, PDO::PARAM_INT);
@@ -52,7 +52,7 @@ if($stmt->execute())
 		$_POST['DEP_ID'] = $results[0]['DEP_ID'];
 		$_POST['ROLE_ID'] = $results[0]['ROLE_ID'];
 		$_POST['UNIV_ID'] = $results[0]['UNIV_ID'];
-		$_POST['EMP_ID'] = $results[0]['EMP_ID'];
+		$_POST['ALMA_MATER'] = $results[0]['ALMA_MATER'];
 	}
 }
 else
@@ -145,22 +145,6 @@ if($stmt->execute())
 
 $_POST['UNIV'] = $univ;
 
-// Get the name of the users' employer
-$sql = "SELECT NAME FROM EMPLOYERS WHERE EMP_ID = :EMP_ID";
-$stmt = $conn->prepare($sql);
-$emp_id = (int) $_POST['EMP_ID'];
-$stmt->bindParam(':EMP_ID', $emp_id, PDO::PARAM_INT);
-
-$emp = '';
-if($stmt->execute())
-{
-	$results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-	$emp = $results[0]['NAME'];
-}
-
-$_POST['EMP'] = $emp;
-
 // Get this users' posts
 $sql = "SELECT MESSAGE, CREATE_TIME FROM POSTS WHERE USER_ID = :USER_ID";
 $stmt = $conn->prepare($sql);
@@ -233,12 +217,13 @@ function formatDateTime($datetime)
 
 			<div id="head-info">
 				<h1><?php echo $_POST['NAME']; ?></h1>
-				<p><?php echo $_POST['ROLE']; ?></br> <?php echo $_POST['UNIV']; ?></br> <?php echo $_POST['DEP']; ?></br><?php echo $_POST['EMP']; ?></p>
+				<p><?php echo $_POST['ROLE']; ?></br> <?php echo $_POST['UNIV']; ?></br> <?php echo $_POST['DEP']; ?></p>
 				<p><b>Research Summary</b></br></br>
 				   <?php echo $_POST['BIO']; ?></p>
 				   <p><b>Email:</b> <?php echo $_POST['EMAIL']; ?></p>
 				<p><b>Phone:</b> <?php echo $_POST['PHONE_NUM']; ?></p>
 				<p><b>Hometown:</b> <?php echo $_POST['HOMETOWN']; ?></p>
+				<p><b>Alma Mater:</b> <?php echo $_POST['ALMA_MATER']; ?></p>
 			</div>
 
 		<div id="ints-skills">
