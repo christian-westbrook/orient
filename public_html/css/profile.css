@@ -133,6 +133,7 @@ body
 	width: 25px;
 	height: 25px;
 
+	margin-left: 0.25em;
 	margin-top: 0.5em;
 }
 
@@ -140,7 +141,6 @@ body
 {
 	display: inline-block;
 	float: right;
-	margin-left: 0.25em;
 }
 
 .post-time
