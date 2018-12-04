@@ -41,15 +41,6 @@ include 'session.php';
 			window.location.href = redirect;
 		}
 		
-		$(document).keypress(function(e) {
-			var keycode = (e.keyCode ? e.keyCode : e.which);
-			if (keycode == '13') {
-				var searchString = document.getElementById("input").value;
-				var redirect = "results.php?SEARCH=" + searchString;
-				window.location.href = redirect;
-			}
-		});
-		
 	}
 </script>
 
