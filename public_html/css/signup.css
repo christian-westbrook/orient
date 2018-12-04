@@ -57,6 +57,15 @@
 	text-decoration: none;
 }
 
+body 
+{
+	
+    background-image: url(../img/background.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+	
+}
+
 .field
 {
 	width: 15vw;
