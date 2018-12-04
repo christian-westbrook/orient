@@ -131,3 +131,16 @@ body
 	clear: left;
 	margin-top: 0.5em;
 }
+
+.heart
+{
+	display: inline-block;
+	float: left;
+	clear: left;
+}
+
+.likes
+{
+	display: inline-block;
+	float: left;
+}
