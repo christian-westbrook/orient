@@ -100,6 +100,7 @@ body
 	font-size: 0.75em;
 	display: inline-block;
 	float: right;
+
 }
 
 .post-profile-pic
@@ -139,10 +140,13 @@ body
 
 	width: 25px;
 	height: 25px;
+
+	margin-top: 0.5em;
 }
 
 .likes
 {
 	display: inline-block;
 	float: left;
+	margin-bottom: 0.5em;
 }
