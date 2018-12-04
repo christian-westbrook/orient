@@ -23,7 +23,7 @@ include 'header.php';
 
 			$search = "%" . $_GET['SEARCH'] . "%";
 
-			$sql = 'SELECT DISTINCT USERS.USER_ID, USERS.FNAME, USERS.LNAME FROM USERS INNER JOIN USERS_INTERESTS ON USERS_INTERESTS.USER_ID = USERS.USER_ID INNER JOIN INTERESTS ON INTERESTS.INT_ID = USERS_INTERESTS.INT_ID INNER JOIN USERS_SKILLS ON USERS_SKILLS.USER_ID = USERS.USER_ID INNER JOIN SKILLS ON SKILLS.SKILL_ID = USERS_SKILLS.SKILL_ID WHERE INTERESTS.NAME LIKE :SEARCH OR SKILLS.NAME LIKE :SEARCH';
+			$sql = 'SELECT DISTINCT USERS.USER_ID, USERS.TITLE, USERS.FNAME, USERS.LNAME, USERS.PROFILE FROM USERS INNER JOIN USERS_INTERESTS ON USERS_INTERESTS.USER_ID = USERS.USER_ID INNER JOIN INTERESTS ON INTERESTS.INT_ID = USERS_INTERESTS.INT_ID INNER JOIN USERS_SKILLS ON USERS_SKILLS.USER_ID = USERS.USER_ID INNER JOIN SKILLS ON SKILLS.SKILL_ID = USERS_SKILLS.SKILL_ID WHERE INTERESTS.NAME LIKE :SEARCH OR SKILLS.NAME LIKE :SEARCH OR USERS.FNAME LIKE :SEARCH OR USERS.LNAME LIKE :SEARCH';
 			$stmt = $conn->prepare($sql);
 			$stmt->bindParam(':SEARCH', $search, PDO::PARAM_STR);
 
@@ -35,7 +35,10 @@ include 'header.php';
 				{
 					foreach($results as $key => $value)
 					{
-						echo '<a href="profile.php?SEARCH_ID=' . $results[$key]["USER_ID"] . '">' . $results[$key]["FNAME"] . ' ' . $results[$key]["LNAME"] . '</a><br>';
+						$id = $results[$key]["USER_ID"];
+						$name = $results[$key]["TITLE"] . ' ' . $results[$key]["FNAME"] . ' ' . $results[$key]["LNAME"];
+						$profile = $results[$key]["PROFILE"];
+						echo '<div class="result"><img src="' . $profile . '" /><a href="profile.php?SEARCH_ID=' . $id . '">' . $name . '</a></div>';
 					}
 				}
 			}
