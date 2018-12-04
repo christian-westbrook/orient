@@ -92,3 +92,12 @@
 	margin-left: 1em;
 	margin-top: 1em;
 }
+
+.result-summary
+{
+	display: inline-block;
+	float: left;
+	clear: left;
+
+	text-align: left;
+}
