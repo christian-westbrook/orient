@@ -27,7 +27,7 @@ body
 	float: left;
 	clear: left;
 	color: white;
-	margin-left: 30%;
+	margin: 0 auto;
 	margin-top: 1em;
 	background: #006994;
 	border-radius: 6px;
