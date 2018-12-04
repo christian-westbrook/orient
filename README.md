@@ -11,39 +11,39 @@ This web system is licensed as open-source under the MIT license. Under this lic
 
 3. INITIAL SETUP
 
-  a) Set up a Linux environment with internet access.
+    1. Set up a Linux environment with internet access.
 
-  Common Linux Distributions
-  Ubuntu   : https://www.ubuntu.com/
-  openSUSE : https://www.opensuse.org/
+    Common Linux Distributions
+    Ubuntu   : https://www.ubuntu.com/
+    openSUSE : https://www.opensuse.org/
 
-  b) Install the following services and technologies
-  Apache HTTP Server : https://httpd.apache.org/
-  PHP                : http://www.php.net/
-  Git                : https://git-scm.com/
-  MariaDB            : https://mariadb.org/
+    2. Install the following services and technologies
+    Apache HTTP Server : https://httpd.apache.org/
+    PHP                : http://www.php.net/
+    Git                : https://git-scm.com/
+    MariaDB            : https://mariadb.org/
   
-  c) Clone the ORIENT repository into your Linux environment.
-  git clone https://github.com/christian-westbrook/orient.git
+    3. Clone the ORIENT repository into your Linux environment.
+    git clone https://github.com/christian-westbrook/orient.git
   
-  d) Replace the root server directory of your Apache HTTP Server with the public_html directory in the ORIENT repository. Be sure to change the name of the public_html directory back to the proper name for your root server directory (usually either 'htdocs' or 'www').
+    4. Replace the root server directory of your Apache HTTP Server with the public_html directory in the ORIENT repository. Be sure to change the name of the public_html directory back to the proper name for your root server directory (usually either 'htdocs' or 'www').
   
-  e) Set up an administrator account with MariaDB.
+    5. Set up an administrator account with MariaDB.
   
-  f) Make a new database/schema for ORIENT within MariaDB.
+    6. Make a new database/schema for ORIENT within MariaDB.
   
-  g) Change the variables in the ./public_html/php/database.php script such that the host, username, password, and dbname variables reference the database you intend to use for ORIENT and the MariaDB username and password through which the ORIENT web system will access and modify the database.
+    7. Change the variables in the ./public_html/php/database.php script such that the host, username, password, and dbname variables reference the database you intend to use for ORIENT and the MariaDB username and password through which the ORIENT web system will access and modify the database.
   
-  h) Run the script ./public_html/sql/build.sql on the database created for ORIENT.
+    8. Run the script ./public_html/sql/build.sql on the database created for ORIENT.
   
-  i) Navigate to your web server's index page.
+    9. Navigate to your web server's index page.
   
-  j) Log in with the credentials:
-  email = admin@admin.com
-  password = password
+    10. Log in with the credentials:
+    email = admin@admin.com
+    password = password
   
-  k) CHANGE YOUR EMAIL AND PASSWORD
+    11. CHANGE YOUR EMAIL AND PASSWORD
   
-  l) Invite other users to sign up on your ORIENT server.
+    12. Invite other users to sign up on your ORIENT server.
   
-  m) Change the roles and settings of your ORIENT members with the admin tools page.
+    13. Change the roles and settings of your ORIENT members with the admin tools page.
