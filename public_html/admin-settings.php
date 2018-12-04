@@ -80,10 +80,10 @@ $valCU = $stmtCU->fetchAll(PDO::FETCH_ASSOC);
 			<input type="text" name="fname" value="<?php echo $valCU[0]['FNAME']; ?>" class="field" /></br>
 			<input type="text" name="lname" value="<?php echo $valCU[0]['LNAME']; ?>" class="field" /></br>
 			<input type="text" name="email" value="<?php echo $valCU[0]['EMAIL']; ?>" class="field" /></br>			
-			<input type="text" name="title" <?php if($valCU[0]['TITLE'] !== '') echo 'value="'.$valCU[0]['TITLE'].'"'; else echo 'placeholder="Title"'; ?> class="field" /></br>
-			<input type="text" name="hometown" <?php if($valCU[0]['HOMETOWN'] !== '') echo 'value="'.$valCU[0]['HOMETOWN'].'"'; else echo 'placeholder="Hometown"'; ?> class="field" /></br>
-			<input type="text" name="phone-num" <?php if($valCU[0]['PHONE_NUM'] !== '') echo 'value="'.$valCU[0]['PHONE_NUM'].'"'; else echo 'placeholder="XXX-XXX-XXXX"'; ?> class="field" /></br>
-			<textarea rows="4" name="bio" class="field3"><?php echo $valCU[0]['BIO'];?></textarea></br>
+			<input type="text" name="title" <?php if(!empty($valCU[0]['TITLE'])) echo 'value="'.$valCU[0]['TITLE'].'"'; else echo 'placeholder="Title"'; ?> class="field" /></br>
+			<input type="text" name="hometown" <?php if(!empty($valCU[0]['HOMETOWN'])) echo 'value="'.$valCU[0]['HOMETOWN'].'"'; else echo 'placeholder="Hometown"'; ?> class="field" /></br>
+			<input type="text" name="phone-num" <?php if(!empty($valCU[0]['PHONE_NUM'])) echo 'value="'.$valCU[0]['PHONE_NUM'].'"'; else echo 'placeholder="XXX-XXX-XXXX"'; ?> class="field" /></br>
+			<textarea rows="4" name="bio" class="field3"><?php if(!empty($valCU[0]['BIO'])) echo $valCU[0]['BIO']; ?></textarea></br>
 			<select name="role" class="field">
 				<option value="ignore">--Select A New Role--</option>
 				<?php
