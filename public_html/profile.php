@@ -32,7 +32,7 @@ else
 // Retrieve the given user's info
 include 'php/database.php';
 
-$sql = "SELECT FNAME, LNAME, TITLE, EMAIL, PHONE_NUM, BIO, PROFILE, HOMETOWN, ALMA_MATER, DEP_ID, ROLE_ID, UNIV_ID, FROM USERS WHERE USER_ID= :ID";
+$sql = "SELECT FNAME, LNAME, TITLE, EMAIL, PHONE_NUM, BIO, PROFILE, HOMETOWN, ALMA_MATER, DEP_ID, ROLE_ID, UNIV_ID FROM USERS WHERE USER_ID= :ID";
 
 $stmt = $conn->prepare($sql);
 $stmt->bindParam(':ID', $id, PDO::PARAM_INT);
@@ -43,8 +43,6 @@ if($stmt->execute())
 
 	if($results)
 	{
-
-		print_r($results);
 
 		$_POST['NAME'] = $results[0]['TITLE'] . " " . $results[0]['FNAME'] . " " . $results[0]['LNAME'];
 		$_POST['EMAIL'] = $results[0]['EMAIL'];
