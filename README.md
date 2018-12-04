@@ -13,7 +13,7 @@ This web system is licensed as open-source under the MIT license. Under this lic
 
     1. Set up a Linux environment with internet access.
 
-        Common Linux Distributions
+        Common Linux Distributions - 
         Ubuntu   : https://www.ubuntu.com/
         openSUSE : https://www.opensuse.org/
 
