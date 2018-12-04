@@ -45,9 +45,7 @@ include 'session.php';
 			
 			if (event.keyCode == 13) {
 				
-				var searchString = document.getElementById("input").value;
-				var redirect = "results.php?SEARCH=" + searchString;
-				window.location.href = redirect;
+				a.click();
 				
 			}
 			
