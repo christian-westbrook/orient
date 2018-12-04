@@ -1,7 +1,6 @@
 #container
 {
 	width: 100%;
-	height: 200vh;
 
 	z-index: -1;
 }
@@ -71,13 +70,13 @@
 	height: 3em;
 }
 
-body 
+body
 {
-	
+
     background-image: url(../img/background.jpg);
     background-size: cover;
     background-attachment: fixed;
-	
+
 }
 
 .post
