@@ -84,7 +84,7 @@ $valCU = $stmtCU->fetchAll(PDO::FETCH_ASSOC);
 				<input type="text" name="phone-num" <?php if(!empty($valCU[0]['PHONE_NUM'])) echo 'value="'.$valCU[0]['PHONE_NUM'].'"'; else echo 'placeholder="XXX-XXX-XXXX"'; ?> class="field" /></br>
 				<textarea rows="4" name="bio" class="field3" placeholder="Research Summary"><?php if(!empty($valCU[0]['BIO'])) echo $valCU[0]['BIO']; ?></textarea></br>
 
-				<p class="label">Research Interests</p>
+				<p class="label">Update Research Interests</p>
 
 				<select name="interest[]" class="field2" multiple>
 					<option value="ignore">--Select Your Interests--</option>
@@ -106,7 +106,7 @@ $valCU = $stmtCU->fetchAll(PDO::FETCH_ASSOC);
 					<?php } ?>
 				</select><br>
 
-				<p class="label">Skills</p>
+				<p class="label">Update Skills</p>
 
 				<select name="skill[]" class="field2" multiple>
 					<option value="ignore">--Select Your Skills--</option>
