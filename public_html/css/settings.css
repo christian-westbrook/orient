@@ -48,13 +48,13 @@
 	text-decoration: none;
 }
 
-body 
+body
 {
-	
+
     background-image: url(../img/background.jpg);
     background-size: cover;
     background-attachment: fixed;
-	
+
 }
 
 /**#profile
@@ -66,10 +66,6 @@ body
 .sub-button
 {
 	text-decoration: none;
-	background: #006994;
-	color: white;
-	border-radius: 6px;
-	border: solid 1px black;
 	padding: 8px;
 	width: 15vw;
 	height: 3em;
