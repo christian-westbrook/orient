@@ -38,7 +38,7 @@ include 'header.php';
 						$id = $results[$key]["USER_ID"];
 						$name = $results[$key]["TITLE"] . ' ' . $results[$key]["FNAME"] . ' ' . $results[$key]["LNAME"];
 						$profile = $results[$key]["PROFILE"];
-						echo '<div class="result"><img class="result-pic" src="' . $profile . '" /><a href="profile.php?SEARCH_ID=' . $id . '">' . $name . '</a></div>';
+						echo '<div class="result"><img class="result-pic" src="' . $profile . '" /><a href="profile.php?SEARCH_ID=' . $id . '"><p class="result-name">' . $name . '</p></a></div>';
 					}
 				}
 			}

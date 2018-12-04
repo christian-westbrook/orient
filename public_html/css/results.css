@@ -82,3 +82,12 @@
 	display: inline-block;
     float: left;
 }
+
+.result-name
+{
+	display: inline-block;
+    float: left;
+
+	margin-left: 1em;
+	margin-top: 1em;
+}
