@@ -10,7 +10,6 @@
     $almamater  = $_POST['alma-mater'];
     $phone_num  = $_POST['phone-num'];
     $bio        = $_POST['bio'];
-    $university = $_POST['university'];
 
     include 'database.php';
 
@@ -80,16 +79,6 @@
 
         $stmt = $conn->prepare($sql);
         $stmt->bindParam(':BIO', $bio, PDO::PARAM_STR);
-        $stmt->bindParam(':USER_ID', $id, PDO::PARAM_INT);
-        $stmt->execute();
-    }
-
-    if($university !== 'ignore')
-    {
-        $sql = 'UPDATE USERS SET UNIV_ID= :UNIV_ID WHERE USER_ID= :USER_ID';
-
-        $stmt = $conn->prepare($sql);
-        $stmt->bindParam(':UNIV_ID', $university, PDO::PARAM_INT);
         $stmt->bindParam(':USER_ID', $id, PDO::PARAM_INT);
         $stmt->execute();
     }

@@ -84,25 +84,6 @@ $valCU = $stmtCU->fetchAll(PDO::FETCH_ASSOC);
 				<input type="text" name="phone-num" <?php if(!empty($valCU[0]['PHONE_NUM'])) echo 'value="'.$valCU[0]['PHONE_NUM'].'"'; else echo 'placeholder="XXX-XXX-XXXX"'; ?> class="field" /></br>
 				<textarea rows="4" name="bio" class="field3" placeholder="Research Summary"><?php if(!empty($valCU[0]['BIO'])) echo $valCU[0]['BIO']; ?></textarea></br>
 
-				<select name="university" class="field">
-					<option value="ignore">--Select A University--</option>
-					<?php
-						$valz = $stmtUNI->fetchAll(PDO::FETCH_ASSOC);
-						$length = count($valz);
-						$sql = 'SELECT * FROM USERS WHERE USER_ID= :USER_ID AND UNIV_ID= :UNIV_ID';
-						for($i = 0; $i < $length; $i++){
-							$stmt = $conn->prepare($sql);
-							$stmt->bindParam(':UNIV_ID', $valz[$i]['UNIV_ID'], PDO::PARAM_INT);
-							$stmt->bindParam(':USER_ID', $id, PDO::PARAM_INT);
-							$stmt->execute();
-							$valz2 = $stmt->fetchAll(PDO::FETCH_ASSOC);
-							$length2 = count($valz2);
-							if($length2>0){$selected='selected';}
-							else{$selected='';}
-					?>
-					<option value="<?php echo $valz[$i]['UNIV_ID'];?>" <?php echo $selected;?>><?php echo $valz[$i]['NAME'];?></option>
-					<?php } ?>
-				</select><br>
 				<select name="interest[]" class="field2" multiple>
 					<option value="ignore">--Select Your Interests--</option>
 					<?php
