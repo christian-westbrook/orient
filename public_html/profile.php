@@ -37,8 +37,6 @@ $sql = "SELECT FNAME, LNAME, TITLE, EMAIL, PHONE_NUM, BIO, PROFILE, HOMETOWN, AL
 $stmt = $conn->prepare($sql);
 $stmt->bindParam(':ID', $id, PDO::PARAM_INT);
 
-echo "HERE";
-
 if($stmt->execute())
 {
 	$results = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -61,6 +59,8 @@ else
 {
 	echo "Unable to find that user.";
 }
+
+echo "HERE";
 
 // Grab data from the USERS_SKILLS table
 $sql = "SELECT SKILLS.NAME FROM SKILLS INNER JOIN USERS_SKILLS ON SKILLS.SKILL_ID = USERS_SKILLS.SKILL_ID WHERE USERS_SKILLS.USER_ID= :ID";
