@@ -13,9 +13,9 @@ This web system is licensed as open-source under the MIT license. Under this lic
 
     1. Set up a Linux environment with internet access.
 
-    Common Linux Distributions
-    Ubuntu   : https://www.ubuntu.com/
-    openSUSE : https://www.opensuse.org/
+        Common Linux Distributions
+        Ubuntu   : https://www.ubuntu.com/
+        openSUSE : https://www.opensuse.org/
 
     2. Install the following services and technologies
     Apache HTTP Server : https://httpd.apache.org/
