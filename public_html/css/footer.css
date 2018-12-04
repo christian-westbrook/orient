@@ -9,6 +9,12 @@
     position: absolute;
     bottom: 0;
 
+	display: inline-block;
+	float: left;
+	clear: left;
+	margin-top: 0px;
+	margin-left: 0px;
+
 	z-index: 2;
 }
 
