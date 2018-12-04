@@ -19,11 +19,11 @@ if(isset($_POST['newuseriddd'])) $id = $_POST['newuseriddd'];
 else $id= $_SESSION['USER_ID'];
 
 include 'php/database.php';
-$sqlUNI = 'SELECT * FROM UNIVERSITIES';
-$sqlINT = 'SELECT * FROM INTERESTS';
-$sqlSKL = 'SELECT * FROM SKILLS';
+$sqlUNI = 'SELECT * FROM UNIVERSITIES ORDER BY NAME ASC';
+$sqlINT = 'SELECT * FROM INTERESTS ORDER BY NAME ASC';
+$sqlSKL = 'SELECT * FROM SKILLS ORDER BY NAME ASC';
 $sqlROL = 'SELECT * FROM ROLES';
-$sqlDEP = 'SELECT * FROM DEPARTMENTS';
+$sqlDEP = 'SELECT * FROM DEPARTMENTS ORDER BY NAME ASC';
 
 $stmtUNI = $conn->prepare($sqlUNI);
 $stmtUNI->execute();
@@ -40,7 +40,7 @@ $sqlNU = 'SELECT * FROM USERS';
 $stmtNU = $conn->prepare($sqlNU);
 $stmtNU->execute();
 
-$sqlCU = 'SELECT * FROM USERS WHERE USER_ID= :USER_ID';
+$sqlCU = 'SELECT * FROM USERS WHERE USER_ID= :USER_ID ORDER BY LNAME ASC';
 $stmtCU = $conn->prepare($sqlCU);
 $stmtCU->bindParam(':USER_ID', $id, PDO::PARAM_INT);
 $stmtCU->execute();
