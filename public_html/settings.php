@@ -83,9 +83,12 @@ $valCU = $stmtCU->fetchAll(PDO::FETCH_ASSOC);
 				<input type="text" name="alma-mater" <?php if(!empty($valCU[0]['ALMA_MATER'])) echo 'value="'.$valCU[0]['ALMA_MATER'].'"'; else echo 'placeholder="Alma Mater"'; ?> class="field" /></br>
 				<input type="text" name="phone-num" <?php if(!empty($valCU[0]['PHONE_NUM'])) echo 'value="'.$valCU[0]['PHONE_NUM'].'"'; else echo 'placeholder="XXX-XXX-XXXX"'; ?> class="field" /></br>
 				<textarea rows="4" name="bio" class="field3" placeholder="Research Summary"><?php if(!empty($valCU[0]['BIO'])) echo $valCU[0]['BIO']; ?></textarea></br>
+				<input type="submit" value="Update Information" class="sub-button">
+			</form>
 
-				<p class="label">Update Research Interests</p>
+			<p class="label">Update Research Interests</p>
 
+			<form action="php/update-interests-script.php" method="POST">
 				<select name="interest[]" class="field2" multiple>
 					<option value="ignore">--Select Your Interests--</option>
 					<?php
@@ -105,9 +108,12 @@ $valCU = $stmtCU->fetchAll(PDO::FETCH_ASSOC);
 					<option value="<?php echo $valz[$i]['INT_ID'];?>"<?php echo $selected;?>><?php echo $valz[$i]['NAME'];?></option>
 					<?php } ?>
 				</select><br>
+				<input type="submit" value="Update Interests" class="sub-button">
+			</form>
 
-				<p class="label">Update Skills</p>
+			<p class="label">Update Skills</p>
 
+			<form action="php/update-skills-script.php" method="POST">
 				<select name="skill[]" class="field2" multiple>
 					<option value="ignore">--Select Your Skills--</option>
 					<?php
@@ -127,7 +133,7 @@ $valCU = $stmtCU->fetchAll(PDO::FETCH_ASSOC);
 					<option value="<?php echo $valz[$i]['SKILL_ID'];?>" <?php echo $selected;?>><?php echo $valz[$i]['NAME'];?></option>
 					<?php } ?>
 				</select><br>
-				<input type="submit" value="Update Information" class="sub-button">
+				<input type="submit" value="Update Skills" class="sub-button">
 			</form>
 		</div>
 	</div>
