@@ -100,7 +100,6 @@ body
 	font-size: 0.75em;
 	display: inline-block;
 	float: right;
-	clear: left;
 }
 
 .post-profile-pic
@@ -135,7 +134,7 @@ body
 .heart
 {
 	display: inline-block;
-	float: left;
+	float: right;
 	clear: left;
 
 	width: 25px;
@@ -147,6 +146,6 @@ body
 .likes
 {
 	display: inline-block;
-	float: left;
+	float: right;
 	margin-bottom: 0.5em;
 }
