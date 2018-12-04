@@ -17,13 +17,10 @@ $js = array(
 				0 => 'validatePassword'
 	   		);
 
-include('header.php');
+include 'header.php';
 
-if($sessionStarted == false)
-{
-   header('Location: /~orient/');
-}
 $id         = $_SESSION['USER_ID'];
+
 include 'php/database.php';
 $sqlEMP = 'SELECT * FROM EMPLOYERS';
 $sqlUNI = 'SELECT * FROM UNIVERSITIES';

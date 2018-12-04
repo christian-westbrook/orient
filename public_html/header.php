@@ -50,6 +50,7 @@ include 'session.php';
 			echo '<a href="index.php"><p id="home-link">ORIENT</p></a>';
 			echo '<a href="profile.php"><p>Profile</p></a>';
 			echo '<a href="settings.php"><p>Settings</p></a>';
+			echo '<a href="explore.php"><p id="explore-link">Explore</p></a>';
 			if($_SESSION['ROLE_ID'] == 5)echo '<a href="admin-settings.php"><p>Admin</p></a>';
 			echo '<input type="text" id="input" placeholder="Search..." />';
 			echo '<a onclick="search()" href="#" id="search-link"><p>Search</p></a>';
@@ -58,6 +59,7 @@ include 'session.php';
 		else
 		{
 			echo '<a href="index.php"><p id="home-link">ORIENT</p></a>';
+			echo '<a href="explore.php"><p id="explore-link">Explore</p></a>';
 			echo '<input type="text" id="input" placeholder="Search..." />';
 			echo '<a onclick="search()" href="#" id="search-link"><p>Search</p></a>';
 			echo '<a href="signup.php" id="sign-up"><p>Sign Up</p></a>';
