@@ -1,5 +1,5 @@
 **Open-source Research Interest Network (ORIENT)**
-Copyright (c) 2018 Nathan Brown, Elias Nyantakanya, Anthony Todaro, Brad Hamilton and Christian Westbrook
+Copyright (c) 2018 Nathan Brown, Anthony Todaro, Brad Hamilton and Christian Westbrook
 
 1. INTRODUCTION
 
